@@ -1,0 +1,33 @@
+html.body-scroll-lock {
+  /* position fixed hack, locks iOS too */
+  position: fixed;
+  width: 100%;
+
+  /* avoids scroll to top */
+  top: var(--body-scroll-lock-top-rect);
+
+  /* reserves space for scrollbar */
+  padding-right: var(--body-scroll-lock-vertical-scrollbar-gap);
+}
+
+/* iOS only */
+html.body-scroll-lock.ios {
+  /* position fixed hack */
+  position: fixed;
+  width: 100%;
+
+  /* avoids scroll to top */
+  top: var(--body-scroll-lock-top-rect);
+}
+
+/* standard browsers only */
+html.body-scroll-lock.standard body {
+  /* standard way to lock body scroll */
+  overflow: hidden;
+}
+
+/* both iOS and standard browsers */
+html.body-scroll-lock {
+  /* reserves space for scrollbar */
+  padding-right: var(--body-scroll-lock-vertical-scrollbar-gap);
+}

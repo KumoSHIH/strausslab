@@ -1,0 +1,1061 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/components/_product_info
+@import ../common/components/_dropdown
+@import ../common/components/_addtion
+@import ../common/ajax/_ajax_brand
+.product_detail
+  .footer
+    .go-top
+      +rwdmax(1200)
+        position: absolute
+        left: 5%
+        top: -60px
+        opacity: 1
+      +rwdmax(800)
+        left: 0
+      +rwdmax(767)
+        left: 20px
+  .main-wrapper
+    transition: background-color .8s ease-in-out
+  main 
+    padding-top: 80px
+    +rwdmax(1500)
+      padding-top: 130px
+    +rwdmax(1366)
+      padding-top: 100px
+    +rwdmax(1024)
+      padding-bottom: 140px
+    +rwdmax(767)
+      padding-bottom: 100px
+  // 客製商品按鈕
+  .fix-btn 
+    position: fixed
+    right: 60px
+    bottom: 18%
+    // transform: translateY(-50%)
+    z-index: 5
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 95px
+    height: 95px
+    border-radius: 50%
+    overflow: hidden
+    cursor: pointer
+    opacity: 0
+    visibility: hidden
+    transition: .5s ease-in-out
+    +rwdmax(767)
+      position: relative
+      right: auto
+      bottom: auto
+      margin: -10px auto 35px
+      opacity: 1
+      visibility: visible
+    &.show
+      opacity: 1
+      visibility: visible
+    &.hide
+      opacity: 0
+      z-index: -1
+    .bg 
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-image: url(../../../dist/uploads/product/cus-bg.jpg)
+      background-repeat: no-repeat
+      background-size: cover
+      transition: .5s ease-in-out
+    span 
+      z-index: 1
+      width: 50%
+      text-align: center
+      color: #fff
+      line-height: 1.5
+      letter-spacing: 0.98px
+      transition: letter-spacing .5s ease-in-out
+      font-size: px(13)
+    &:hover
+      box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.4)
+      .bg
+        transform: rotate(15deg) scale(1.1)
+      span
+        +rwdmin(767)
+          letter-spacing: 2.5px
+    +rwdmax(767)
+      width: 80px
+      height: 80px
+  .breadcrumb 
+    li
+      padding:  0 10px
+    +rwdmax(900)
+      width: 70%
+      margin: 0 auto
+    +rwdmax(767)
+      width: 100%
+      padding: 0 18px
+  .share
+    display: inline-flex
+    align-items: center
+    +rwdmax(900)
+      width: 70%
+      margin: 0 auto
+      >span 
+        margin: 0
+    +rwdmax(767)
+      width: 100%
+      padding: 0 20px
+  .heart
+    +rwdmax(900)
+      top: 0
+    +rwdmax(767)
+      right: 30px
+  .top-wrap
+    min-height: 600px
+    +rwdmax(1600)
+      min-height: 550px
+    +rwdmax(1500)
+      min-height: 500px
+    +rwdmax(1366)
+      min-height: 440px
+    +rwdmax(1200)
+      min-height: 360px
+    +rwdmax(900)
+      min-height: 300px
+  // 上方swiper
+  &_swiper
+    position: relative
+    +rwdmax(1366)
+      width: 90%
+      margin: auto
+    .heart
+      right: 33%
+      +rwdmax(900)
+        right: -10px
+        top: 15px
+    .swiper-container
+      +rwdmax(1366)
+        width: 90%
+        margin: auto
+      +rwdmax(1024)
+        width: 100%
+    .swiper-wrapper
+      align-items: center
+    .swiper-slide
+      .content
+        .img
+          width: 565px
+          transform: scale(0.6,0.6)
+          transition: .5s ease-in-out
+          +rwdmax(1600)
+            width: 450px
+          +rwdmax(1400)
+            width: 420px
+          +rwdmax(1300)
+            width: 350px
+          +rwdmax(1200)
+            width: 300px
+          +rwdmax(900)
+            transform: unset
+            transition: unset
+            width: 80%
+            margin: 0 auto
+          +rwdmax(767)
+            width: 330px
+    .swiper-slide-active
+      .content
+        .img 
+          transform: scale(1,1)
+          +rwdmax(900)
+            transform: unset
+    .content
+      position: relative
+      transition: .8s ease-in-out
+    .swiper-pagination
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+    .swiper-pagination-bullet
+      margin: 0 6px
+    .swiper-arrow-wrap
+      position: absolute
+      z-index: 2
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: calc( 100% - 40px )
+      max-width: 1810px
+      pointer-events: none
+      +flex($x: space-between)
+      +rwdmax(900)
+        width: 120%
+      +rwdmax(767)
+        display: none
+      a
+        position: relative
+        display: block
+        width: 60px
+        height: 60px
+        border-radius: 50%
+        overflow: hidden
+        transition: .3s
+        pointer-events: auto
+        +flex
+        +rwdmax(1024)
+          width: 40px
+          height: 40px
+        &.prev-btn
+          padding-right: 5px
+        &.next-btn
+          padding-left: 5px
+        &::before
+          z-index: 0
+          content: ""
+          display: block
+          width: 0
+          height: 0
+          border-radius: 50%
+          background-color: #000
+          transition: .5s
+          +posCenter
+          +rwdmax(1024)
+            display: none
+        &:hover
+          &::before
+            width: 60px
+            height: 60px
+          i
+            color: #fff
+            +rwdmax(1024)
+              color: #000
+        i
+          position: relative
+          z-index: 1
+          font-size: px(24)
+          transition: .3s
+    &[data-aost]
+      +yWaypoint(50)
+    &.show
+      +zWaypoint
+    +rwdmax(900)
+      width: 60%
+      margin: 0 auto
+    +rwdmax(767)
+      width: 90%
+  // 商品規格篩選
+  &_filter
+    max-width: 1200px
+    width: 90%
+    margin: 0 auto
+    +rwdmax(1100)
+      width: 100%
+      padding: 0 50px
+      .filter-container
+        .filter-name
+          height: 26px
+    +rwdmax(900)
+      width: 100%
+      margin-top: 35px
+      padding: 0 30px
+    +rwdmax(767)
+      margin-top: 25px
+      padding: 0
+    .top-tools
+      display: flex
+      justify-content: space-between
+      &[data-aost]
+        +opacity
+      &.show
+        +opacity1
+      +rwdmax(1650)
+        width: 90%
+        margin: 0 auto
+      +rwdmax(1500)
+        width: 100%
+      +rwdmax(900)
+        flex-direction: column
+        width: 100%
+        padding: 0
+        .share
+          display: none
+      +rwdmax(767)
+        width: 90%
+    .filter-title
+      min-height: 70px
+      align-items: center
+      padding: 20px 14px
+      +rwdmax(1200)
+        padding: 20px 10px
+      +rwdmax(900)
+        padding: 20px
+    .content
+      // padding-top: 20px
+      padding-bottom: 80px
+      +rwdmax(1366)
+        padding-top: 10px
+        padding-bottom: 60px
+      +rwdmax(900)
+        padding-top: 13px
+        padding-bottom: 30px
+      .top-title,
+      .top-filter 
+        max-width: 1200px
+        width: 100%
+        margin: 0 auto
+        +rwdmax(900)
+          width: 70%
+        +rwdmax(767)
+          width: 90%
+          margin: 0 auto
+          padding: 0 15px
+
+      // 大標
+      .top-title
+        min-height: 130px
+        display: flex
+        justify-content: space-between
+        +rwdmax(900)
+          flex-direction: column
+        .left
+          display: inline-flex
+          align-items: center
+          flex-wrap: wrap
+          width: 60%
+          +rwdmax(900)
+            width: 100%
+            flex-direction: column
+            align-items: flex-start
+          .soldout
+            margin-right: 10px
+            +rwdmax(900)
+              margin-right: 0
+              margin-bottom: 10px
+          h1 
+            font-weight: bold
+            letter-spacing: 2.03px
+            line-height: 1.5
+            +fontSet2(px(40),$basic)
+            +rwdmax(1366)
+              +fontSet2(px(36),$basic)
+          p 
+            width: 100%
+            // margin-top: auto 
+            margin-bottom: 40px
+            font-weight: bold
+            line-height: 1.8
+            letter-spacing: 1px
+            +fontSet2(px(20),$basic)
+            +rwdmax(1366)
+              margin-top: 15px
+              margin-bottom: 15px
+            +rwdmax(900)
+              margin-top: 0
+              margin-bottom: 10px
+          +rwdmax(900)
+            h1 
+              padding-bottom: 8px
+              letter-spacing: 1.55px
+              line-height: 1.35
+              font-size: px(31)
+        .right
+          text-align: right
+          .price
+            padding: 15px 0
+            letter-spacing: 1.19px
+            span:first-child
+              padding-right: 12px
+              letter-spacing: 0.46px
+              +fontSet2(px(14),$basicbold)
+            span:last-child
+              letter-spacing: 0.99px
+              +fontSet2(px(36),$basicbold)
+              +rwdmax(767)
+                +fontSet2(px(20),$basicbold)
+          .description
+            text-decoration: line-through
+            letter-spacing: 0.46px
+            +fontSet2(px(14),$basicbold)
+            span 
+              letter-spacing: 0.53px
+              +fontSet2(px(16),$basicR)
+          +rwdmax(900)
+            display: flex
+            flex-wrap: wrap
+            align-items: baseline
+            text-align: left
+            padding-bottom: 35px
+            >span 
+              padding-right: 14px
+            .price
+              letter-spacing: 0.66px
+              font-size: px(20)
+            .description
+              width: 100%
+        .more-discount 
+          margin-top: 18px
+          margin-bottom: 20px
+          margin-left: auto
+          width: 90%
+          height: 40px
+          color: #fff
+          background-color: #e84949
+          letter-spacing: 0.46px
+          font-family: $JhengHei
+          font-size: px(14)
+          cursor: pointer
+          +flexCenter
+          &::after
+            content: '$'
+            padding-left: 13px
+          +rwdmax(1100)
+            width: 300px
+            margin-left: 0
+            margin-bottom: 15px
+        &[data-aost]
+          +opacity
+        &.show
+          +opacity1
+      .top-filter 
+        position: relative
+        // z-index: 1
+        z-index: 3
+        padding-bottom: 10px
+        &[data-aost]
+          +opacity
+        &.show
+          +opacity1
+        +rwdmax(1100)
+          // position: relative
+        +rwdmax(900)
+          padding-bottom: 25px
+          .filter
+            flex-direction: column
+            &-container,
+            &-options,
+            &-wrap 
+              margin-right: 0
+              width: 100%
+
+      // 下拉內容區塊
+      .select-libox
+        .scroll-content
+        +rwdmax(1200)
+          position: fixed
+          left: 0
+          // bottom: -100%
+          top: 0
+          z-index: -1
+          width: 100vw
+          height: 100vh
+          height: calc(var(--vh, 1vh) * 100)
+          display: none
+          background-color: rgba(0,0,0,0.2)
+          // transition: bottom .8s ease-in-out
+          opacity: 0
+          transition: .5s ease-in-out
+          &.in
+            opacity: 1
+            z-index: 999
+          .scroll-content
+            width: 100vw
+            height: 80vh !important
+            overflow-y: scroll
+            margin-top: auto
+            > .scroll-element.scroll-y
+              width: 4px
+            > .scroll-element .scroll-element_track
+              background-color: rgba(0,0,0,0.4)
+            > .scroll-element .scroll-bar
+              background-color: #000
+            // &::-webkit-scrollbar
+            //   display: none
+      .select-content
+        position: relative
+        width: 100%
+        height: 0
+        transition: height .5s ease-in-out
+        +rwdmax(1200)
+          height: 100%
+      .select-block
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        display: none
+        padding-bottom: 78px
+        ul 
+          width: 100%
+          display: flex
+          flex-wrap: wrap
+          justify-content: center
+        li
+          display: flex
+          flex-wrap: wrap
+          flex-direction: column
+          text-align: center
+          padding-right: 15px
+          .img
+            width: 120px
+            height: 120px
+            position: relative
+            overflow: hidden
+            background-color: rgba(255,255,255,0.2)
+            border: solid 3px transparent
+            transition: border-color .5s ease-in-out
+            &::after,
+            &::before
+              position: absolute
+              opacity: 0
+              transition: opacity .5s ease-in-out
+            &::after
+              font-family: 'icomoon' !important
+              content: '\e90e'
+              right: 12px
+              bottom: 12px
+              color: #fff
+              font-size: px(32)
+              +mozhack
+                bottom: 9px
+            &::before
+              content: ''
+              width: 25px
+              height: 25px
+              right: 15px
+              bottom: 15px
+              border-radius: 50%
+              background-color: #000
+          .text
+            padding: 10px 0
+            max-width: 120px
+            line-height: 1.5
+            +fontSet2(px(14),$basicbold)
+          .size
+            max-width: 120px
+            word-break: break-all
+            padding: 0 7px
+            line-height: 1.2
+            letter-spacing: 0.7px
+            +fontSet2(px(14),$basic)
+          &.active
+            .img
+              border-color: #fff
+              &::after,
+              &::before
+                opacity: 1
+        li:last-child
+          padding-right: 0
+        p 
+          padding-top: 25px
+          text-align: center
+          line-height: 1.5
+          letter-spacing: 0.7px
+          +fontSet2(px(14),$basicbold)
+        +rwdmax(1200)
+          width: 100vw
+          max-height: 80vh
+          padding-top: 40px
+          padding-bottom: 0px
+          .wrap
+            display: flex
+            flex-direction: column-reverse
+          p 
+            padding: 0 20px 10px
+          ul
+            padding-bottom: 80px
+          li 
+            padding: 10px
+          li:last-child
+            padding-right: 10px
+        +rwdmax(767)
+          li 
+            padding: 7px
+      .filter .img-cir
+        flex-shrink: 0
+        width: 24px
+        height: 24px
+        border: solid 2px #fff
+        margin-right: 10px
+      .filter-replace span
+        +ellipsis(1,17px)
+      .pro-event,
+      .product-extra
+        max-width: 1180px
+        width: 100%
+        margin: 0 auto
+        display: flex
+      .product-extra
+        .extra-block:nth-child(1)
+          margin-top: 0
+      .pro-event
+        margin-bottom: 5px
+        +rwdmax(767)
+          margin-bottom: 20px
+      // 按鈕
+      .btn-wrap
+        padding-top: 40px
+        +flexCenter
+        .btn-cir
+          display: flex
+          flex-direction: column 
+          align-items: center
+          justify-content: center
+          color: #fff
+          span 
+            display: block
+            letter-spacing: 0.46px
+            +fontSet2(px(14),$basic)
+          span:first-child
+            padding-bottom: 10px
+            font-size: px(26)
+        .btn-cir:first-child
+          margin-right: 18px
+          +buttonCircle(115px,#202121)
+        .btn-cir:last-child
+          +buttonCircle(115px,$main)
+        &[data-aost]
+          +opacity
+        &.show
+          +opacity1
+        +rwdmax(900)
+          padding-top: 30px
+
+    .extra-block>ul>li .item-box .txt-color .img-cir
+      border-color: #fff
+  // 手機 固定按鈕
+  .fixed-block
+    width: 100%
+    position: fixed
+    left: 0
+    bottom: 20px
+    z-index: 10
+    display: none
+    opacity: 0
+    visibility: hidden
+    transition: .5s ease-in-out
+    .wrap
+      display: flex
+      flex-direction: row-reverse
+      align-items: center
+      justify-content: center
+      .go-top
+        margin-left: 24px
+      .btn-wrap
+        padding-top: 0
+        .btn-cir
+          align-items: center
+          flex-direction: row
+          width: auto 
+          height: auto
+          border-radius: 25px
+          padding: 14px 16px
+          box-shadow: 0px 3px 21px 0 rgba(0, 0, 0, 0.18)
+          span:first-child
+            padding-bottom: 0
+            padding-right: 8px
+            font-size: px(20)
+        .btn-cir:first-child
+          margin-right: 8px
+    +rwdmax(1200)
+      display: block
+      &.show
+        opacity: 1
+        visibility: visible
+
+  // 商品評價
+  &_evaluate
+    .evaluate-wrap
+      max-width: 1650px
+      width: 90%
+      margin: 0 auto
+      display: flex
+      border-top: solid 5px
+    .left 
+      width: 30%
+      padding-top: 80px
+      display: flex
+      flex-direction: column
+      align-items: center
+      .medals
+        padding-bottom: 20px
+      .icon-wrap
+        position: relative
+        width: 140px
+        .icon
+          display: none
+          &.active
+            display: block
+        .score
+          z-index: 1
+          color: #fff
+          +posCenter
+          +fontSet2(px(30),$basic)
+      .text
+        text-align: center
+        .en 
+          +fontSet2(px(32),$basic)
+        .ch 
+          padding: 15px 0 20px
+          font-weight: bold
+          +fontSet2(px(18),$basic)
+        p 
+          letter-spacing: 0.7px
+          +fontSet2(px(14),$basic)
+      &[data-aost]
+        +opacity
+      &.show
+        +opacity1
+      +rwdmax(767)
+        .icon-wrap
+          width: 100px
+          .score
+            font-size: px(19)
+        .text
+          .en 
+            font-size: px(35)
+          .ch
+            padding-top: 20px
+            font-size: px(20)
+    .right
+      position: relative
+      width: 70%
+      ul 
+        display: flex
+        flex-wrap: wrap
+        padding: 70px 60px
+        +rwdmax(1500)
+          padding: 70px 20px 
+      li 
+        width: 50%
+        padding: 20px
+        display: none
+        >a
+          display: flex 
+          align-items: center
+          &:hover 
+            .person
+              transform: rotate(5deg)
+              .plus
+                opacity: 1
+                transform: rotate(180deg)
+              .img:after
+                opacity: 1
+              img 
+                
+            .text
+              .top 
+                .name
+                  transform: translateX(10px)
+        .person
+          position: relative
+          flex-shrink: 0
+          width: 110px
+          height: 110px
+          border-radius: 100%
+          border: solid 3px #fff
+          overflow: hidden
+          transition: transform .5s ease-in-out
+          .plus
+            opacity: 0
+            transition: .5s ease-in-out
+            +posCenter
+            &:after,&:before  
+              content: ''
+              z-index: 1
+              background-color: #fff
+              +posCenter
+            &:after
+              width: 20px
+              height: 2px
+            &:before
+              width: 2px
+              height: 20px
+          .img
+            position: relative
+            overflow: hidden
+            border-radius: 100%
+            &::after
+              content: ''
+              position: absolute
+              left: 0
+              top: 0
+              width: 100%
+              height: 100%
+              border-radius: 100%
+              background-color: rgba(0,0,0,0.5)
+              opacity: 0
+              transition: .5s ease-in-out
+          img 
+            transition: .5s ease-in-out
+        .text
+          width: 100%
+          padding-left: 25px
+          .top 
+            display: flex
+            align-items: baseline
+            justify-content: space-between
+            padding-bottom: 9px
+            .name
+              transition: .5s ease-in-out
+              +fontSet2(px(18),$basic)
+          .score
+            display: flex
+            align-items: baseline
+            span 
+              padding-right: 10px
+              letter-spacing: 0.6px
+              +fontSet2(px(14),$basic)
+            .fraction
+              display: flex
+              align-items: center
+              justify-content: center
+              width: 45px
+              height: 45px
+              border-radius: 100%
+              background-color: rgba(255,255,255,0.3)
+              +fontSet2(px(24),$basicbold)
+          .description
+            line-height: px(25)
+            letter-spacing: 0.7px
+            +fontSet2(px(14),$basic)
+            +ellipsis(2, 25px)
+          .date
+            display: block
+            padding-top: 7px
+            letter-spacing: 0.7px
+            +fontSet2(px(14),$basicbold)
+        &[data-aost]
+          +yWaypoint(50)
+        &.show
+          +zWaypoint
+      li:nth-child(1),
+      li:nth-child(2),
+      li:nth-child(3)
+        display: block
+      .unit-link
+        right: 7%
+        bottom: 28%
+        .icon
+          right: auto 
+          left: 0
+          top: 50%
+          transform: translateY(-50%)
+        .text
+          padding-right: 0
+          padding-left: 35px
+          .en
+            +fontSet2(px(14),$basic)
+        &[data-aost]
+          +opacity
+        &.show
+          +opacity1
+    +rwdmax(1200)
+      .evaluate-wrap
+        flex-direction: column
+      .left
+        width: 100%
+        padding-top: 45px
+      .right
+        width: 100%
+    +rwdmax(900)
+      .right
+        ul 
+          padding: 50px 0 75px
+          flex-direction: column
+          width: 70%
+          margin: 0 auto
+        li 
+          width: 100%
+        .unit-link
+          right: 50%
+          transform: translateX(50%)
+          bottom: 0
+          .text
+            padding-right: 0
+    +rwdmax(767)
+      .right
+        ul 
+          width: 100%
+          padding-top: 15px
+          padding-bottom: 55px
+          flex-direction: column
+        li 
+          padding: 30px 0
+          >a 
+            align-items: flex-start
+          .person
+            width: 100px
+            height: 100px
+            border: solid 2px #fff
+          .text
+            padding-left: 15px
+            .top 
+              padding-bottom: 5px
+              align-items: center
+              .name
+                margin-top: 25px
+            .score
+              flex-direction: column
+              align-items: center
+              span 
+                padding-right: 0
+                padding-bottom: 9px
+            .date
+              padding-top: 10px
+        
+// 推薦商品swiper
+.product-other 
+  position: relative
+  padding-top: 100px
+  .title-type
+    position: static
+    display: flex
+    flex-direction: column
+    align-items: center
+    .en 
+      line-height: 1.2
+      +fontSet2(px(50),$basicbold)
+    p 
+      padding-top: 35px
+      font-weight: bold
+      +fontSet2(px(21),$basic)
+  .title-move[data-move="top"]
+    transform: translateY(0)
+    .en.border-bottom span
+      border-bottom: solid 3px
+  .other-swiper 
+    position: relative
+    max-width: 1500px
+    width: 100%
+    margin: 0 auto
+    padding-top: 50px
+    padding-bottom: 280px
+    +rwdmax(1366)
+      width: 90%
+      max-width: 1100px
+    +rwdmax(767)
+      width: 100%
+    .swiper-container
+      padding-bottom: 80px
+      +rwdmax(767)
+        padding-bottom: 45px
+    .swiper-wrapper
+      &.center
+        justify-content: center
+    .swiper-slide
+      width: auto
+      opacity: 1
+      &.swiper-slide-duplicate
+        opacity: 0 !important
+      .cont
+        display: block
+        padding: 0 20px
+        .text-detail
+          margin-top: 10px
+          opacity: 0
+          transition: opacity .5s ease-in-out
+          span
+            +fontSet2(px(14),$basicbold)
+          span:last-child
+            position: relative
+            text-decoration: none
+            &::after
+              content: ''
+              position: absolute
+              top: 50%
+              left: 0
+              width: 100%
+              height: 1px
+              background-color: #000
+          +rwdmax(1200)
+            opacity: 1
+      .img
+        position: relative
+        .tag 
+          position: absolute
+          top: 20px
+          left: 10px
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 60px
+          height: 60px
+          border-radius: 100%
+          overflow: hidden
+          color: #fff
+          +fontSet2(px(12),$basicbold)
+          .bg
+            position: absolute
+            right: 0
+            top: 0
+            width: 100%
+            height: 100%
+            border-radius: 100%
+            overflow: hidden
+            background-image: url(../../../dist/uploads/product/cus-bg-s.jpg)
+            background-repeat: no-repeat
+            background-size: cover
+            animation: rotate 6s linear infinite
+          span 
+            z-index: 1
+        +rwdmin(901)
+          transition: transform .5s ease-in-out
+        +rwdmax(900)
+          height: 250px
+          display: flex
+          align-items: center
+        +rwdmax(767)
+          height: 220px  
+      +rwdmin(1201)
+        &:nth-child(odd)
+          .img
+            transform-origin: left top
+        &:nth-child(even) 
+          .img
+            transform-origin: right top
+        &:hover
+          &:nth-child(odd)
+            .img
+              transform: rotate(5deg)
+          &:nth-child(even)
+            .img
+              transform: rotate(-5deg)
+          .cont
+            .text-detail
+              opacity: 1
+    .swiper-slide:nth-child(odd)
+      +rwdmin(901)
+        .cont
+          transform: translateY(40px)
+    .swiper-slide:nth-child(even)
+      +rwdmin(901)
+        .cont
+          transform: translateY(-20px)
+    &[data-aost]
+      +opacity
+    &.show
+      +opacity1
+    +rwdmax(1200)
+      padding-bottom: 150px
+    +rwdmax(900)
+      width: 95%
+      padding-bottom: 50px
+    +rwdmax(767)
+      width: 65%
+      padding-top: 20px
+      padding-bottom: 0px
+  +rwdmax(1200)
+    .title-type
+      .en 
+        font-size: px(40)
+      p 
+        font-size: px(18)
+  +rwdmax(767)
+    .title-type
+      .en 
+        font-size: px(33)
+      p 
+        padding-top: 20px
+        font-size: px(20)

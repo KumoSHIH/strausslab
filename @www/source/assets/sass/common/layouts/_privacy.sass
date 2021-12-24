@@ -1,0 +1,306 @@
+.common-lightbox
+  display: none
+  position: fixed
+  z-index: 100
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  overflow-y: scroll
+  &::-webkit-scrollbar-track
+    border-radius: 10px
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  &::-webkit-scrollbar
+    width: 6px
+    +rwdmax(767)
+      display: none
+  &::-webkit-scrollbar-thumb
+    border-radius: 10px
+    background-color: rgba(108, 110, 113, 1)
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  .modal-contain
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, .5)
+    overflow: hidden
+    .scroll-wrapper.scrollbar-macosx
+      width: 100%
+      >.scroll-element.scroll-x
+        display: none
+      >.scroll-element.scroll-y
+        right: -7px
+        width: 5px
+        .scroll-bar
+          width: 4px
+    .scrollbar-macosx[data-scroll-wrapper]
+      max-height: 100vh !important
+      overflow-x: hidden !important
+      &::-webkit-scrollbar
+        display: none
+    .modal-dialog
+      position: relative
+      left: 50%
+      width: 885px
+      height: 885px
+      border-radius: 50%
+      margin: 2.5vh 0
+      padding: 180px 6.2%
+      opacity: 0
+      transform: translateX(-50%) scale(.5)
+      transition: .8s
+      &.bg 
+        background-image: url(../../../dist/uploads/member/bg02.jpg)
+        background-position: center 0
+      &.normal
+        background-color: #202020
+      +rwdmax(1500)
+        padding: 160px 11.2%
+      //   width: 81.9vh
+      //   height: 81.9vh
+      +rwdmax(1200)
+        padding: 200px 14%
+      //   width: 87.9vh
+      //   height: 87.9vh
+      +rwdmax(750)
+        padding: 200px 120px
+      //   width: 750px
+      //   height: 750px
+      //   padding: 120px 12%
+      +rwdmax(700)
+        padding: 200px 180px
+      // +rwdmax(550)
+      //   width: 620px
+      //   height: 620px
+      //   padding: 90px 90px
+      //   &.bg
+      //     background-position: 48% 72%
+      +rwdmax(575)
+        padding: 150px 40%
+      +rwdmax(450)
+        padding: 150px 270px
+      +rwdmax(360)
+        padding: 120px 300px
+      &.show
+        opacity: 1
+        transform: translateX(-50%) scale(1)
+      a.btn-cir
+        position: absolute
+        top: 40px
+        left: calc( 50% - 24px )
+        display: block
+        width: 48px
+        height: 48px
+        border-radius: 50%
+        border: 0
+        // cursor: pointer
+        &.dark
+          background-color: #000
+        &.mainGreen
+          background-color: $main
+        +rwdmax(550)
+          top: 25px
+      .modal-inner
+        .sec-title
+          text-align: center
+          margin-bottom: 35px
+          &.mainGreen
+            color: $main
+          +rwdmax(550)
+            margin-bottom: 20px
+        .sec-content
+          font-size: px(14)
+          &.white
+            color: #fff
+          &.member
+            .content-wrap
+              >div 
+                .title
+                  margin-top: 35px
+                  margin-bottom: 20px
+                  font-weight: 600
+                  font-size: px(20)
+                p 
+                  line-height: 1.7
+                  letter-spacing: 0.46px
+                  font-size: px(14)
+          .scrollbar-inner
+            >.scroll-element.scroll-y
+              width: 5px
+              border-radius: 0px
+              .scroll-element_outer
+                border-radius: 0px
+              .scroll-element_track
+                width: 5px
+                left: 1px
+              .scroll-bar
+                width: 5px
+                opacity: 1
+                border-radius: 0px
+            &.white
+              >.scroll-element.scroll-y .scroll-bar
+                background-color: #fff
+            &.mainGreen
+              >.scroll-element.scroll-y .scroll-bar
+                background-color: $main
+          .scrollbar-inner[data-modal-content]
+            max-height: 450px !important
+            +rwdmax(1500)
+              // max-height: 30vh !important
+            +rwdmax(900)
+              // max-height: 330px !important
+            +rwdmax(550)
+              // max-height: 300px !important
+            &::-webkit-scrollbar
+              display: none
+          .content-wrap
+            padding-right: 35px
+            +rwdmax(550)
+              padding-right: 15px
+            p
+              line-height: 1.7
+            >ul
+              >li
+                margin-top: 40px
+                .title
+                  font-size: px(20)
+                  margin-bottom: 20px
+                  font-weight: 600
+                ul
+                  li
+                    position: relative
+                    padding-left: 8px
+                    line-height: 1.7
+                    &::before
+                      position: absolute
+                      content: ''
+                      display: block
+                      top: 10px
+                      left: 0
+                      width: 2px
+                      height: 2px
+                      border-radius: 50%
+                      background-color: #fff
+        .gotop-btn
+          position: absolute
+          bottom: 12.4%
+          left: 50%
+          transform: translateX(-50%)
+          color: $main
+          // cursor: pointer
+          +rwdmax(550)
+            bottom: 10%
+          span
+            padding-right: 25px
+          i.arrow
+            position: absolute
+            top: 5px
+            right: 0
+            border-width: 0 6px 7px 6px
+            border-style: solid
+            border-color: transparent transparent $main transparent
+        
+        // 會員
+        .agree
+          padding-top: 30px
+          .pick-wrap
+            text-align: center
+            >div
+              position: relative
+              display: inline-flex
+              justify-content: center
+              align-items: center
+              padding-bottom: 25px
+              &::after
+                content: ''
+                position: absolute
+                left: 0
+                bottom: 0
+                width: 100%
+                height: 8px
+                background-color: rgba(255,255,255,.5)
+              &.active
+                .btn-cir
+                  background-color: $main
+                  span
+                    color: #fff
+              p 
+                letter-spacing: 0.7px
+            .btn-cir
+              flex-shrink: 0
+              position: relative
+              margin-right: 8px
+              +buttonCircle(30px,#eee)
+              span 
+                color: #bfbfbf
+                transition: .5s ease-in-out
+                font-size: px(40)
+                +posCenter
+                +mozhack 
+                  top: 60%
+              &:hover 
+                background-color: #eee
+
+        .btn-wrap
+          padding-top: 25px
+          display: flex
+          justify-content: center
+          .unit-link
+            .text
+              flex-direction: row
+              // margin-right: 45px
+              padding-right: 0
+              position: relative
+              &::before
+                content: ''
+                position: absolute
+                left: 0
+                bottom: -5px
+                width: 0
+                height: 1px
+                background-color: #000
+                transition: .5s ease-in-out
+              .en 
+                padding-bottom: 0
+                  
+            .icon
+              font-size: px(32)
+            &.reverse
+              .text
+                padding-left: 0
+                margin-left: 45px
+            &:hover 
+              .text
+                &::before
+                  width: 100%
+              .en
+                &::after
+                  width: 0
+                  height: 0
+          .unit-link:last-child
+            position: relative
+            padding-left: 10px
+            margin-left: 10px
+            &::after
+              content: ''
+              position: absolute
+              left: 0
+              top: 50%
+              transform: translateY(-50%)
+              background-color: #000 
+              width: 1px
+              height: 13px
+            .text
+              margin-right: 45px
+  &.member-lightbox
+    +rwdmax(550)
+      .modal-contain  
+        .modal-dialog
+          .modal-inner
+            .scrollbar-inner[data-modal-content]
+              // max-height: 180px !important
+
+

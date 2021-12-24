@@ -1,0 +1,136 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/components/_libox_service
+
+.member_order
+  background-color: #ffe4ab
+  .mouse-container
+    .circle
+      border: solid 1px rgba(0,0,0,.5)
+  .footer
+    background-color: #ffe4ab
+  main
+    padding-top: 240px
+    padding-bottom: 200px
+    .member-title .title .right .link-text 
+      a:not(.active)
+        .en,.ch
+          color: rgba(0,0,0,0.2)
+      a.active 
+        .en,.ch
+          color: #000
+    +rwdmax(1100)
+      padding-top: 180px
+      padding-bottom: 250px
+    +rwdmax(767)
+      padding-top: 150px
+      padding-bottom: 140px
+  .range
+    max-width: 1300px
+    width: 100%
+    margin: 0 auto
+    +rwdmax(1500)
+      width: 90%
+    +rwdmax(900)
+      width: 100%
+  .bg
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    width: 100%
+    height: 100%
+    background-position: center 0
+    background-size: cover
+    background-repeat: no-repeat
+    +rwdmax(1100)
+      background-size: 120%
+    +rwdmax(900)
+      background-size: 250%
+    +rwdmax(767)
+      background-size: 500%
+  .member-status
+    padding-top: 60px
+    .scrollbar-inner
+      width: 100% !important
+    ul 
+      display: flex
+      li 
+        margin-right: 8px
+        border-top: solid 6px 
+        border-color: rgba(255,255,255,0.5)
+        width: 100%
+        transition: border-color .5s ease-in-out
+        a   
+          height: 100%
+          padding: 20px 0
+          display: flex
+          align-items: center
+          justify-content: center
+        span 
+          letter-spacing: 0.46px
+          font-size: px(14)
+        div 
+          margin-left: 10px
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 32px
+          height: 32px
+          border-radius: 50%
+          color: #fff 
+          background-color: #000
+          transition: background-color .5s ease-in-out
+          letter-spacing: 0.4px
+          font-size: px(12)
+      li:last-child
+        margin-right: 0
+    +rwdmax(1100)
+      padding-top: 40px
+      padding-bottom: 20px
+      .scrollbar-inner
+        position: relative
+        width: 98% !important
+        overflow-x: scroll
+        margin: 0 auto
+        >.scroll-element.scroll-x
+          height: 5px
+          border-radius: 0px
+          .scroll-element_outer
+            border-radius: 0px
+          .scroll-element_track
+            width: 1px
+            left: 1px
+          .scroll-bar
+            width: 3px
+            background-color: rgba(0,0,0,0.3)
+            opacity: 1
+            border-radius: 5px
+        ul 
+          li 
+            flex-shrink: 0
+            max-width: 205px
+    +rwdmax(767)
+      .scrollbar-inner
+        ul 
+          li 
+            max-width: 160px
+  
+  .button-wrap
+    .form-btn:not(:first-child)
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        width: 1px
+        height: 14px
+        background-color: #fff
+        opacity: .8
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+    +rwdmax(767)
+      flex-wrap: wrap
+      justify-content: center
+      .form-btn:nth-child(3)
+        margin-top: -20px

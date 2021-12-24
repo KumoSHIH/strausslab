@@ -1,0 +1,38 @@
+-
+  var brand = [
+    '../../../uploads/brand/logo01.png',
+    '../../../uploads/brand/logo02.png',
+    '../../../uploads/brand/logo03.png',
+    '../../../uploads/brand/logo04.png',
+    '../../../uploads/brand/logo05.png',
+    '../../../uploads/brand/logo01.png',
+    '../../../uploads/brand/logo02.png',
+    '../../../uploads/brand/logo03.png',
+    '../../../uploads/brand/logo04.png',
+    '../../../uploads/brand/logo05.png',
+  ]
+
+.brand.brand-overview
+  .modal-contain.modal-scroll-wrap.scrollbar-macosx(data-scroll-content)
+    .modal-dialog
+      .cir-btn.close.ajax_close
+        .cross
+      .modal-content
+        .sec-title.green
+          h6.en Brand Guide
+          h6.ch 品牌一覽
+          p 除了我們自己的 Strauss Lab，我們也精心挑選、收錄了各式品牌，
+            |<br>提供適合與我們風格搭配的美好品項，提供更完整的居住提案。
+        ul 
+          // 圖片建議尺寸 寬高180X180以下
+          each val in brand
+            li.hover-cir(data-ajax-route="./ajax_brand_detail.html" 
+              data-ajax-container=".libox-container2" 
+              data-ajax-callback="_brand.detailCallback"
+              data-ajax
+              data-hover="yellowBig")
+              .img 
+                img(src= val, alt="")
+      .cir-btn.black.goTop(data-anchor-target="" data-anchor-container=".brand-overview .modal-contain[data-scroll-content]" data-anchor)
+        .icon-trangle-up
+

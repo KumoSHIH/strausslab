@@ -1,0 +1,236 @@
+- 
+  var navitem = [
+    {
+      en: 'PRODUCT',
+      ch: '探索產品',
+      url: './product.html'},
+    {
+      en: 'SALE',
+      ch: '探索空間',
+      url: './product_sale.html'},
+    {
+      en: 'NEWS',
+      ch: '最新消息',
+      url: './news.html'},
+  ] 
+  var unit = [
+    {
+      route: './about.html',
+      en: 'Brand Story',
+      ch: '品牌故事'},
+    {
+      route: './news.html',
+      en: 'News',
+      ch: '最新消息'},
+    {
+      route: './product.html',
+      en: 'Product',
+      ch: '探索產品'},
+    {
+      route: './faq.html',
+      en: 'Q&A',
+      ch: '疑難排解'},
+    {
+      route: './contact.html',
+      en: 'Contact',
+      ch: '與我們聯繫'},
+  ]
+
+  var series = [
+    {
+      img: '',
+      en: 'Bed Series',
+      ch: '床組'},
+    {
+      img: '',
+      en: 'Table',
+      ch: '桌子'},
+    {
+      img: '../../../uploads/navbar/img-04.png',
+      en: 'Sofa',
+      ch: '沙發'},
+    {
+      img: '',
+      en: 'Chair',
+      ch: '單椅'},
+    {
+      img: '../../../uploads/navbar/img-05.png',
+      en: 'Storage',
+      ch: '收納'},
+  ]
+  var hot = [
+    {
+      en: 'NT$ 2000 Bonus',
+      ch: '沙發系列滿萬現折 2000！'},
+    {
+      en: 'Nov. Pop-up Event',
+      ch: '十一月快閃活動，前往查看活動商品頁！'},
+    {
+      en: 'Hot Sale',
+      ch: '熱銷商品三件 95 折，一起團購享受美好生活品質'},
+    {
+      en: '08.28 Fri. - 10.20 Tue.',
+      ch: '書臥生活，系列家具享優惠'},
+    {
+      en: 'NT$ 2000 Bonus',
+      ch: '沙發系列滿萬現折 2000！'},
+    {
+      en: 'Nov. Pop-up Event',
+      ch: '十一月快閃活動，前往查看活動商品頁！'},
+    {
+      en: 'Hot Sale',
+      ch: '熱銷商品三件 95 折，一起團購享受美好生活品質'},
+    {
+      en: '08.28 Fri. - 10.20 Tue.',
+      ch: '書臥生活，系列家具享優惠'},
+  ]
+  var inspire = [
+    {
+      en: 'Color Inspiration',
+      ch: '驚喜配色  黃色沙發背牆'},
+    {
+      en: 'Color Inspiration',
+      ch: '驚喜配色  黃色沙發背牆'},
+  ]
+  var space = [
+    {
+      en: 'Dining Room',
+      ch: '餐廳空間'},
+    {
+      en: 'Dining Room',
+      ch: '餐廳空間'},
+    {
+      en: 'Dining Room',
+      ch: '餐廳空間'},
+  ]
+
+
+nav.nav.waypoint(data-aost data-aost-class="show")
+  .nav-wrap 
+    .nav-left
+      a.btn-menu.hover-cir(href="javascript:;" data-hover="blueBig" data-menu="menu" aria-label="menu")
+        div
+        div
+        div
+      a.btn-cart.hover-cir(href="./shopping.html" data-hover="blueBig" aria-label="shopping cart")
+        i.icon-cart
+          // 購物車商品數
+          .num 
+            span 9
+      a.btn-fav.hover-cir(href="./member_lovelist.html" data-hover="blueBig" aria-label="lovelist")
+        i.icon-heart-o
+      a.btn-search.hover-cir(href="javascript:;" data-hover="blueBig"
+        data-ajax-route="./ajax_search.html" 
+        data-ajax-container=".libox-container" 
+        data-ajax-callback="_search.callback"
+        data-ajax
+        aria-label="search")
+        i.icon-search
+      a.btn-login.login.hover-cir(href="./member.html" data-hover="blueBig" aria-label="login")
+        i.icon-member-1
+    .nav-center
+      ul
+        each val in navitem
+          li
+            a.hover-cir(href=val.url data-hover="blueBig" aria-label= val.en)
+              span.en= val.en
+              span.ch= val.ch
+    a.nav-logo.hover-cir(href="./index.html" data-hover="blueBig" aria-label="home")
+      img(src="../../../assets/img/logo-w.png", alt="")
+
+// 選單
+.libox-menu(data-name="menu")
+  .menu-box
+    .cir-btn.mainGreen.close-menu.hover-cir(data-hover="yellowBig")
+      .cross
+    // 會員登入
+    // 背景圖建議尺寸: 電腦版- 510X1080 / 平板- 1100X500 /手機- 380X550
+    .login-wrap(data-desktop="../../../uploads/navbar/nav-bg-510X1080.jpg" data-pad="../../../uploads/navbar/nav-bg-1100X500.jpg" data-mobile="../../../uploads/navbar/nav-bg-380X550.jpg")
+      .top
+        // 會員頭像
+        .member-photo
+          .headshot(style="background-image: url(../../../assets/img/logo-255X255.png)")
+        // 未登入: MEMBER
+        // 已登入: WELCOME!
+        p MEMBER 
+        .member-link
+          // 未登入顯示
+          a.hover-cir(href="./member.html" data-hover="blue") 會員登入
+          // 已登入顯示
+          a.hover-cir(href="./member_center.html" data-hover="blue") 會員中心
+          a.hover-cir(href="./member_order.html" data-hover="blue") 訂單紀錄
+      .page-link
+        each val in unit
+          a.hover-cir(href= val.route data-hover="blueBig")
+            span.en= val.en 
+            span.ch= val.ch 
+    // 商品分類 & 活動
+    .other-wrap
+      .scrollbar-inner
+        .wrap
+          .category-box
+            .mob-wrap
+              .sub-tit
+                span.en Category
+                span.ch 商品分類
+              .btn-arrow 
+                span.icon-arrowDown
+            ul 
+              each val in series
+                li 
+                  a.hover-cir(href="./product_list.html" data-hover="yellowSmall")
+                    if val.img
+                      .img 
+                        img(src= val.img, alt="")
+                    if !val.img
+                      .text.noneImg
+                        span.ch= val.ch
+                        span.en= val.en
+                    else 
+                      .text
+                        span.ch= val.ch
+                        span.en= val.en
+          .explore-box
+            .sub-tit
+              span.en Special
+              span.ch 探索更多
+            .explore-wrap
+              .txt-wrap.hover-cir(data-hover="blue")
+                .small-tit 
+                  span.en HOT SALES
+                  span.ch 促銷特惠
+                .open
+                  .cross-plus
+              ul
+                each val in hot
+                  li 
+                    a.hover-cir(href="./product_list.html" data-hover="yellowSmall")
+                      span.en= val.en
+                      span.ch= val.ch
+            .explore-wrap
+              .txt-wrap.hover-cir(data-hover="blue")
+                .small-tit 
+                  span.en INSPIRATION
+                  span.ch 促銷特惠
+                .open
+                  .cross-plus
+              ul
+                each val in inspire
+                  li 
+                    a.hover-cir(href="./product_list.html" data-hover="yellowSmall")
+                      span.en= val.en
+                      span.ch= val.ch
+            .explore-wrap 
+              .txt-wrap.hover-cir(data-hover="blue")
+                .small-tit 
+                  span.en SPACE
+                  span.ch 探索空間
+                .open
+                  .cross-plus
+              ul
+                each val in space
+                  li 
+                    a.hover-cir(href="./product_list.html" data-hover="yellowSmall")
+                      span.en= val.en
+                      span.ch= val.ch
+          

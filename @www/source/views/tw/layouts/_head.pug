@@ -1,0 +1,62 @@
+// 網站語系及語言宣告
+meta(http-equiv='content-language', content='zh-TW')
+meta(charset='UTF-8')
+
+// RWD設定
+meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no')
+
+// 瀏覽器設定
+meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+// 網站關鍵字
+meta(name="keywords" content="網站關鍵字")
+
+// 網頁內容描述
+meta(name='description', content='網頁內容描述，中文 80 個字元、英文 160 個字元')
+
+// 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中
+meta(name='robots', content='noindex')
+
+// 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中
+meta(name='googlebot', content='noindex')
+
+// Open Graph Protocol for facebook
+meta(property='og:title', content='網頁Title')
+meta(property='og:description', content='網頁內容描述')
+meta(property='og:url', content='主要網址')
+meta(property='og:locale', content='zh_TW')
+meta(property='og:image', content='分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px')
+meta(property='og:type', content='website')
+meta(property='og:site_name', content='網頁內容描述')
+
+// Open Graph Protocol for google plus
+meta(itemprop='name', content='網站名稱或標題')
+meta(itemprop='image', content='分享的影像位址')
+meta(itemprop='description', content='網頁描述')
+
+// Twitter Card data
+meta(name='twitter:card', content='分享的影像位址')
+meta(name='twitter:site', content='網站名稱')
+meta(name='twitter:title', content='網頁標題')
+meta(name='twitter:description', content='網頁描述 200 個字元以內')
+meta(name='twitter:creator', content='客戶公司或品牌名稱')
+
+// Twitter summary card with large image must be at least 280x150px
+meta(name='twitter:image:src', content=' http://www.example.com/image.html')
+
+title 有情門 Strausslab
+
+// 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中
+link(rel='canonical', href='主要網址', itemprop='url')
+
+link(rel="shortcut icon" href="../../../assets/img/logo-w.png" type="image/x-icon")
+link(rel="stylesheet", href="../../../../dist/assets/css/style.css")
+//- script(src="https://www.youtube.com/iframe_api")
+// Google Tag Manager
+// 以下script 後端自行打開
+// script.
+//   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+//   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+//   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+//   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+//   })(window,document,'script','dataLayer','GTM編號');

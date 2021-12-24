@@ -1,0 +1,210 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/components/_category
+.news
+	.main-wrapper
+		background-color: #fff
+	main 
+		max-width: 1450px
+		width: 100%
+		margin: 0 auto
+		display: flex
+		+rwdmax(1200)
+			flex-direction: column 
+			align-items: center
+			justify-content: center
+	&-left
+		width: 32%
+		+rwdmax(1200)
+			width: 100%
+		.left-wrap
+			min-width: 310px
+			position: fixed
+			top: 38%
+			left: pxTovw(300)
+			transition: .5s ease-in-out
+			&.fix
+				top: 50%
+				transform: translateY(-50%)
+			&.hide
+				opacity: 0
+			.unit-title
+				max-width: pxTovw(400)
+				width: 100%
+			+rwdmax(1700)
+				left: auto
+			+rwdmax(1500)
+				left: 5%
+			+rwdmax(1200)
+				width: 100%
+				position: static
+				.unit-title
+					max-width: none
+					justify-content: center
+			+rwdmax(767)
+				.unit-title
+					text-align: left
+					justify-content: start
+					padding: 0 20px
+
+	&-title
+		padding-bottom: 160px
+		+rwdmax(1700)
+			padding-bottom: 100px
+		+rwdmax(1200)
+			justify-content: center
+			text-align: center
+			padding-bottom: 60px
+		+rwdmax(767)
+			padding-bottom: 40px
+	&-right
+		max-width: 900px
+		width: 100%
+		margin-left: auto
+		padding-right: 40px
+		+mozhack
+			margin-left: 20px
+		+rwdmax(1500)
+			width: 65%
+			margin-right: 5%
+		+rwdmax(1200)
+			width: 80%
+			margin: 0 auto
+			padding-right: 0
+		+rwdmax(900)
+			width: 85%
+		+rwdmax(767)
+			width: 100%
+			
+	&-banner 
+		display: flex
+		align-items: center
+	&-swiper
+		position: relative
+		width: 100%
+		.cont
+			position: relative
+			width: 100%
+			overflow: hidden
+			padding-bottom: 44.4%
+			img 
+				+posCenter
+		.swiper-button-wrap 
+			max-width: 48.08vw
+		+rwdmax(767)
+			.cont
+			// width: 85%
+			// margin: 0 auto
+	&-content
+		ul 
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			+rwdmax(1440)
+				justify-content: space-around
+			+rwdmax(900)
+				justify-content: space-between
+		li 
+			max-width: 340px
+			width: 100%
+			transition: .5s ease-in-out
+			+rwdmax(1200)
+				max-width: 300px
+			+rwdmax(900)
+				max-width: 250px
+		li:nth-child(4n-3)
+			.block
+				.date
+					bottom: 15px
+		li:nth-child(4n-2)
+			.block
+				.date
+					top: 15px
+		li:nth-child(4n-1)
+			margin-left: 30px
+			.block
+				.date
+					top: 15px
+			+rwdmax(767)
+				margin-left: 0
+		li:nth-child(4n)
+			margin-right: 30px
+			.block
+				.date
+					bottom: 15px
+			+rwdmax(767)
+				margin-right: 0
+		li:nth-child(odd)
+			margin-top: 90px
+			&.waypoint
+				transform: translateY(50px) skew(10deg, 5deg)
+				opacity: 0
+			&.show
+				transform: translateZ(0)
+				opacity: 1
+			+rwdmax(1200)
+				margin-top: 60px
+			+rwdmax(900)
+				margin-top: 50px
+			+rwdmax(767)
+				margin: 0 0 40px
+		li:nth-child(even)
+			margin-top: 180px
+			&.waypoint
+				transform: translateY(-50px) skew(10deg, 5deg)
+				opacity: 0
+			&.show
+				transform: translateZ(0)
+				opacity: 1
+			+rwdmax(1200)
+				margin-top: 120px
+			+rwdmax(900)
+				margin-top: 100px
+			+rwdmax(767)
+				margin: 0 0 30px auto
+				.block
+					.date
+						right: auto 
+						left: -40px
+		.block
+			display: flex
+			flex-wrap: wrap
+			.top-wrap
+				position: relative
+				width: 362px
+			.parallax-container
+				padding-bottom: 135.29%
+			.date
+				position: absolute
+				right: -42px
+				p 
+					display: inline-block
+					padding-left: 5px
+					border-left: solid 3px
+					writing-mode: vertical-rl
+					+fontSet2(px(16),$basicbold)
+			h2 
+				width: 100%
+				margin: 20px
+				font-weight: bold
+				letter-spacing: 0.95px
+				line-height: px(29)
+				+fontSet2(px(19),$basic)
+				+ellipsis(2,29px)
+			+rwdmax(900)
+				.date
+					right: -25px
+			+rwdmax(767)
+				.date
+					right: -40px
+				h2 
+					margin: 20px 15px
+	
+	.learn-more
+		display: inline-flex
+		margin-top: 150px
+		margin-left: 50%
+		transform: translateX(-50%)
+		+rwdmax(1200)
+			margin-top: 50px
+	

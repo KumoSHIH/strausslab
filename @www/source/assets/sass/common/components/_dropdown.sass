@@ -1,0 +1,401 @@
+// 下拉選單
+.filter
+  position: relative
+  display: flex
+  z-index: 1
+  &-container,&-options,&-wrap
+    position: relative
+    width: 95%
+    margin-right: 18px
+    +rwdmax(1200)
+      margin-right: 10px
+  .scrollbar-inner
+    > .scroll-element.scroll-y
+      width: 8px
+    > .scroll-element .scroll-element_track
+      background-color: rgba(255,255,255,0.8)
+    > .scroll-element .scroll-bar
+      opacity: .6
+      background-color: #fff
+  &-options
+    max-width: 150px
+    position: static
+    .filter-title
+      .icon 
+        margin-right: 0
+    +rwdmax(1200)
+      max-width: none
+  &-container
+    &.counter
+      .filter-name>span
+        flex-shrink: 0
+        font-weight: bold
+        font-family: $basic
+    &.mobile-filter
+      display: none
+      +rwdmax(1200)
+        display: block
+  &-container:last-child,
+  &-wrap:last-child
+    margin-right: 0
+  &-wrap[data-content="spec"]
+    .filter-replace
+      +ellipsis(1,17px)
+  &-title
+    padding: 30px 13px
+    border-top: solid 6px
+    border-color: rgba(0,0,0,0.1)
+    display: flex
+    justify-content: space-between
+    cursor: pointer
+    .icon
+      margin-right: 15px
+      height: 20px
+      transition: transform .5s ease-in-out
+      &.active
+        transform: rotateX(180deg) translateY(4px)
+      +rwdmax(767)
+        margin-right: 0
+    &.white
+      border-color: rgba(255,255,255,0.2)
+    &[data-type="imgs"]
+      .filter-name span
+        // align-self: baseline
+      .filter-replace
+        flex-wrap: wrap
+        .img-cir
+          transform: translateY(-3px)
+      .imgs
+        margin-right: 5px
+        margin-bottom: 5px
+        border: solid 2px rgb(202,202,202)
+  &-name
+    width: 100%
+    display: flex
+    align-items: center
+    font-size: px(14)
+    >span
+      flex-shrink: 0
+      font-family: $basicbold
+  &-replace
+    display: flex
+    align-items: center
+    padding-left: 14px
+    font-family: $basicR
+    .img-cir
+      margin-right: 14px
+    +rwdmax(1200)
+      padding-left: 5px
+  // 下拉
+  &-dropdown
+    display: none
+    width: 100%
+    position: absolute
+    top: 80px
+    left: 0
+    z-index: 1
+    .scrollbar-inner
+      max-height: 240px !important
+      +rwdmax(1200)
+        overflow-y: scroll
+    li 
+      padding: 20px 30px
+      display: flex
+      align-items: center
+      background-color: #202020
+      color: #fff
+      transition: .5s ease-in-out
+      font-size: px(14)
+      cursor: pointer
+      &.active
+        background-color: #3e3e3e
+      &:hover
+        +rwdmin(1201)
+          background-color: #3e3e3e
+      +rwdmax(1200)
+        padding: 20px 15px
+      +rwdmax(767)
+        padding: 15px 20px
+  
+  // 手機版
+  &.mobile
+    +rwdmin(768)
+      display: none
+    .mobile-filter
+      padding: 15px 13px
+      width: 100px
+      border-top: solid 6px
+      border-color: rgba(0,0,0,0.1)
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-right: 6px
+      .icon-filter
+        padding-right: 5px
+        font-size: px(20)
+      span 
+        +fontSet2(px(14),$basicbold)
+    .filter-container 
+      margin-right: 0
+      .filter-title
+        padding: 25px 13px
+    .wrap 
+      display: none
+      position: fixed
+      top: 0
+      left: 0
+      width: 100vw
+      height: 100vh
+      height: calc(var(--vh, 1vh) * 100)
+      background-color: rgba(0,0,0,0.3)
+      opacity: 0
+      z-index: -999
+      transition: .5s ease-in-out
+      &.show
+        opacity: 1
+        z-index: 999
+        .wrap-bg
+          transform: translateX(0)
+      &.out
+        .wrap
+          transition-delay: .3s
+        .wrap-bg
+          transition-delay: 0s
+      &-bg 
+        position: relative
+        width: 85%
+        height: 100vh
+        height: calc(var(--vh, 1vh) * 100)
+        background-color: #202020
+        color: #fff
+        transform: translateX(-100%)
+        transition: .5s .3s ease-in-out
+        // overflow-y: scroll
+        .unit-link
+          padding: 11px 30px
+          width: 100%
+          display: inline-flex
+          margin-left: auto
+          .text
+            padding-right: 10px
+            flex-direction: row-reverse
+            .en 
+              flex-shrink: 0
+              padding-bottom: 0
+          .cross
+            position: static
+            transform: translateZ(0)
+        .filter-title 
+          .filter-name
+            padding-left: 25px
+          .icon
+            padding-right: 25px
+        // 普通下拉
+        .filter-dropdown
+          position: static
+          ul 
+            padding-bottom: 15px
+          li 
+            border-top: solid 1px rgba(255,255,255,.2)
+            margin: 0 20px
+            padding: 15px 20px
+        
+      .scrollbar-inner
+        max-height: calc(100vh - 119px) !important
+        overflow-y: scroll
+        &::-webkit-scrollbar
+          display: none
+
+    .filter-container, 
+    .filter-options, 
+    .filter-wrap
+      width: 100%
+    .filter-title[data-type="imgs"]
+      .filter-name span
+        align-self: auto
+      .filter-replace .img-cir
+        transform: translateY(0)
+    
+    // 多選下拉
+    .options-dropdown
+      position: static
+      padding: 0 20px 60px
+      .form-group
+        padding: 0 20px
+        flex-direction: column
+        align-items: flex-start
+        border-top: solid 1px #414141
+        p.subject
+          padding: 23px 0 15px
+      .form-check
+        padding: 0 0 13px
+        border-bottom: 0
+        .check-wrap
+          padding: 0 25px 0 0
+    // 確定篩選按鈕
+    .btn-wrap
+      display: flex
+      justify-content: center
+      width: 100%
+      position: absolute
+      left: 50%
+      bottom: 15px
+      transform: translateX(-50%)
+      >a 
+        display: flex
+        align-items: center
+        >span 
+          padding-right: 10px
+          font-size: px(14)
+        .cir-btn
+          width: 40px
+          height: 40px
+      >a:first-child
+        margin-right: 35px
+      .btn-done
+        .cir-btn
+          display: flex
+          align-items: center
+          justify-content: center
+      +rwdmax(1200)
+        bottom: 0
+        padding: 10px 0
+        background-color: #202020
+  .img-cir
+    position: relative
+    width: 20px
+    height: 20px
+    margin-right: 20px
+    border-radius: 100%
+    overflow: hidden
+    img 
+      border-radius: 100%
+    +rwdmax(1200)
+      margin-right: 12px
+
+  // 計數器
+  &-count
+    display: flex
+    align-items: center
+    margin-left: auto
+    margin-left: auto
+    input
+      width: 70px
+      text-align: center
+      border: 0
+      background-color: transparent
+      +fontSet2(px(24),$basicbold)
+      +rwdmax(1200)
+        width: 60px
+    &.white
+      color: #fff
+      .btn-cir
+        border-color: #fff
+        &:after,&:before
+          background-color: #fff
+      input 
+        color: #fff
+    +rwdmax(1200)
+      .btn-cir
+        width: 25px
+        height: 25px
+    +rwdmax(900)
+      .btn-cir
+        width: 30px
+        height: 30px
+
+// 多選下拉
+.options-dropdown
+  display: none
+  position: absolute
+  left: 0
+  top: 80px
+  z-index: 1
+  width: 100%
+  padding: 27px 60px 40px
+  background-color: #202020
+  color: #fff
+  +rwdmax(1200)
+    top: 166px
+    padding-left: 40px
+    padding-right: 40px
+  // 覆蓋設定------
+  .form-grid
+    padding: 0px
+  .form-group
+    border-bottom: 0
+    padding: 0
+    p.subject
+      min-width: 16%
+      letter-spacing: 0.7px
+      +fontSet2(px(14),$basicbold)
+      &::after
+        width: 0
+        height: 0
+  .form-row:last-child
+    .form-check
+      border-bottom: 0
+  .form-check
+    flex-wrap: wrap
+    width: 100%
+    padding: 15px
+    border-bottom: solid 1px #414141
+    +rwdmax(1200)
+      padding: 10px 15px
+  .check-wrap
+    margin-right: 0
+    padding: 0 15px
+    cursor: pointer
+  label.word
+    padding: 10px 0
+    color: #fff
+  label.form-fakebox
+    width: 14px
+    height: 14px
+    border-radius: 100%
+    .form-box
+      width: 14px
+      height: 14px
+      border-radius: 100%
+      span 
+        width: 7px
+        height: 7px
+        border-radius: 100%
+        background-color: $main
+        +ieHack 
+          width: 6px
+          height: 6px
+        +mozhack
+          width: 6px
+          height: 6px
+  // -------------
+  .scrollbar-inner
+    max-height: 300px !important
+    +rwdmax(1200)
+      max-height: 250px !important
+      // overflow-y: scroll
+  .opt-wrap
+    display: flex
+  
+  // 按鈕
+  .btn-wrap
+    display: flex
+    justify-content: flex-end
+    .btn-clear,
+    .btn-done
+      display: flex
+      align-items: center
+      span 
+        +fontSet2(px(14),$basicbold)
+      .cir-btn
+        width: 40px
+        height: 40px
+        margin: 0 12px
+    .btn-done
+      padding-left: 30px
+      .cir-btn
+        background-color: $main
+      .icon
+        font-size: px(14)
+        +posCenter
+  

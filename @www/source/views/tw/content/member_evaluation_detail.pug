@@ -1,0 +1,358 @@
+- 
+  var k = 5;
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/member_detail.css")
+  body.member_detail(data-page="member_evaluation_detail")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        main.white.range
+          .top
+            a.cir-btn.black.hover-cir(href="./member_evaluation.html" data-hover="blue")
+              .cross
+          // 大標
+          .title
+            .title-left
+              .bgtext
+                span Evaluation
+              .text 
+                span.en Product Evaluation
+                span.ch 產品評價
+            // 已評 & 待評筆數
+            .title-right
+              div 
+                span.num 2
+                span.ch 待評價商品
+              div 
+                span.num 3
+                span.ch 已評價商品
+          // 訂單編號
+          .order-number
+            span.ch NO. 訂單編號
+            span.en JDI2020110225
+          // 訂單內容
+          .order-detail
+            .item-wrap
+              // 項目敘述
+              .item-head
+                .img 購買項目
+                .item
+                .qty 數量
+                .price 價格
+              
+              // 一項
+              .item-body
+                // 大圖 380X250 <div class="img"> + large
+                // 小圖 190X250 <div class="img"> + small
+                .img.large
+                  figure
+                    img(src="../../../uploads/product/detail-obj05-380X250.png", alt="")
+                // 項目明細
+                .item
+                  h2 乘風沙發
+                  .normal
+                    span.fz-14.strong SPEC：
+                    span.fz-14 雙人座 W52xD30xH52 (cm)
+                  .color-wrap
+                    .color
+                      span.strong COLOR：
+                      div
+                        .img-cir
+                          img(src="../../../uploads/product/color03-120X120.jpg", alt="")
+                        span.fz-14 紫色
+                    .color
+                      span.strong COLOR：
+                      div
+                        .img-cir
+                          img(src="../../../uploads/product/color05-120X120.jpg", alt="")
+                        span.fz-14 綠色
+                  .color-wrap
+                    .color
+                      span.strong WOOD：
+                      div
+                        .img-cir
+                          img(src="../../../uploads/product/color10-120X120.jpg", alt="")
+                        span.fz-14 鯨木色
+                // 數量
+                .qty x 1
+                  
+                // 價格
+                .price
+                  span.fz-14 VIP 售價
+                  .money
+                    span $40,800
+                  .origin
+                    span 原價  
+                    span $50,800
+                // 評分
+                .item-score
+                  .img
+                  .score-wrap.normal
+                    .score-cont
+                      span SCORE 您的評分
+                      ul
+                        -for(var i = 0; i < k; i++)
+                          li
+                            svg(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve")
+                              path(stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z")
+                    .textarea
+                      textarea(placeholder="請填寫您的商品評價於此...")
+                    .form-btn.form-done.hover-cir.bd0-dark(data-hover="yellowBig" onclick="_common.openliboxInner('send')")
+                      p SEND 送出評價
+                      span.icon-arrAngle
+              
+              // 一項
+              .item-body
+                .img.small
+                  figure
+                    img(src="../../../uploads/product/pro01-190X250.jpg", alt="")
+                // 項目明細
+                .item
+                  h2 阡陌套几
+                  .normal
+                    span.fz-14.strong SPEC：
+                    span.fz-14 大 W52xD30xH52 (cm)
+                  .color-wrap
+                    .color
+                      span.strong WOOD：
+                      div
+                        .img-cir
+                          img(src="../../../uploads/product/color10-120X120.jpg", alt="")
+                        span.fz-14 鯨木色
+                // 數量
+                .qty x 1
+                // 價格
+                .price
+                  span.fz-14 PRICE 原價
+                  .money
+                    span $20,800
+                // 評分 - 查看評價
+                .item-score.hover-cir(data-hover="blueBig"
+                data-ajax-route="./ajax_evaluation.html" 
+                data-ajax-container=".libox-container" 
+                data-ajax-callback="_ajaxCallback.evaLibox" 
+                data-ajax)
+                  .img
+                  .score-wrap.done
+                    .left
+                      span.date 2020-12-31
+                      span.ch 評價已成功發布
+                    .form-btn.form-done.bd0-white()
+                      p VIEW 查看評價
+                      span.icon-arrAngle
+
+              // 一項
+              // 組合優惠
+              .item-packpage
+                .top 
+                  .tit
+                    span.en EVENT PACKAGE：
+                    span.ch 書臥 life 生活任選三件享八折
+                .item-body
+                  .img.large
+                    figure
+                      img(src="../../../uploads/product/sofa05-380X250.png", alt="")
+                  // 項目明細
+                  .item
+                    h2 恰恰好沙發
+                    .normal
+                      span.fz-14.strong SPEC：
+                      span.fz-14 雙人座 SH42.5 / W155.5xD88.5xH100
+                    .color-wrap
+                      .color
+                        span.strong COLOR：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color03-120X120.jpg", alt="")
+                          span.fz-14 紫色
+                      .color
+                        span.strong COLOR：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color05-120X120.jpg", alt="")
+                          span.fz-14 綠色
+                    .color-wrap
+                      .color
+                        span.strong WOOD：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color10-120X120.jpg", alt="")
+                          span.fz-14 鯨木色
+                  // 數量
+                  .qty x 1
+                  // 價格
+                  .price
+                    span.fz-14 DISCOUNT 優惠價
+                    .money
+                      span $40,800
+                    .origin.line-through
+                      span 原價  
+                      span $50,800
+                  // 評分
+                  .item-score
+                    .img
+                    .score-wrap.normal
+                      .score-cont
+                        span SCORE 您的評分
+                        ul
+                          -for(var i = 0; i < k; i++)
+                            li
+                              svg(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve")
+                                path(stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z")
+                      .textarea
+                        textarea(placeholder="請填寫您的商品評價於此...")
+                      .form-btn.form-done.hover-cir.bd0-dark(data-hover="yellowBig" onclick="_common.openliboxInner('send')")
+                        p SEND 送出評價
+                        span.icon-arrAngle
+                .item-body
+                  .img.small
+                    figure
+                      img(src="../../../uploads/product/cart02-190X250.png", alt="")
+                  // 項目明細
+                  .item
+                    h2 加菲收納筒 - 木蓋
+                    .normal
+                      span.fz-14.strong SPEC：
+                      span.fz-14 F W46×D40×H42(cm)
+                    .color-wrap
+                      .color
+                        span.strong COLOR：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color03-120X120.jpg", alt="")
+                          span.fz-14 紫色
+                  // 數量
+                  .qty x 1
+                  // 價格
+                  .price
+                    span.fz-14 DISCOUNT 優惠價
+                    .money
+                      span $3,000
+                    .origin.line-through
+                      span 原價  
+                      span $4,500
+                  // 評分 - 評價已送出
+                  .item-score
+                    .img
+                    .score-wrap.sended
+                      .left
+                        span.date 2020-12-15
+                        span.ch 評價已送出
+                      p AUDIT 評價審核中
+                .item-body
+                  .img.small
+                    figure
+                      img(src="../../../uploads/product/cart01-190X250.png", alt="")
+                  // 項目明細
+                  .item
+                    h2 奇畦餐椅
+                    .normal
+                      span.fz-14.strong SPEC：
+                      span.fz-14 SH 43.5 / W51xD67xH73(cm)
+                    .color-wrap
+                      .color
+                        span.strong COLOR：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                          span.fz-14 紅色
+                    .color-wrap
+                      .color
+                        span.strong WOOD：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color10-120X120.jpg", alt="")
+                          span.fz-14 鯨木色
+                  // 數量
+                  .qty x 1
+                  // 價格
+                  .price
+                    span.fz-14 DISCOUNT 優惠價
+                    .money
+                      span $3,180
+                    .origin.line-through
+                      span 原價  
+                      span $4,800
+                  // 評分 - 評價審核未通過
+                  .item-score
+                    .img
+                    .score-wrap.edit
+                      .left.hover-cir(onclick="_common.openliboxInner('failed')" data-hover="yellowBig")
+                        div
+                          span.date 2020-12-18
+                          span.ch 評價審核未通過，請重新編輯
+                        .btn
+                          div
+                      .score-cont
+                        span SCORE 您的評分
+                        ul
+                          -for(var i = 0; i < k; i++)
+                            li
+                              svg(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve")
+                                path(stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z")
+                      .textarea
+                        textarea(placeholder="請填寫您的商品評價於此...")
+                      .form-btn.form-done.hover-cir.bd0-dark(data-hover="yellowBig" onclick="_common.openliboxInner('send')")
+                        p SEND 送出評價
+                        span.icon-arrAngle
+
+          .bottom
+            // go top
+            .cir-btn.black.goTop.hover-cir(data-hover="blue")(
+              data-aost data-aost-class="show" data-aost-offset="100"
+              data-anchor-speed="1200"
+              data-anchor)
+              .icon
+                .icon-trangle-up            
+        // 評價送出燈箱
+        // 開啟: _common.openliboxInner('send');
+        .libox-inner(data-name="send")
+          .libox-common
+            .cir-wrap.member
+              .bg
+              .cir-bg
+                h5.white Success
+                h6.white 您的評價已送出！
+                .wrap
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p OK 確認
+        // 審核未通過燈箱
+        // 開啟: _common.openliboxInner('failed');
+        .libox-inner(data-name="failed")
+          .libox-common
+            .cir-wrap.middle.shortage
+              .cir-btn.mainGreen.ajax_close.hover-cir(data-hover="yellowSmall")
+                .cross
+              .cir-bg
+                .scrollbar-inner
+                  div
+                    h5.white About Failed
+                    h6.white 關於審核未通過
+                    p 若您的評價被審核未通過，有可能是因為內容中包含粗俗、色情、鄙視等不雅
+                      |字眼，或者是對於商品和服務流程有不當的指證。
+                      |若您的評價被審核未通過，有可能是因為內容中包含粗俗、色情、鄙視等不雅
+                      |字眼，或者是對於商品和服務流程有不當的指證。
+                      |若您的評價被審核未通過，有可能是因為內容中包含粗俗、色情、鄙視等不雅
+                      |字眼，或者是對於商品和服務流程有不當的指證。
+                      |<br>
+                      |<br>
+                      |我們歡迎您重新編輯此評價，若對於本次的審核有任何疑問，都可以透過網站
+                      |「聯繫單元」與我們聯繫，謝謝！
+                //.wrap
+                  .btn-close.hover-cir(data-hover="yellowBig" data-anchor-container=".libox-inner[data-name='failed'] .scrollbar-inner" data-anchor)
+                    p TOP 
+                    span.icon-trangle-up
+    
+  //引入的script
+  include ../layouts/_script.pug  

@@ -1,0 +1,871 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+@import ../common/components/_shoppingItem
+.shopping
+  cursor: auto
+  input
+    &:-webkit-autofill
+      -webkit-text-fill-color: #000 !important
+  main 
+    padding-top: 65px
+    padding-bottom: 80px
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    +rwdmax(900)
+      padding-top: 50px
+    // 共用按鈕
+    .btn-cir.del
+      position: absolute
+      left: -75px
+      top: 73px
+      width: 51px
+      height: 51px
+      background-color: #eee
+      border: 0
+      .cross
+        padding: 16px
+        &:after,
+        &:before
+          width: 2px
+          height: 16px
+          background-color: #000
+      +rwdmax(1200)
+        left: auto 
+        right: 15%
+        top: 20px
+      +rwdmax(900)
+        width: 35px
+        height: 35px
+        padding: 0
+        .cross
+          padding: 15px
+          &::after,
+          &::before
+            top: 10px
+            height: 9px
+            width: 1px
+      +rwdmax(767)
+        right: 20px
+        // top: 20px
+    .bgtext
+      transform: translateX(37.5px)
+      span 
+        color: rgba(0,0,0,0.1)
+        +fontSet2(px(131),$basic)
+      &.fix
+        position: fixed
+        left: 0
+        top: 0
+        z-index: -1
+        width: 100vw
+        height: 100vh
+        height: calc(var(--vh, 1vh) * 100)
+        span
+          width: 100%
+          text-align: center
+          +posCenter
+      &.static
+        width: 100%
+        text-align: center
+      +rwdmax(1200)
+        transform: translateX(0)
+        span
+          font-size: px(101)
+      +rwdmax(900)
+        &.static
+          position: relative
+          left: 50%
+          transform: translateX(-50%)
+          width: 115%
+      +rwdmax(767)
+        &.fix
+          span 
+            font-size: px(56)
+        &.static
+          width: 250%
+          
+    .content
+      position: relative
+      padding-top: 60px
+      margin-right: 75px
+      max-width: 1205px
+      width: 100%
+      .text
+        padding-bottom: 60px
+        text-align: center
+        transform: translateX(34.5px)
+        .en
+          +fontSet2(px(35),$basic)
+        .ch
+          padding-left: 14px
+          font-weight: bold
+          letter-spacing: 0.95px
+          +fontSet2(px(20),$basic)
+      +rwdmax(1400)
+        width: 85%
+        margin-right: 0
+      +rwdmax(1200)
+        width: 100%
+        .text
+          transform: translateX(0)
+          padding-bottom: 40px
+      +rwdmax(900)
+        padding-top: 35px
+      +rwdmax(767)
+        .text
+          display: flex
+          flex-direction: column
+          .ch
+            padding-top: 12px
+    .item-body
+      .extra-block
+        ul 
+          >li 
+            .dropdown-item
+              .space:after
+                width: calc(82.7% - 29px)
+              li 
+                .opt
+                  width: calc(46.44% - 33px)
+                  margin-left: 30px
+      +rwdmax(1200)
+        .qty:before
+          font-size: px(14)
+        .extra-block
+          >.item
+            // width: 61% !important
+            width: 56% !important
+            flex-direction: row
+          .qty
+            // width: 21.3%
+            width: 20%
+            position: static
+            &::before
+              display: none
+          .qty-2
+            align-items: flex-start
+            justify-content: space-between
+            margin-top: -4px
+            div:not(.qty-line)
+              // width: 33%
+              width: 26%
+              line-height: px(20)
+            .qty-line
+              margin-top: 3px
+              // margin-left: 0
+              // margin-right: 0
+          .price
+            position: static
+            display: flex
+            justify-content: flex-end
+            width: 24%
+            padding-right: 16px
+            span
+              position: static
+              padding-right: 20px
+          .thead
+            .item
+              // width: 60%
+              width: 56%
+          ul
+            >li
+              >.item
+                // width: 60%
+                width: 56%
+              .dropdown-item
+                .scrollbar-inner,
+                .opt,
+                .opt:after,
+                .qty,
+                .qty:after,
+                .price
+                  background-color: #fff
+                li 
+                  .opt 
+                    // width: 60%
+                    width: 56%
+                    margin-left: 0
+          .mob-check
+            background-color: #fff
+      +rwdmax(900)
+        .extra-block
+          >.item
+            width: 60% !important
+          .qty,  
+          .qty-2
+            // width: 26%
+            width: 20%
+          .qty
+            &::after
+              width: 0
+              height: 0
+          .qty-2
+            div:not(.qty-line)
+              width: 30px
+              flex-shrink: 0
+          .price
+            // width: 15%
+            // width: 21%
+            width: 24%
+            padding-right: 10px
+          ul 
+            >li 
+              .dropdown-item
+                .item
+                  width: 100%
+                li 
+                  &::after
+                    background-color: #ccc
+                  .opt
+                    width: 100% !important
+                    margin-left: 0
+                    padding-left: 20px
+                  .price
+                    justify-content: flex-start
+                    width: 10.44%
+      +rwdmax(767)
+        .extra-block
+          .thead
+            .price
+              padding-right: 10px
+            .qty
+              display: none
+          .qty
+            width: auto
+          .price
+            width: auto 
+            margin-left: auto
+          ul 
+            >li 
+              .qty
+                &::before
+                  content: '數量'
+                  display: block
+                  padding-right: 0
+              .qty-2
+                div:not(.qty-line)
+                  width: auto
+                .qty-line
+                  margin: 3px 15px 0
+              .qty-font
+                &::before
+                  content: '數量'
+                  padding-right: 12px
+              .dropdown-item
+                >.item
+                  padding-left: 16px
+                li 
+                  .opt 
+                    padding-left: 40px
+                    padding-right: 40px
+                  .price
+                    width: auto
+                    margin-left: 40px
+                  .qty
+                    &::before
+                      content: ''
+            &.cus-give
+              .qty
+                &::before
+                  content: ''
+              .qty-font
+                &::before
+                  content: '數量'
+                  padding-right: 12px
+    .item-wrap .img
+      +rwdmax(1360)
+        width: 17.2%
+      +rwdmax(1200)
+        width: 100%
+        margin-bottom: 10px
+        figure
+          height: 100px
+    .item-packpage
+      +rwdmax(1200)
+        .top
+          // padding-bottom: 40px
+          flex-direction: column
+          align-items: flex-start
+          >a
+            padding-top: 15px
+            padding-right: 0
+      +rwdmax(767)
+        .top
+          padding-top: 33px
+          padding-bottom: 0px
+          .tit
+            max-width: 265px
+        .btn-cir.del
+          top: 20px
+
+    // 加購選項
+    .item-type
+      .extra-block 
+        .thead
+          div 
+            // border: solid 1px yellow
+        ul>li 
+          >div 
+            // border: solid 1px #aaa
+          .dropdown-item
+            .space:after
+              width: calc(100% - 101px)
+            li 
+              .opt
+                width: 100%
+                margin-left: 10px
+      +rwdmax(1200)
+        .extra-block
+          ul>li 
+            padding-bottom: 0
+            .dropdown-item
+              .img 
+                width: 0
+              li 
+                .opt
+                  margin-left: 0
+      +rwdmax(900)
+        .extra-block 
+          .thead
+            .price
+              padding-right: 10px
+          li
+            .price
+              padding-right: 10px
+      +rwdmax(767)
+        .extra-block
+          ul>li
+            padding-bottom: 15px
+            >.item
+              width: 100%
+            .opt 
+              margin-bottom: 0
+            .qty-2
+              margin-top: auto 
+              margin-bottom: 3px
+            .dropdown-item
+              li 
+                &:after 
+                  background-color: #ccc
+                .opt
+                  max-width: 340px
+                  display: flex
+                  flex-wrap: wrap
+                  .img-cir:nth-child(5)
+                    margin-left: 0
+            >li:last-child
+              padding-bottom: 0
+          .item
+            width: 100%
+          .price
+            width: 40%
+            margin-left: auto
+          ul>li 
+            .price
+              padding-right: 0
+          ul.cus-give
+            .price
+              width: auto
+              
+    // 收件訂購資訊
+    .item-info
+      +rwdmax(1200)
+        .desc
+          .w10
+            width: 20%
+      +rwdmax(900)
+        .desc
+          .w10
+            margin-left: 56px
+            margin-top: 15px
+          .w90
+            span.small
+              margin-left: 56px
+              line-height: 1.5
+    .item-form
+      +rwdmax(1200)
+        padding-left: 15%
+        padding-right: 15%
+        padding-top: 40px
+        flex-direction: column
+        &.border-none
+          padding-top: 0
+          >p 
+            border-top: 0
+        >p 
+          flex-shrink: 0
+          padding-right: 30px
+          padding-top: 40px
+          border-top: solid 1px
+        .desc
+          padding-right: 0
+          padding-top: 15px
+          border-top: 0
+      +rwdmax(900)
+        padding-left: 10%
+        padding-right: 10%
+        >p 
+          padding-right: 0
+        .desc-tit
+          padding-left: 15px
+          padding-right: 18px
+      +rwdmax(767)
+        padding-left: 20px
+        padding-right: 20px
+        textarea 
+          height: 345px
+    .item-select
+      .pick-dropdown>ul>li .wrap
+        .mob-show
+          display: none
+      +rwdmax(1200)
+        .pick-wrap
+          .saved
+            position: static
+            text-align: right
+            margin-top: 15px
+            margin-right: 10px
+          .pick-dropdown>ul>li .wrap
+            .mob-show
+              display: block
+              letter-spacing: 0.45px
+              font-weight: bold
+              font-size: px(14)
+      +rwdmax(767)
+        .pick-wrap
+          .w9
+            position: absolute
+            top: 20px
+            left: 0
+          .desc
+            width: 100%
+            >span 
+              padding-top: 0
+              // padding-left: 16%
+              line-height: px(25)
+          
+    // 按鈕
+    .btn-wrap
+      padding-top: 40px
+      +flexCenter
+      .btn-cir
+        display: flex
+        flex-direction: column 
+        align-items: center
+        justify-content: center
+        color: #fff
+        span 
+          display: block
+          letter-spacing: 0.46px
+          +fontSet2(px(14),$basic)
+        span:first-child
+          padding-bottom: 5px
+          font-size: px(34)
+        .cross-plus
+          position: relative
+          // padding: 17px
+          &::after,
+          &:before 
+            width: 2px
+            height: 18px
+            background-color: #fff
+      .btn-cir:first-child
+        margin-right: 18px
+        +buttonCircle(115px,#202121)
+        span 
+          margin-top: 10px
+      .btn-cir:last-child
+        +buttonCircle(115px,$main)
+      &[data-aost]
+        +opacity
+      &.show
+        +opacity1
+    
+    .bottom
+      padding-top: 130px
+      +rwdmax(900)
+        padding-top: 230px
+  // 付款燈箱
+  .libox-inner[data-name="pay"]
+    .cir-btn
+      margin-left: auto 
+      margin-right: 30px
+    .scrollbar-macosx
+      > .scroll-element.scroll-y .scroll-bar
+        width: 4px
+        background-color: $main
+    .box
+      cursor: default !important
+      max-width: pxTovw(850)
+      width: 100%
+      height: 100vh
+      height: calc(var(--vh, 1vh) * 100)
+      padding-top: 60px
+      margin-left: auto
+      background-color: #202020
+      transform: translateX(100%)
+      transition: .6s ease-in-out
+      &.in 
+        transform: translateX(0)
+      &-item 
+        max-width: 725px
+        width: 100%
+        margin: 0 auto
+        display: flex
+        flex-direction: column
+        padding-bottom: 45px
+        border-bottom: solid 6px $main
+        .tit
+          padding-top: 45px
+          padding-bottom: 20px
+          display: flex
+          align-items: baseline
+          span 
+            color: $main
+          .en
+            +fontSet2(px(35),$basic)
+          .ch
+            padding-left: 9px
+            font-weight: bold
+            letter-spacing: 0.95px
+            +fontSet2(px(20),$basic)
+          p 
+            padding-left: 25px
+            color: #fff
+            line-height: 1.5
+            letter-spacing: 0.7px
+            +fontSet2(px(14),$basic)
+        p.desc 
+          padding: 0 50px
+          margin-bottom: 10px
+          color: #fff 
+          line-height: 1.5
+          letter-spacing: 0.95px
+          font-size: px(14)
+        .item-select
+          padding: 0
+          border-bottom: 0
+        .pick-wrap
+          display: flex
+          align-items: flex-start
+          padding: 20px 50px
+          cursor: pointer
+          transition: box-shadow .3s ease-in-out
+          &::after
+            width: 0
+            height: 0
+          .btn-cir
+            display: block
+            margin-right: 13px
+            flex-shrink: 0
+            width: 36px
+            height: 36px
+            background-color: #3d3d3d
+            position: relative
+            transition: .5s ease-in-out
+            span 
+              display: block
+              position: absolute
+              left: 50%
+              top: 50%
+              transform: translate(-50%,-50%)
+              color: #202020
+              font-size: px(40)
+              transition: color .5s ease-in-out
+          .desc
+            padding-top: 9px
+            display: flex
+            flex-direction: row
+            flex-grow: 1
+            color: #fff
+            &.column
+              flex-direction: column
+              >div 
+                padding-top: 20px
+            >p 
+              // border: solid 1px
+              margin-top: 0
+              padding: 0
+              width: 110px
+              flex-shrink: 0
+              font-weight: bold
+              letter-spacing: 0.78px
+              +fontSet2(px(16),$basic)
+            >div 
+              margin-top: -2px
+              width: 100%
+              span 
+                line-height: 1.5
+                letter-spacing: 0.7px
+                +fontSet2(px(14),$basic)
+              .pick-dropdown
+                &.d-none
+                  display: none
+          &:hover 
+            box-shadow: 7.4px 9.5px 25.8px 3.2px rgba(0, 0, 0, 0.31)
+          &.active
+            .btn-cir
+              background-color: $main
+              span 
+                color: #fff
+        &.total
+          padding-top: 48px
+          justify-content: center
+          align-items: center
+          color: #fff
+          .text
+            display: flex
+            justify-content: center
+            align-items: baseline
+            padding-bottom: 10px
+            >span
+              padding-right: 10px
+              +fontSet2(px(16),$basicbold)
+            >p 
+              letter-spacing: 0.7px
+              font-weight: bold
+              +fontSet2(px(24),$basicbold)
+          .text-wrap
+            >span 
+              text-align: center
+              +fontSet2(px(14),$basicbold)
+          .cir-btn.goTop 
+            margin: 130px auto 100px
+
+        // 付款按鈕
+        .btn-wrap
+          padding-top: 34px
+          .btn-cir
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            +buttonCircle(115px,$main)
+            span:nth-child(1)
+              font-size: px(30)
+            span:nth-child(2)
+              padding-top: 5px
+              font-weight: bold
+              letter-spacing: 0.46px
+              font-size: px(14)
+        .form-select .select-content ul.scrollbar-inner li
+          background-color: darken(#ccc,20%)
+          &:hover
+            background-color: darken(#ccc,10%)
+    .form-group
+      height: auto
+    +rwdmax(1850)
+      .box
+        max-width: none
+        width: 50%
+    +rwdmax(1650)
+      .box
+        width: 60%
+    +rwdmax(1400)
+      .box 
+        width: 70%
+    +rwdmax(1200)
+      .box
+        width: 100%
+    +rwdmax(767)
+      .box
+        padding-top: 20px
+        &-item 
+          padding-bottom: 28px
+          .tit
+            padding: 0 20px 20px
+            flex-wrap: wrap
+            .ch
+              font-size: px(19)
+            p 
+              padding-left: 0
+              padding-top: 10px
+          p.desc 
+            padding: 0 20px
+          .pick-wrap
+            padding: 20px
+            .desc
+              flex-direction: column
+              padding-bottom: 0
+              padding-right: 20px
+              >p 
+                padding-bottom: 14px
+              >div
+                margin-top: 0
+            .pick-dropdown
+              margin-top: 14px
+          .btn-wrap
+            padding-top: 20px
+          &.total
+            .text-wrap
+              width: 100%
+              padding: 0 20px
+              display: flex
+              flex-direction: row-reverse
+              align-items: center
+              justify-content: space-between
+            .cir-btn
+              &.goTop
+                margin-bottom: 80px
+      .box-item:nth-child(2)
+        padding-top: 65px
+        padding-bottom: 47px
+
+      .box-item:nth-child(2),
+      .box-item:nth-child(3)
+        .pick-wrap
+          position: relative
+          .btn-cir
+            position: absolute
+            left: 20px
+            top: 21px
+          .desc
+            >p 
+              margin-left: 56px
+            .form
+              padding-top: 15px
+            &.column
+              padding-right: 0
+          .pick-dropdown
+            margin-top: 0
+      .cir-btn
+        margin-right: 20px
+  // 樓層費
+  .libox-inner[data-name="floor"]
+    .cir-bg
+      h5 
+        padding-top: 100px
+      h6 
+        padding: 20px 0
+    .stoke-wrap
+      margin-top: 0
+      .scrollbar-inner > p
+        margin-left: 30px
+        margin-right: 30px
+        padding-bottom: 45px
+        text-align: center
+      .stoke-head 
+        max-width: 470px
+        width: 100% 
+        margin: 0 auto 30px
+        padding: 0 8px
+        display: flex
+        justify-content: space-between
+        letter-spacing: 1.05px
+        color: $main
+      li 
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 18px 8px
+        .floor-price
+          display: flex
+          align-items: flex-end
+          span
+            color: #ffffff
+            &.txt
+              padding-right: 10px
+              letter-spacing: 1.09px
+              font-size: px(15)
+            &.price
+              letter-spacing: 1.43px
+              font-size: px(19)
+            &.fz-16
+              letter-spacing: 1.2px
+    +rwdmax(1400)
+      .cir-bg
+        h5 
+          padding-top: 8%
+      .stoke-wrap
+        max-width: 400px
+        .stoke-head,
+        ul
+          max-width: 350px
+    +rwdmax(767)
+      .stoke-wrap
+        margin-top: 15px
+        .scrollbar-inner > p
+          padding-bottom: 30px
+        li 
+          padding: 18px 10px 
+
+  // 樓層費
+  .libox-inner[data-name="fare"]
+    .libox-common
+      align-items: flex-start
+    .img-wrap
+      position: relative
+      margin-top: 140px
+      margin-bottom: 100px
+      background-color: #fff
+    .img
+      max-width: 960px
+      width: 100%
+      margin: 0 auto
+      padding-top: 50px
+      padding-bottom: 30px
+    .cir-btn
+      position: absolute
+      left: 50%
+      top: -24px
+      transform: translateX(-50%)
+    +rwdmax(1200)
+      .img
+        width: 80%
+    +rwdmax(575)
+      .img-wrap
+        margin-top: 80px
+        margin-bottom: 50px
+      .img 
+        width: 90%
+  // 燈箱共同
+  .libox-inner
+    display: none
+    
+// 購物流程
+.shopping-check
+  main
+  .content
+    >.text
+      margin-top: -50px
+  .item-info
+    .sub-tit
+      padding-top: 0
+      margin-top: -50px
+  .notice
+    border-top: solid 1px 
+    margin-top: 50px
+    &-wrap 
+      padding: 50px 45px 0
+    li 
+      line-height: 1.7
+      letter-spacing: 0.6px
+      font-size: px(14)
+    +rwdmax(1100)
+      &-wrap 
+        width: 70%
+        margin: 0 auto
+        padding: 40px 0 0
+    +rwdmax(767)
+      width: 100%
+      padding: 0 20px
+      &-wrap
+        width: 100%
+  +rwdmax(1200)
+    .content
+      >.text
+        margin-top: -40px
+    .item-info
+      .sub-tit
+        margin-top: -40px
+  +rwdmax(767)
+    .content
+      >.text
+        margin-top: -75px
+    .item-info
+      .sub-tit
+        margin-top: -75px
+

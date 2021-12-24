@@ -1,0 +1,176 @@
+-
+  var link = [
+    {
+      'en': 'Overview',
+      'ch': '會員總覽',
+      'link': './member_center.html'},
+    {
+      'en': 'Basic Information',
+      'ch': '帳號管理',
+      'link': './member_info.html'},
+    {
+      'en': 'Order',
+      'ch': '訂單查詢',
+      'link': './member_order.html'},
+    {
+      'en': 'Evaluation',
+      'ch': '商品評價',
+      'link': './member_evaluation.html'},
+    {
+      'en': 'Lovelist',
+      'ch': '商品收藏',
+      'link': './member_lovelist.html'},
+  ]
+
+  var undone = [
+    {
+      'date': '2020-12-25',
+      'number': 'JDI2020110225',
+      'unfinish': '2',
+      'finish': '3'},
+    {
+      'date': '2020-12-25',
+      'number': 'JDI2020110225',
+      'unfinish': '1',
+      'finish': '8'},
+    {
+      'date': '2020-12-25',
+      'number': 'JDI2020110225',
+      'unfinish': '2',
+      'finish': '3'},
+    {
+      'date': '2020-12-25',
+      'number': 'JDI2020110225',
+      'unfinish': '1',
+      'finish': '8'},
+    {
+      'date': '2020-12-25',
+      'number': 'JDI2020110225',
+      'unfinish': '2',
+      'finish': '3'},
+  ]
+
+  var done = [
+    {
+      'date': '2020-12-25',
+      'number': 'JDI2020110225',
+      'finish': '5'},
+    {
+      'date': '2020-12-25',
+      'number': 'JDI2020110225',
+      'finish': '1'},
+  ]
+
+
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/member_evaluation.css")
+  body.member_evaluation(data-page="member_evaluation")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          // 大標
+          section.member-title.type-detail
+            .title.range
+              .left-block(data-aost data-aost-class="show")
+                // 大標 & 敘述可改
+                .unit-title 
+                  .left
+                    span.ch 會員中心
+                    span.en WELCOME!
+                    p 歡迎來到會員中心，您可在此查看訂單，商品收藏，或是修改個人基本資料！
+                // 會員登出
+                // --
+                .logout.hover-cir(data-hover="blue" onclick="_common.openliboxInner('logout')")
+                  a.cir-btn.mainGreen(href="javascript:;")
+                    .icon-cirArrow-2
+                  span LOG OUT 會員登出
+              // 會員相關連結
+              .right(data-aost data-aost-class="show")
+                each val,index in link
+                  .link-text.hover-cir(data-hover="blueBig")
+                    a(href=val.link)(class= index == 3 ? 'active': '')
+                      .en
+                        span= val.en
+                        span= val.ch
+                      .ch= val.ch
+
+          // 頁籤切換
+          section.member-tab.range(data-aost data-aost-class="show")
+            ul
+              li.hover-cir.active(data-hover="blueBig" data-class="undone")
+                span.ch 待評價
+                span.num 3
+              li.hover-cir(data-hover="blueBig" data-class="done")
+                span.ch 已完成
+                span.num 99+
+
+          // 待評價
+          section.active(data-tab="undone")
+            .wrap
+              each val in undone
+                a.eva-block.hover-cir(href="./member_evaluation_detail.html" data-hover="blueBig" data-aost data-aost-class="show")
+                  div
+                    .date
+                      span DATE 訂單完成日期
+                      span= val.date
+                    .order-num
+                      span NO. 訂單編號
+                      span= val.number
+                    .score
+                      div
+                        span.num= val.unfinish
+                        span.ch 待評價商品
+                      div
+                        span.num= val.finish
+                        span.ch 已評價商品
+          // 已評價
+          section(data-tab="done")
+            .wrap
+              each val in done
+                a.eva-block.hover-cir(href="./member_evaluation_detail.html" data-hover="yellowBig" data-aost data-aost-class="show")
+                  div
+                    .date
+                      span DATE 訂單完成日期
+                      span= val.date
+                    .order-num
+                      span NO. 訂單編號
+                      span= val.number
+                    .score
+                      div
+                        span.num= val.finish
+                        span 已評價所有商品
+
+        // 會員登出燈箱
+        // 開啟: _common.openliboxInner('logout');
+        .libox-inner(data-name="logout")
+          .libox-common
+            .cir-wrap.member
+              .bg
+              .cir-bg
+                h5.white Log out
+                h6.white 您已成功登出
+                p 歡迎隨時回來！
+                .wrap
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p OK 確認
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug  

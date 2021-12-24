@@ -1,0 +1,248 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.member_evaluation
+  .footer
+    background-color: #fff
+  main
+    background-color: #fff
+    padding-top: 240px
+    padding-bottom: 200px
+    +rwdmax(1100)
+      padding-top: 150px
+      padding-bottom: 100px
+    .member-title .title .right .link-text 
+      a:not(.active)
+        .en,.ch
+          color: rgba(0,0,0,0.2)
+          +rwdmax(900)
+            color: rgba(0,0,0,0.5)
+      a.active 
+        .en,.ch
+          color: #000
+  .range
+    max-width: 1300px
+    width: 100%
+    margin: 0 auto
+    +rwdmax(1500)
+      width: 85%
+    +rwdmax(900)
+      width: 100%
+  
+  // 頁籤切換
+  .member-tab
+    // width: 100%
+    margin-top: 55px
+    ul 
+      display: flex
+      justify-content: space-between
+    li
+      padding: 20px 0
+      width: calc(50% - 6px)
+      display: flex
+      justify-content: center
+      align-items: center
+      border-top: solid 6px #ccc
+      transition: .5s ease-in-out
+      cursor: pointer
+      .ch
+        margin-right: 9px
+        letter-spacing: 0.46px
+        font-size: px(14)
+      .num
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 32px
+        height: 32px
+        border-radius: 50%
+        color: #fff
+        background-color: #000
+        letter-spacing: 0.4px
+        transition: background-color .5s ease-in-out
+        font-size: px(12)
+      &.active
+        border-top: solid 6px #ff7675
+        .num
+          background-color: #ff7675
+    &[data-aost]
+      +opacity
+    &.show
+      +opacity1
+    +rwdmax(1100)
+      width: 80%
+    +rwdmax(767)
+      width: 90%
+      margin-top: 30px
+  // 評價
+  [data-tab]
+    padding-top: 25px
+    max-width: 1340px
+    width: 100%
+    margin: 0 auto
+    display: none
+    &.active
+      display: block
+    .wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      transition: opacity .5s ease-in-out
+    .eva-block
+      margin-right: 45px  
+      width: 415px
+      height: 415px
+      border-radius: 50%
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      box-shadow: 7.4px 9.5px 25.8px transparent
+      transition: .3s ease-in-out
+      >div
+        max-width: 250px
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+      .date,
+      .order-num
+        padding: 20px 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        span 
+          color: #101010
+        span:first-child
+          padding-bottom: 15px
+          letter-spacing: 0.46px
+          font-size: px(14)
+        span:last-child
+          letter-spacing: 0.58px
+          font-size: px(17)
+      .date
+        width: 100%
+        border-bottom: solid 1px #fff
+      .score
+        display: flex
+        >div 
+          padding: 0 25px
+          display: flex
+          flex-direction: column
+          align-items: center
+          .num
+            padding-bottom: 14px
+            letter-spacing: 1.65px
+            +fontSet2(px(50),$basicbold)
+          .ch 
+            letter-spacing: 0.46px
+            font-size: px(14)
+      &[data-aost]
+        +yWaypoint(50)
+      &.show
+        +zWaypoint
+      &:hover
+        box-shadow: 7.4px 9.5px 25.8px rgba(0, 0, 0, 0.3)
+    .eva-block:nth-child(3n-1)
+      &[data-aost]
+        +rwdmin(767)
+          transition-delay: .3s
+    .eva-block:nth-child(3n)
+      margin-right: 0
+      &[data-aost]
+        +rwdmin(767)
+          transition-delay: .5s
+    .eva-block:last-child
+      margin-right: 0
+    +rwdmax(1400)
+      width: 90%
+      .eva-block
+        margin-bottom: 40px
+      .eva-block:nth-child(2n)
+        margin-right: 0
+      .eva-block:nth-child(3n)
+        margin-right: 45px
+    +rwdmax(975)
+      .eva-block,
+      .eva-block:nth-child(3n)
+        margin-right: 25px
+    +rwdmax(950)
+      .eva-block
+        width: 360px
+        height: 360px
+    +rwdmax(830)
+      .wrap
+        flex-direction: column
+        align-items: center
+      .eva-block,
+      .eva-block:nth-child(3n)
+        margin-right: 0
+    +rwdmax(767)
+      width: 100%
+      padding: 20px 10px 0
+      .eva-block
+        margin: 0 0 25px 0
+        width: 360px
+        height: 360px
+        >div
+          max-width: 250px
+        .score
+          width: 90%
+          justify-content: space-around
+          >div 
+            width: 100%
+            padding: 0 10px
+            .num 
+              font-size: px(40)
+        &:nth-child(3n)
+          margin-right: 0
+
+  [data-tab="undone"]
+    .eva-block
+      .score
+        >div:last-child
+          position: relative
+          &::after
+            content: ''
+            position: absolute
+            left: 0
+            top: 8px
+            width: 1px
+            height: 40px
+            background-color: #fff
+            +rwdmax(1200)
+              top: 5px
+            +rwdmax(767)
+              top: 0
+    .eva-block:nth-child(3n-2)
+      background-color: #d5e2eb
+      .num
+        color: darken( #d5e2eb, 25%)
+      &:hover
+        background-color: darken( #d5e2eb, 7%)
+    .eva-block:nth-child(3n-1)
+      background-color: #d7e6dd
+      .num
+        color: darken( #d7e6dd, 25%)
+      &:hover
+        background-color: darken( #d7e6dd, 7%)
+    .eva-block:nth-child(3n)
+      background-color: #f5e2c2
+      .num
+        color: darken( #f5e2c2, 25%)
+      &:hover
+        background-color: darken( #f5e2c2, 7%)
+  [data-tab="done"]
+    .eva-block
+      background-image: url(../../../dist/uploads/member/eva-bg.jpg)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: 100%
+      color: #fff
+      .date,
+      .order-num
+        span 
+          color: #fff
+
+

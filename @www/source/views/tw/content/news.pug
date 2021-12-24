@@ -1,0 +1,158 @@
+- 
+  var newsBanner = [
+    '../../../uploads/news/banner-900X400.jpg',
+    '../../../uploads/product/detail-img01-960X580.jpg',
+    '../../../uploads/product/detail-img03-1200X900.jpg'
+  ]
+  var category = [
+    'ALL',
+    'SALE',
+    'NEW PRODUCTS',
+    'BRAND EVENT'
+  ]
+
+  var news = [
+    {
+      img: '../../../uploads/news/img01-340X552.jpg',
+      date: '2020-10-11',
+      title: '貓咪 X 色彩，絕佳的共生空間'},
+    {
+      img: '../../../uploads/news/img02-340X552.jpg',
+      date: '2020-10-08',
+      title: '2021 色彩趨勢，Stauss Lab 先幫你預測！'},
+    {
+      img: '../../../uploads/news/img03-340X552.jpg',
+      date: '2020-09-30',
+      title: '熱銷商品三件 95 折，一起團購享受美好生活品質折，一起團購享受美好生活品質'},
+    {
+      img: '../../../uploads/news/img04-340X552.jpg',
+      date: '2020-09-25',
+      title: '書臥生活，系列家具享優惠'},
+    {
+      img: '../../../uploads/news/img05-340X552.jpg',
+      date: '2020-09-12',
+      title: '沙發系列滿萬現折 2000！'},
+    {
+      img: '../../../uploads/news/img06-340X552.jpg',
+      date: '2020-09-08',
+      title: '十一月快閃活動，前往查看活動商品頁！'},
+  ]
+
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/news.css")
+  body.news(data-page="news")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main.common-padding
+          // 左側固定
+          .news-left
+            .left-wrap
+              // 大標題
+              article.news-title
+                .unit-title 
+                  .left
+                    span.en.white-after News
+                    // 敘述可改
+                    span.ch.white-after Lab 新鮮事
+              // 分類敘述(電腦版)
+              // 分類點擊 會替換分類 & 分類敘述
+              article.category-des.white-after
+                .top 
+                  span.en ALL 
+                  span.ch 所有訊息
+                p 即時掌握 Strauss Lab 最新動態，不漏接我們想與您分享的每個事件！
+
+          // 右側
+          .news-right
+            .right-wrap
+              // banner
+              // 圖片建議尺寸 900X400
+              section.news-banner.white-after
+                .news-swiper
+                  .swiper-container
+                    .swiper-wrapper
+                      each val in newsBanner
+                        .swiper-slide
+                          .cont 
+                            img(src= val, alt="")
+                  .swiper-button-wrap
+                    a.swiper-next.hover-cir(href="javascript:;" data-hover="yellowBig")
+                      .icon-arrAngle
+                    a.swiper-prev.hover-cir(href="javascript:;" data-hover="yellowBig")
+                      .icon-arrAngle
+              // 訊息分類
+              section.category.white-after
+                // 分類列表
+                // 分類點擊後 會替換分類左側的分類 & 分類敘述 (有分手機版和電腦版需要串兩個地方)
+                // 直接展開分類JS: _categoryList.open()
+                .category-list
+                  ul
+                    each val,index in category
+                      li(class=(index == 0 ? 'active':''))
+                        a.hover-cir(href="javascript:;" data-hover="yellowSmall")= val
+                  // 使用tag篩選(新聞內頁觸發)
+                  // 後端用 tag篩選顯示: _news.showTagList();
+                  .tag-list.hide
+                    span TAG: #COLOR
+                .btn-wrap.hover-cir(data-hover="yellowBig")
+                  a.unit-link.dark.link-open(href="javascript:;")
+                    .text 
+                      p.en.fz-14 MORE
+                      p.ch.fz-14 
+                        span 所有訊息分類
+                    div.icon.rotate
+                      i.icon-trangle-down
+                  a.unit-link.dark.link-close(href="javascript:;")
+                    .text 
+                      p.en.fz-14 CANCEL
+                      p.ch.fz-14 
+                        span 返回分類
+                    div
+                      .cross
+                // 分類敘述(手機版)
+                // 分類點擊 會替換分類 & 分類敘述
+                .category-des.mobile
+                  .top 
+                    span.en ALL 
+                    span.ch 所有訊息
+                  p 即時掌握 Strauss Lab 最新動態，不漏接我們想與您分享的每個事件！
+              
+              // 新聞內容
+              section.news-content
+                ul
+                  // AJAX callback : _news.newsCallback();
+                  each val in news
+                    li.waypoint(data-aost data-aost-class="show")
+                      a.block.white-after.hover-cir.cursor-none(href="./news_detail.html" data-hover="yellowBig")
+                        .top-wrap
+                          .parallax-container(data-parallax-container)
+                            .img-bg.b-lazy(src="../../../assets/img/blazy.gif" data-src=`${val.img}` data-parallax data-parallax-bg) 
+                          .date.white-after
+                            p= val.date
+                        h2= val.title
+                // 載入更多按鈕 +6則訊息
+                a.learn-more.hover-cir(href="javascript:;" data-hover="yellowBig")
+                  span MORE
+                  .icon.plus
+                    .cross-plus
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

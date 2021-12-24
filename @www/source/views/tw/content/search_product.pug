@@ -1,0 +1,277 @@
+-
+  var data = [
+    {
+      type: 'normal',
+      size: 'large',
+      img: '../../../uploads/product/detail-obj05-380X250.png',
+      cus: '',
+      tag: 'HOT',
+      direction: 'left',
+      color: '#ff2668',
+      bgcolor: '#bedbbb',
+      name: '乘風沙發',
+      price: '40,800',
+      text: '特價',
+      line: 'true',
+      style: [
+        {
+          img: '../../../uploads/product/detail-obj05-380X250.png',
+          colorImg: '../../../uploads/product/color04-20X20.jpg',
+          bgcolor: '#bedbbb',
+          name: '甜筒條凳 W90',
+          price: '40,800',
+          text: '特價',
+          line: 'true',},
+        {
+          img: '../../../uploads/product/detail-obj07-380X250.png',
+          colorImg: '../../../uploads/product/color05-20X20.jpg',
+          bgcolor: '#f9f871',
+          name: '甜筒條凳 W91',
+          price: '41,000',
+          text: '原價',
+          line: 'false',},
+        {
+          img: '../../../uploads/product/detail-obj06-380X250.png',
+          colorImg: '../../../uploads/product/color07-24X24.jpg',
+          bgcolor: '#d3e0ea',
+          name: '甜筒條凳 W95',
+          price: '41,000',
+          text: '原價',
+          line: 'false',},
+        {
+          img: '../../../uploads/product/detail-obj05-380X250.png',
+          colorImg: '../../../uploads/product/color04-20X20.jpg',
+          bgcolor: '#bedbbb',
+          name: '甜筒條凳 W90',
+          price: '40,800',
+          text: '特價',
+          line: 'true',},
+        {
+          img: '../../../uploads/product/detail-obj07-380X250.png',
+          colorImg: '../../../uploads/product/color05-20X20.jpg',
+          bgcolor: '#f9f871',
+          name: '甜筒條凳 W91',
+          price: '41,000',
+          text: '原價',
+          line: 'false',},
+        {
+          img: '../../../uploads/product/detail-obj06-380X250.png',
+          colorImg: '../../../uploads/product/color07-24X24.jpg',
+          bgcolor: '#d3e0ea',
+          name: '甜筒條凳 W95',
+          price: '41,000',
+          text: '原價',
+          line: 'false',},
+        {
+          img: '../../../uploads/product/detail-obj05-380X250.png',
+          colorImg: '../../../uploads/product/color04-20X20.jpg',
+          bgcolor: '#bedbbb',
+          name: '甜筒條凳 W90',
+          price: '40,800',
+          text: '特價',
+          line: 'true',},
+        {
+          img: '../../../uploads/product/detail-obj07-380X250.png',
+          colorImg: '../../../uploads/product/color05-20X20.jpg',
+          bgcolor: '#f9f871',
+          name: '甜筒條凳 W91',
+          price: '41,000',
+          text: '原價',
+          line: 'false',},
+        {
+          img: '../../../uploads/product/detail-obj06-380X250.png',
+          colorImg: '../../../uploads/product/color07-24X24.jpg',
+          bgcolor: '#d3e0ea',
+          name: '甜筒條凳 W95',
+          price: '41,000',
+          text: '原價',
+          line: 'false',},
+      ]},
+    {
+      type: 'normal',
+      size: 'large',
+      img: '../../../uploads/product/detail-obj05-380X250.png',
+      cus: '',
+      tag: 'HOT',
+      direction: 'right',
+      color: '#ff2668',
+      bgcolor: '#bedbbb',
+      name: '乘風沙發',
+      price: '40,800',
+      text: '特價',
+      line: 'true',
+      style: [
+        {
+          img: '../../../uploads/product/detail-obj05-380X250.png',
+          colorImg: '../../../uploads/product/color04-20X20.jpg',
+          bgcolor: '#bedbbb',
+          name: '乘風沙發',
+          price: '40,800',
+          text: '特價',
+          line: 'true',},
+        {
+          img: '../../../uploads/product/detail-obj06-380X250.png',
+          colorImg: '../../../uploads/product/color07-24X24.jpg',
+          bgcolor: '#d3e0ea',
+          name: '甜筒條凳 W95',
+          price: '41,000',
+          text: '原價',
+          line: 'false',},
+      ]},
+    {
+      type: 'customer',
+      size: 'small',
+      img: '../../../uploads/product/detail-obj08-190X250.png',
+      cus: true,
+      tag: 'NEW',
+      direction: 'right',
+      color: '#ff4949',
+      bgcolor: '#aee1e1',
+      name: '乘風沙發',
+      price: '40,800',
+      text: '原價',
+      line: 'false',},
+    {
+      type: 'customer',
+      size: 'large',
+      img: '../../../uploads/product/sofa06-380X250.png',
+      cus: true,
+      tag: '',
+      direction: '',
+      color: '',
+      bgcolor: '#94b5c0',
+      name: '乘風沙發',
+      price: '40,800',
+      text: '原價',
+      line: 'false',},
+  ]
+
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/search.css")
+  body.search-result.search_product(data-page="search_product")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        main
+          a.cir-btn.mainGreen(href="javascript:;")
+            .cross
+          .top 
+            .bgText
+              p(data-aost data-aost-class="show") Product
+            .detail 
+              // 顯示筆數: 串兩個
+              .num(data-aost data-aost-class="show")
+                span 5
+                span 5
+              p(data-aost data-aost-class="show") Search Result
+                span 搜尋結果
+              // input內容
+              .keyword(data-aost data-aost-class="show")
+                span # 雙人沙發
+          .search-filter
+            .w33(data-aost data-aost-class="show")
+              p
+                span.num ALL
+                span.en
+                span.ch
+              p WIDTH 寬度
+            .w33(data-aost data-aost-class="show")
+              p
+                span.num 120 - 150
+                span.en cm
+                span.ch
+              p DEPTH 深度
+            .w33(data-aost data-aost-class="show")
+              p
+                span.num 100
+                span.en cm
+                span.ch 以下
+              p HEIGHT 高度
+            .w100(data-aost data-aost-class="show")
+              .tag.fz-14 5-10坪
+              .tag.fz-14 防貓抓
+              .tag.fz-14 涼感易散熱
+              .tag.fz-14 涼感易散熱
+            
+            // 返回搜尋燈箱
+            .cir-btn.mainGreen.back-search(
+              data-aost data-aost-class="show"
+              data-ajax-route="./ajax_search.html" 
+              data-ajax-container=".libox-container" 
+              data-ajax-callback="_search.openSearchPro"
+              data-ajax)
+              .icon-search
+          // 搜尋結果
+          .result
+            ul 
+              each val in data
+                // 標準品 li+class: normal
+                li(data-aost data-aost-class="show" data-aost-offset="95")(class= (val.type == 'normal'? 'normal': ''))
+                  // data-bgcolor: 家具hover的背景底色
+                  a.hover-cir(href="./product_detail.html" data-hover="border" data-bgcolor= val.bgcolor)(class= val.size)
+                    if val.type == 'normal'
+                      // 標準品選色
+                      .dot
+                        .dot-wrap
+                          // data-route: 該色產品內頁
+                          // data-img: 該色家具圖
+                          // data-name: 該色家具名稱
+                          // data-price: 該色家具價格
+                          // data-text: 該色家具優惠狀態
+                          // data-bg: 該色家具hover的背景底色
+                          // data-line: true/false 是否要+ line-through
+                          each dot in val.style
+                            .dot-block(data-route="./product_detail2.html" data-img= dot.img data-name= dot.name data-price= dot.price data-text= dot.text data-bg= dot.bgcolor data-line= dot.line)
+                              // 該色縮圖
+                              img(src= dot.colorImg, alt="")
+                    .img
+                      img.b-lazy(src="../../../assets/img/blazy.gif" data-src= val.img, alt="")
+                      // 圓圓標籤: 可上可不上
+                      // 內容可自訂
+                      // 底色可自訂 
+                      // 位置可選左/右 +class="left" / "right"
+                      .tag(class= val.direction)(style=`background-color: ${val.color}`)
+                        span= val.tag
+                      
+                      if val.cus == true && val.tag !== ''
+                        // 優惠標籤 與 客製化標籤同時存在 (位置(左右)一樣)
+                        .tag.cus(class= val.direction)
+                          .bg
+                          span MORE
+                      else if val.cus == true && val.tag == ''
+                        // 只有客製化標籤時的狀態
+                        .tag.cus.cus-left 
+                          .bg
+                          span MORE
+                    .text-detail 
+                      h2= val.name 
+                      .price
+                        span NTD$
+                        span= val.price
+                      // 優惠價 data-line="true"
+                      .txt(class= (val.line == 'true' ? 'line-through': '') data-line= val.line)
+                        span PRICE&ensp;
+                        span= val.text
+          // 搜尋沒有結果
+          //.no-result
+            p.fz-14 Try again!
+          // go top
+          .cir-btn.black.goTop(
+            data-aost data-aost-class="show" data-aost-offset="100"
+            data-anchor-speed="1200"
+            data-anchor)
+            .icon-trangle-up
+  
+  //引入的script
+  include ../layouts/_script.pug

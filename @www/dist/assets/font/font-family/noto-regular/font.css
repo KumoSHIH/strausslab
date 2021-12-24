@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'NotoSansCJKtc-Regular';
+  src: url('../assets/font/NotoSansCJKtc/Regular/NotoSansCJKtc-Regular.woff2') format('woff2'),
+       url('../assets/font/NotoSansCJKtc/Regular/NotoSansCJKtc-Regular.woff') format('woff'),
+       url('../assets/font/NotoSansCJKtc/Regular/NotoSansCJKtc-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

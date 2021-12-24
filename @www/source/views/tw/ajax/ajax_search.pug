@@ -1,0 +1,168 @@
+// 搜尋燈箱
+.libox-search
+  .modal-scroll-wrap.scrollbar-macosx(data-scroll-content)
+    .container
+      .cir-btn.mainGreen.ajax_close
+        .cross
+      .search-content
+        p
+          span.en Search for
+          span.ch 開始搜尋
+        ul 
+          li.hover-cir(data-hover="yellowBig" data-search="product") 
+            a(href="javascript:;")
+              span.en Products 
+              span.ch 搜尋產品
+          // 點點 可略過
+          li.dot
+          li.hover-cir(data-hover="yellowBig" data-search="news") 
+            a(href="javascript:;")
+              span.en News 
+              span.ch 搜尋新訊
+          
+      // 新聞搜尋
+      .search-news
+        .search-input
+          input(type="text" placeholder="Keywords")
+          a.cir-btn.mainGreen.search(href="./search_news.html")
+            span.icon-search
+      // 產品搜尋
+      .search-product
+        .search-input
+          input(type="text" placeholder="Keywords")
+          // 快速搜尋
+          // 點擊會帶入input
+          ul 
+            li
+              a(href="javascript:;") # 雙人沙發
+            li 
+              a(href="javascript:;") # 熱銷商品
+            li 
+              a(href="javascript:;") # 新居落成
+            li 
+              a(href="javascript:;") # 寵物
+        .search-filter
+          span SIZE 商品尺寸
+          .select-wrap
+            // 下拉選項
+            .select-opt
+              .select(data-class="width")
+                .select-tit
+                  p
+                    span.num 0
+                    span.en
+                    span.ch
+                  p WIDTH 寬度
+                .icon
+                  i.icon-trangle-down
+              .select(data-class="depth")
+                .select-tit
+                  p
+                    span.num 0
+                    span.en
+                    span.ch
+                  p DEPTH 深度
+                .icon
+                  i.icon-trangle-down
+              .select(data-class="height")
+                .select-tit
+                  p
+                    span.num 0
+                    span.en
+                    span.ch
+                  p HEIGHT 高度
+                .icon
+                  i.icon-trangle-down
+            // 下拉選單內容
+            .select-content
+              .ul-width
+                .scrollbar-inner
+                  // ++
+                  .mob-show SELECT 選擇寬度
+                  ul
+                    li.hover-cir(data-hover="blue")
+                      // 尺寸
+                      span.num 100
+                      // 單位
+                      span.en cm
+                      // 沒有中文不出現此結構
+                      span.ch 以下
+                    li.hover-cir(data-hover="blue")
+                      span.num 100 - 120
+                      span.en cm
+              .ul-depth
+                .scrollbar-inner
+                  // ++
+                  .mob-show SELECT 選擇深度
+                  ul
+                    li.hover-cir(data-hover="blue")
+                      span.num 100
+                      span.en cm
+                      span.ch 以下
+                    li.hover-cir(data-hover="blue")
+                      span.num 100 - 120
+                      span.en cm
+                    li.hover-cir(data-hover="blue")
+                      span.num 120 - 150
+                      span.en cm
+                    li.hover-cir(data-hover="blue")
+                      span.num 150 - 180
+                      span.en cm
+                    li.hover-cir(data-hover="blue")
+                      span.num 180 - 200
+                      span.en cm
+                    li.hover-cir(data-hover="blue")
+                      span.num 200
+                      span.en cm
+                      span.ch 以上
+              .ul-height
+                .scrollbar-inner
+                  // ++
+                  .mob-show SELECT 選擇高度
+                  ul
+                    li.hover-cir(data-hover="blue")
+                      span.num 100
+                      span.en cm
+                      span.ch 以下
+                    li.hover-cir(data-hover="blue")
+                      span.num 100 - 120
+                      span.en cm
+                    li.hover-cir(data-hover="blue")
+                      span.num 120 - 150
+                      span.en cm
+                    li.hover-cir(data-hover="blue")
+                      span.num 150 - 180
+                      span.en cm
+            // 商品功能checkbox
+            .select-ckbox
+              p FUNCTION 商品功能
+              .form-row
+                .form-check
+                  .check-wrap
+                    input#checkbox11(type="checkbox")
+                    label.form-fakebox.transparent(for="checkbox11")
+                      .form-box
+                        span
+                    label.word(for="checkbox11") 5坪以下
+                  .check-wrap
+                    input#checkbox12(type="checkbox")
+                    label.form-fakebox.transparent(for="checkbox12")
+                      .form-box
+                        span
+                    label.word(for="checkbox12") 5-10坪
+                  .check-wrap
+                    input#checkbox13(type="checkbox")
+                    label.form-fakebox.transparent(for="checkbox13")
+                      .form-box
+                        span
+                    label.word(for="checkbox13") 10-20坪
+                  .check-wrap
+                    input#checkbox14(type="checkbox")
+                    label.form-fakebox.transparent(for="checkbox14")
+                      .form-box
+                        span
+                    label.word(for="checkbox14") 20坪以上
+
+          a.cir-btn.mainGreen.search(href="./search_product.html")
+            span.icon-search
+          

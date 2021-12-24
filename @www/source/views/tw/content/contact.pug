@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/contact.css")
+  body.contact(data-page="contact")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          .left-title(data-aost data-aost-class="show" data-aost-offset="90")
+            // 標題&敘述都可改
+            .unit-title 
+              .left
+                span.en Hi!
+                span.ch 與我們聯繫
+            p 如果您有任何疑問與想法，歡迎透過右側的聯繫表單與我們聯繫，相關夥伴將在收到訊息後，盡快與您回覆!
+            .inner-text.hi
+              span H
+              span i
+              span !
+            .inner-text.tks
+              span T
+              span k
+              span s
+              span !
+          .right
+            .img(data-aost data-aost-class="show" data-aost-offset="90")
+              img(src="../../../assets/img/img-talk.png", alt="")
+            .wdd-form
+              .form-row
+                .form-grid
+                  label.form-group.transparent
+                    p.subject
+                      span NAME
+                      span 姓名
+                    input(type="text" placeholder="")
+                .form-grid
+                  label.form-group.full-box.transparent
+                    .form-select.type-normal.transparent
+                      .select-head
+                        p.option 
+                          span SALUTATION
+                          span 稱謂
+                        span.arrow-icon
+                      .select-content
+                        ul.scrollbar-inner
+                          li 女士
+                          li 男士
+              .form-row
+                .form-grid
+                  label.form-group.transparent
+                    p.subject
+                      span PHONE 
+                      span 聯繫手機
+                    input(type="text" placeholder="ex. 0912 345 678" inputmode="numeric")
+              // 一排一個input
+              .form-row
+                .form-grid
+                  label.form-group.transparent
+                    p.subject 
+                      span E-MAIL
+                      span 信箱
+                    input(type="email" placeholder="")    
+              // 選主旨 swiper
+              .form-row
+                .form-grid
+                  .form-group.swiper.transparent
+                    p.subject
+                      span SUBJECT 
+                      span 主旨
+                    .form-swiper
+                      .swiper-container
+                        .swiper-wrapper
+                          .swiper-slide
+                            p Shopping 購物相關疑問
+                          .swiper-slide
+                            p About Products 產品相關疑問
+                          .swiper-slide
+                            p Member 會員相關疑問
+                      .swiper-button.swiper-next
+                        span.icon-arrAngleLeft
+                      .swiper-button.swiper-prev
+                        span.icon-arrAngle
+              // textarea
+              // ++
+              .form-row(data-class="textarea")
+                .form-grid
+                  label.form-group.type-column.transparent
+                    p.subject 
+                      sapn CONTENT 
+                      span 內容
+                    textarea(placeholder="請於此填寫您的想法與意見")
+              // 輸入驗證碼
+              .form-row.certification
+                .form-grid.required
+                  label.form-group.form-require.transparent
+                    p.subject
+                      span CERTIFICATION
+                      span 驗證碼
+                    // ++
+                    input(type="text" placeholder="請輸入驗證碼")
+                    .img-wrap
+                      img(src="https://test.wellcare.com.tw/captcha/default", alt="")
+                      // 重新整理按鈕
+                      .form-refresh
+                        span.icon-refresh
+                    
+              // 送出&清除按鈕
+              .form-row.button-wrap
+                .form-btn.form-clear.hover-cir(data-hover="borderGreen")
+                  .cross
+                  p REWRITE 重新填寫
+                .form-btn.form-done.hover-cir(data-hover="borderGreen")
+                  p SEND 確認送出
+                  span.icon-arrAngle
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

@@ -1,0 +1,482 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.member_center
+  .nav
+    background-color: #fff
+  &[data-color="white"]
+    color: #fff
+    .nav
+      background-color: #000
+    .nav-left
+      .btn-menu
+        div 
+          background-color: #fff
+      a[class*="btn-"]
+        color: #fff
+    .title .right .level-info .open-level
+      .btn-cir
+        background-color: #fff
+  .footer
+    .go-top
+      position: absolute
+      top: 0
+      right: auto
+      left: 80px
+      opacity: 1
+      display: block !important
+    +rwdmax(1200)
+      .go-top
+        top: -120px
+    +rwdmax(800)
+      .go-top
+        left: 35px
+        top: -75px
+    +rwdmax(767)
+      .go-top
+        top: -60px
+  main
+    padding-top: 240px
+    padding-bottom: 200px
+    background-position: center 0
+    background-repeat: no-repeat
+    +rwdmax(1100)
+      padding-top: 150px
+      padding-bottom: 100px
+  .range
+    max-width: 1300px
+    width: 100%
+    margin: 0 auto
+    +rwdmax(1500)
+      width: 85%
+    +rwdmax(767)
+      width: 95%
+  // 大標
+  .member-title
+    background-color: #fff
+    .right
+      padding-bottom: 45px
+      .clone-container
+        display: none
+    +rwdmax(1100)
+      .left-block
+        .logout
+          display: none
+      .right
+        padding-bottom: 0
+        .clone-container
+          display: block
+          padding-top: 10px
+    +rwdmax(767)
+      .right
+        .clone-container
+          .logout
+            display: flex
+  // 連結
+  .content
+    padding-top: 25px
+    &.active-dark
+      .member-link >a:not(.active)
+        .ch,.en 
+          color: rgba(0,0,0,0.2)
+    &.active-white
+      .member-link >a:not(.active)
+        .ch,.en 
+          color: rgba(255,255,255,0.2)
+    .member-link
+      >a 
+        display: block
+        max-width: 50%
+        margin: 0 auto
+        padding: 35px 0
+        text-align: center
+        // border: solid 1px red
+        &.dark
+          .en
+            color: #000
+          .ch 
+            color: #000
+        &.white
+          .en
+            color: #fff
+          .ch 
+            color: #fff
+      .en
+        color: transparent
+        background-clip: text
+        -webkit-background-clip: text
+        background-image: url(../../../dist/uploads/member/bg03.jpg)
+        &.none
+          background-image: none
+          background-clip: unset 
+          animation: unset
+        +fontSet2(px(70),$basicbold)
+        +ieHack
+          background-image: none
+          background-clip: unset 
+          animation: unset
+          color: #000
+      .ch
+        padding-top: 20px
+        font-size: px(26)
+      .en,.ch
+        transition: .5s ease-in-out
+      &[data-aost]
+        +opacity
+      &.show
+        +opacity1
+    .member-link:nth-child(1)
+      position: relative
+      .fakebox
+        position: absolute
+        width: 100%
+        height: 100%
+        // border: solid 1px blue
+      .img 
+        width: 320px
+        height: 320px
+        border-radius: 100%
+        overflow: hidden
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(50%,-50%)
+        opacity: 0
+        pointer-events: none
+        transition: opacity .5s ease-in-out
+        &.active
+          opacity: 1
+        +rwdmax(1100)
+          &.show
+            opacity: 1
+      a
+        position: relative
+      .en
+        animation: textAni1 40s infinite
+    .member-link:nth-child(2)
+      .en
+        animation: textAni2 32s infinite
+    .member-link:nth-child(3)
+      .en
+        animation: textAni3 35s infinite
+    .member-link:nth-child(4)
+      .en
+        animation: textAni4 37s infinite
+    +rwdmax(1300)
+      .member-link
+        >a 
+          max-width: 80%
+    +rwdmax(1100)
+      .member-link
+        .en 
+          font-size: px(60)
+        .ch
+          padding-top: 15px
+          letter-spacing: 1.03px
+          font-size: px(26)
+        &:nth-child(1)
+          .img
+            width: 300px
+            height: 300px
+            transform: translate(-50%,-50%)
+    +rwdmax(900)
+      .member-link
+        >a 
+          padding: 25px 0
+        .en 
+          font-size: px(45)
+        .ch
+          padding-top: 15px
+          letter-spacing: 1.03px
+          font-size: px(21)
+    +rwdmax(767)
+      .member-link
+        .en 
+          font-size: px(33)
+        &:nth-child(1)
+          .img
+            width: 250px
+            height: 250px
+
+  // 背景
+  .bg-wrap
+    .bg
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      width: 100vw
+      opacity: 0
+      visibility: hidden
+      transition: .5s ease-in-out
+      &.active
+        opacity: 1
+        visibility: visible
+      &-info
+        // height: 100%
+      &-order
+        height: 100%
+        background-position: center 0
+        background-size: cover
+      &-evaluation
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+      &-lovelist
+        width: 100%
+        height: 100vh
+        display: flex
+        align-items: center
+        justify-content: center
+        .img-wrap
+          width: 100%
+          position: relative
+          display: flex
+        .img 
+          margin: 0 50px
+          flex-shrink: 0
+          width: 100%
+          &.large
+            max-width: 380px
+          &.small
+            max-width: 190px
+    +rwdmax(1100)
+      .bg-evaluation
+        height: auto
+        width: 50%
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+      .bg-lovelist
+        height: auto
+        top: 50%
+        transform: translateY(-50%)
+    +rwdmax(900)
+      .bg-evaluation
+        width: 60%
+    +rwdmax(767)
+      .bg-evaluation
+        width: 90%
+      .bg-lovelist
+        .img
+          width: 80%
+  // 會員等級說明燈箱
+  .libox-inner[data-name="level"]
+    .ajax_close
+      margin-left: auto 
+      margin-right: 30px
+    [data-scroll-content]
+      max-height: 80vh !important
+      > .scroll-element.scroll-y
+        width: 4px
+      > .scroll-element .scroll-element_track
+        background-color: rgba(0,0,0,0.4)
+      > .scroll-element .scroll-bar
+        background-color: $main
+    .box
+      cursor: default !important
+      max-width: pxTovw(850)
+      width: 100%
+      height: 100vh
+      height: calc(var(--vh, 1vh) * 100)
+      padding-top: 60px
+      margin-left: auto
+      background-color: #202020
+      transform: translateX(100%)
+      transition: .6s ease-in-out
+      &.in 
+        transform: translateX(0)
+    .modal-contain
+      max-width: 685px
+      width: 100%
+      margin: 0 auto
+      padding-right: 10px
+      color: #fff
+      >.scroll-element.scroll-y
+        width: 4px
+        border-radius: 0px
+        .scroll-element_outer
+          border-radius: 0px
+        .scroll-element_track
+          width: 1px
+          left: 1px
+        .scroll-bar
+          width: 3px
+          opacity: 1
+          border-radius: 0px
+          background-color: $main
+            
+      .sec-title 
+        padding: 0 17px 30px 
+        max-width: 370px
+        width: 100%
+        .en 
+          padding-bottom: 15px
+          line-height: 1.2
+      .text-wrap
+        padding-top: 25px
+        padding-left: 17px
+        border-top: solid 5px #3a3a3a
+        >p 
+          padding-bottom: 20px
+          letter-spacing: 0.7px
+          line-height: px(25)
+      .level
+        width: 15%
+      .intro
+      .thead
+        display: flex
+        div 
+          color: $main
+          letter-spacing: 0.7px
+          +fontSet2(px(14),$basicbold)
+      .tbody
+        padding: 25px 0
+        position: relative
+        cursor: pointer
+        &::after
+          content: ''
+          position: absolute
+          right: 0
+          bottom: 0
+          background-color: #3a3a3a
+          width: 85%
+          height: 1px
+        &.active
+          .item-title
+            .open
+              transform: rotate(45deg)
+      .item-title
+        display: flex
+        align-items: flex-end
+        >div 
+          // border: solid 1px red
+        .level
+          font-size: px(21)
+        .intro 
+          flex: 1
+          display: flex 
+          align-items: center
+          // border-bottom: solid 1px #3a3a3a
+          >span 
+            margin-top: 5px
+            margin-right: 22px
+            color: #999
+            letter-spacing: 0.7px
+        .price
+          display: flex
+          align-items: baseline
+          p 
+            padding-left: 3px
+            font-size: px(25)
+        .open
+          margin-left: auto
+          margin-right: 15px
+          position: relative
+          transition: .5s ease-in-out
+          .cross-plus
+            padding: 16px
+          .cross-plus:after,
+          .cross-plus:before
+            background-color: #fff
+            height: 16px
+      .item-content
+        display: flex
+        .intro
+          flex: 1
+        .wrap 
+          display: none
+          margin-top: 15px
+          padding-bottom: 15px
+          p 
+            letter-spacing: 0.7px
+            line-height: px(25)
+    .goTop
+      position: absolute
+      left: 50%
+      bottom: 50px
+      transform: translateX(-50%)
+    +rwdmax(1750)
+      .box
+        max-width: 50vw
+    +rwdmax(1600)
+      .box
+        max-width: 55vw
+    +rwdmax(1400)
+      .box
+        max-width: 60vw
+    +rwdmax(1300)
+      .box
+        max-width: 68vw
+    +rwdmax(1100)
+      [data-scroll-content]
+        max-height: 70vh !important
+      .modal-contain
+        width: 85%
+        height: 70%
+        overflow-y: scroll
+        .text-wrap
+          padding-right: 10px
+      .goTop
+        // bottom: 50px
+    +rwdmax(1000)
+      .box
+        max-width: 100vw
+    +rwdmax(767)
+      .box
+        padding-top: 30px
+      .modal-contain
+        max-height: 68% !important
+        width: 100%
+        padding: 0 13px
+        .sec-title
+          padding: 0 0 30px
+          .en 
+            font-size: px(38)
+        .text-wrap
+          padding: 30px 8px 0
+        .tbody:after
+          width: 100%
+        .item-title
+          flex-wrap: wrap
+          .level
+            width: calc(100% - 32px)
+          .intro 
+            order: 3
+            width: 100%
+            padding-top: 14px
+            >span
+              margin-right: 10px
+          .open
+            margin-right: 0
+        .item-content
+          .wrap
+            margin-top: 20px
+            padding-bottom: 0
+          .level
+            display: none
+      .goTop
+        bottom: 60px
+
+@keyframes textAni1
+  0%
+    background-position: 0 0
+  100%
+    background-position: 1565px 1819px
+@keyframes textAni2
+  0%
+    background-position: 1565px 1819px
+  100%
+    background-position: 40% 20%
+@keyframes textAni3
+  0%
+    background-position: 80% 10%
+  100%
+    background-position: 1565px 1819px
+@keyframes textAni4
+  0%
+    background-position: 20% 70%
+  100%
+    background-position: 1565px 1819px
+

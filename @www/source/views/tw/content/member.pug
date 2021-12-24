@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/member.css")
+  body.member(data-page="member")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          // 單元大標
+          .unit-title(data-aost data-aost-class="show")
+            .left
+              span.ch 會員中心
+              span.en Welcome!
+          .content(style="background-image:url(../../../uploads/member/bg01.jpg)")
+            .content-wrap
+              p.white 歡迎來到會員中心，請於下方進行登入，或是註冊成為我們的會員！
+              .btn-wrap
+                a.btn-square.white.hover-cir(href="javascript:;" data-hover="blue")
+                  .icon-facebook
+                  span 使用 FACEBOOK 登入
+                a.btn-square.hover-cir(href="javascript:;" data-hover="blue")
+                  .img
+                    img(src="../../../assets/font/icomoon/svg/Google__G__Logo.svg", alt="")
+                  span 使用 GOOGLE 登入
+              p.white.en MEMBER LOG IN 手機號碼登入
+              .form
+                // 一排
+                .form-row
+                  .form-grid
+                    label.form-group.white
+                      p.subject
+                        span ACCOUNT
+                        span 帳號
+                        span.basicbold +886
+                      input(type="text" placeholder="912345678" inputmode="numeric" autocomplete="off")
+                // 一排
+                .form-row
+                  .form-grid
+                    label.form-group.white
+                      p.subject
+                        span PASSWORD
+                        span 密碼
+                      input(type="password" placeholder="請輸入會員密碼")
+              // 按鈕
+              .btn-wrap.big
+                // 登入會員
+                a.btn-cir.hover-cir(href="javascript:;" data-hover="blue")
+                  span.icon-cirArrow-1
+                  span 登入會員
+                // 會員註冊
+                a.btn-cir.hover-cir.btn-register(href="javascript:;" data-hover="blue" data-libox="member")
+                  span.icon-re
+                  span 立即註冊
+              // 忘記密碼
+              a.hover-cir.btn-forget(href="./member_forget_password.html" data-hover="yellowBig")
+                p.white Forget Password?
+                  span.ch 忘記密碼
+
+        // 會員權益說明
+        // 標題 & 敘述可改
+        .common-lightbox.member-lightbox
+          .modal-contain
+            .scrollbar-macosx(data-scroll-wrapper)
+              .modal-dialog.bg
+                a.btn-cir.dark.hover-cir(href="javascript:;" data-hover="blue")
+                  .cross
+                .modal-inner
+                  .sec-content.member
+                    .scrollbar-inner.white(data-modal-content)
+                      .sec-title
+                        .en Member Benefits
+                        .ch 會員權益及服務條款
+                      .content-wrap
+                        // 項目可新增
+                        // 一項
+                        div 
+                          // 標題
+                          // 不上資料隱藏結構
+                          .title
+                          // 內文 可自行斷行
+                          p 親愛的會員您好，非常感謝您使用本商店的服務（以下稱本服務），本商店將根據以下之會員服務
+                            |條款(以下簡稱本條款)，提供會員便利的交易。為了保障您的權益，請務必詳讀本條款，在您註冊
+                            |成為本商店會員、或開始使用本服務時，即視為您已經閱讀、瞭解並同意接受本條款及「隱私權保
+                            |護政策」之所有內容，並視為您已確認詳閱並同意個人資料保護告知暨同意事項。
+                            <br>
+                            <br>
+                            |如您不同意本條款之全部或部分內容，請勿註冊，並請立即停止使用本服務。本條款之具體約定內
+                            |容如後：
+                        // 一項
+                        div 
+                          .title 一、會員註冊
+                          p 01. 當您以個人身份註冊時，請依照會員註冊程序，提供正確資料，並即時進行維護與更新，以保障最佳的服務品質。「有情門Lab網路商城」不會個別通知會員更新、變更註冊資訊。
+                          p 02. 當您完成「有情門 LAB網路商城」之會員註冊手續，並開始使用本服務時，即表示您已閱讀並了解、同意與接受會員權益及服務條款之所有內容。
+                          p 03. 「有情門 LAB網路商城」有權於任何時間修改或變更會員權益及服務條款，修改或變更後之內容將公佈於「有情門 LAB網路商城」上。
+                          p 04. 依您註冊之帳號及密碼登入「有情門 LAB網路商城」後之一切行為，皆視為本人所為。當您發現個人帳號及密碼遭他人盜用、安全疑慮時，請立即通知本網站。
+                          p 05. 會員註冊之資料若有不確實、不完整、冒名、假名或重複等情況，「有情門 LAB網路商城」可不經通知進行拒絕、暫停及永久取消註冊之會員帳號。
+                          p 06. 註冊之會員帳號因非法或使用不當造成之損害，除經證明係可歸責於本網站外，本網站將不負責和相關責任。
+                          p 07. 如以綁定Facebook或Google帳號方式登入，帳號資料係由該網站負責，本網站並無權管理。
+                        // 一項
+                        div
+                          .title 二、購物須知
+                          p 01. 當您使用「有情門 LAB網路商城」進行交易時，亦遵守本網站中所提供的商品數量及價格等機制，訂單成立後，將由客服人員與您聯繫。由客服人聯繫確認訂單後，訂單狀態為備貨中，則不提供取消訂單之服務。
+                          p 02. 於客服人員與您聯繫前，本網站仍保有不接受訂單或取消出貨之權利。
+                          p 03. 若您使用本網站進行商品訂購後，任意取消訂單或造成訂單作業、商品生產或其他損害之行為，「有情門 LAB網路商城」有權暫停或永久取消您的會員身份及註冊帳號。
+                          p 04. 在進行商品購買前，請您確認已詳細閱讀會員權益及服務條款。對於購物須知、運費及樓層費等條件了解，並且確認您可以接受。
+                          p 05. 「有情門 LAB網路商城」提供自由選擇或搭配商品的顏色，皆為訂單成立後才開始進行製作。實木家具約需要16個工作天，沙發類型的商品則需要30個工作天，我們與您一起期待。
+                          p 06. 所有商品尺寸皆為人工丈量，尺寸誤差3%內屬正常情況，訂購前請務必參考商品頁面中之尺寸標示，確認使用空間是否合適。
+                          p 07. 網路照片與實際商品色彩會因顯示器性能、個人感官差異及拍攝場景之光線等略微不同，依實際出貨商品為準。
+                          p 08. 大型家具如：沙發、櫥櫃、大桌等皆須填寫環境評估表單，並透過客服人員進行環境評估，以免發生商品物流運送到府後，無法進電梯或空間入口等情形。
+                          p 09. 由於「有情門Lab網路商城」提供自由選擇或搭配商品的顏色，皆為客服人員致電確認訂單內容後，才開始進行製作。
+                          p 10. 如若您因個人因素導致訂單內容錯，則需取消原定單並重新下單，但無法追溯活動優惠。
+                          p 11. 根據統一發票使用辦法之規定，二聯式發票一經開立，無法更改或改開為公三聯式發票。若為公司行號採購，請慎選發票開立類型。
+                          p 12. 因不可抗拒之天災因素，「有情門 LAB網路商城」保有更改出貨時間之權利。將會由客服專員與您聯繫，重新約定配日期並不負相關損失賠償責任
+                          p 13. 出貨前3日將會有專人與您聯繫，確認當天到達之時段。如因客戶私人因素，於原約定配送日若需改期，僅限更改一次，並且需於配合本公司之物流配送日，商品需40天內出貨完畢。若無法於40天內出貨完畢，將視為拒收商品，「有情門 LAB網路商城」有權利將訂單取消。
+                          p 14. 目前「有情門 LAB網路商城」提供信用卡刷卡、虛擬帳號付款之功能。如因退貨產生退款事宜，詳見退換貨說明。
+                          p 15. 為預防網路、電話詐騙行為，本公司並不會透過任何簡訊或不明來電告知消費者訂單交易失敗，提供重新匯款或線上刷卡資訊。 與交易相關的保護措施，如您有任何交易上的疑慮，請一律透過官方粉絲專頁或本公司客服電話04-25676039確認。
+                          p 16. 有情門Lab將依您提供資料與銀行照會及保留出貨權益，提醒您勿冒用他人個資進行交易，經查獲必移送法辦。
+                          p 17. 商品享有7天鑑賞期，若需退貨請於7日內申請，並請妥善保留商品包裝、發票以及商品。若包裝未完整，需支付售價之15%物流包裝費。請確認無須退貨再行丟棄包裝。
+                        // 一項
+                        div
+                          .title 三、運費及樓層費說明
+                          p 01. 運費：「有情門 LAB網路商城」可以從物流服務資費表中了解各地區之運費，在您最後結帳時，也會根據您的運送地區計算運費。
+                          p 02. 樓層費：送貨地點2樓(含)以下及可使用電梯之空間，不另收取樓層費。送貨地點3樓(含)以上無電梯之空間，每一層樓依商品類別各別收費。<br>300元：沙發類、床類<br>200元：桌類、櫃類、架類<br>100元：几類、椅類、凳類
+                        // 一項
+                        div
+                          .title 四、關於保固
+                          p 商品品質與材質，在一般室內正常使用，且無人為因素或其他外力、環境破壞下，可享有以下保固年限。
+                          p 沙發：沙發骨架6年保固
+                          p 單品家具：實木結構3年保固
+                          p 實木結構床組：實木結構及五金3年保固
+                          p 商品之墊裝：2年保固
+                          p 家飾品：保固內容以各項商品頁面說明為準。
+                        // 一項
+                        div
+                          .title 五、退換貨政策（詳見退換貨說明）
+                        // 一項
+                        div
+                          .title 六、網站使用者條款
+                          p 01. 您承諾遵守中華民國相關法規、其他所屬國家法規及一切使用網際網路之國際慣例。 您同意並保證不得利用本網站從事侵害他人權益或違法之行為。
+                          p 02. 您向本網站確認您已經達到使用本網站的合法年齡，並承擔您在使用本網站時產生的一切法律責任。您理解使用本網站時及他人使用您的登錄資訊使用本網站時所產生的交易責任。
+                          p 03. 「有情門 LAB網路商城」可能會提供連結至其他營運網站之超連結，此類超連結僅提供您參考使用。於此聲明此類網站非「有情門 LAB網路商城」所有，我們對其內容不承擔任何責任。
+                        // 一項
+                        div
+                          .title 七、智慧財產權說明
+                          p 本網站所使用之軟體或程式、網站上所有內容，包括但不限於圖片、文字、聲音、圖像、按鈕、商標、服務標章、商品名稱及 LOGO，均受智慧財產權的保護，任何人不得逕自使用、修改、重製、公開播送、改作、散布、發行、公開發表、進行還原工程等，如有侵害智慧財產權之情事，應負損害賠償責任，本網站並得逕行暫停或永久取消其註冊帳號。
+                        // 一項
+                        div
+                          .title 八、紛爭處理
+                          p 本條款之解釋與適用及相關糾紛之處理，應依中華民國法律，並以台灣台中地方法院為第一審管轄法院。
+                          
+                  .agree.hover-cir(data-hover="yellowSmall")
+                    .pick-wrap
+                      div
+                        .btn-cir
+                          span.icon-check
+                        p.fz-14 我已閱讀完畢且同意此會員條款
+                  .btn-wrap
+                    a.unit-link.reverse.hover-cir(href="javascript:;" data-hover="yellowBig")
+                      .text 
+                        p.en.fz-14 BACK
+                        p.ch.fz-14 取消返回
+                      div.icon.left
+                        i.icon-arrAngleLeft
+                    // 會員註冊網址放在 data-route
+                    a.unit-link.hover-cir(href="javascript:;" data-hover="yellowBig" data-route="./member_register.html" data-register)
+                      .text 
+                        p.en.fz-14 OK
+                        p.ch.fz-14 開始註冊
+                      div.icon.right
+                        i.icon-arrAngle
+                    //- .form-btn.hover-cir(data-hover="yellowBig")
+                    //-   span.icon-arrAngle
+                    //-   p BACK 取消返回
+                    //- .form-btn.hover-cir(data-hover="yellowBig")
+                    //-   p OK 開始註冊
+                    //-   span.icon-arrAngle
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

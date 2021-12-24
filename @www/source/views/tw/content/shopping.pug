@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/shopping.css")
+  body.shopping(data-page="shopping")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        main
+          .bgtext.fix
+            span Shopping List
+          .top.hover-cir(data-hover="blue")
+            a.cir-btn.mainGreen(href="javascript:;" onclick="history.go(-1)")
+              .cross
+          .content
+            .text 
+              span.en Today’s list
+              span.ch 本次購買清單
+            .item-wrap
+              // 項目敘述
+              .item-head
+                .img 購買項目
+                .item
+                .qty 數量
+                .price 價格
+              // 一項
+              .item-body
+                // 刪除按鈕
+                .btn-cir.del
+                  .cross
+                // 大圖 380X250 <div class="img"> + large
+                // 小圖 190X250 <div class="img"> + small
+                .img.large
+                  a.cursor.hover-cir(href="./product_detail.html" data-hover="border") 
+                    figure
+                      img(src="../../../uploads/product/detail-obj05-380X250.png", alt="")
+                // 項目明細
+                // 標準品
+                // 庫存不足提示 item-box + alert
+                .item-box.alert
+                  a.cursor.hover-cir(href="./product_detail.html" data-hover="border") 
+                    h2 乘風沙發 雙人座
+                    .color-wrap
+                      .color
+                        span.strong SPEC：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                          span.fz-14 綠紫色 + 自然木色
+                // 數量
+                .qty
+                  .btn-cir.btn-less
+                  input(type="text" value="0" inputmode="numeric")
+                  .btn-cir.btn-plus
+                // 價格
+                .price
+                  span.fz-14 VIP 售價
+                  .money
+                    span $40,800
+                  .origin
+                    span 原價
+                    span $50,800
+                // 加購商品
+                .extra-block
+                  .extra-name
+                    .img
+                    span ADDITIONAL 加價購
+                  // 標準品
+                  .thead
+                    .img
+                    .item 項目
+                    .qty 數量
+                    .price 價格
+                  // 標準品
+                  ul
+                    li
+                      .img
+                      .item-box
+                        .txt-name 雲起時沙發 腳几
+                        .txt-color
+                          .img-cir
+                            img(src="../../../uploads/product/color10-20X20.jpg", alt="")
+                          p 綠色 x 自然木色
+                      .qty
+                        .btn-cir.btn-less
+                        input(type="text" value="0" inputmode="numeric")
+                        .btn-cir.btn-plus
+                      .price.type + $ 1,999
+                      
+                  // 客製品
+                  .thead
+                    .img
+                    .item 客製化項目
+                    .qty 數量
+                    .price 款式
+                  // 客製品 ul + cus-give
+                  ul.cus-give
+                    // 有展開選項的要 + spread
+                    li.spread
+                      .img
+                      .item-box.alert
+                        .txt-name 雲起時沙發 客製品
+                        .txt-color
+                          p 雙人座
+                      // qty - 單獨裡面一個數字的 + qty-font
+                      .qty.qty-font
+                        span.fz-20 0
+                      .price.type
+                        p.hover-cir(data-hover="yellowSmall") 選擇款式
+                        .btn-cir.open.hover-cir(data-hover="yellowSmall")
+                          .icon-trangle-down
+                      .dropdown-item 
+                        .scrollbar-inner
+                          .mob-show
+                            p SELECT 挑選款式
+                            .btn-cir.open
+                              .icon-trangle-down
+                          ul 
+                            li
+                              .img
+                              .item.opt
+                                .img-cir
+                                  img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                p.after 布色：綠紫色
+                                .img-cir
+                                  img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                                p.after 布色：紅色
+                                .img-cir
+                                  img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                                p 木色：原木色
+                              .qty
+                                .btn-cir.btn-less
+                                input(type="text" value="0" inputmode="numeric")
+                                .btn-cir.btn-plus
+                              .price.type
+                                span 原價 NTD$ 1,999
+                              .mob-space
+                            li
+                              .img
+                              .item.opt
+                                .img-cir
+                                  img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                p.after 布色：綠紫色
+                                .img-cir
+                                  img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                                p.after 布色：紅色
+                                .img-cir
+                                  img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                                p 木色：原木色
+                              .qty
+                                .btn-cir.btn-less
+                                input(type="text" value="0" inputmode="numeric")
+                                .btn-cir.btn-plus
+                              .price.type
+                                span 原價 NTD$ 1,999
+                              .mob-space
+                        // 行動裝置 確定按鈕
+                        .mob-check
+                          div 
+                            span.fz-14 確定挑選
+                            .cir-btn.mainGreen
+                              .icon-check
+                
+                // 贈品
+                .extra-block
+                  .extra-name 
+                    .img 
+                    span GIVEAWAY 贈品
+                  // 標準品
+                  .thead
+                    .img
+                    .item 項目
+                    .qty 數量
+                    .price 價格
+                  // 標準品
+                  ul
+                    li
+                      .img
+                      .item-box
+                        .txt-name 明月香氛盤
+                        .txt-color
+                          .img-cir
+                            img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                          p 自然木色
+                      .qty
+                        .btn-cir.btn-less
+                        input(type="text" value="0" inputmode="numeric")
+                        .btn-cir.btn-plus
+                      .price.type 原價 $ 200
+                  // 客製品
+                  .thead
+                    .img
+                    .item 客製化項目
+                    .qty.qty-2
+                      .qty-text 可選數量
+                      .qty-line.white
+                      .qty-num 已選數量
+                    .price 款式
+                  // 客製品 + cus-give
+                  ul.cus-give
+                    // 有展開選項的要 + spread
+                    li.spread
+                      .img
+                      .item-box
+                        .txt-name 雙色抱枕 客製品
+                        .txt-color
+                          p F
+                      .qty.qty-2
+                        .qty-text 1
+                        .qty-line
+                        // 已選狀態 + active
+                        .qty-num.active 1
+                      .price.type
+                        p.hover-cir(data-hover="yellowSmall") 選擇款式
+                        .btn-cir.open.hover-cir(data-hover="yellowSmall")
+                          .icon-trangle-down
+                      .dropdown-item 
+                        .scrollbar-inner
+                          .mob-show
+                            p SELECT 挑選款式
+                            .btn-cir.open
+                              .icon-trangle-down
+                          ul 
+                            li
+                              .img
+                              .item.opt
+                                .img-cir
+                                  img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                p.after 布色：綠紫色綠紫色綠紫色
+                                .img-cir
+                                  img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                                p.after 布色：紅色綠紫色綠紫色
+                                .img-cir
+                                  img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                                p 木色：原木色
+                              .qty
+                                .btn-cir.btn-less
+                                input(type="text" value="0" inputmode="numeric")
+                                .btn-cir.btn-plus
+                              .price.type
+                                span 原價 NTD$ 1,999
+                              .mob-space
+                        // 行動裝置 確定按鈕
+                        .mob-check
+                          div 
+                            span.fz-14 確定挑選
+                            .cir-btn.mainGreen
+                              .icon-check
+                    // 有展開選項的要 + spread
+                    li.spread
+                      .img
+                      .item-box
+                        .txt-name 明月香氛盤 客製品
+                        .txt-color
+                          p S
+                      .qty.qty-2
+                        .qty-text 2
+                        .qty-line
+                        // 已選狀態 + active
+                        .qty-num 0
+                      .price.type
+                        p.hover-cir(data-hover="yellowSmall") 選擇款式
+                        .btn-cir.open.hover-cir(data-hover="yellowSmall")
+                          .icon-trangle-down
+                      .dropdown-item 
+                        .scrollbar-inner
+                          .mob-show
+                            p SELECT 挑選款式
+                            .btn-cir.open
+                              .icon-trangle-down
+                          ul 
+                            li
+                              .img
+                              .item.opt
+                                .img-cir
+                                  img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                p 布色：綠紫色 x 
+                                .img-cir
+                                  img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                                p 布色：紅色 x
+                                .img-cir
+                                  img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                                p 木色：原木色
+                              .qty
+                                .btn-cir.btn-less
+                                input(type="text" value="0" inputmode="numeric")
+                                .btn-cir.btn-plus
+                              .price.type
+                                span 原價 NTD$ 1,999
+                              .mob-space
+                            li
+                              .img
+                              .item.opt
+                                .img-cir
+                                  img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                p 布色：綠紫色 x 
+                                .img-cir
+                                  img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                                p 布色：紅色 x
+                                .img-cir
+                                  img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                                p 木色：原木色
+                              .qty
+                                .btn-cir.btn-less
+                                input(type="text" value="0" inputmode="numeric")
+                                .btn-cir.btn-plus
+                              .price.type
+                                span 原價 NTD$ 1,999
+                              .mob-space
+                        // 行動裝置 確定按鈕
+                        .mob-check
+                          div 
+                            span.fz-14 確定挑選
+                            .cir-btn.mainGreen
+                              .icon-check
+                // 商品活動
+                .pro-event.sale.mb
+                  .left 
+                    .icon 
+                      .icon-speaker
+                    span SALE
+                  ul.hover-cir(data-hover="blue")
+                    li
+                      a(href="javascript:;" ) 十一月快閃活動，系列商品八折起，前往查看活動商品頁！
+              
+              // 一項
+              // 一般原價
+              // 客製品
+              .item-body
+                .btn-cir.del
+                  .cross
+                .img.large
+                  a.cursor.hover-cir(href="./product_detail.html" data-hover="border")
+                    figure
+                      img(src="../../../uploads/product/detail-obj05-380X250.png", alt="")
+                // 項目明細
+                .item
+                  a.cursor.hover-cir(href="./product_detail.html" data-hover="border")
+                    h2 乘風沙發 客製品
+                    .normal
+                      span.fz-14.strong SPEC：
+                      span.fz-14 大 W52xD30xH52 (cm)
+                    .color-wrap
+                      .color
+                        span.strong 布色1(主色)
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color06-20X20.jpg", alt="")
+                          span.fz-14 紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色
+                      .color
+                        span.strong 布色2(輔色)
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color04-20X20.jpg", alt="")
+                          span.fz-14 綠色紫色紫色紫色紫色紫色紫色
+                    .color-wrap
+                      .color
+                        span.strong WOOD：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color08-24X24.jpg", alt="")
+                          span.fz-14 鯨木色
+                // 數量
+                .qty
+                  .btn-cir.btn-less
+                  input(type="text" value="0" inputmode="numeric")
+                  .btn-cir.btn-plus
+                // 價格
+                .price
+                  span.fz-14 PRICE 原價
+                  .money
+                    span $20,800
+              // 一項
+              // 一般原價
+              // 標準品
+              .item-body
+                .btn-cir.del
+                  .cross
+                .img.large
+                  a.cursor.hover-cir(href="./product_detail.html" data-hover="border")
+                    figure
+                      img(src="../../../uploads/product/detail-obj05-380X250.png", alt="")
+                // 項目明細
+                .item
+                  a.cursor.hover-cir(href="./product_detail.html" data-hover="border")
+                    h2 乘風沙發 雙人座
+                    .color-wrap
+                      .color
+                        span.strong SPEC：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                          span.fz-14 綠紫色 + 自然木色
+                // 數量
+                .qty
+                  .btn-cir.btn-less
+                  input(type="text" value="0" inputmode="numeric")
+                  .btn-cir.btn-plus
+                // 價格
+                .price
+                  span.fz-14 PRICE 原價
+                  .money
+                    span $20,800
+              // 一項
+              // 組合優惠
+              .item-packpage
+                // 刪除組合按鈕
+                .btn-cir.del
+                  .cross
+                .top 
+                  .tit
+                    span.en EVENT PACKAGE：
+                    // 組合敘述可自訂
+                    span.ch 書臥 life 生活任選三件享八折
+                  a.hover-cir(href="./product_sale.html" data-hover="")
+                    .icon 
+                      .icon-refresh
+                    span EDIT 重新編輯
+                .item-body
+                  .img.large
+                    a.cursor.hover-cir(href="./product_detail.html" data-hover="border")
+                      figure
+                        img(src="../../../uploads/product/sofa05-380X250.png", alt="")
+                  // 項目明細
+                  .item
+                    a.cursor.hover-cir(href="./product_detail.html" data-hover="border")
+                      h2 恰恰好沙發
+                      .normal
+                        span.fz-14.strong SPEC：
+                        span.fz-14 雙人座 SH42.5 / W155.5xD88.5xH100
+                      .color-wrap
+                        .color
+                          span.strong COLOR：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color03-120X120.jpg", alt="")
+                            span.fz-14 紫色
+                        .color
+                          span.strong COLOR：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color05-120X120.jpg", alt="")
+                            span.fz-14 綠色
+                      .color-wrap
+                        .color
+                          span.strong WOOD：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color10-120X120.jpg", alt="")
+                            span.fz-14 鯨木色
+                  // 數量
+                  .qty
+                    .btn-cir.btn-less
+                    input(type="text" value="0" inputmode="numeric")
+                    .btn-cir.btn-plus
+                  // 價格
+                  .price
+                    span.fz-14 DISCOUNT 優惠價
+                    .money
+                      span.red $40,800
+                    .origin.line-through
+                      span 原價  
+                      span $50,800
+                .item-body
+                  .img.small
+                    a.cursor.hover-cir(href="./product_detail.html" data-hover="border")
+                      figure
+                        img(src="../../../uploads/product/cart02-190X250.png", alt="")
+                  // 項目明細
+                  .item
+                    a.cursor.hover-cir(href="./product_detail.html" data-hover="border")
+                      h2 加菲收納筒 - 木蓋
+                      .normal
+                        span.fz-14.strong SPEC：
+                        span.fz-14 F W46×D40×H42(cm)
+                      .color-wrap
+                        .color
+                          span.strong COLOR：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color03-120X120.jpg", alt="")
+                            span.fz-14 紫色
+                  // 數量
+                  .qty
+                    .btn-cir.btn-less
+                    input(type="text" value="0" inputmode="numeric")
+                    .btn-cir.btn-plus
+                  // 價格
+                  .price
+                    span.fz-14 DISCOUNT 優惠價
+                    .money
+                      span.red $3,000
+                    .origin.line-through
+                      span 原價  
+                      span $4,500
+                .item-body
+                  .img.small
+                    a.cursor.hover-cir(href="./product_detail.html" data-hover="border")
+                      figure
+                        img(src="../../../uploads/product/cart01-190X250.png", alt="")
+                  // 項目明細
+                  .item
+                    a.cursor.hover-cir(href="./product_detail.html" data-hover="border")
+                      h2 奇畦餐椅
+                      .normal
+                        span.fz-14.strong SPEC：
+                        span.fz-14 SH 43.5 / W51xD67xH73(cm)
+                      .color-wrap
+                        .color
+                          span.strong COLOR：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                            span.fz-14 紅色
+                      .color-wrap
+                        .color
+                          span.strong WOOD：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color10-120X120.jpg", alt="")
+                            span.fz-14 鯨木色
+                  // 數量
+                  .qty
+                    .btn-cir.btn-less
+                    input(type="text" value="0" inputmode="numeric")
+                    .btn-cir.btn-plus
+                  // 價格
+                  .price
+                    span.fz-14 DISCOUNT 優惠價
+                    .money
+                      span.red $3,180
+                    .origin.line-through
+                      span 原價  
+                      span $4,800
+              
+              // 新增結帳優惠
+              // 商品活動
+              .pro-event.event
+                .left 
+                  .icon 
+                    .icon-money2
+                  span EVENT
+                ul
+                  li.hover-cir(data-hover="blue") 
+                    a(href="javascript:;" ) 年末優惠，消費滿 2,000 打八折享優惠贈品與加價購
+                  li.hover-cir(data-hover="blue") 
+                    a(href="javascript:;" ) 十一月快閃活動，系列商品八折起，前往查看活動商品頁！
+              // 訂單金額
+              .total-price
+                // 原價
+                .origin
+                  div 
+                    span NTD$
+                    span 135,698
+                  p PRICE  訂單原價
+                // 省下金額
+                .saved.text-center 
+                  div
+                    span NTD$
+                    span.red -27,120
+                  p DISCOUNT  本次省下金額
+                // 總金額
+                .total.text-right 
+                  div
+                    span NTD$
+                    span 109,578
+                  p TOTAL  訂單小計
+
+          // 按鈕
+          .btn-wrap
+            a.btn-cir.hover-cir(href="./product.html" data-hover="blue")
+              .cross-plus
+              span 繼續逛逛
+            // 提示登入會員燈箱
+            // _common.openAjax('./ajax_login.html','.libox-container', '_ajaxCallback.normalLightbox')
+            a.btn-cir.hover-cir(href="./shopping_check.html" data-hover="blue")
+              span.icon-money 
+              span 前往結帳
+
+          .bottom
+            // go top
+            .cir-btn.black.goTop.hover-cir(data-hover="blue")(
+              data-anchor-speed="1200"
+              data-anchor)
+              .icon-trangle-up
+  
+        // delete 燈箱
+        // _common.openliboxInner("delete")
+        .libox-inner(data-name="delete")
+          .libox-common
+            .cir-wrap.login
+              .cir-bg 
+                .bg-text OOPS
+                h5 Delete Product
+                h6 請問確定要移除此商品嗎？
+                .wrap
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p CANCEL 取消
+                  .btn-close.hover-cir(data-hover="yellowSmall")
+                    p DELETE 刪除
+        // 加購與贈品重置燈箱
+        // _common.openliboxInner("reset")
+        .libox-inner(data-name="reset")
+          .libox-common
+            .cir-wrap.login
+              .cir-bg 
+                .bg-text OOPS
+                h5 Notice!
+                h6 加購與贈品樣式即將重置
+                p 由於商品購買數量減少，將影響加購與贈品可選數量，
+                  |<br>原先選取的樣式將直接清空，需重新填寫。
+                  |<br>請問確定繼續嗎？
+                .wrap
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p BACK  返回
+                  .btn-close.hover-cir(data-hover="yellowSmall")
+                    p OK 確認
+
+  //引入的script
+  include ../layouts/_script.pug

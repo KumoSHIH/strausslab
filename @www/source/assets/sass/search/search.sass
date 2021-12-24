@@ -1,0 +1,547 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.search-result
+  transition: background-color .5s ease-in-out
+  main 
+    padding-bottom: 60px
+    // background-color: #fff
+    >a.cir-btn
+      margin-right: 30px
+  &.search_news
+    main
+      background-color: #fff
+  &.search_product
+    .main-wrapper
+      transition: background-color .5s ease-in-out
+  .cir-btn
+    display: flex
+    align-items: center
+    justify-content: center
+    &.back-search
+      margin-top: 40px
+      margin-left: auto 
+      margin-right: auto
+      width: 65px
+      height: 65px
+      color: #fff
+      transition: background-color .5s ease-in-out
+      &:hover
+        background-color: #000
+      &[data-aost]
+        +opacity
+        // transition-delay: 1s
+      &.show
+        +opacity1
+  a.cir-btn
+    margin-left: auto
+    margin-top: 30px
+  .cir-btn.goTop
+    margin: 0 auto
+    transition: background-color .5s ease-in-out
+    &:hover
+      background-color: $main
+    &[data-aost]
+      +opacity
+    &.show
+      +opacity1
+    +rwdmax(767)
+      margin-top: 140px
+  .top
+    position: relative
+    padding-top: 80px
+    .bgText
+      position: absolute
+      top: 100px
+      left: 50%
+      transform: translateX(-50%)
+      p
+        color: rgba(0,0,0,0.1)
+        +fontSet2(px(149),$basic)
+        &[data-aost]
+          +yWaypoint(20)
+        &.show
+          +zWaypoint
+    .detail
+      text-align: center
+      .num 
+        position: relative
+        padding-bottom: 109px
+        &[data-aost]
+          +yWaypoint(20)
+          transition-delay: .3s
+        &.show
+          +zWaypoint
+        span
+          display: block
+          position: absolute
+          top: 0
+          left: 50%
+          transform: translateX(-50%)
+          +fontSet2(px(109),$basic)
+        span:first-child
+          z-index: 1
+          color: transparent
+          background-clip: text
+          -webkit-background-clip: text
+          background-image: url(../../../dist/assets/img/search-bg.jpg)
+          animation: numAni 20s infinite
+          +ieHack
+            background-image: none
+            background-clip: unset 
+            animation: unset
+            color: #000
+        span:last-child
+          color: #fff
+          +ieHack
+            display: none
+      p 
+        padding-bottom: 20px
+        +fontSet2(px(35),$basic)
+        &[data-aost]
+          +yWaypoint(20)
+          transition-delay: .5s
+        &.show
+          +zWaypoint
+        span 
+          padding-left: 15px
+          font-weight: bold
+          letter-spacing: 0.95px
+          +fontSet2(px(19),$basic)
+    .keyword
+      max-width: 560px
+      width: 100%
+      margin: 0 auto
+      display: flex
+      justify-content: center
+      padding-bottom: 20px
+      &[data-aost]
+        +yWaypoint(20)
+        transition-delay: .7s
+      &.show
+        +zWaypoint
+      span
+        padding-bottom: 15px
+        position: relative
+        border-bottom: solid 4px
+        font-weight: bold
+        line-height: 1.5
+        letter-spacing: 0.9px
+        +fontSet2(px(18),$basicbold)
+        &::before
+          content: 'KEYWORD'
+          padding-right: 10px
+          letter-spacing: 0.46px
+          +fontSet2(px(14),$basicbold)
+        +mozhack 
+          font-weight: normal
+    +rwdmax(900)
+      .bgText
+        top: 120px
+        p
+          font-size: px(120)
+      .keyword
+        span
+          padding-bottom: 10px
+          font-size: px(14)
+    +rwdmax(767)
+      padding-top: 50px
+      .bgText
+        top: 80px
+        p 
+          font-size: px(96)
+      .keyword
+        width: 90%
+      .detail
+        .num 
+          span 
+            font-size: px(80)
+  .search-filter
+    max-width: 1100px
+    width: 90%
+    margin: 0 auto
+    padding-top: 12px
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    +rwdmax(1400)
+      width: 80%
+    +rwdmax(900)
+      width: 85%
+    +rwdmax(767)
+      width: 100%
+      padding: 0 6px
+    .w33,.w100
+      background-color: #e9e9e9
+    .w33
+      width: calc((100% - 8px) / 3)
+      padding: 25px 30px
+      text-align: center
+      margin-right: 4px
+      span.ch 
+        font-weight: bold
+        font-size: px(15)
+      p:last-child
+        padding-top: 10px
+        letter-spacing: 0.46px
+        font-weight: bold
+        +fontSet2(px(14),$basicbold)
+      +rwdmax(900)
+        padding-top: 20px
+        padding-bottom: 20px
+      +rwdmax(767)
+        width: 100%
+        margin-right: 0
+        margin-bottom: 4px
+      &[data-aost]
+        +yWaypoint(-20)
+      &.show
+        +zWaypoint
+    .w33:nth-child(1)
+      &[data-aost]
+        +rwdmin(768)
+          transition-delay: .7s
+    .w33:nth-child(2)
+      &[data-aost]
+        +rwdmin(768)
+          transition-delay: .9s
+    .w33:nth-child(3)
+      margin-right: 0
+      &[data-aost]
+        +rwdmin(768)
+          transition-delay: 1.1s
+      +rwdmax(767)
+        margin-bottom: 0
+    .w100 
+      margin-top: 4px
+      display: flex
+      justify-content: center
+      padding: 20px
+      &[data-aost]
+        +yWaypoint(20)
+        transition-delay: .9s
+      &.show
+        +zWaypoint
+      .tag
+        margin: 0 10px 10px
+        padding: 8px 22px
+        display: inline-block
+        color: #fff
+        background-color: #202020
+        border-radius: 25px
+        letter-spacing: 0.46px
+      .tag:last-child
+        margin-right: 0
+      +rwdmax(767)
+        padding: 20px 10px
+        flex-wrap: wrap
+  // 搜尋沒有結果
+  .no-result
+    min-height: 200px
+    p 
+      padding-top: 15px
+      text-align: center
+      letter-spacing: 0.53px
+      font-family: $basicbold
+    &[data-aost]
+      +yWaypoint(20)
+    &.show
+      +zWaypoint
+    +rwdmax(1200)
+      min-height: 120px
+
+// 產品
+.search_product
+  .result
+    max-width: 1260px
+    width: 100%
+    margin: 45px auto 0
+    +rwdmax(1500)
+      width: 80%
+    ul 
+      display: flex
+      flex-wrap: wrap
+    li 
+      width: 33.3%
+      padding: 0 20px 90px
+      transition: .5s ease-in-out
+      &[data-aost]
+        +yWaypoint(50)
+      &.show
+        +zWaypoint
+      +rwdmax(900)
+        width: 50%
+      +rwdmax(767)
+        width: 100%
+        padding-bottom: 20px
+    a 
+      // display: block
+      display: flex
+      flex-direction: column
+      width: 100%
+      margin: 0 auto
+      // &.large
+      //   // max-width: 380px
+      // &.small
+      //   // max-width: 190px
+      //   img 
+      //     width: auto
+      &.large
+        width: 380px
+        .img
+          padding-bottom: 65.78%
+        +rwdmax(1366)
+          width: 350px
+          .img
+            padding-bottom: 71.42%
+        +rwdmax(900)
+          width: 300px
+          .img
+            padding-bottom: 83.3%
+            // padding-bottom: 65.78%
+        +rwdmax(767)
+          width: 150px
+          .img
+            padding-bottom: 73.33%
+      &.small
+        width: 190px
+        .img
+          padding-bottom: 131.57%
+        +rwdmax(1366)
+          width: 150px
+          .img
+            padding-bottom: 166.66%
+        +rwdmax(900)
+          width: 190px
+          .img
+            padding-bottom: 131.57%
+        +rwdmax(767)
+          width: 150px
+          .img 
+            width: 82px
+            margin: 0 auto
+            // padding-bottom: 134.14%
+            padding-bottom: 73.33%
+          .tag
+            &.left,
+            &.right
+              left: -30px
+    .img
+      order: 1
+      position: relative
+      transition: transform .5s ease-in-out
+      img 
+        // width: auto 
+        +posCenter
+        margin: 0 auto
+      +rwdmax(1100)
+        // height: 250px
+        display: flex
+        align-items: center
+      +rwdmax(767)
+        // height: 200px
+    .tag
+      position: absolute
+      top: 20px
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 60px
+      height: 60px
+      border-radius: 100%
+      color: #fff
+      +fontSet2(px(12),$basicbold)
+      &.left
+        left: 10px
+        +rwdmax(900)
+          left: 0
+      &.right
+        right: 10px
+        +rwdmax(900)
+          right: 0
+      &.cus
+        top: 85px
+        // background-color: #202020
+        .bg
+          position: absolute
+          right: 0
+          top: 0
+          width: 60px
+          height: 60px
+          border-radius: 100%
+          background-image: url(../../../dist/uploads/product/cus-bg-s.jpg)
+          background-repeat: no-repeat
+          background-size: cover
+          animation: rotate 6s linear infinite
+        span 
+          z-index: 1
+      &.cus-left 
+        left: 0
+        top: 20px
+    // 選色點點
+    .dot 
+      width: 60%
+      margin: 0 auto
+      padding-top: 20px
+      order: 3
+      &-wrap
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+      &-block
+        margin: 0 5px 5px
+        width: 21px
+        height: 21px
+        border: solid 2px rgba(0,0,0,0.1) 
+        border-radius: 50%
+        overflow: hidden
+        cursor: pointer
+        &.active
+          border-color: #000
+      +rwdmax(1200)
+        width: 80%
+      +rwdmax(767)
+        width: 100%
+    .text-detail
+      order: 2
+      text-align: center
+  .cir-btn.goTop
+    +rwdmax(1200)
+      margin-top: 70px
+
+// 新聞
+.search_news
+  .result
+    max-width: 1380px
+    width: 100%
+    margin: 15px auto 100px
+    +rwdmax(1600)
+      max-width: 1240px
+    +rwdmax(1400)
+      max-width: 1200px
+    +rwdmax(1200)
+      max-width: 750px
+      margin-bottom: 60px
+    +rwdmax(900)
+      max-width: 600px
+    +rwdmax(767)
+      max-width: none
+      width: 80%
+      margin-top: 35px
+      margin-bottom: 140px
+      margin-left: calc((100% - 333px) / 2)
+    ul 
+      display: flex
+      flex-wrap: wrap
+      justify-content: start
+      +rwdmax(1200)
+        justify-content: space-between
+      +rwdmax(767)
+        justify-content: center
+    li 
+      max-width: 340px
+      width: 100%
+      transition: .5s ease-in-out
+      margin-right: 160px
+      margin-bottom: 80px
+      &[data-aost]
+        +yWaypoint(50)
+      &.show
+        +zWaypoint
+      +rwdmax(1600)
+        max-width: 300px
+      +rwdmax(1400)
+        margin-right: 140px
+      +rwdmax(1200)
+        margin-right: 0
+      +rwdmax(900)
+        margin-right: 0
+        max-width: 250px
+      +rwdmax(767)
+        max-width: 290px
+        margin-right: 0
+        margin-bottom: 40px
+      +rwdmax(360)
+        max-width: 220px
+    li:nth-child(3n-2)
+      .block
+        .date
+          bottom: 15px
+    li:nth-child(3n-1)
+      .block
+        transform: translateY(100px)
+        .date
+          top: 15px
+      &[data-aost]
+        transition-delay: .5s
+      +rwdmax(1200)
+        .block
+          transform: translateY(0)
+        &[data-aost]
+          transition-delay: 0s
+    li:nth-child(3n)
+      margin-right: 0
+      .block
+        .date
+          bottom: 15px
+      &[data-aost]
+        transition-delay: .6s
+      +rwdmax(1200)
+        // margin-right: 160px
+        margin-right: 0
+        &[data-aost]
+          transition-delay: 0s
+      +rwdmax(900)
+        margin-right: 0
+      +rwdmax(767)
+        margin-right: 0
+    li:nth-child(even)
+      +rwdmax(1200)
+        margin-right: 0
+        .block
+          transform: translateY(100px) 
+        &[data-aost]
+          transition-delay: .5s
+      +rwdmax(767)
+        .block
+          transform: translateY(0)
+        &[data-aost]
+          transition-delay: 0s
+    li:last-child
+      +rwdmax(767)
+        margin-bottom: 0
+    .block
+      display: flex
+      flex-wrap: wrap
+      .top-wrap
+        position: relative
+        width: 362px
+        +rwdmax(1600)
+          width: 300px
+      .parallax-container
+        padding-bottom: 135.29%
+      .date
+        position: absolute
+        right: -42px
+        p 
+          display: inline-block
+          padding-left: 5px
+          border-left: solid 3px
+          writing-mode: vertical-rl
+          +fontSet2(px(16),$basicbold)
+      h2 
+        width: 100%
+        margin: 20px
+        font-weight: bold
+        letter-spacing: 0.95px
+        line-height: px(29)
+        +fontSet2(px(19),$basic)
+        +ellipsis(2,29px)
+      +rwdmax(767)
+        .date
+          right: -40px
+        h2 
+          margin: 20px 15px

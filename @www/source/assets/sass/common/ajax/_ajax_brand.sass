@@ -1,0 +1,215 @@
+.brand
+  cursor: default !important
+  max-width: pxTovw(850)
+  width: 100%
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  margin-left: auto
+  background-color: #202020
+  transform: translateX(100%)
+  transition: .6s ease-in-out
+  .scrollbar-macosx
+    > .scroll-element.scroll-y .scroll-bar
+      width: 4px
+      background-color: $main
+  &.in 
+    transform: translateX(0)
+    .sec-title
+      .en,.ch,p 
+        +zWaypoint
+    &.brand-overview
+      ul li
+        opacity: 1
+        transform: rotate(0)
+    &.brand-detail
+      .share,
+      .brand-logo,
+      .brand-content,
+      .brand-button
+        +zWaypoint
+  +rwdmax(1800)
+    max-width: none
+    width: 50%
+  +rwdmax(1550)
+    width: 55%
+  +rwdmax(1200)
+    width: 65%
+  +rwdmax(850)
+    width: 100%
+  .modal-dialog
+    position: relative
+  .cir-btn
+    cursor: pointer !important
+    &.close
+      background-color: $main
+      position: absolute
+      right: 30px
+      top: 30px
+    &.goTop
+      position: absolute
+      left: 50%
+      bottom: 60px
+      transform: translateX(-50%)
+      background-color: #000
+      transition: .5s ease-in-out
+      &:hover 
+        background-color: $main
+      +rwdmax(767)
+        position: static
+        transform: translateX(0)
+        margin: 0 auto 60px
+  .sec-title
+    .en,.ch,p
+      +yWaypoint(20)
+      transition: .8s .5s ease-in-out
+  .brand-overview
+    .modal-content
+      li 
+        
+  .share,.brand-logo 
+    +yWaypoint(20)
+    transition: .8s .5s ease-in-out
+  .brand-content,
+  .brand-button 
+    opacity: 0
+    transition: .8s .8s ease-in-out
+
+  &-overview
+    .modal-content
+      padding: 90px
+      +rwdmax(1300)
+        padding: 90px 70px
+      +rwdmax(850)
+        padding: 90px
+      +rwdmax(767)
+        padding: 100px 20px 65px
+      ul 
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        padding-bottom: 60px
+      li 
+        width: 33.33%
+        padding: 0 20px
+        cursor: pointer !important
+        opacity: 0
+        // transform: rotateY(180deg)
+        transition: .5s ease-in-out
+        // animation: leftTopIn .5s .3s ease-in-out forwards
+        .img 
+          height: 200px
+          display: flex
+          align-items: center
+          justify-content: center
+        img 
+          width: auto
+          height: auto
+          max-width: 100%
+        &:hover 
+          box-shadow: 7.4px 9.5px 25.8px 3.2px rgba(0, 0, 0, 0.31)
+        +rwdmax(767)
+          width: 46%
+          .img 
+            height: 165px
+  &-detail
+    cursor: default !important
+    max-width: pxTovw(850)
+    width: 100%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    margin-left: auto
+    background-color: #202020
+    color: #fff
+    +rwdmax(1800)
+      max-width: none
+      width: 50%
+    +rwdmax(1550)
+      width: 55%
+    +rwdmax(1200)
+      width: 65%
+    +rwdmax(850)
+      width: 100%
+    .modal-content
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-end
+      padding: 110px 90px
+      +rwdmax(1200)
+        padding: 110px 70px
+      +rwdmax(850)
+        padding: 90px
+      +rwdmax(767)
+        padding: 100px 20px 20px
+    .share
+      position: static
+      margin-left: auto
+      >span 
+        padding-right: 15px
+      a 
+        opacity: .4
+        span 
+          font-size: px(20)
+      li:hover 
+        a 
+          opacity: 1
+      +rwdmax(767)
+        margin-left: 0
+        a 
+          opacity: 1
+    .sec-title
+      padding-bottom: 10px
+    .unit-link 
+      .text
+        .ch:after
+          background-color: #fff
+      &:hover 
+        .icon
+          color: $main
+      &.brand-all
+        text-align: right
+  &-logo,
+  &-content,
+  &-button
+    width: 100%
+  &-logo
+    padding: 60px 0
+    .logo 
+      max-width: 115px
+      width: 100%
+      margin: 0 auto
+  &-content
+    display: flex
+    p 
+      line-height: px(25)
+      letter-spacing: 0.7px
+      +fontSet2(px(14),$basic)
+    .left
+      padding-right: 50px
+      flex-shrink: 0
+      +rwdmax(1200)
+        padding-right: 30px
+      p
+        color: $main
+    .right
+      p 
+        padding-bottom: 25px
+      .img
+        // padding: 20px 0
+        padding-bottom: 20px
+    +rwdmax(767)
+      flex-direction: column 
+      align-items: center
+      .left
+        padding: 0
+        display: flex
+        align-self: flex-start
+        .en 
+          padding-right: 3px
+      .right
+        p 
+          padding-bottom: 20px
+  &-button
+    display: flex
+    justify-content: space-between
+    padding-top: 60px
+    padding-bottom: 80px

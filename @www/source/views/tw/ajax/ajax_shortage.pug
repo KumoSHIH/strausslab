@@ -1,0 +1,81 @@
+// AJAX 庫存不足燈箱
+// _common.openAjax('./ajax_shortage.html','.libox-container','_ajaxCallback.shortageLibox');
+
+// 庫存不足的項目
+// <class="item-box"> + alert
+// 之後callback: _shopping.shortageCallback();
+
+
+// 移除 庫存燈箱 & 庫存不足狀態
+// _shopping.shortageRemove();
+
+.libox-common
+  .cir-wrap.large.shortage
+    .cir-btn.mainGreen.hover-cir.ajax_close.shortage(data-hover="blue")
+      .cross
+    .cir-bg
+      h5 Notice
+      h6 選購商品庫存不足
+      p 以下商品或贈品庫存不足，請調整選購數量
+      .stoke-wrap
+        .scrollbar-inner
+          ul 
+            li 
+              .tit
+                .tit-wrap
+                  span.name 雲起時沙發
+                  span.norm 三人座
+                span 數量不足：1
+              div
+                .img-cir
+                  img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                p.after 布色：綠紫色
+                .img-cir
+                  img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                p.after 布色：紅色
+                .img-cir
+                  img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                p 木色：原木色
+            li 
+              .tit
+                .tit-wrap
+                  span.name 茶几
+                  span.norm M
+                span 數量不足：2
+              div
+                .img-cir
+                  img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                p 藍色 x 原木色
+            li 
+              .tit 
+                .tit-wrap
+                  span.name 甜甜餐椅
+                  span.norm 椅套
+                span 數量不足：1
+              div
+                .img-cir
+                  img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                p 紫色
+            li 
+              .tit
+                .tit-wrap
+                  span.name 甜甜餐椅
+                  span.norm 椅套
+                span 數量不足：3
+              div
+                .img-cir
+                  img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                p 綠色
+            li 
+              .tit
+                .tit-wrap
+                  span.name 甜甜餐椅
+                  span.norm 椅套
+                span 數量不足：1
+              div
+                .img-cir
+                  img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                p 紅色
+
+      .btn-close.ajax_close.hover-cir.shortage(data-hover="yellowSmall")
+        p OK 確認

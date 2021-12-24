@@ -1,0 +1,368 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.about
+  background-color: #fff
+  .nav,.footer
+    background-color: #fff
+  main
+    padding-top: 275px
+    padding-bottom: 290px
+    background-color: #fff
+    section
+      display: block
+    +rwdmax(1200)
+      padding-top: 180px
+    +rwdmax(900)
+      padding-top: 150px
+    +rwdmax(767)
+      padding-top: 130px
+      padding-bottom: 140px
+  .top-title
+    &[data-aost]
+      clip-path: inset(0 100% 0 0)
+    &.show
+      animation: imgIn 1s linear forwards
+  .unit-title
+    max-width: none
+    justify-content: center
+    .left
+      text-align: center
+      .en,.ch
+        color: $main
+    +rwdmax(767)
+      .left
+        width: 90%
+        padding-bottom: 205px
+        position: relative
+        .en,.ch
+          position: absolute
+          left: 50%
+          transform: translateX(-50%)
+        .en
+          top: 0
+        .ch
+          bottom: 0
+  
+  .section1
+    position: relative
+    z-index: 2
+    padding-top: 50px
+    pointer-events: none
+    .wrap
+      max-width: 1280px
+      width: 100%
+      margin: 0 auto
+      display: flex
+      // border: solid 1px
+    .left
+      width: 58.35%
+      display: flex
+      .img 
+        max-width: 350px
+        width: 100% 
+      .img1,
+      .img2
+        transition: .7s .3s ease-in-out
+      .img1
+        margin-right: 45px
+        margin-top: 52px
+        &[data-aost]
+          transform: translateY(50px) skew(5deg, 3deg)
+          opacity: 0
+        &.show
+          transform: translateZ(0)
+          opacity: 1
+      .img2
+        &[data-aost]
+          transform: translateY(-50px) skew(5deg, 3deg)
+          opacity: 0
+        &.show
+          transform: translateZ(0)
+          opacity: 1
+    .right
+      position: relative
+      flex-grow: 1
+      margin-top: 50px
+      margin-left: 45px
+      padding-bottom: 11.3%
+      .text
+        .fz-20
+          letter-spacing: 0.64px
+          line-height: px(30)
+        .fz-14
+          letter-spacing: 0.46px
+          line-height: px(25)
+          span 
+            padding-left: 3px
+            letter-spacing: 0.79px
+            line-height: px(40)
+            font-size: px(24)
+        p
+          padding: 10px 0
+        &[data-aost]
+          p
+            +xWaypoint(50)
+            @for $i from 0 through 5
+              &:nth-child(#{$i})
+                transition-delay: $i*0.1s
+        &.show
+          p
+            +zWaypoint
+
+      .img 
+        max-width: 200px
+        width: 100%
+        position: absolute
+        right: 0
+        bottom: 0
+        &[data-aost]
+          +yWaypoint(50)
+          transition-delay: .3s
+        &.show
+          +zWaypoint
+    +rwdmax(1500)
+      .wrap
+        width: 80%
+      .right
+        .img 
+          right: -15%
+    +rwdmax(1300)
+      .wrap
+        width: 90%
+      .right
+        .img 
+          right: -10%
+    +rwdmax(1200)
+      .left
+        .img1
+          margin-right: 30px
+          margin-top: 25px
+      .right
+        margin-left: 30px
+        margin-top: 0
+        .img
+          max-width: 145px
+    +rwdmax(1100)
+      .right
+        padding-bottom: 16%
+    +rwdmax(900)
+      .left
+        .img1
+          margin-right: 15px
+      .right
+        padding-bottom: 24%
+        .text
+          p:first-child
+            padding-top: 0
+    +rwdmax(767)
+      padding-top: 35px
+      .wrap
+        flex-direction: column
+        align-items: center
+      .left
+        width: 100%
+        justify-content: center
+        .img1
+          margin-right: 20px
+      .right
+        padding-top: 35px
+        padding-bottom: 50%
+        margin-left: 0
+        width: 100%
+        .img
+          right: 0
+  .section2
+    margin-top: -50px
+    position: relative
+    z-index: 1
+    padding-bottom: 46.875%
+    width: 100%
+    height: 100%
+    display: block
+    .marquee
+      position: absolute
+      top: 180px
+      left: 0
+      width: 100%
+      height: 150px
+      pointer-events: none
+      .track 
+        p 
+          font-size: px(131)
+          span 
+            display: inline-block
+            margin: 0 30px
+            border-bottom: solid 4px
+    .text-wrap
+      position: absolute
+      top: 52%
+      left: 50%
+      transform: translate(-50%,-50%)
+      max-width: 1300px
+      width: 100%
+      margin: 0 auto
+      padding-top: 130px
+      pointer-events: none
+      .fz-20
+        letter-spacing: 0.64px
+        line-height: px(35)
+      .fz-14
+        padding-top: 25px
+        letter-spacing: 0.46px
+        line-height: px(24)
+      &[data-aost]
+        p 
+          +opacity
+        p
+          @for $i from 0 through 3
+            &:nth-child(#{$i})
+              transition-delay: $i*0.1s
+      &.show
+        p 
+          +opacity1
+    .bg
+      position: absolute
+      top: 0
+      left: 0
+      z-index: -1
+      width: 100%
+      height: 100%
+      #bgCanvas
+        width: 100vw
+        height: 100vh
+        background-size: cover
+        background-position: center center
+    +rwdmax(1750)
+      .marquee
+        top: 100px
+    +rwdmax(1650)
+      padding-bottom: 50%
+    +rwdmax(1500)
+      .text-wrap
+        width: 80%
+    +rwdmax(1440)
+      padding-bottom: 55%
+      .marquee
+        .track 
+          p
+            font-size: px(80)
+            span 
+              padding-bottom: 15px
+              margin: 0 10px
+      .text-wrap
+        top: 45%
+    +rwdmax(1200)
+      padding-bottom: 74.875%
+      .marquee
+        .track 
+          p
+            font-size: px(66)
+      .text-wrap
+        top: 40%
+    +rwdmax(1100)
+      padding-bottom: 85.875%
+    +rwdmax(1024)
+      padding-bottom: 74.875%
+    +rwdmax(900)
+      margin-top: -80px
+      padding-bottom: 134%
+      .marquee
+        top: 140px
+      .text-wrap
+        top: 33%
+      .bg
+        #bgCanvas
+          background-position: 60% 0
+    +rwdmax(767)
+      padding-bottom: 240%
+      .marquee
+        top: 155px
+      .text-wrap
+        top: 42%
+      .bg
+        #bgCanvas
+          width: 100%
+          height: 100%
+          background-position: center 0
+  .section3
+    display: block
+    position: relative
+    z-index: 2
+    .wrap
+      max-width: 1050px
+      width: 100%
+      margin: 0 auto
+      display: flex
+      justify-content: center
+    .left
+      width: 50%
+      position: relative
+      margin-right: 50px
+      .title-move[data-move="top"]
+        &.type-over[data-type="left-bottom"]
+          bottom: 0
+          align-items: flex-end
+          transform: translateX(0) translateY(90px)
+      .title-move[data-move=top].small .en.border-bottom
+        border-bottom: 0
+      .title-move.title-type .en.border-bottom span
+        border-bottom: solid 3px
+    .right
+      width: 50%
+      .img
+        position: relative
+        max-width: 525px
+        width: 100%
+        margin-left: auto
+    &[data-aost]
+      .left
+        +yWaypoint(50)
+      .right
+        transform: translateY(80px) skew(5deg, 3deg)
+        opacity: 0
+        transition: .7s ease-in-out
+    &.show
+      .left,
+      .right
+        +zWaypoint
+    +rwdmax(1650)
+      .wrap
+        margin-top: 50px
+    +rwdmax(1400)
+      .wrap
+        margin-top: -50px
+    +rwdmax(1200)
+      .wrap
+        margin-top: -80px
+        width: 95%
+    +rwdmax(900)
+      .wrap
+        margin-top: -80px
+        width: 95%
+      .left
+        margin-right: 30px
+    +rwdmax(767)
+      padding: 0 20px
+      .wrap
+        width: 100%
+        margin-top: -50px
+        flex-direction: column-reverse
+        align-items: flex-end
+      .right
+        width: 75%
+      .left
+        width: 100%
+        margin-right: 0
+        .title-type
+          position: static
+          padding-top: 15px
+        .title-move[data-move=top]
+          &.type-over[data-type=left-bottom]
+            transform: translateY(0)
+          &.type-over 
+            .en
+            letter-spacing: 0
+            font-size: px(29)
+        .title-move.title-type .en.border-bottom span
+          padding-bottom: 10px

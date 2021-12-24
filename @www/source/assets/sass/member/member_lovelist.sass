@@ -1,0 +1,230 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.member_lovelist
+  background-color: #e7e7e7
+  .footer
+    background-color: #e7e7e7
+  .mouse-container
+    .circle
+      border: solid 1px rgba(0,0,0,.5)
+  main
+    background-color: #e7e7e7
+    padding-top: 240px
+    padding-bottom: 200px
+    .member-title .title .right .link-text 
+      a:not(.active)
+        .en,.ch
+          color: rgba(0,0,0,0.2)
+          +rwdmax(900)
+            color: rgba(0,0,0,0.5)
+      a.active 
+        .en,.ch
+          color: #000
+    +rwdmax(1100)
+      padding-top: 150px
+      padding-bottom: 100px
+
+  .range
+    max-width: 1300px
+    width: 100%
+    margin: 0 auto
+    +rwdmax(1500)
+      width: 85%
+    +rwdmax(900)
+      width: 100%
+  .member-title
+    +rwdmax(900)
+      .right
+        margin-top: 20px
+      &.type-detail
+        .title
+          .right
+            background-color: rgba(255,255,255,.6)
+  .content
+    max-width: 1450px
+    width: 100%
+    margin: 0 auto
+    padding-top: 80px
+    ul 
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+    li
+      padding-bottom: 40px
+      .lovelist-circle 
+        opacity: 0
+        transform: scale(.6)
+        transition: .5s ease-in-out
+        div 
+          position: absolute
+          left: 50%
+          bottom: 20%
+          transform: translateX(-50%)
+          +hoverCircle($w: 240px, $bgc: #f2c94d)
+      &:hover
+        .lovelist-circle 
+          opacity: 1
+          transform: scale(1)
+    li
+      position: relative
+      display: block
+      margin: 0 15px
+      &.large
+        max-width: 380px
+        width: 100%
+        .text,
+        .sale
+          width: 100%
+          margin: 0 auto
+        .text
+          max-width: 260px
+        .sale
+          max-width: 300px
+      &.small
+        max-width: 190px
+        width: 100% 
+        .text
+          max-width: calc(100% - 40px)
+          width: 100%
+          margin: 0 auto
+      .img 
+        position: relative
+        img
+          position: relative
+          z-index: 1
+      .text
+        padding-bottom: 18px
+        display: flex
+        justify-content: space-between
+        position: relative
+        >a
+          width: calc(100% - 30px)
+          line-height: 1.2
+          letter-spacing: 0.9px
+          font-weight: bold
+          font-size: px(18)
+        .heart
+          width: 22px
+          height: 22px
+          top: -2px
+          transform: translateY(0)
+          background-color: transparent
+          svg
+            width: 22px
+            height: 22px
+            fill: #e04b4b
+            stroke: transparent
+          &:hover 
+            svg
+              fill: transparent
+              stroke: #fff
+          
+      .sale
+        display: block
+        padding: 15px 0
+        width: 100%
+        letter-spacing: 0.7px
+        background-color: #1a1a1a
+        text-align: center
+        color: $main
+    +rwdmax(1100)
+      width: 90%
+      margin: 0 auto
+      padding-top: 40px
+      li 
+        margin: 0
+        // border: solid 1px
+        .heart
+          right: 10px
+        &.large,
+        &.small
+          .text
+            padding: 0 10px 18px
+          .text,
+          .sale
+            max-width: 295px
+            margin: 0 auto
+        &.large
+          .img
+            max-width: 380px
+            margin: 0 auto
+        &.small
+          max-width: 380px
+          .img
+            max-width: 190px
+            margin: 0 auto
+    +rwdmax(900)
+      ul
+        flex-direction: column
+        align-items: center
+      li 
+        padding-bottom: 30px
+
+  // 尚未有商品收藏
+  .no-products
+    padding-top: 60px
+    display: flex
+    justify-content: center
+    >div
+      width: 600px
+      height: 600px
+      position: relative
+      display: flex
+      justify-content: center
+      align-items: center
+      text-align: center
+      &::after
+        content: ''
+        width: 600px
+        height: 600px
+        border-radius: 50%
+        background-color: rgba(255,255,255,.5)
+        z-index: 0
+        transition: .5s ease-in-out
+        +posCenter
+      &:hover
+        &::after
+          background-color: rgba(255,255,255,1)
+      .cir-bg
+        z-index: 1
+        h5
+          padding-top: 40px
+          font-size: px(36)
+        h6 
+          padding: 22px 0
+          letter-spacing: 1.5px
+          font-weight: bold
+          font-size: px(20)
+        >p 
+          letter-spacing: 1.05px
+          font-size: px(14)
+        .button-wrap
+          padding-top: 40px
+          width: auto
+          .form-btn
+            margin: 0 auto
+            border: 0
+            color: #000
+            p 
+              letter-spacing: 0.46px
+              font-family: $basicbold
+            p:after
+              background-color: #000
+            &.form-done
+              span 
+                margin-left: 10px
+                font-size: px(28)
+
+    
+  .libox-common
+    .cir-wrap.login
+      p
+        max-width: 300px
+        width: 100%
+        text-align: center
+    .cir-bg
+      h5 
+        padding-top: 50px
+      .btn-close
+        margin-top: 20px

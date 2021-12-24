@@ -1,0 +1,248 @@
+// 燈箱 客服QA
+.libox-inner[data-name="service"]
+  // display: block
+  .content
+    padding: 52px 50px 32px
+    position: relative
+    max-width: 800px
+    width: 100%
+    height: calc(100% - 130px)
+    // margin: 0 auto 
+    background-color: #202020
+    .cir-btn
+      position: absolute
+      top: -25px
+      left: 50%
+      transform: translateX(-50%)
+    .top-title
+      text-align: center
+      .tit 
+        color: $main
+        .en
+          font-size: px(35)
+        .ch
+          margin-left: 5px
+          letter-spacing: 0.95px
+          font-size: px(20)
+      .text
+        padding-top: 10px
+        padding-bottom: 25px
+        .ch 
+          margin-right: 9px
+          color: #b2b2b6
+          letter-spacing: 0.46px
+          +fontSet2(px(14),$basicbold)
+        .en
+          color: #fff
+          letter-spacing: 0.45px
+          font-size: px(14)
+    // 
+    .text-box
+      margin-bottom: 5px
+      padding: 30px
+      background-color: #252525
+      .tit
+        color: #fff
+        letter-spacing: 0.6px
+        +fontSet2(px(14),$basicbold)
+      // 訊息輸入框
+      .write-wrap
+        display: flex
+        align-items: center
+        .textarea
+          width: 100%
+          padding-top: 19px
+          textarea
+            height: 60px
+            color: #fff
+        .btn-send
+          flex-shrink: 0
+          display: flex
+          align-items: center
+          justify-content: center
+          +buttonCircle(55px,#e8c330)
+          span
+            color: #fff
+            letter-spacing: 0.4px
+            transition: letter-spacing .5s ease-in-out
+            +fontSet2(px(12),$basicbold)
+          &:hover
+            span 
+              letter-spacing: 1px
+      // 對話紀錄
+      .text-wrap
+        margin-top: 25px
+        .scrollbar-inner
+          max-height: 400px !important
+          >.scroll-element.scroll-y
+            width: 4px
+            border-radius: 0px
+            .scroll-element_outer
+              border-radius: 0px
+            .scroll-element_track
+              width: 1px
+              left: 1px
+            .scroll-bar
+              width: 3px
+              background-color: $main
+              opacity: 1
+              border-radius: 0px
+      .box
+        display: flex
+        flex-wrap: wrap
+        padding-left: 12px
+        padding-right: 50px
+        padding-bottom: 30px
+        //對話框樣式
+        .message
+          display: flex
+          flex-direction: column
+          margin-top: 15px
+          position: relative
+          &-wrap 
+            display: flex
+            max-width: 460px
+            width: 100%
+            letter-spacing: 0.7px
+            font-size: px(14)
+            p 
+              display: inline-block
+              position: relative
+              padding: 12px 25px
+              border-radius: 10px
+              line-height: 1.5
+              z-index: 1
+              &::after
+                content: ''
+                position: absolute
+                border-style: solid solid solid
+                border-width: 7px 25px 7px 25px
+                top: 15px
+
+        // 大頭照
+        .img
+          width: 75px
+          height: 75px
+          border-radius: 50%
+          overflow: hidden
+        // 留言日期
+        p.date
+          // position: absolute
+          // bottom: -14px
+          width: 100%
+          // border: solid 1px #fff
+          padding-top: 10px
+          color: #666
+          letter-spacing: 0.6px
+          font-size: px(12)
+        &-right
+          justify-content: flex-start
+          .message
+            margin-left: auto
+            margin-right: 40px
+          .message-wrap
+            p 
+              margin-left: auto
+              color: #fff
+              background-color: #202020
+              border: solid 1px #404040
+              &::after
+                border-color: transparent transparent transparent #404040
+                right: -50px
+              &::before
+                content: ''
+                position: absolute
+                top: 15px
+                right: -48px
+                border-style: solid solid solid
+                border-width: 7px 25px 7px 25px
+                border-color: transparent transparent transparent #202020
+                z-index: 1
+          p.date
+            // right: 40px
+            // margin-right: 40px
+            text-align: right
+            
+        &-left
+          flex-direction: row-reverse
+          .message
+            margin-right: auto
+            margin-left: 40px
+          .message-wrap
+            p
+              margin-right: auto
+              background-color: #eee
+              &::after
+                border-color: transparent #eeeeee transparent transparent 
+                left: -48px
+          p.date
+            // left: 40px
+            // margin-left: 40px
+      &:nth-child(4)
+        min-height: 450px
+    +rwdmax(1500)
+      height: 600px
+      .text-box
+        padding: 25px
+        .text-wrap
+          .scrollbar-inner
+            max-height: 200px !important
+        &:nth-child(4)
+          min-height: 250px
+    +rwdmax(900)
+      width: 90%
+    +rwdmax(767)
+      width: 100%
+      height: calc(100% - 65px)
+      margin-top: 65px
+      // margin-bottom: 65px
+      padding-left: 13px
+      padding-right: 13px
+      .text-box
+        padding-left: 7px
+        padding-right: 7px
+        .tit
+          padding-left: 20px
+        .write-wrap
+          .textarea
+            padding-left: 20px
+          .btn-send
+            width: 45px
+            height: 45px
+            align-self: flex-end
+            span 
+              letter-spacing: 0.33px
+              font-size: px(10)
+        .text-wrap
+          .scrollbar-inner
+            max-height: 200px !important
+        .box
+          padding-left: 7px
+          padding-right: 5px
+          padding-bottom: 20px
+          flex-wrap: nowrap
+          .message-wrap
+            p 
+              padding: 16px 20px
+          .img
+            width: 60px
+            height: 60px
+            flex-shrink: 0
+          &-right
+            .img
+              margin-right: 10px
+            p.date 
+              padding-right: 30px
+          &-left
+            p.date 
+              padding-left: 30px
+        &:nth-child(3)
+          padding-top: 20px
+          padding-bottom: 10px
+        &:nth-child(4)
+          padding-top: 30px
+    +rwdmax(320)
+      .text-box
+        .text-wrap
+          .scrollbar-inner
+            max-height: 150px !important

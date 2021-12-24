@@ -1,0 +1,282 @@
+- 
+  var pro4 = [
+    {
+      img: '../../../uploads/product/img03-340X552.jpg',
+      en: 'NT$ 2000 Bonus',
+      ch: '沙發系列滿萬現折 2000！'},
+    {
+      img: '../../../uploads/product/img04-340X552.jpg',
+      en: 'Nov. Pop-up Event',
+      ch: '十一月快閃活動，前往查看活動商品頁！'},
+    {
+      img: '../../../uploads/product/img05-340X552.jpg',
+      en: 'Hot Sale',
+      ch: '熱銷商品三件 95 折，一起團購享受美好生活品質'},
+    //- {
+    //-   img: '../../../uploads/product/img06-340X552.jpg',
+    //-   en: '08.28 Fri. - 10.20 Tue.',
+    //-   ch: '書臥生活，系列家具享優惠'},
+    //- {
+    //-   img: '../../../uploads/product/img03-340X552.jpg',
+    //-   en: 'NT$ 2000 Bonus',
+    //-   ch: '沙發系列滿萬現折 2000！'},
+    //- {
+    //-   img: '../../../uploads/product/img04-340X552.jpg',
+    //-   en: 'Nov. Pop-up Event',
+    //-   ch: '十一月快閃活動，前往查看活動商品頁！'},
+    //- {
+    //-   img: '../../../uploads/product/img05-340X552.jpg',
+    //-   en: 'Hot Sale',
+    //-   ch: '熱銷商品三件 95 折，一起團購享受美好生活品質'},
+
+  ]
+  var pro2 = [
+    {
+      img: '../../../uploads/product/img07-760X594.jpg',
+      en: 'Color Inspiration',
+      ch: '驚喜配色  黃色沙發背牆',
+      cont: '嚴選黃色系列家具，讓您盡情展示充滿活力的歡快氛圍！'},
+    {
+      img: '../../../uploads/product/img08-760X594.jpg',
+      en: 'Color Inspiration',
+      ch: '驚喜配色  黃色沙發背牆',
+      cont: '嚴選黃色系列家具，讓您盡情展示充滿活力的歡快氛圍！'},
+    {
+      img: '../../../uploads/product/img09-1000X780.jpg',
+      en: 'Color Inspiration',
+      ch: '驚喜配色  黃色沙發背牆',
+      cont: '嚴選黃色系列家具，讓您盡情展示充滿活力的歡快氛圍！'},
+    //- {
+    //-   img: '../../../uploads/product/img10-1000X780.jpg',
+    //-   en: 'Color Inspiration',
+    //-   ch: '驚喜配色  黃色沙發背牆',
+    //-   cont: '嚴選黃色系列家具，讓您盡情展示充滿活力的歡快氛圍！'},
+  ]
+  var pro3 = [
+    {
+      img: '../../../uploads/product/img09-1000X780.jpg',
+      en: 'Dining Room',
+      ch: '餐廳空間',
+      color: 'light'},
+    {
+      img: '../../../uploads/product/img10-1000X780.jpg',
+      en: 'Dining Room',
+      ch: '餐廳空間',
+      color: 'light'},
+    {
+      img: '../../../uploads/product/img11-1000X780.jpg',
+      en: 'Dining Room',
+      ch: '餐廳空間',
+      color: ''},
+  ]
+
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/product.css")
+  body.product(data-page="product")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          // 單元大標
+          section.product-title
+            .unit-title 
+              .left
+                span.en.white-after Products
+                span.ch.white-after 探索產品
+                p.white-after 我們提供各種不同的方式啟發您的探索之旅，<br>
+                  |運用下方最令你心動的查詢方式，讓我們帶領您進入商品旅程！
+              .right.white-after 
+                .unit-img
+                  img(src="", alt="")
+                a.unit-link.hover-cir.dark(href="javascript:;" data-hover="blueBig" 
+                data-ajax-route="./ajax_brand_overview.html" 
+                data-ajax-container=".libox-container"
+                data-ajax-callback="_brand.overviewCallback"
+                data-ajax)
+                  .text 
+                    p.en.fz-14 MORE BRANDS
+                    p.ch.fz-14 
+                      span 所有品牌介紹
+                  div.icon.right
+                    i.icon-arrAngle
+          // 產品分類區塊
+          // 可新增產品分類
+          section.product-category
+            // 分小圖和大圖
+            // 建議尺寸
+            // 背景圖 (小)360X528 (大)1000X780
+            // 家具物件 (小)360X440 (大)740X500
+
+            // 設定家具物件移動方向 <div class="obj" data-path="">
+            // data-path="right" (家具位置偏右邊)
+            // data-path="left" (家具位置偏左邊)
+            // data-path="top" (家具位置偏上面)
+            // data-path="bottom" (家具位置偏下面)
+            ul 
+              li
+                // 一般背景圖+滾動視差
+                a.block.hover-cir.white-after.cursor-none(href="./product_list.html" data-hover="yellowBig" data-size="small")
+                  .parallax-container(data-parallax-container)
+                    // 背景圖
+                    .img-bg.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/product/img01-360X528.jpg" data-parallax data-parallax-bg)
+                  .text 
+                    .en Bed Series
+                    .ch 床組
+              li
+                // 背景色塊+家具物件+滾動視差
+                a.block.hover-cir.white-after.cursor-none(href="./product_list.html" data-hover="yellowBig" data-size="small")
+                  .parallax-container(data-parallax-container)
+                    // 背景圖
+                    .img-bg.b-lazy(style="background-color: #a0f37b" data-parallax data-parallax-bg)
+                      // 家具物件
+                      .obj(data-path="right")
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/product/desk-360X440.png", alt="")
+                  .text 
+                    .en Table
+                    .ch 桌子
+              li
+                a.block.hover-cir.white-after.cursor-none(href="./product_list.html" data-hover="yellowBig" data-size="small")
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(style="background-color: #f98f8f" data-parallax data-parallax-bg)
+                      .obj(data-path="left") 
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/product/sofa-360X440.png", alt="")
+                  .text 
+                    .en Chair
+                    .ch 椅子
+              li
+                a.block.hover-cir.white-after.cursor-none(href="./product_list.html" data-hover="yellowBig" data-size="large")
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(data-src="../../../uploads/product/img02-1000X780.jpg" data-parallax data-parallax-bg)
+                  .text 
+                    .en Sofa
+                    .ch 沙發
+              li
+                a.block.hover-cir.white-after.cursor-none(href="./product_list.html" data-hover="yellowBig" data-size="small")
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(style="background-color: #f3d237" data-parallax data-parallax-bg)
+                      .obj(data-path="bottom") 
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/product/wood-360X440.png", alt="")
+                  .text 
+                    .en Storage
+                    .ch 收納產品
+              li
+                a.block.hover-cir.white-after.cursor-none(href="./product_list.html" data-hover="yellowBig" data-size="large")
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(data-src="../../../uploads/product/img02-1000X780.jpg" data-parallax data-parallax-bg)
+                  .text 
+                    .en Sofa
+                    .ch 沙發
+              li
+                a.block.hover-cir.white-after.cursor-none(href="./product_list.html" data-hover="yellowBig" data-size="large")
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(style="background-color: #f3d237" data-parallax data-parallax-bg)
+                      .obj(data-path="left") 
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/product/sofa-740X550.png", alt="")
+                  .text 
+                    .en Storage
+                    .ch 收納產品
+          // 產品行銷區塊
+          // 可新增行銷區塊
+          section.product-marketing
+            // 標題
+            article.market-title
+              // 固定樣式
+              // 3組一樣的字(可改字)
+              .title-type.title-move.small(data-type="center-top" data-move="top")
+                .en
+                  span.white-after Need More Advice
+                .en
+                  span.white-after Need More Advice
+                .en.border-bottom
+                  span.white-after Need More Advice
+
+            // 行銷區塊輪播樣式
+            // 四圖
+            // 圖片建議尺寸 340X552
+            article.swiper-row4
+              p.sub-tit
+                span.en HOT SALES
+                span.ch 促銷特惠
+              .swiper-container
+                .swiper-wrapper
+                  each val in pro4
+                    .swiper-slide 
+                      a.block.hover-cir.white-after.cursor-none(href="./product_list.html" data-hover="yellowBig")
+                        .parallax-container(data-parallax-container)
+                          .img-bg(style=`background-image: url(${val.img})` data-parallax data-parallax-bg)
+                        .text
+                          p.en= val.en
+                          p.ch= val.ch
+                .swiper-pagination
+            // 兩大圖
+            // 圖片建議尺寸 760X594
+            article.swiper-row2
+              p.sub-tit 
+                span.en INSPIRATION
+                span.ch 探索靈感
+              .swiper-container
+                .swiper-wrapper
+                  each val in pro2
+                    .swiper-slide
+                      a.block.hover-cir.white-after.cursor-none(href="./product_list.html" data-hover="yellowBig")
+                        .img-wrap
+                          .parallax-container(data-parallax-container)
+                            .img-bg(style=`background-image: url(${val.img})` data-parallax data-parallax-bg)
+                        .text
+                          .text-wrap
+                            p.en= val.en
+                            p.ch= val.ch
+                            p.cont= val.cont
+                .swiper-pagination
+            // 三圖
+            // 圖片建議尺寸 1000X780
+            article.swiper-row3
+              p.sub-tit 
+                span.en SPACE
+                span.ch 探索空間
+              .swiper-container
+                .swiper-wrapper
+                  each val,index in pro3
+                    if index == 1
+                      .swiper-slide
+                        .yt-wrap.white-after
+                          .yt-player
+                            //- (id="player1" data-video="Oip1z_b4J1E")
+                            .yt-iframe
+                              iframe(id="" src="https://www.youtube.com/embed/Oip1z_b4J1E?rel=0&autoplay=1&mute=1&playlist=Oip1z_b4J1E&loop=1", allow="accelerometer;clipboard-write;encrypted-media;gyroscope;picture-in-picture;autoplay" allowfullscreen)
+                            //- a.mute.active.hover-cir(href="javascript:;" data-hover="yellowBig")
+                            //-   span.icon-mute
+                            //-   span.icon-volume
+                          a.text.hover-cir.cursor-none(href="./product_list.html" class= val.color data-hover="yellowBig")
+                            p.en= val.en
+                            p.ch= val.ch
+                    else
+                      .swiper-slide 
+                        a.block.hover-cir.white-after.cursor-none(href="./product_list.html" data-hover="yellowBig")
+                          .parallax-container(data-parallax-container)
+                            .img-bg(style=`background-image: url(${val.img})` data-parallax data-parallax-bg)
+                          // 可選字的顏色 預設黑 +light(白)
+                          .text(class= val.color)
+                            p.en= val.en
+                            p.ch= val.ch
+                .swiper-pagination
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <!-- head標籤 & 網站設定-->
+  <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <!--共用設定-->
+    <!-- 網站語系及語言宣告-->
+    <meta http-equiv="content-language" content="zh-TW"/>
+    <meta charset="UTF-8"/>
+    <!-- RWD設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 瀏覽器設定-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- 網站關鍵字-->
+    <meta name="keywords" content="網站關鍵字"/>
+    <!-- 網頁內容描述-->
+    <meta name="description" content="網頁內容描述，中文 80 個字元、英文 160 個字元"/>
+    <!-- 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="robots" content="noindex"/>
+    <!-- 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="googlebot" content="noindex"/>
+    <!-- Open Graph Protocol for facebook-->
+    <meta property="og:title" content="網頁Title"/>
+    <meta property="og:description" content="網頁內容描述"/>
+    <meta property="og:url" content="主要網址"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="網頁內容描述"/>
+    <!-- Open Graph Protocol for google plus-->
+    <meta itemprop="name" content="網站名稱或標題"/>
+    <meta itemprop="image" content="分享的影像位址"/>
+    <meta itemprop="description" content="網頁描述"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="分享的影像位址"/>
+    <meta name="twitter:site" content="網站名稱"/>
+    <meta name="twitter:title" content="網頁標題"/>
+    <meta name="twitter:description" content="網頁描述 200 個字元以內"/>
+    <meta name="twitter:creator" content="客戶公司或品牌名稱"/>
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content=" http://www.example.com/image.html"/>
+    <title>有情門 Strausslab</title>
+    <!-- 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中-->
+    <link rel="canonical" href="主要網址" itemprop="url"/>
+    <link rel="shortcut icon" href="../../../assets/img/logo-w.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
+    <!-- Google Tag Manager-->
+    <!-- 以下script 後端自行打開-->
+    <!-- script.-->
+    <!--   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+    <!--   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+    <!--   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+    <!--   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+    <!--   })(window,document,'script','dataLayer','GTM編號');-->
+    <!--獨立CSS-->
+    <link rel="stylesheet" href="../../../assets/css/member_detail.css"/>
+  </head>
+  <body class="member_detail" data-page="member_detail">
+    <div class="pub">
+      <div class="center">
+        <div class="pub-wrap"> 
+          <!-- 開啟生日會員gif-->
+          <!-- _gif.init();-->
+          <!-- 關閉廣告-->
+          <!-- _ad.closeEvent();-->
+          <div class="cir-btn black close-menu hover-cir" data-hover="yellowSmall" onclick="_ad.closeEvent()">
+            <div class="cross"></div>
+          </div>
+          <div class="pub-swiper">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:;">
+                    <div class="img"> <img src="../../../assets/img/1200X720.jpg" alt=""/></div></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mouse-container">
+      <div id="mouse"> 
+        <div class="circle"></div>
+        <div class="mark"><img src="../../../assets/img/cursor.png" alt=""/></div>
+      </div>
+    </div>
+    <div class="main-wrapper">
+      <div class="all-wrapper">
+        <main>
+          <div class="top"><a class="cir-btn black hover-cir" href="./member_order.html" data-hover="blue">
+              <div class="cross"></div></a></div>
+          <!-- 訂單紀錄-->
+          <section class="order-top range">
+            <div class="member-bgtext center"><span>Order</span>
+              <div class="text"> 
+                <div class="en">Order Record</div>
+                <div class="ch bold">訂單紀錄</div>
+              </div>
+            </div>
+            <!-- 訂單訊息列表-->
+            <div class="order-list">
+              <ul> 
+                <li>
+                  <div class="thead"> 
+                    <div class="date"><span class="tit">DATE 訂單成立日期</span><span class="en">2020-12-25</span></div>
+                    <div class="num"><span class="tit">NO. 訂單編號</span><span class="en">JDI2020110225</span></div>
+                    <div class="status"><span class="tit">STATUS 訂單狀態</span><span class="ch">處理中</span></div>
+                    <div class="payment"> <span class="tit">PAYMENT 付款狀態</span><span class="ch">未付款</span></div>
+                    <div class="shipping"><span class="tit">SHIPPING 運送狀態</span><span class="ch">宅配中 |<a class="hover-cir" href="javascript:;" data-hover="yellowBig">貨號 1574589632</a></span></div>
+                  </div>
+                  <!-- 金額 & 訂單詳情-->
+                  <div class="detail flex-wrap hover-cir" data-hover="yellowBig">
+                    <div class="price flex-aic w100"><span>PRICE 訂單金額</span><span>$ 20,800</span>
+                      <div class="btn-cir"><span class="icon-trangle-down"></span></div>
+                    </div>
+                    <!-- 結帳明細-->
+                    <div class="detail-text w100">
+                      <div class="wrap"><span class="fz-14">DETAIL 結帳明細</span>
+                        <div class="center">
+                          <div> <span>SUBTOTAL 商品小計</span><span>NTD$  109,578</span></div>
+                          <div> <span>DISCOUNT  訂單優惠</span><span>- NTD$  21,916</span></div>
+                          <div> <span>ADDITIONAL PURCHASE  訂單加價購</span><span>+ NTD$ 1,999</span></div>
+                        </div>
+                        <div class="right">
+                          <div> <span>SHIPPING 運費</span><span>+ NTD$  60</span></div>
+                          <div> <span>CLIMB FEE 搬運費</span><span>+ NTD$  30</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- 切換明細 & 訂單資訊-->
+            <div class="order-explore"><span>EXPLORE</span>
+              <div class="btn-text active hover-cir" data-hover="blue" data-tab="detail"><a href="javascript:;">購買明細</a></div>
+              <div class="btn-text hover-cir" data-hover="blue" data-tab="info"><a href="javascript:;">訂單資訊</a></div>
+              <div class="btn-text hover-cir" data-hover="blue"><a href="./member_evaluation_detail.html">填寫評價</a></div>
+              <div class="btn-text hover-cir" data-hover="blue"><a href="javascript:;" onclick="_common.openliboxInner('service')">客服問答</a></div>
+            </div>
+            <!-- 取消訂單 / 退換貨-->
+            <div class="order-cancle">
+              <div class="button-wrap">
+                <!-- 開啟取消訂單燈箱 : onclick="_common.openliboxInner('cancle')"-->
+                <!-- p CANCEL 取消訂單-->
+                <!-- ----->
+                <!-- 已到貨出現退換貨按鈕 : onclick="_common.openliboxInner('return')"-->
+                <!-- p RETURN 申請退貨-->
+                <div class="form-btn form-done hover-cir bd0-dark other" data-hover="yellowBig" onclick="_common.openliboxInner('return')">
+                  <p>RETURN 申請退貨</p><span class="icon-arrAngle"></span>
+                </div>
+                <!-- 退貨成功送出後的按鈕結構-->
+                <div class="status-btn">
+                  <div class="form-btn form-done hover-cir bd0-dark returnSuccess" data-hover="yellowBig" onclick="_common.openliboxInner('returnSuccess')">
+                    <p>退貨申請中</p><span class="icon-arrAngle"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <!-- 購買明細-->
+            <div class="order-detail range active">
+              <div class="item-wrap">
+                <!-- 項目敘述-->
+                <div class="item-head">
+                  <div class="img">購買項目</div>
+                  <div class="item"></div>
+                  <div class="qty">數量</div>
+                  <div class="price">價格</div>
+                </div>
+                <!-- 一項-->
+                <div class="item-body">
+                  <!-- 大圖 380X250 <div class="img"> + large-->
+                  <!-- 小圖 190X250 <div class="img"> + small-->
+                  <div class="img large">
+                    <figure><img src="../../../uploads/product/detail-obj05-380X250.png" alt=""/></figure>
+                  </div>
+                  <!-- 項目明細-->
+                  <!-- 標準品-->
+                  <div class="item-box">
+                    <h2><span>已申請退貨</span><span>乘風沙發 雙人座</span></h2>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">SPEC：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">綠紫色 + 自然木色</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 數量-->
+                  <div class="qty">x 1</div>
+                  <!-- 價格-->
+                  <div class="price"><span class="fz-14">VIP 售價</span>
+                    <div class="money"><span>$40,800</span></div>
+                    <div class="origin"><span>原價</span><span>$50,800</span></div>
+                  </div>
+                  <!-- 加購-->
+                  <div class="extra-block bg-none">
+                    <div class="thead no-bg">
+                      <div class="img"></div>
+                      <div class="item">ADDITIONAL 加價購</div>
+                      <div class="qty"> </div>
+                      <div class="price"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <div class="img"></div>
+                        <!-- 標準品-->
+                        <div class="item-box return-tag">
+                          <div class="txt-name px-0"> <span>已申請退貨</span><span>雲起時沙發 腳几</span></div>
+                          <div class="txt-color">
+                            <div class="img-cir"><img src="../../../uploads/product/color10-20X20.jpg" alt=""/></div>
+                            <p>綠色 x 自然木色</p>
+                          </div>
+                        </div>
+                        <div class="qty">x 2</div>
+                        <div class="price type">+ $ 1,999</div>
+                      </li>
+                      <li>
+                        <div class="img"></div>
+                        <!-- 客製品-->
+                        <div class="item-box return-tag">
+                          <div class="txt-name px-0"> <span>已申請退貨</span>
+                            <!-- 項目名:雙色抱枕 客製品 + 規格: S--><span>雙色抱枕 客製品 S</span>
+                          </div>
+                          <div class="txt-color">
+                            <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div>
+                            <p class="after">布色：紅色</p>
+                            <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                            <p>木色：原木色</p>
+                          </div>
+                        </div>
+                        <div class="qty">x 1</div>
+                        <div class="price type">+ $ 1,999</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- 贈品-->
+                  <div class="extra-block bg-none">
+                    <div class="thead no-bg">
+                      <div class="img"></div>
+                      <div class="item">GIVEAWAY 贈品</div>
+                      <div class="qty qty-2"></div>
+                      <div class="price"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <div class="img"></div>
+                        <!-- 客製品-->
+                        <div class="item-box">
+                          <div class="txt-name px-0">雙色抱枕 客製品
+                            <!-- 客製品 有多包一個規格欄位--><span class="norm">F</span>
+                          </div>
+                          <div class="txt-color">
+                            <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                            <p>藍色</p>
+                          </div>
+                        </div>
+                        <div class="qty">x 1</div>
+                        <!-- 空的 DIV 要留著-->
+                        <div class="price type"></div>
+                      </li>
+                      <li>
+                        <div class="img"></div>
+                        <!-- 客製品-->
+                        <div class="item-box">
+                          <div class="txt-name px-0">明月香氛盤 客製品
+                            <!-- 客製品 有多包一個規格欄位--><span class="norm">S</span>
+                          </div>
+                          <div class="txt-color">
+                            <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                            <p>自然木色</p>
+                          </div>
+                        </div>
+                        <div class="qty">x 1</div>
+                        <!-- 空的 DIV 要留著-->
+                        <div class="price type"></div>
+                      </li>
+                    </ul>
+                    <!-- 已放棄商品數量-->
+                    <ul class="giveup">
+                      <li>
+                        <div class="img"></div>
+                        <div class="item">
+                          <p>已放棄贈品數量</p>
+                        </div>
+                        <div class="qty">x 1</div>
+                        <!-- 空的 DIV 要留著-->
+                        <div class="price type"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- 一項-->
+                <!-- 一般原價-->
+                <!-- 客製品-->
+                <div class="item-body">
+                  <div class="img large">
+                    <figure><img src="../../../uploads/product/detail-obj05-380X250.png" alt=""/></figure>
+                  </div>
+                  <!-- 項目明細-->
+                  <div class="item">
+                    <h2>乘風沙發 客製品</h2>
+                    <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">大 W52xD30xH52 (cm)</span></div>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">COLOR：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div><span class="fz-14">紅色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色 </span>
+                        </div>
+                      </div>
+                      <div class="color"> <span class="strong">COLOR：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div><span class="fz-14">綠色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">WOOD：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color10-120X120.jpg" alt=""/></div><span class="fz-14">鯨木色</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 數量-->
+                  <div class="qty">x 1</div>
+                  <!-- 價格-->
+                  <div class="price"><span class="fz-14">PRICE 原價</span>
+                    <div class="money"><span>$20,800</span></div>
+                  </div>
+                </div>
+                <!-- 一項-->
+                <!-- 一般原價-->
+                <!-- 標準品-->
+                <div class="item-body">
+                  <div class="img large">
+                    <figure><img src="../../../uploads/product/detail-obj05-380X250.png" alt=""/></figure>
+                  </div>
+                  <!-- 項目明細-->
+                  <div class="item">
+                    <h2>乘風沙發 雙人座</h2>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">SPEC：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">綠紫色 + 自然木色</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 數量-->
+                  <div class="qty">x 1</div>
+                  <!-- 價格-->
+                  <div class="price"><span class="fz-14">PRICE 原價</span>
+                    <div class="money"><span>$20,800</span></div>
+                  </div>
+                </div>
+                <!-- 一項-->
+                <!-- 組合優惠-->
+                <div class="item-packpage">
+                  <div class="top"> 
+                    <div class="tit"><span class="en">EVENT PACKAGE：</span>
+                      <!-- 組合敘述可自訂--><span class="ch">書臥 life 生活任選三件享八折</span>
+                    </div>
+                  </div>
+                  <div class="item-body">
+                    <div class="img large">
+                      <figure><img src="../../../uploads/product/sofa05-380X250.png" alt=""/></figure>
+                    </div>
+                    <!-- 項目明細-->
+                    <div class="item return-tag">
+                      <h2> <span>已申請退貨</span><span>恰恰好沙發</span></h2>
+                      <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">雙人座 SH42.5 / W155.5xD88.5xH100</span></div>
+                      <div class="color-wrap">
+                        <div class="color"><span class="strong">COLOR：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color03-120X120.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                          </div>
+                        </div>
+                        <div class="color"><span class="strong">COLOR：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color05-120X120.jpg" alt=""/></div><span class="fz-14">綠色</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="color-wrap">
+                        <div class="color"><span class="strong">WOOD：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color10-120X120.jpg" alt=""/></div><span class="fz-14">鯨木色</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 數量-->
+                    <div class="qty">x 1</div>
+                    <!-- 價格-->
+                    <div class="price"><span class="fz-14">DISCOUNT 優惠價</span>
+                      <div class="money"><span>$40,800</span></div>
+                      <div class="origin line-through"><span>原價  </span><span>$50,800</span></div>
+                    </div>
+                  </div>
+                  <div class="item-body">
+                    <div class="img small">
+                      <figure><img src="../../../uploads/product/cart02-190X250.png" alt=""/></figure>
+                    </div>
+                    <!-- 項目明細-->
+                    <div class="item">
+                      <h2> <span>已申請退貨</span><span>加菲收納筒 - 木蓋</span></h2>
+                      <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">F W46×D40×H42(cm)</span></div>
+                      <div class="color-wrap">
+                        <div class="color"><span class="strong">COLOR：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color03-120X120.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 數量-->
+                    <div class="qty">x 1</div>
+                    <!-- 價格-->
+                    <div class="price"><span class="fz-14">DISCOUNT 優惠價</span>
+                      <div class="money"><span>$3,000</span></div>
+                      <div class="origin line-through"><span>原價  </span><span>$4,500</span></div>
+                    </div>
+                  </div>
+                  <div class="item-body">
+                    <div class="img small">
+                      <figure><img src="../../../uploads/product/cart01-190X250.png" alt=""/></figure>
+                    </div>
+                    <!-- 項目明細-->
+                    <div class="item">
+                      <h2><span>已申請退貨 </span><span>奇畦餐椅</span></h2>
+                      <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">SH 43.5 / W51xD67xH73(cm)</span></div>
+                      <div class="color-wrap">
+                        <div class="color"><span class="strong">COLOR：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div><span class="fz-14">紅色</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="color-wrap">
+                        <div class="color"><span class="strong">WOOD：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color10-120X120.jpg" alt=""/></div><span class="fz-14">鯨木色</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 數量-->
+                    <div class="qty">x 1</div>
+                    <!-- 價格-->
+                    <div class="price"><span class="fz-14">DISCOUNT 優惠價</span>
+                      <div class="money"><span>$3,180</span></div>
+                      <div class="origin line-through"><span>原價  </span><span>$4,800</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 一項-->
+                <!-- 結帳金額優惠-->
+                <div class="item-body code">
+                  <div class="sub-tit"><span class="en">Order Discount</span><span class="ch">結帳金額優惠</span></div>
+                  <!-- 折扣碼優惠-->
+                  <div class="img">輸入折扣碼</div>
+                  <!-- 優惠明細-->
+                  <div class="item item-select"><span>請輸入折扣碼，享有專屬優惠</span>
+                    <div class="pick-wrap allow-pick spread border-0">
+                      <!-- 優惠敘述可自訂-->
+                      <div class="desc">
+                        <div class="pick-dropdown">
+                          <!-- 滿額折抵 & 滿額折扣 >> tag + dark-->
+                          <!-- 贈品 >> tag + blue-->
+                          <!-- 加價購 >> tag + pink-->
+                          <!-- 免運 >> tag + warm-->
+                          <ul> 
+                            <li> 
+                              <div class="tag dark">滿額折抵滿額折抵滿額折抵滿額折抵</div>
+                              <div class="wrap"><span>結帳金額享八折優惠！結帳金額享八折優惠結帳金額享八折優惠結帳金額享八折優惠</span></div>
+                            </li>
+                            <li> 
+                              <div class="tag blue">贈品好禮</div><span>Straus Lab 新品 - 趣味抱枕 款式任意挑</span>
+                            </li>
+                            <li> 
+                              <div class="tag pink">專屬加價購</div><span>專屬加價購等您來挑選</span>
+                            </li>
+                            <li> 
+                              <div class="tag warm">免運費</div><span>消費滿千免運費</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="qty d-md-none"></div>
+                  <!-- 折扣碼-->
+                  <div class="price"><span class="fz-14">JDSF58D</span><span class="fz-14">- NTD$ 21,916</span></div>
+                  <!-- 加購-->
+                  <div class="extra-block bg-none">
+                    <div class="thead no-bg">
+                      <div class="img"></div>
+                      <div class="item">ADDITIONAL 加價購</div>
+                      <div class="qty"> </div>
+                      <div class="price d-md-none"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <div class="img"></div>
+                        <!-- 標準品-->
+                        <div class="item-box">
+                          <div class="txt-name px-0">雲起時沙發 腳几</div>
+                          <div class="txt-color">
+                            <div class="img-cir"><img src="../../../uploads/product/color10-20X20.jpg" alt=""/></div>
+                            <p>綠色 x 自然木色</p>
+                          </div>
+                        </div>
+                        <div class="qty"> x 2</div>
+                        <div class="price type">+ $ 1,999</div>
+                      </li>
+                      <li>
+                        <div class="img"></div>
+                        <!-- 客製品-->
+                        <div class="item-box">
+                          <div class="txt-name px-0">雲起時沙發 客製品
+                            <!-- 客製品 有多包一個規格欄位--><span class="norm">單人座</span>
+                          </div>
+                          <div class="txt-color">
+                            <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div>
+                            <p class="after">布色：紅色</p>
+                            <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                            <p>木色：原木色</p>
+                          </div>
+                        </div>
+                        <div class="qty">x 1</div>
+                        <div class="price type">+ $ 1,999</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- 贈品-->
+                  <div class="extra-block bg-none">
+                    <div class="thead no-bg">
+                      <div class="img"></div>
+                      <div class="item">GIVEAWAY 贈品</div>
+                      <div class="qty qty-2"></div>
+                      <div class="price"></div>
+                    </div>
+                    <ul>
+                      <li>
+                        <div class="img"></div>
+                        <!-- 標準品-->
+                        <div class="item-box">
+                          <div class="txt-name px-0">雙色抱枕</div>
+                          <div class="txt-color">
+                            <div class="img-cir"><img src="../../../uploads/product/color10-20X20.jpg" alt=""/></div>
+                            <p>綠色</p>
+                          </div>
+                        </div>
+                        <div class="qty">x 2</div>
+                        <!-- 空的 DIV 要留著-->
+                        <div class="price type"></div>
+                      </li>
+                      <li>
+                        <div class="img"></div>
+                        <!-- 客製品-->
+                        <div class="item-box">
+                          <div class="txt-name px-0">明月香氛盤</div>
+                          <div class="txt-color">
+                            <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div>
+                            <p>原木色</p>
+                          </div>
+                        </div>
+                        <div class="qty">x 2</div>
+                        <div class="price type"></div>
+                      </li>
+                    </ul>
+                    <!-- 已放棄商品數量-->
+                    <ul class="giveup">
+                      <li>
+                        <div class="img"></div>
+                        <div class="item">
+                          <p>已放棄贈品數量</p>
+                        </div>
+                        <div class="qty">x 1</div>
+                        <!-- 空的 DIV 要留著-->
+                        <div class="price type d-md-none"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="item-body code">
+                  <!-- 活動優惠-->
+                  <div class="img">活動折扣</div>
+                  <!-- 活動名稱-->
+                  <div class="item item-select"><span>書臥生活，系列家具享優惠</span>
+                    <div class="pick-wrap allow-pick spread border-0">
+                      <!-- 優惠敘述可自訂-->
+                      <div class="desc">
+                        <div class="pick-dropdown">
+                          <ul> 
+                            <li> 
+                              <div class="tag dark">滿額折抵</div>
+                              <div class="wrap"><span>結帳金額享八折優惠！</span></div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="qty d-md-none"></div>
+                  <div class="price d-md-none">
+                    <!-- 空的div要留著--><span class="fz-14"></span><span class="fz-14">- NTD$ 21,916   </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 訂單資訊-->
+            <div class="order-info range">
+              <div class="item-wrap">
+                <!-- 一項-->
+                <!-- 結帳金額優惠-虛擬帳號付款-->
+                <div class="item-body code">
+                  <div class="member-bgtext init">
+                    <div class="text"> 
+                      <div class="en">Payment</div>
+                      <div class="ch bold">付款方式</div>
+                    </div>
+                  </div>
+                  <div class="img">虛擬帳號付款</div>
+                  <div class="discount">
+                    <div> 
+                      <div class="badge">BANK CODE 銀行代碼</div><span>014</span>
+                    </div>
+                    <div> 
+                      <div class="badge">ACOUNT 虛擬帳號</div><span>12354789 - 51236544</span>
+                    </div>
+                    <div> 
+                      <div class="badge">DEADLINE 付款期限</div><span>2020/12/30 16:30 <span>前截止</span></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- 一項-->
+                <!-- 結帳金額優惠-信用卡付款-->
+                <div class="item-body code">
+                  <div class="member-bgtext init">
+                    <div class="text"> 
+                      <div class="en">Payment</div>
+                      <div class="ch bold">付款方式</div>
+                    </div>
+                  </div>
+                  <div class="img">信用卡付款</div>
+                  <div class="discount">
+                    <div> 
+                      <div class="badge">一次付清</div><span>$ 50,000</span>
+                    </div>
+                    <div> 
+                      <div class="badge">分三期</div><span>$ 50,000</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- 一項-->
+                <!-- 發票資訊-->
+                <div class="item-body">
+                  <div class="member-bgtext init">
+                    <div class="text"> 
+                      <div class="en">Invioce</div>
+                      <div class="ch bold">發票資訊</div>
+                    </div>
+                  </div>
+                  <!-- 兩聯式發票 沒有公司名稱欄位&公司統編欄位-->
+                  <div class="item-form border-none">
+                    <div class="title">
+                      <p>三聯式發票</p>
+                    </div>
+                    <div class="desc"><span>Recipient 收件人資料</span>
+                      <div class="form mt-20">
+                        <!-- 一排-->
+                        <div class="form-row">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>NAME</span><span>姓名</span></p><span class="other">王小明</span>
+                            </div>
+                          </div>
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow"><span class="fz-14">先生</span></div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row password">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>ADDRESS</span><span>收件地址</span></p><span class="other">台中市 北區 台灣大道二段 100 號 12F</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>COMPANY</span><span>公司名稱</span></p><span class="other">威德數位設計</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>TAX ID</span><span>公司統編</span></p><span class="other">26270819</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 一項-->
+                <!-- 發票資訊 - 捐贈發票-->
+                <div class="item-body">
+                  <div class="member-bgtext init">
+                    <div class="text"> 
+                      <div class="en">Invioce</div>
+                      <div class="ch bold">發票資訊</div>
+                    </div>
+                  </div>
+                  <div class="item-form border-none">
+                    <div class="title">
+                      <p>捐贈</p>
+                    </div>
+                    <div class="desc"><span>感謝您的愛心捐贈</span></div>
+                  </div>
+                </div>
+                <!-- 一項-->
+                <!-- 收件與訂購資訊-->
+                <div class="item-body">
+                  <div class="member-bgtext init">
+                    <div class="text"> 
+                      <div class="en">Shipping Information</div>
+                      <div class="ch bold">收件與訂購資訊</div>
+                    </div>
+                  </div>
+                  <div class="item-form border-none">
+                    <div class="title">
+                      <p>宅配</p>
+                    </div>
+                    <div class="desc">
+                      <div class="wrap"><span>我們會親自將商品送至您的家中，並且酌收登高費。</span><span class="bold">+ NTD$ 120</span></div>
+                      <!-- 訂購人資訊-->
+                      <div class="form mt-30 border-top"><span class="desc">Orderer 訂購人資訊</span>
+                        <!-- 一排-->
+                        <div class="form-row">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>NAME</span><span>姓名</span></p><span class="other">王小明</span>
+                            </div>
+                          </div>
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow"><span class="fz-14">先生</span></div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>PHONE</span><span>聯繫電話</span></p><span class="other bold">+886 912 345 678</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>E-mail</span><span></span></p><span class="other">example@strausslab.com</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 收件資訊-->
+                      <div class="form mt-30 border-top"><span class="desc">Receiving information 收件資訊</span>
+                        <!-- 一排-->
+                        <div class="form-row">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>NAME</span><span>姓名</span></p><span class="other">王小明</span>
+                            </div>
+                          </div>
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow"><span class="fz-14">先生</span></div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>PHONE</span><span>聯繫電話</span></p><span class="other bold">+886 912 345 678</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>E-mail</span><span></span></p><span class="other">example@strausslab.com</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row password">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>ADDRESS</span><span>收件地址</span></p><span class="other">台中市 北區 台灣大道二段 100 號 12F</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- +++++新增-->
+                      <!-- 運費-->
+                      <div class="form mt-30 border-top floor"><span class="desc">Shipping fee 運費</span>
+                        <div class="item-body">
+                          <!-- 購買品項-->
+                          <div class="extra-block floor">
+                            <div class="thead">
+                              <div class="item">購買品項</div>
+                              <div class="qty">件數</div>
+                              <div class="price">費用</div>
+                            </div>
+                            <ul> 
+                              <!-- 標準品-->
+                              <li> 
+                                <div class="item">乘風沙發 雙人座</div>
+                                <div class="qty"> <span>x 1</span></div>
+                                <div class="price">+NTD$ 300</div>
+                              </li>
+                              <!-- 客製品-->
+                              <li> 
+                                <div class="item">乘風沙發 客製品<span class="norm">雙人座</span></div>
+                                <div class="qty"><span>x 2</span></div>
+                                <div class="price">+NTD$ 600</div>
+                              </li>
+                              <!-- 客製品-->
+                              <li> 
+                                <div class="item">恰恰好沙發 客製品<span class="norm">雙人座</span></div>
+                                <div class="qty"><span>x 1</span></div>
+                                <div class="price">+NTD$ 300</div>
+                              </li>
+                              <!-- 客製品-->
+                              <li> 
+                                <div class="item">加菲收納筒 客製品  <span class="norm">木蓋</span></div>
+                                <div class="qty"><span>x 1</span></div>
+                                <div class="price">+NTD$ 100</div>
+                              </li>
+                              <!-- 客製品-->
+                              <li> 
+                                <div class="item">奇畦餐椅 客製品<span class="norm">單人椅</span></div>
+                                <div class="qty"><span>x 1</span></div>
+                                <div class="price">+NTD$ 100</div>
+                              </li>
+                            </ul>
+                          </div>
+                          <!-- 加購品項-->
+                          <div class="extra-block floor">
+                            <div class="thead">
+                              <div class="item">加購品項</div>
+                              <div class="qty">件數</div>
+                              <div class="price">費用</div>
+                            </div>
+                            <ul> 
+                              <!-- 標準品-->
+                              <li> 
+                                <div class="item">雲起時沙發　抱枕</div>
+                                <div class="qty"><span>x 1</span></div>
+                                <div class="price">+NTD$ 300</div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 樓層費-->
+                      <div class="form mt-30 border-top floor"><span class="desc">Floor fee 樓層費</span>
+                        <!-- 一排-->
+                        <div class="form-row">
+                          <div class="form-grid transparent">
+                            <div class="form-group transparent">
+                              <p class="subject">無電梯，需運送至</p>
+                              <div class="block">12F</div><span class="bold fz-14">+NTD$ 3,600</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-body">
+                          <!-- 購買品項-->
+                          <div class="extra-block floor">
+                            <div class="thead">
+                              <div class="item">購買品項</div>
+                              <div class="qty">件數</div>
+                              <div class="price">費用</div>
+                            </div>
+                            <ul> 
+                              <!-- 標準品-->
+                              <li> 
+                                <div class="item">乘風沙發 雙人座</div>
+                                <div class="qty"> <span>x 1</span></div>
+                                <div class="price">+NTD$ 300</div>
+                              </li>
+                              <!-- 客製品-->
+                              <li> 
+                                <div class="item">乘風沙發 客製品<span class="norm">雙人座</span></div>
+                                <div class="qty"><span>x 2</span></div>
+                                <div class="price">+NTD$ 600</div>
+                              </li>
+                              <!-- 客製品-->
+                              <li> 
+                                <div class="item">恰恰好沙發 客製品<span class="norm">雙人座</span></div>
+                                <div class="qty"><span>x 1</span></div>
+                                <div class="price">+NTD$ 300</div>
+                              </li>
+                              <!-- 客製品-->
+                              <li> 
+                                <div class="item">加菲收納筒 客製品  <span class="norm">木蓋</span></div>
+                                <div class="qty"><span>x 1</span></div>
+                                <div class="price">+NTD$ 100</div>
+                              </li>
+                              <!-- 客製品-->
+                              <li> 
+                                <div class="item">奇畦餐椅 客製品<span class="norm">單人椅</span></div>
+                                <div class="qty"><span>x 1</span></div>
+                                <div class="price">+NTD$ 100</div>
+                              </li>
+                            </ul>
+                          </div>
+                          <!-- 加購品項-->
+                          <div class="extra-block floor">
+                            <div class="thead">
+                              <div class="item">加購品項</div>
+                              <div class="qty">件數</div>
+                              <div class="price">費用</div>
+                            </div>
+                            <ul> 
+                              <!-- 標準品-->
+                              <li> 
+                                <div class="item">雲起時沙發　抱枕</div>
+                                <div class="qty"><span>x 1</span></div>
+                                <div class="price">+NTD$ 300</div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 進階資訊-->
+                      <div class="form border-top adv-info"><span class="desc">Advanced Information 進階資訊</span>
+                        <!-- 一排-->
+                        <div class="form-row info">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span></span><span class="px-0">電梯口高度</span></p><span class="other">300 cm</span>
+                            </div>
+                          </div>
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span></span><span class="px-0">電梯口寬度</span></p><span class="other">120 cm</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row info">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span></span><span class="px-0">電梯高度</span></p><span class="other">350 cm</span>
+                            </div>
+                          </div>
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span></span><span class="px-0">電梯寬度</span></p><span class="other">200 cm</span>
+                            </div>
+                          </div>
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span></span><span class="px-0">電梯深度</span></p><span class="other">100 cm</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row mt-20 info"> 
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span></span><span class="px-0">門口高度</span></p><span class="other">200 cm</span>
+                            </div>
+                          </div>
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span></span><span class="px-0">門口寬度</span></p><span class="other">120 cm</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row mt-20"> 
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>TIME</span><span>收貨時間</span></p><span class="other bold">14:00 - 16:00</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 一排-->
+                        <div class="form-row note">
+                          <p class="subject"><span class="bold">NOTE</span><span>其他備註</span></p>
+                          <div class="textarea">請小心運送，避免碰撞與商品毀損</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 門市自取-->
+                  <div class="item-form border-none">
+                    <div class="title">
+                      <p>門市取貨</p>
+                    </div>
+                    <div class="desc">
+                      <div class="wrap">
+                        <p class="fz-14">門市資訊</p>
+                      </div>
+                      <div class="form mt-20 border-top">
+                        <!-- 一排-->
+                        <div class="form-row mt-20">
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow">
+                              <p class="subject"><span>COUNTY</span><span>地區</span></p><span class="other">台中市</span>
+                            </div>
+                          </div>
+                          <div class="form-grid yellow">
+                            <div class="form-group yellow"><span class="fz-14">柳川門市</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- go top-->
+          <div class="bottom">
+            <div class="cir-btn black goTop hover-cir" data-hover="blue" data-aost="data-aost" data-aost-class="show" data-aost-offset="100" data-anchor-speed="1200" data-anchor="data-anchor">
+              <div class="icon">
+                <div class="icon-trangle-up"></div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- 取消訂單-->
+        <!-- 開啟: _common.openliboxInner('cancle');-->
+        <div class="libox-inner" data-name="cancle">
+          <div class="libox-common">
+            <div class="cir-wrap login">
+              <div class="cir-bg"> 
+                <div class="bg-text">OOPS</div>
+                <h5>Notice!</h5>
+                <h6>取消訂單</h6>
+                <p>訂單即將取消，請問您確定要取消訂單嗎？</p>
+                <div class="wrap">
+                  <div class="btn-close hover-cir" data-hover="yellowSmall">
+                    <p>OK 確認</p>
+                  </div>
+                  <div class="btn-close ajax_close hover-cir" data-hover="yellowSmall">
+                    <p>BACK 返回</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 訂單客服紀錄-->
+        <div class="libox-inner" data-name="service">
+          <div class="libox-common">
+            <div class="content">
+              <div class="cir-btn mainGreen ajax_close hover-cir" data-hover="blue">
+                <div class="cross"></div>
+              </div>
+              <div class="top-title">
+                <div class="tit"><span class="en">Hello! </span><span class="ch bold">訂單客服紀錄</span></div>
+                <div class="text"><span class="ch">NO. 訂單編號</span><span class="en">JDI2020110225</span></div>
+              </div>
+              <!-- 訊息輸入框-->
+              <div class="text-box">
+                <div class="tit">WRITE MESSAGE 您的訊息</div>
+                <div class="write-wrap">
+                  <div class="textarea">
+                    <textarea placeholder="請填寫您的想法或建議於此..."></textarea>
+                  </div>
+                  <div class="btn-send hover-cir" data-hover="blue"><span>SEND</span></div>
+                </div>
+              </div>
+              <!-- 對話紀錄-->
+              <div class="text-box">
+                <div class="tit">MESSAGE RECORD 對話紀錄</div>
+                <div class="text-wrap">
+                  <div class="scrollbar-inner" data-scrollbody="data-scrollbody">
+                    <div class="text-h">
+                      <!-- 顧客訊息 box-right-->
+                      <div class="box box-right">
+                        <div class="message">
+                          <div class="message-wrap">
+                            <!-- 可斷行-->
+                            <p>您好，請問我的商品預計什麼時候出貨呢？是否可於過年前到貨～？</p>
+                          </div>
+                          <!-- 留言時間-->
+                          <p class="date">2020/12/28 08:00</p>
+                        </div>
+                        <!-- 會員照片-->
+                        <div class="img">
+                          <div class="headshot" style="background-image: url(../../../uploads/member/person-320X320.jpg)"></div><img src="../../../uploads/member/person-320X320.jpg" alt=""/>
+                        </div>
+                      </div>
+                      <!-- 客服訊息 box-left-->
+                      <div class="box box-left">
+                        <div class="message">
+                          <div class="message-wrap">
+                            <p>
+                              Strauss Lab :<br>親愛的會員您好，由於我們的商品是接單訂製，整體而言算是半客製化的品項，製作時間大概需要 7-20 個工作天不等。<br>一旦出貨我們會立刻發送通知給您，希望能夠將最好的體驗帶到你們的家中，敬請耐心等候，非常感謝！</p>
+                          </div>
+                          <p class="date">2020/12/28 08:15</p>
+                        </div>
+                        <!-- 客服照片-->
+                        <div class="img"> 
+                          <div class="headshot" style="background-image: url(../../../uploads/member/person-320X320.jpg)"></div>
+                        </div>
+                      </div>
+                      <!-- 顧客訊息 box-right-->
+                      <div class="box box-right">
+                        <div class="message">
+                          <div class="message-wrap">
+                            <p>了解</p>
+                          </div>
+                          <p class="date">2020/12/31 18:00</p>
+                        </div>
+                        <div class="img">
+                          <div class="headshot" style="background-image: url(../../../uploads/member/person-320X320.jpg)"></div>
+                        </div>
+                      </div>
+                      <!-- 顧客訊息 box-right-->
+                      <div class="box box-right">
+                        <div class="message">
+                          <div class="message-wrap">
+                            <p>感謝回覆</p>
+                          </div>
+                          <p class="date">2020/12/31 18:01</p>
+                        </div>
+                        <div class="img">
+                          <div class="headshot" style="background-image: url(../../../uploads/member/person-320X320.jpg)"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 新增-->
+        <!-- 申請退貨-->
+        <div class="libox-inner" data-name="return">
+          <div class="libox-common">
+            <div class="content">
+              <div class="cir-btn mainGreen ajax_close hover-cir" data-hover="blue">
+                <div class="cross"></div>
+              </div>
+              <!-- 上半部標題-->
+              <div class="content-top">
+                <div class="title">
+                  <p class="en">Application for Return</p>
+                  <p class="ch">申請退貨</p>
+                </div>
+                <div class="item-number"> <span>NO. 訂單編號</span><span>JDI2020110225</span></div>
+                <p>
+                  請選擇您要退貨整筆訂單，或是單筆品項有問題需要退貨，<br>以利我們加速處理作業！</p>
+              </div>
+              <!-- 內容-->
+              <div class="content-text">
+                <div class="item-select">
+                  <!-- 整筆訂單退貨-->
+                  <div class="pick-wrap" data-pick="main">
+                    <div class="btn-cir chk-btn large"><span class="icon-check"></span></div>
+                    <div class="desc flex-row">
+                      <p>整筆訂單退貨</p>
+                    </div>
+                  </div>
+                  <!-- 指定品項退貨-->
+                  <div class="pick-wrap appoint" data-pick="main">
+                    <div class="btn-cir chk-btn large"><span class="icon-check"></span></div>
+                    <div class="desc flex-row">
+                      <p>指定品項退貨</p>
+                    </div>
+                    <!-- 退貨項目-->
+                    <section> 
+                      <div class="notice"><span class="fz-16">ITEM 購買項目</span>
+                        <!-- 敘述可改-->
+                        <p>NOTICE：若商品有附送贈品，退貨時將連帶收回贈品品項。</p>
+                      </div>
+                      <div class="return-wrap">
+                        <!-- 一項 - 項目包含 贈品 /加購-->
+                        <div class="return-box">
+                          <!-- 標準品-->
+                          <!-- 可選取的項目 data-pick="item"-->
+                          <div class="return-item" data-pick="item">
+                            <div class="left">
+                              <p>乘風沙發 雙人座</p>
+                              <div class="color-wrap">
+                                <div class="color"><span class="strong">SPEC：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">綠紫色 + 自然木色</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="btn-cir chk-btn small"><span class="icon-check"></span></div>
+                          </div>
+                          <!-- 贈品-->
+                          <div class="return-extra"><span>GIVEAWAY 贈品</span>
+                            <ul> 
+                              <!-- 一項 - 標準品-->
+                              <li>
+                                <div class="left">
+                                  <div class="txt-name">雙色抱枕</div>
+                                  <div class="txt-color">
+                                    <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                    <p>藍色</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- 一項 - 客製品-->
+                              <li>
+                                <div class="left">
+                                  <div class="txt-name">明月香氛盤</div>
+                                  <div class="txt-color">
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                                    <p>木色：原木色</p>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                          <!-- 加價購-->
+                          <div class="return-extra"><span>ADDITIONAL 加價購</span>
+                            <ul>
+                              <!-- 一項 -標準品-->
+                              <li data-pick="item">
+                                <div class="left">
+                                  <div class="txt-name">雙色抱枕</div>
+                                  <div class="txt-color">
+                                    <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                    <p>藍色</p>
+                                  </div>
+                                </div>
+                                <div class="btn-cir chk-btn small"><span class="icon-check"></span></div>
+                              </li>
+                              <!-- 一項 -客製品-->
+                              <li data-pick="item">
+                                <div class="left">
+                                  <div class="txt-name">雲起時沙發  客製品
+                                    <!-- 客製品 有多包一個規格欄位--><span class="norm">雙人椅</span>
+                                  </div>
+                                  <div class="txt-color">
+                                    <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                    <p>藍色</p>
+                                  </div>
+                                </div>
+                                <div class="btn-cir chk-btn small"><span class="icon-check"></span></div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!-- 一項 - 客製品-->
+                        <div class="return-box">
+                          <!-- 客製品-->
+                          <div class="return-item" data-pick="item">
+                            <div class="left">
+                              <p>乘風沙發 客製品</p>
+                              <div class="normal"><span class="fz-14 strong">SPEC：</span><span>雙人座 W52xD30xH52 (cm)</span></div>
+                              <div class="color-wrap">
+                                <div class="color"><span class="strong">COLOR：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                                  </div>
+                                </div>
+                                <div class="color"><span class="strong">COLOR：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">綠色</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="color-wrap">
+                                <div class="color"><span class="strong">WOOD：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">原木色</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="btn-cir chk-btn small"><span class="icon-check"></span></div>
+                          </div>
+                        </div>
+                        <!-- 一項 - 標準品-->
+                        <div class="return-box">
+                          <!-- 標準品-->
+                          <div class="return-item" data-pick="item">
+                            <div class="left">
+                              <p>乘風沙發</p>
+                              <div class="normal"><span class="fz-14 strong">SPEC：</span><span>雙人座 W52xD30xH52 (cm)</span></div>
+                              <div class="color-wrap">
+                                <div class="color"><span class="strong">COLOR：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="btn-cir chk-btn small"><span class="icon-check"></span></div>
+                          </div>
+                        </div>
+                        <!-- 一項 - 商品組合-->
+                        <div class="return-box" data-mode="group" data-pick="item">
+                          <!-- 組合標題-->
+                          <div class="group-title">
+                            <div class="notice left-transparent">
+                              <div class="txt-wrap"><span>EVENT PACKAGE：</span><span class="fz-16">書臥 life 生活任選三件享八折</span></div>
+                              <!-- 敘述可改-->
+                              <p>NOTICE：若商品有附送贈品，退貨時將連帶收回贈品品項。</p>
+                            </div>
+                            <div class="btn-cir chk-btn small"><span class="icon-check"></span></div>
+                          </div>
+                          <!-- 一項 - 客製品-->
+                          <div class="return-item">
+                            <div class="left">
+                              <p>恰恰好沙發</p>
+                              <div class="normal"><span class="fz-14 strong">SPEC：</span><span>雙人座 SH42.5 / W155.5xD88.5xH100</span></div>
+                              <div class="color-wrap">
+                                <div class="color"><span class="strong">COLOR：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="color-wrap">
+                                <div class="color"><span class="strong">WOOD：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">原木色</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- 一項 - 標準品-->
+                          <div class="return-item">
+                            <div class="left">
+                              <p>加菲收納筒 - 木蓋</p>
+                              <div class="normal"><span class="fz-14 strong">SPEC：</span><span>F W46×D40×H42(cm)</span></div>
+                              <div class="color-wrap">
+                                <div class="color"><span class="strong">COLOR：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- 一項 - 客製品-->
+                          <div class="return-item">
+                            <div class="left">
+                              <p>奇畦餐椅</p>
+                              <div class="normal"><span class="fz-14 strong">SPEC：</span><span>SH 43.5 / W51xD67xH73(cm)</span></div>
+                              <div class="color-wrap">
+                                <div class="color"><span class="strong">COLOR：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                                  </div>
+                                </div>
+                                <div class="color"><span class="strong">COLOR：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="color-wrap">
+                                <div class="color"><span class="strong">WOOD：</span>
+                                  <div>
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">原木色</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 一項 - 優惠項目-->
+                        <div class="return-box" data-mode="discount">
+                          <div class="notice"><span class="fz-16">DISCOUNT ITEM 優惠項目</span>
+                            <!-- 敘述可改-->
+                            <p>NOTICE：若商品退貨導致贈品資格失效，下方贈品需連帶收回。</p>
+                          </div>
+                          <!-- 贈品-->
+                          <div class="return-extra"><span>GIVEAWAY 贈品</span>
+                            <ul> 
+                              <!-- 一項 - 標準品-->
+                              <li data-pick="item">
+                                <div class="left">
+                                  <div class="txt-name">雙色抱枕</div>
+                                  <div class="txt-color">
+                                    <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                    <p>布色：藍色</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <!-- 一項 - 標準品-->
+                              <li data-pick="item">
+                                <div class="left">
+                                  <div class="txt-name">明月香氛盤</div>
+                                  <div class="txt-color">
+                                    <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                                    <p>木色：原木色</p>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                          <!-- 加價購-->
+                          <div class="return-extra"><span>ADDITIONAL 加價購</span>
+                            <ul>
+                              <!-- 一項 -標準品-->
+                              <li data-pick="item">
+                                <div class="left">
+                                  <div class="txt-name">雲起時沙發  腳几</div>
+                                  <div class="txt-color">
+                                    <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                    <p>藍色</p>
+                                  </div>
+                                </div>
+                                <div class="btn-cir chk-btn small"><span class="icon-check"></span></div>
+                              </li>
+                              <!-- 一項 -客製品-->
+                              <li data-pick="item">
+                                <div class="left">
+                                  <div class="txt-name">雲起時沙發  客製品
+                                    <!-- 客製品 有多包一個規格欄位--><span class="norm">雙人椅</span>
+                                  </div>
+                                  <div class="txt-color">
+                                    <div class="img-cir"><img src="../../../uploads/product/color06-20X20.jpg" alt=""/></div>
+                                    <p class="after">布色：紅色</p>
+                                    <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                    <p>木色：原木色</p>
+                                  </div>
+                                </div>
+                                <div class="btn-cir chk-btn small"><span class="icon-check"></span></div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <!-- 確定送出-->
+              <div class="btn-wrap" onclick="_member_detail.liboxReturnSuccess()"><a class="btn-cir hover-cir" href="javascript:;" data-hover="blue"><span class="icon-check"></span><span>確定送出</span></a></div>
+              <div class="cir-btn black goTop hover-cir" data-hover="blue" data-anchor-target="" data-anchor-container=".libox-inner[data-name='return'] .libox-common" data-anchor="data-anchor">
+                <div class="icon">
+                  <div class="icon-trangle-up"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 新增-->
+        <!-- 退貨成功送出燈箱-->
+        <div class="libox-inner" data-name="returnSuccess">
+          <div class="libox-common">
+            <div class="cir-wrap shortage">
+              <div class="cir-btn mainGreen ajax_close returnSuccess hover-cir" data-hover="blue">
+                <div class="cross"></div>
+              </div>
+              <div class="cir-bg"> 
+                <h5>Send Successfully</h5>
+                <h6>
+                  您的申請已送出<br>請加入 line@ 進行下一步服務</h6>
+                <div class="stoke-wrap">
+                  <div class="scrollbar-inner">
+                    <!-- 敘述可換-->
+                    <p>我們需要請您提供詳細的產品與發票照片，並說明退貨原因，後續將有專人與您即時對談處理，敬請加入我們的 line@，謝謝！</p>
+                    <!-- 圖可換-->
+                    <!-- 建議尺寸 200X200 png-->
+                    <div class="qr-code"><img src="../../../uploads/member/qrcode.png" alt=""/></div><span class="fz-16">掃描以加入我們的 LINE@</span><a href="https://reurl.cc/zbj7V0">或點此加入好友</a>
+                    <div class="btn-txt ajax_close returnSuccess hover-cir" data-hover="blue"><span>CLOSE 關閉</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!--引入的script-->
+  <script>document.createElement( "picture" );</script>
+  <script src="../../../assets/js/plugins-dist.js"></script>
+  <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
+  <script src="../../../assets/js/fesdDB.1.0-dist.js"></script>
+  <script src="../../../assets/js/fesd.2.0.min.js"></script>
+  <script src="../../../assets/js/aost-dist.js"></script>
+  <script src="../../../assets/js/methods-dist.js"></script>
+  <script src="../../../assets/js/main-dist.js"></script><!-- microdata : professional service -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "ProfessionalService",
+      "name": "網站名子",
+      "email": "mailto:email",
+      "url": "本站網址",
+      "image": "favicon logo路徑",
+      "priceRange":"商品價格區間",
+      "telephone": "電話",
+      "logo": "logo路徑",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "地址",
+        "addressLocality": "區",
+        "addressRegion": "成市",
+        "postalCode": "郵遞區號",
+        "addressCountry": "中華民國 (台灣)"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.619435",
+        "longitude": "120.296034"
+      },
+      "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+      "openingHours": [
+        "Mo-Th 11:00-22:00",
+        "Fr 11:00-22:30",
+        "Sa 10:30-22:30",
+        "Su 10:30-22:00"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+886-00-12345678"
+      },
+      "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+    }
+    
+    
+  </script><!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://example.com/dresses",
+            "name": "Dresses"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "https://example.com/dresses/real",
+            "name": "Real Dresses"
+          }
+        }
+      ]
+    }
+  </script>
+</html>

@@ -1,0 +1,483 @@
+-
+  var link = [
+    {
+      'en': 'Overview',
+      'ch': '會員總覽',
+      'link': './member_center.html'},
+    {
+      'en': 'Basic Information',
+      'ch': '帳號管理',
+      'link': './member_info.html'},
+    {
+      'en': 'Order',
+      'ch': '訂單查詢',
+      'link': './member_order.html'},
+    {
+      'en': 'Evaluation',
+      'ch': '商品評價',
+      'link': './member_evaluation.html'},
+    {
+      'en': 'Lovelist',
+      'ch': '商品收藏',
+      'link': './member_lovelist.html'},
+  ]
+
+  var status = [
+    {
+      'title': '處理中',
+      'num': '3',
+      'color': '#ff7675'},
+    {
+      'title': '備貨中',
+      'num': '1',
+      'color': '#52a2bd'},
+    {
+      'title': '已出貨',
+      'num': '1',
+      'color': '#496c3c'},
+    {
+      'title': '已完成',
+      'num': '99+',
+      'color': '#64ba76'},
+    {
+      'title': '已取消',
+      'num': '',
+      'color': '#ffa555'},
+    {
+      'title': '退貨申請',
+      'num': '1',
+      'color': '#9293fd'},
+  ]
+
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/member_order.css")
+  body.member_order(data-page="member_order")
+    include ../layouts/_ad.pug
+    .mouse-container.libox-type
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          // 背景圖可略過
+          .bg(style="background-image:url(../../../uploads/member/bg-order.jpg)")
+          // 大標
+          section.member-title.type-detail
+            .title.range
+              .left-block(data-aost data-aost-class="show")
+                // 大標 & 敘述可改
+                .unit-title 
+                  .left
+                    span.ch 會員中心
+                    span.en WELCOME!
+                    p 歡迎來到會員中心，您可在此查看訂單，商品收藏，或是修改個人基本資料！
+                // 會員登出
+                // --
+                .logout.hover-cir(data-hover="blue" onclick="_common.openliboxInner('logout')")
+                  a.cir-btn.mainGreen(href="javascript:;")
+                    .icon-cirArrow-2
+                  span LOG OUT 會員登出
+              // 會員相關連結
+              .right(data-aost data-aost-class="show")
+                each val,index in link
+                  .link-text.hover-cir(data-hover="blueBig")
+                    a(href=val.link)(class= index == 2 ? 'active': '')
+                      .en
+                        span= val.en
+                        span= val.ch
+                      .ch= val.ch
+
+          // 訂單狀態切換
+          section.member-status.range
+            // 退貨申請暫不開放需要隱藏(欄位保留)
+            .scrollbar-inner
+              ul 
+                each val,index in status
+                  li(class= index == 0? 'active': '')(data-color= val.color)
+                    a.hover-cir(href="javascript:;" data-hover="blueBig")
+                      // 訂單狀態
+                      span= val.title
+                      if(val.num !== '')
+                        // 沒有筆數不顯示此結構
+                        div= val.num
+          
+          // 訂單紀錄
+          section.order-list.range
+            ul 
+              // 處理中
+              li
+                // 訂單資訊
+                .thead 
+                  .date
+                    span.tit DATE 訂單成立日期
+                    span.en 2020-12-25
+                  .num
+                    span.tit NO. 訂單編號
+                    span.en JDI2020110225
+                  .status
+                    span.tit STATUS 訂單狀態
+                    span.ch 處理中
+                  .payment 
+                    span.tit PAYMENT 付款狀態
+                    span.ch 未付款
+                  .shipping
+                    span.tit SHIPPING 運送狀態
+                    span.ch 未出貨
+                // 金額 & 訂單詳情
+                .detail
+                  .price
+                    span PRICE 訂單金額
+                    span $ 20,800
+                  .button-wrap
+                    // 開啟客服對話
+                    a.form-btn.form-done.hover-cir.bd0-red(href="javascript:;" data-hover="yellowBig" onclick="_common.openliboxInner('service')")
+                      p NOTICE 有新回覆
+                    // 開啟取消訂單燈箱
+                    a.form-btn.form-done.hover-cir.bd0.opt(href="javascript:;" data-hover="yellowBig" onclick="_common.openliboxInner('cancle')")
+                      p CANCEL 取消訂單
+                    a.form-btn.form-done.hover-cir.bd0.green(href="./member_detail.html" data-hover="yellowBig")
+                      p DETAIL 查看詳情
+                      span.icon-arrAngle
+              // 備貨中(訂單狀態 & 付款狀態改變 沒有取消訂單按鈕)
+              li
+                .thead 
+                  .date
+                    span.tit DATE 訂單成立日期
+                    span.en 2020-12-25
+                  .num
+                    span.tit NO. 訂單編號
+                    span.en JDI2020110225
+                  .status
+                    span.tit STATUS 訂單狀態
+                    span.ch 備貨中
+                  .payment 
+                    span.tit PAYMENT 付款狀態
+                    span.ch 已付款
+                  .shipping
+                    span.tit SHIPPING 運送狀態
+                    span.ch 未出貨 | 預計出貨日 2021-01-30
+                // 金額 & 訂單詳情
+                .detail
+                  .price
+                    span PRICE 訂單金額
+                    span $ 20,800
+                  .button-wrap
+                    // 開啟客服對話
+                    a.form-btn.form-done.hover-cir.bd0-red(href="javascript:;" data-hover="yellowBig" onclick="_common.openliboxInner('service')")
+                      p NOTICE 有新回覆
+                    a.form-btn.form-done.hover-cir.bd0.green(href="./member_detail.html" data-hover="yellowBig")
+                      p DETAIL 查看詳情
+                      span.icon-arrAngle
+              // 已出貨(訂單狀態 & 運送狀態改變 沒有取消訂單)
+              li
+                .thead 
+                  .date
+                    span.tit DATE 訂單成立日期
+                    span.en 2020-12-25
+                  .num
+                    span.tit NO. 訂單編號
+                    span.en JDI2020110225
+                  .status
+                    span.tit STATUS 訂單狀態
+                    span.ch 已出貨
+                  .payment 
+                    span.tit PAYMENT 付款狀態
+                    span.ch 已付款
+                  .shipping
+                    span.tit SHIPPING 運送狀態
+                    span.ch 宅配中 |
+                      a.hover-cir(href="javascript:;" data-hover="yellowSmall") 貨號 1574589632
+                // 金額 & 訂單詳情
+                .detail
+                  .price
+                    span PRICE 訂單金額
+                    span $ 20,800
+                  .button-wrap
+                    // 開啟客服對話
+                    a.form-btn.form-done.hover-cir.bd0-red(href="javascript:;" data-hover="yellowBig" onclick="_common.openliboxInner('service')")
+                      p NOTICE 有新回覆
+                    a.form-btn.form-done.hover-cir.bd0.green(href="./member_detail.html" data-hover="yellowBig")
+                      p DETAIL 查看詳情
+                      span.icon-arrAngle
+              // 已完成(運送狀態改變)
+              // 七天以內的訂單 顯示 退換貨申請按鈕  
+              // 超過七天的訂單 會顯示 已/未填寫評價按鈕
+              // 注意按鈕class會有所不同
+              li
+                .thead 
+                  .date
+                    span.tit DATE 訂單成立日期
+                    span.en 2020-12-25
+                  .num
+                    span.tit NO. 訂單編號
+                    span.en JDI2020110225
+                  .status
+                    span.tit STATUS 訂單狀態
+                    span.ch 已出貨
+                  .payment 
+                    span.tit PAYMENT 付款狀態
+                    span.ch 已付款
+                  .shipping
+                    span.tit SHIPPING 運送狀態
+                    span.ch 已送達
+                // 金額 & 訂單詳情
+                .detail
+                  .price
+                    span PRICE 訂單金額
+                    span $ 20,800
+                  .button-wrap
+                    // 開啟客服對話
+                    a.form-btn.form-done.hover-cir.bd0-red(href="javascript:;" data-hover="yellowBig" onclick="_common.openliboxInner('service')")
+                      p NOTICE 有新回覆
+                    a.form-btn.form-done.hover-cir.bd0-white(href="javascript:;" data-hover="yellowBig")
+                      p RETURN 退換貨申請
+                    a.form-btn.form-done.hover-cir.bd0.green(href="./member_detail.html" data-hover="yellowBig")
+                      p DETAIL 查看詳情
+                      span.icon-arrAngle
+              li
+                .thead 
+                  .date
+                    span.tit DATE 訂單成立日期
+                    span.en 2020-12-25
+                  .num
+                    span.tit NO. 訂單編號
+                    span.en JDI2020110225
+                  .status
+                    span.tit STATUS 訂單狀態
+                    span.ch 已出貨
+                  .payment 
+                    span.tit PAYMENT 付款狀態
+                    span.ch 已付款
+                  .shipping
+                    span.tit SHIPPING 運送狀態
+                    span.ch 已送達
+                // 金額 & 訂單詳情
+                .detail
+                  .price
+                    span PRICE 訂單金額
+                    span $ 20,800
+                  .button-wrap
+                    // 開啟客服對話
+                    a.form-btn.form-done.hover-cir.bd0-red(href="javascript:;" data-hover="yellowBig" onclick="_common.openliboxInner('service')")
+                      p NOTICE 有新回覆
+                    a.form-btn.form-done.hover-cir.bd0-red(href="./member_evaluation_detail.html" data-hover="yellowBig")
+                      p EVALUATION 填寫評價
+                    a.form-btn.form-done.hover-cir.bd0.green(href="./member_detail.html" data-hover="yellowBig")
+                      p DETAIL 查看詳情
+                      span.icon-arrAngle
+              li
+                .thead 
+                  .date
+                    span.tit DATE 訂單成立日期
+                    span.en 2020-12-25
+                  .num
+                    span.tit NO. 訂單編號
+                    span.en JDI2020110225
+                  .status
+                    span.tit STATUS 訂單狀態
+                    span.ch 已出貨
+                  .payment 
+                    span.tit PAYMENT 付款狀態
+                    span.ch 已付款
+                  .shipping
+                    span.tit SHIPPING 運送狀態
+                    span.ch 已送達
+                // 金額 & 訂單詳情
+                .detail
+                  .price
+                    span PRICE 訂單金額
+                    span $ 20,800
+                  .button-wrap
+                    // 開啟客服對話
+                    a.form-btn.form-done.hover-cir.bd0-red(href="javascript:;" data-hover="yellowBig" onclick="_common.openliboxInner('service')")
+                      p NOTICE 有新回覆
+                    .form-btn.form-done.bd0.disable
+                      p DONE 已填寫評價
+                    a.form-btn.form-done.hover-cir.bd0.green(href="./member_detail.html"  data-hover="yellowBig")
+                      p DETAIL 查看詳情
+                      span.icon-arrAngle
+              // 已取消
+              li
+                .thead 
+                  .date
+                    span.tit DATE 訂單成立日期
+                    span.en 2020-12-25
+                  .num
+                    span.tit NO. 訂單編號
+                    span.en JDI2020110225
+                  .status
+                    span.tit STATUS 訂單狀態
+                    span.ch 已取消
+                  .payment 
+                    span.tit PAYMENT 付款狀態
+                    span.ch 已退款
+                  .shipping
+                    span.tit SHIPPING 運送狀態
+                    span.ch 未出貨
+                // 金額 & 訂單詳情
+                .detail
+                  .price
+                    span PRICE 訂單金額
+                    span $ 20,800
+                  .button-wrap
+                    // 開啟客服對話
+                    a.form-btn.form-done.hover-cir.bd0-red(href="javascript:;" data-hover="yellowBig" onclick="_common.openliboxInner('service')")
+                      p NOTICE 有新回覆
+                    a.form-btn.form-done.hover-cir.bd0.green(href="./member_detail.html"  data-hover="yellowBig")
+                      p DETAIL 查看詳情
+                      span.icon-arrAngle
+              // ++ 新增退貨
+              // 退貨申請
+              li
+                .thead 
+                  .date
+                    span.tit DATE 申請日期
+                    span.en 2021-01-01
+                  .num
+                    span.tit NO. 訂單編號
+                    span.en JDI2020110225
+                  // 訂單狀態 : 申請退貨，退貨審核中，退貨處理中，退貨已完成
+                  .status
+                    span.tit STATUS 訂單狀態
+                    span.ch 申請退貨
+                  // 付款狀態 : 已付款，已退款
+                  .payment 
+                    span.tit PAYMENT 付款狀態
+                    span.ch 已付款
+                  // 運送狀態 : 已送達，已退貨
+                  .shipping
+                    span.tit SHIPPING 運送狀態
+                    span.ch 已送達
+                // 金額 & 訂單詳情
+                .detail
+                  .price
+                    span PRICE 訂單金額
+                    span $ 500
+                  .button-wrap
+                    // 開啟客服對話
+                    a.form-btn.form-done.hover-cir.bd0-red(href="javascript:;" data-hover="yellowBig" onclick="_common.openliboxInner('service')")
+                      p NOTICE 有新回覆
+                    a.form-btn.form-done.hover-cir.bd0.green(href="./member_detail.html"  data-hover="yellowBig")
+                      p DETAIL 查看詳情
+                      span.icon-arrAngle
+              // 無訂單紀錄
+              li.no-result
+                .en No Orders
+                .ch 尚未有訂單紀錄
+              
+        // 會員登出燈箱
+        // 開啟: _common.openliboxInner('logout');
+        .libox-inner(data-name="logout")
+          .libox-common
+            .cir-wrap.member
+              .bg
+              .cir-bg
+                h5.white Log out
+                h6.white 您已成功登出
+                p 歡迎隨時回來！
+                .wrap
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p OK 確認
+
+        // 取消訂單
+        // 開啟: _common.openliboxInner('cancle');
+        .libox-inner(data-name="cancle")
+          .libox-common
+            .cir-wrap.login
+              .cir-bg 
+                .bg-text OOPS
+                h5 Notice!
+                h6 取消訂單
+                p 訂單即將取消，請問您確定要取消訂單嗎？
+                .wrap
+                  .btn-close.hover-cir(data-hover="yellowSmall")
+                    p OK 確認
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p BACK 返回
+
+        // 新增
+        // 訂單客服紀錄
+        .libox-inner(data-name="service")
+          .libox-common
+            .content
+              .cir-btn.mainGreen.ajax_close.hover-cir(data-hover="blue")
+                .cross
+              .top-title
+                .tit
+                  span.en Hello! 
+                  span.ch.bold 訂單客服紀錄
+                .text
+                  span.ch NO. 訂單編號
+                  span.en JDI2020110225
+              // 訊息輸入框
+              .text-box
+                .tit WRITE MESSAGE 您的訊息
+                .write-wrap
+                  .textarea
+                    textarea(placeholder="請填寫您的想法或建議於此...")
+                  .btn-send.hover-cir(data-hover="blue")
+                    span SEND
+              // 對話紀錄
+              .text-box
+                .tit MESSAGE RECORD 對話紀錄
+                .text-wrap
+                  .scrollbar-inner(data-scrollbody)
+                    .text-h
+                      // 顧客訊息 box-right
+                      .box.box-right
+                        .message
+                          .message-wrap
+                            // 可斷行
+                            p 您好，請問我的商品預計什麼時候出貨呢？是否可於過年前到貨～？
+                          // 留言時間
+                          p.date 2020/12/28 08:00
+                        // 會員照片
+                        .img
+                          .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+                          img(src="../../../uploads/member/person-320X320.jpg", alt="")
+                        
+                      // 客服訊息 box-left
+                      .box.box-left
+                        .message
+                          .message-wrap
+                            p Strauss Lab :<br>
+                              | 親愛的會員您好，由於我們的商品是接單訂製，整體而言算是半客製化的品項，製作時間大概需要 7-20 個工作天不等。<br>一旦出貨我們會立刻發送通知給您，希望能夠將最好的體驗帶到你們的家中，敬請耐心等候，非常感謝！
+                          p.date 2020/12/28 08:15
+                        // 客服照片
+                        .img 
+                          .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+                        
+                      // 顧客訊息 box-right
+                      .box.box-right
+                        .message
+                          .message-wrap
+                            p 了解
+                          p.date 2020/12/31 18:00
+                        .img
+                          .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+                        
+                      // 顧客訊息 box-right
+                      .box.box-right
+                        .message
+                          .message-wrap
+                            p 感謝回覆
+                          p.date 2020/12/31 18:01
+                        .img
+                          .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug      

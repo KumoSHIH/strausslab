@@ -1,0 +1,155 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.member
+  .mouse-container
+    .circle
+      border-color: #fff
+  .nav,.footer
+    background-color: #fff
+  .footer
+    .go-top
+      position: absolute
+      top: 0
+      right: auto
+      left: 80px
+      opacity: 1
+      display: block !important
+    +rwdmax(1200)
+      .go-top
+        top: -120px
+    +rwdmax(800)
+      .go-top
+        left: 35px
+        top: -75px
+    +rwdmax(767)
+      .go-top
+        top: -60px
+  main 
+    padding-top: 200px
+    padding-bottom: 200px
+    background-color: #fff
+    +rwdmax(1200)
+      padding-top: 180px
+    +rwdmax(900)
+      padding-top: 150px
+    +rwdmax(767)
+      padding-top: 130px
+      padding-bottom: 140px
+    .unit-title 
+      max-width: none
+      justify-content: center
+      .left
+        text-align: center
+      &[data-aost]
+        +opacity
+      &.show
+        +opacity1
+      +rwdmax(767)
+        .left
+          .ch 
+            padding-top: 0
+            padding-bottom: 5px
+    .content
+      max-width: 800px
+      width: 100%
+      margin: -50px auto 0
+      padding-top: 170px
+      background-repeat: no-repeat
+      background-position: center
+      &-wrap 
+        max-width: 520px
+        width: 100%
+        margin: 0 auto
+      p 
+        text-align: center
+        letter-spacing: 0.46px
+        font-size: px(14)
+        &.white
+          color: #fff 
+        &.en 
+          padding-top: 40px
+          padding-bottom: 18px
+          font-size: px(16.5)
+      .form
+        .form-row:first-child
+          input
+            +rwdmax(767)
+              font-size: px(15)
+      .form-group 
+        input[type="text"],
+        input[type="password"]
+          // margin-top: 4px
+          padding-left: 11px
+          &::placeholder
+            letter-spacing: 0.7px
+            font-family: $basicbold
+        span.basicbold
+          letter-spacing: 0.7px
+      .btn-forget
+        display: block
+        padding-top: 115px
+        padding-bottom: 100px
+        text-align: center
+        p 
+          position: relative
+          display: inline-block
+          padding-bottom: 25px
+          letter-spacing: 0.54px
+          +fontSet2(px(16),$basic)
+          &::after
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: 10px
+            background-color: rgba(255,255,255,.5)
+          .ch 
+            padding-left: 5px
+            font-size: px(14)
+      +rwdmax(1200)
+        margin-top: -30px
+        padding-top: 147px
+        .btn-forget
+          padding-top: 60px
+        .form-group
+          padding: 0 20px
+      +rwdmax(767)
+        // padding-top: 120px
+        &-wrap
+          padding: 0 20px
+        p 
+          line-height: 1.5
+    .btn-wrap
+      padding-top: 40px
+      .btn-square
+        span 
+          padding-left: 10px
+          letter-spacing: 0.4px
+          +fontSet2(px(14),$basicbold)
+      .btn-square:nth-child(1)
+        margin-bottom: 4px
+        background-color: #4557c4
+        .icon-facebook
+          font-size: px(18)
+      .btn-square:nth-child(2)
+        background-color: #fff
+        .img 
+          width: 20px
+      
+    .btn-wrap.big 
+      .btn-cir:nth-child(1)
+        span 
+          margin-top: 0
+        span:first-child
+          font-size: px(26)
+          font-family: $basicR
+        span:last-child
+          margin-top: 5px
+      .btn-cir:nth-child(2)
+        span:first-child
+          font-size: px(26)
+        span:last-child
+          margin-top: 3px
+

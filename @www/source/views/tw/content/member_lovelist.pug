@@ -1,0 +1,176 @@
+-
+  var link = [
+    {
+      'en': 'Overview',
+      'ch': '會員總覽',
+      'link': './member_center.html'},
+    {
+      'en': 'Basic Information',
+      'ch': '帳號管理',
+      'link': './member_info.html'},
+    {
+      'en': 'Order',
+      'ch': '訂單查詢',
+      'link': './member_order.html'},
+    {
+      'en': 'Evaluation',
+      'ch': '商品評價',
+      'link': './member_evaluation.html'},
+    {
+      'en': 'Lovelist',
+      'ch': '商品收藏',
+      'link': './member_lovelist.html'},
+  ]
+
+  var list = [
+    {
+      'img': '../../../uploads/member/img01-380X250.png',
+      'name': '奇畦條凳',
+      'sale': 'true',
+      'size': 'large'},
+    {
+      'img': '../../../uploads/member/img04-380X250.png',
+      'name': '天空電視櫃',
+      'sale': 'false',
+      'size': 'large'},
+    {
+      'img': '../../../uploads/member/img05-190X250.png',
+      'name': '飯糰葉子茶几',
+      'sale': 'false',
+      'size': 'small'},
+    {
+      'img': '../../../uploads/product/sofa05-380X250.png',
+      'name': '恰恰好沙發',
+      'sale': 'false',
+      'size': 'large'},
+    {
+      'img': '../../../uploads/member/img04-380X250.png',
+      'name': '得意餐桌',
+      'sale': 'false',
+      'size': 'large'},
+    {
+      'img': '../../../uploads/member/img06-190X250.png',
+      'name': '加菲收納桶',
+      'sale': 'false',
+      'size': 'small'},
+    {
+      'img': '../../../uploads/product/detail-obj08-190X250.png',
+      'name': '奇畦餐椅',
+      'sale': 'true',
+      'size': 'small'},
+  ]
+
+
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/member_lovelist.css")
+  body.member_lovelist(data-page="member_lovelist")
+    include ../layouts/_ad.pug
+    .mouse-container.libox-type
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          // 大標
+          section.member-title.type-detail
+            .title.range
+              .left(data-aost data-aost-class="show")
+                // 大標 & 敘述可改
+                .unit-title 
+                  .left
+                    span.ch 會員中心
+                    span.en WELCOME!
+                    p 歡迎來到會員中心，您可在此查看訂單，商品收藏，或是修改個人基本資料！
+                // 會員登出
+                .logout.hover-cir(data-hover="blue" onclick="_common.openliboxInner('logout')")
+                  a.cir-btn.mainGreen(href="javascript:;")
+                    .icon-cirArrow-2
+                  span LOG OUT 會員登出
+              // 會員相關連結
+              .right(data-aost data-aost-class="show")
+                each val,index in link
+                  .link-text.hover-cir(data-hover="blueBig")
+                    a(href=val.link)(class= index == 4 ? 'active': '')
+                      .en
+                        span= val.en
+                        span= val.ch
+                      .ch= val.ch
+          // 內容
+          section.content
+            ul
+              each val in list
+                li(class= val.size)
+                  .img
+                    a(href="./product_detail.html")
+                      img(src= val.img, alt="")
+                    // 圓圓背景可略過
+                    .lovelist-circle 
+                      div
+                  .text
+                    a(href="./product_detail.html")= val.name
+                    // 點擊取消收藏
+                    .heart.hover-cir(data-hover="blue")
+                      svg(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve")
+                        path(d="M30.9,9.7C29.9,4.3,24.2,1,19.1,3c-1.2,0.5-2.2,1.1-3.2,2.1C15.8,5,15.8,5,15.7,4.9c-2.2-2-4.7-2.7-7.6-2.3c-3.9,0.7-7,4.3-7.1,8.2c-0.1,2.6,0.8,4.6,2.6,6.4C7,20.6,10.4,24,13.7,27.4c0.7,0.7,1.4,1.4,2.2,2.2c0.1-0.1,0.1-0.1,0.2-0.2c0.7-0.7,1.2-1.2,1.9-1.9c3.5-3.4,6.8-6.8,10.2-10.2C30.4,15.2,31.4,12.7,30.9,9.7z")
+                  if(val.sale == 'true')
+                    a.sale(href="./product_detail.html")
+                      span.fz-14 ON SALE 現有優惠活動
+          // 尚未有商品收藏
+          section.no-products
+            div 
+              .cir-bg
+                h5 No Products
+                h6 尚未有商品收藏
+                p 快前往商品專區挑選心儀的商品吧！
+                a.form-row.button-wrap(href="./product_list.html")
+                  .form-btn.form-done.hover-cir(data-hover="yellowBig")
+                    p LET’S GO 商品專區
+                    span.icon-arrAngle
+        
+        // 會員登出燈箱
+        // 開啟: _common.openliboxInner('logout');
+        .libox-inner(data-name="logout")
+          .libox-common
+            .cir-wrap.member
+              .bg
+              .cir-bg
+                h5.white Log out
+                h6.white 您已成功登出
+                p 歡迎隨時回來！
+                .wrap
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p OK 確認
+        // 刪除收藏 燈箱
+        // _common.openliboxInner('delete');
+        .libox-inner(data-name="delete")
+          .libox-common
+            .cir-wrap.login
+              .cir-bg 
+                .bg-text OOPS
+                h5 Notice!
+                h6 刪除收藏
+                p 若確定移除將無法復原此操作，您確定要移除此項商品嗎？
+                .wrap
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p BACK  取消返回
+                  .btn-close.hover-cir(data-hover="yellowSmall")
+                    p DELETE 確認刪除
+
+
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug  

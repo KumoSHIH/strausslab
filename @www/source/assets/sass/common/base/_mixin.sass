@@ -1,0 +1,176 @@
+//字體宣告
+$JhengHei: "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif
+$JhengHeiBold: "微軟正黑體修正", "Microsoft-JhengHei-Bold", sans-serif
+	
+//RWD
+@mixin rwdmax($max)
+	@media only screen and (max-width: $max + px)  
+		@content
+
+@mixin rwdmin($min)
+	@media only screen and (min-width: $min + px)  
+		@content
+
+//文字大小像素轉rem
+@mixin font-size($size: 16) 
+	font-size: ($size/16) + rem
+
+@function px($px)
+	@return $px / 16 * 1rem
+
+//文字大小像素轉vw/vh
+@function pxTovw($px)
+	@return $px / 1920 * 100vw
+
+@function pxTovh($px)
+	@return $px / 1080 * 100vh
+
+//背景圖
+@mixin bg($url,$size,$repeat,$pos)
+	background-image: url($url)
+	background-size: $size
+	background-repeat: $repeat
+	background-position: $pos
+	
+=bgcenter 
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+
+//文字設定
+=fontSet2($size: px(16), $font: $basic)
+	font-family: $font 
+	font-size: $size
+
+=fontSet($font: $JhengHei, $fw: normal, $size: px(16), $lh: 1, $color: inherit, $ls: normal)
+	font-family: $font
+	font-weight: $fw
+	font-size: $size
+	line-height: $lh
+	color: $color
+	letter-spacing: $ls
+
+//flex
+=flex($display: flex, $wrap: nowrap, $direction: row, $x: center, $y: center)
+	display: $display
+	flex-wrap: $wrap
+	flex-direction: $direction
+	justify-content: $x
+	align-items: $y
+=flexCenter
+	display: flex
+	align-items: center
+	justify-content: center
+// absolute-center
+=posCenter
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+
+// 文字溢出加省略號 ...
+=ellipsis($line: 2, $lh: 32px, $height: $line * $lh)
+	display: block
+	overflow: hidden
+	display: -webkit-box
+	-webkit-box-orient: vertical
+	-webkit-line-clamp: $line
+	line-height: $lh
+	max-height: $line * $lh
+	height: $height
+
+//placeholder
+=placeholder($font: $basic, $color: black, $size: px(16))
+	&::placeholder /* Chrome, Firefox, Opera, Safari 10.1+ */
+		font-family: $font
+		font-size: $size
+		color: $color
+		opacity: 1 /* Firefox */
+	&:-ms-input-placeholder /* Internet Explorer 10-11 */
+		font-family: $font
+		font-size: $size
+		color: $color
+	&::-ms-input-placeholder /* Microsoft Edge */
+		font-family: $font
+		font-size: $size
+		color: $color
+
+=hideH1
+	position: absolute
+	left: -1000px
+	top: 0
+// animation setting
+=xWaypoint($x)
+	opacity: 0
+	transform: translateX($x + px)
+	transition: .8s ease-in-out
+=yWaypoint($y)
+	opacity: 0
+	transform: translateY($y + px)
+	transition: .8s ease-in-out
+=zWaypoint 
+	opacity: 1
+	transform: translateZ(0)
+
+=opacity
+	opacity: 0
+	transition: .5s ease-in-out
+=opacity1
+	opacity: 1
+
+=leftTopIn 
+	opacity: 0
+	transform: translate(-20px,-10px)
+
+=hoverCircle($w: 50px, $bgc: inherit)
+	width: $w
+	height: $w 
+	background-color: $bgc
+	border-radius: 50%
+=crossBase($bgc: #000)
+	display: block
+	padding: 15px
+	&::after,
+	&:before
+		content: ''
+		position: absolute
+		left: 15px
+		top: 9px
+		width: 1px
+		height: 12px
+		transition: .5s ease-in-out
+		background-color: $bgc
+
+
+=buttonCircle($w,$bgc:transparent)
+	width: $w
+	height: $w 
+	border-radius: 100%
+	flex-shrink: 0
+	transition: .5s ease-in-out
+	@if $bgc == transparent
+		border: solid 1px rgba(0,0,0,0.2) 
+		&:hover 
+			background-color: rgba(0,0,0,0.1)
+	@else 
+		border: 0
+		background-color: $bgc
+		&:hover 
+			background-color: darken($bgc,10%)
+=fakeBottomLine($h,$bgc)
+	content: ''
+	position: absolute
+	left: 0
+	bottom: 0
+	width: 0
+	height: $h
+	transition: .5s ease-in-out
+	background-color: $bgc
+////IE
+=ieHack
+		@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none)
+				@content
+// 偵測火狐
+=mozhack
+	@-moz-document url-prefix()
+		@content

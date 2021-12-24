@@ -1,0 +1,279 @@
+.footer
+  position: relative
+  // overflow: hidden
+  width: 100%
+  height: 400px
+  display: flex
+  padding-left: 13%
+  padding-right: 115px
+  z-index: 4
+  +rwdmax(1500)
+    padding-right: 80px
+  +rwdmax(1200)
+    height: auto
+    padding-right: 50px
+  +rwdmax(800)
+    width: 90%
+    margin: 0 auto
+    flex-direction: column
+    padding: 0 0 30px 0
+  +rwdmax(767)
+    width: 100%
+    padding: 0 40px 50px
+  &.white
+    .go-top
+      border-color: #fff
+  &.dark
+    background-color: #000
+  // waypoint 動畫
+  &.waypoint
+    .footer-right
+      +opacity
+    .footer-item li
+      +leftTopIn
+      @for $i from 0 through 6
+        &:nth-child(#{$i})
+          transition-delay: $i*0.1s
+    .footer-social li 
+      +leftTopIn
+      @for $i from 0 through 7
+        &:nth-child(#{$i})
+          transition-delay: $i*0.1s
+    .footer-mail,
+    .copyright
+      +yWaypoint(20)
+    .footer-mail
+      transition-delay: .5s
+    .copyright
+      transition-delay: .8s
+  &.show
+    .footer-right,
+    .footer-item li,
+    .footer-social li,
+    .footer-mail,
+    .copyright
+      +zWaypoint
+  
+  &-left
+    display: flex
+    flex-wrap: wrap
+    +rwdmax(767)
+      flex-direction: column
+  &-item 
+    max-width: 535px
+    width: 100%
+    margin-top: 15px
+    display: flex
+    justify-content: space-between
+    align-content: baseline
+    flex-wrap: wrap
+    +ieHack
+      height: 200px
+    li 
+      width: 40%
+      transition: .5s ease-in-out
+      +fontSet2(px(40),$basic)
+      a 
+        position: relative
+        display: block
+        width: 100%
+        padding-bottom: 25px
+        // transition: .5s ease-in-out
+      span 
+        transition: .5s ease-in-out
+      .en
+        position: relative
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          top: 50%
+          transform: translateY(-50%)
+          height: 20%
+          opacity: 0
+          background-color: rgba(0,0,0,0.8)
+          transition: .5s ease-in-out
+          animation: blockIn .5s forwards
+      .ch
+        position: absolute
+        left: 0
+        top: 6px
+        opacity: 0
+        font-weight: bold
+        font-size: px(30)
+      &:hover
+        .en
+          opacity: 0
+          &::after
+            opacity: 1
+            animation: blockOut .8s forwards
+        .ch 
+          opacity: 1
+    +rwdmax(1500)
+      max-width: 435px
+    +rwdmax(1200)
+      max-width: 330px
+      li 
+        font-size: px(32)
+        a 
+          padding-bottom: 20px
+        .ch 
+          font-size: px(28)
+        &:hover 
+          a 
+            transform: translateX(0)
+    +rwdmax(900)
+      width: 80%
+    +rwdmax(767)
+      width: 100%
+      max-width: none
+      padding-bottom: 45px
+      li 
+        font-size: px(30)
+        a 
+          padding-bottom: 15px
+        .ch 
+          font-size: px(26)
+  .go-top
+    position: fixed
+    right: 80px
+    bottom: 10%
+    opacity: 0
+    transition: .5s ease-in-out
+    &.show
+      z-index: 0
+      opacity: 1
+    &.bottom
+      right: auto
+      left: 80px
+      bottom: 35%
+      +rwdmax(1500)
+        bottom: 50%
+      +rwdmax(1200)
+        bottom: 40%
+      +rwdmax(800)
+        bottom: auto
+        top: 61%
+        left: 35px
+      +rwdmax(767)
+        top: auto
+        bottom: calc(400px + 2%)
+    +rwdmax(1200)
+      right: 40px
+      bottom: 27%
+    +rwdmax(800)
+      bottom: 23%
+    +rwdmax(767)
+      right: 5%
+      bottom: 35%
+    
+
+
+  // 聯絡
+  &-contact
+    width: 100%
+    transform: translateY(-40px)
+    .copyright 
+      padding-top: 25px
+      display: flex
+      align-items: center
+      p 
+        line-height: 20px
+        letter-spacing: 0.24px
+        font-family: $mpr
+        font-size: px(12)
+      >a 
+        padding: 10px 3px
+        transition: .5s ease-in-out
+        font-size: px(13)
+        &:hover
+          color: lighten(#000,30%)
+    .privacy
+      margin-left: 10px
+      border-bottom: solid 1px
+      line-height: 1.2
+      letter-spacing: 0.24px
+      +fontSet2(px(12),$mpr)
+    +rwdmax(1200)
+      .copyright
+        padding-top: 15px
+    +rwdmax(767)
+      transform: translateY(0)
+      .copyright 
+        max-width: 220px
+
+  &-social
+    display: flex
+    flex-direction: column
+    padding-left: 170px
+    li 
+      position: relative
+      margin-bottom: 8px
+      transition: .3s ease-in-out
+      &:hover 
+        a
+          border: solid 1px rgba(0,0,0,0.5)
+        span 
+          transform: rotateY(180deg)
+      a 
+        width: 38px
+        height: 38px
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-shrink: 0
+        padding: 10px
+        border: solid 1px transparent
+        border-radius: 50%
+        transition: .3s ease-in-out
+        font-size: px(18)
+      span
+        display: block  
+        transition: transform .5s ease-in-out
+    +rwdmax(1500)
+      padding-left: 100px
+    +rwdmax(1200)
+      li 
+        width: 32px
+        height: 32px
+    +rwdmax(767)
+      flex-direction: row
+      width: 100%
+      padding-left: 0
+      padding-bottom: 40px
+      transform: translateX(-10px)
+      li 
+        margin-right: 10px
+    
+  &-mail 
+    display: flex
+    align-items: center
+    span 
+      display: block
+      margin-right: 15px
+      font-size: px(20)
+    p 
+      letter-spacing: 0.72px
+      +fontSet2(px(24),$basic)
+    +rwdmax(1200)
+      p 
+        font-size: px(18)
+    +rwdmax(800)
+      span 
+        margin-right: 8px
+  &-right
+    align-self: center
+    margin-left: auto
+    .logo
+      display: block
+      width: 95px
+    +rwdmax(1200)
+      .logo 
+        width: 70px
+    +rwdmax(800)
+      position: absolute
+      right: 0
+      top: auto
+    +rwdmax(767)
+      right: 20px
+      bottom: 50px

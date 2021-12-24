@@ -1,0 +1,147 @@
+
+<!-- 搜尋燈箱-->
+<div class="libox-search">
+  <div class="modal-scroll-wrap scrollbar-macosx" data-scroll-content="data-scroll-content">
+    <div class="container">
+      <div class="cir-btn mainGreen ajax_close">
+        <div class="cross"></div>
+      </div>
+      <div class="search-content">
+        <p><span class="en">Search for</span><span class="ch">開始搜尋</span></p>
+        <ul> 
+          <li class="hover-cir" data-hover="yellowBig" data-search="product"> <a href="javascript:;"><span class="en">Products </span><span class="ch">搜尋產品</span></a></li>
+          <!-- 點點 可略過-->
+          <li class="dot"></li>
+          <li class="hover-cir" data-hover="yellowBig" data-search="news"> <a href="javascript:;"><span class="en">News </span><span class="ch">搜尋新訊</span></a></li>
+        </ul>
+      </div>
+      <!-- 新聞搜尋-->
+      <div class="search-news">
+        <div class="search-input">
+          <input type="text" placeholder="Keywords"/><a class="cir-btn mainGreen search" href="./search_news.html"><span class="icon-search"></span></a>
+        </div>
+      </div>
+      <!-- 產品搜尋-->
+      <div class="search-product">
+        <div class="search-input">
+          <input type="text" placeholder="Keywords"/>
+          <!-- 快速搜尋-->
+          <!-- 點擊會帶入input-->
+          <ul> 
+            <li><a href="javascript:;"># 雙人沙發</a></li>
+            <li> <a href="javascript:;"># 熱銷商品</a></li>
+            <li> <a href="javascript:;"># 新居落成</a></li>
+            <li> <a href="javascript:;"># 寵物</a></li>
+          </ul>
+        </div>
+        <div class="search-filter"><span>SIZE 商品尺寸</span>
+          <div class="select-wrap">
+            <!-- 下拉選項-->
+            <div class="select-opt">
+              <div class="select" data-class="width">
+                <div class="select-tit">
+                  <p><span class="num">0</span><span class="en"></span><span class="ch"></span></p>
+                  <p>WIDTH 寬度</p>
+                </div>
+                <div class="icon"><i class="icon-trangle-down"></i></div>
+              </div>
+              <div class="select" data-class="depth">
+                <div class="select-tit">
+                  <p><span class="num">0</span><span class="en"></span><span class="ch"></span></p>
+                  <p>DEPTH 深度</p>
+                </div>
+                <div class="icon"><i class="icon-trangle-down"></i></div>
+              </div>
+              <div class="select" data-class="height">
+                <div class="select-tit">
+                  <p><span class="num">0</span><span class="en"></span><span class="ch"></span></p>
+                  <p>HEIGHT 高度</p>
+                </div>
+                <div class="icon"><i class="icon-trangle-down"></i></div>
+              </div>
+            </div>
+            <!-- 下拉選單內容-->
+            <div class="select-content">
+              <div class="ul-width">
+                <div class="scrollbar-inner">
+                  <!-- ++-->
+                  <div class="mob-show">SELECT 選擇寬度</div>
+                  <ul>
+                    <li class="hover-cir" data-hover="blue">
+                      <!-- 尺寸--><span class="num">100</span>
+                      <!-- 單位--><span class="en">cm</span>
+                      <!-- 沒有中文不出現此結構--><span class="ch">以下</span>
+                    </li>
+                    <li class="hover-cir" data-hover="blue"><span class="num">100 - 120</span><span class="en">cm</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ul-depth">
+                <div class="scrollbar-inner">
+                  <!-- ++-->
+                  <div class="mob-show">SELECT 選擇深度</div>
+                  <ul>
+                    <li class="hover-cir" data-hover="blue"><span class="num">100</span><span class="en">cm</span><span class="ch">以下</span></li>
+                    <li class="hover-cir" data-hover="blue"><span class="num">100 - 120</span><span class="en">cm</span></li>
+                    <li class="hover-cir" data-hover="blue"><span class="num">120 - 150</span><span class="en">cm</span></li>
+                    <li class="hover-cir" data-hover="blue"><span class="num">150 - 180</span><span class="en">cm</span></li>
+                    <li class="hover-cir" data-hover="blue"><span class="num">180 - 200</span><span class="en">cm</span></li>
+                    <li class="hover-cir" data-hover="blue"><span class="num">200</span><span class="en">cm</span><span class="ch">以上</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="ul-height">
+                <div class="scrollbar-inner">
+                  <!-- ++-->
+                  <div class="mob-show">SELECT 選擇高度</div>
+                  <ul>
+                    <li class="hover-cir" data-hover="blue"><span class="num">100</span><span class="en">cm</span><span class="ch">以下</span></li>
+                    <li class="hover-cir" data-hover="blue"><span class="num">100 - 120</span><span class="en">cm</span></li>
+                    <li class="hover-cir" data-hover="blue"><span class="num">120 - 150</span><span class="en">cm</span></li>
+                    <li class="hover-cir" data-hover="blue"><span class="num">150 - 180</span><span class="en">cm</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- 商品功能checkbox-->
+            <div class="select-ckbox">
+              <p>FUNCTION 商品功能</p>
+              <div class="form-row">
+                <div class="form-check">
+                  <div class="check-wrap">
+                    <input id="checkbox11" type="checkbox"/>
+                    <label class="form-fakebox transparent" for="checkbox11">
+                      <div class="form-box"><span></span></div>
+                    </label>
+                    <label class="word" for="checkbox11">5坪以下</label>
+                  </div>
+                  <div class="check-wrap">
+                    <input id="checkbox12" type="checkbox"/>
+                    <label class="form-fakebox transparent" for="checkbox12">
+                      <div class="form-box"><span></span></div>
+                    </label>
+                    <label class="word" for="checkbox12">5-10坪</label>
+                  </div>
+                  <div class="check-wrap">
+                    <input id="checkbox13" type="checkbox"/>
+                    <label class="form-fakebox transparent" for="checkbox13">
+                      <div class="form-box"><span></span></div>
+                    </label>
+                    <label class="word" for="checkbox13">10-20坪</label>
+                  </div>
+                  <div class="check-wrap">
+                    <input id="checkbox14" type="checkbox"/>
+                    <label class="form-fakebox transparent" for="checkbox14">
+                      <div class="form-box"><span></span></div>
+                    </label>
+                    <label class="word" for="checkbox14">20坪以上</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><a class="cir-btn mainGreen search" href="./search_product.html"><span class="icon-search"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

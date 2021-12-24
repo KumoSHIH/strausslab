@@ -1,0 +1,682 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.home
+  h1 
+    +hideH1
+  .main-wrapper
+    background-color: #fff
+    main
+      position: relative
+      overflow: hidden
+      +rwdmax(1200)
+        padding-top: 120px
+  section 
+    position: relative
+
+  .block-wrap
+    position: relative
+    overflow: hidden
+    width: 100%
+    display: flex
+  .type-row1,
+  .type-row2,
+  .type-row3,
+  .type-row4
+    a.block
+      position: relative
+      display: block
+      .img-normal,
+      .img-cover
+        transition: .5s ease-in-out
+      &.hover
+        +rwdmin(1200)
+          &:hover 
+            .img-normal
+              opacity: 0
+            .img-cover
+              opacity: 1
+      &.hover-text
+        +rwdmin(1200)
+          .text
+            display: block
+            opacity: 0
+            transition: opacity .5s ease-in-out
+          &:hover 
+            .text
+              opacity: 1
+    .img-normal
+      .text
+        +rwdmin(1200)
+          display: none
+    .img-cover
+      position: absolute
+      left: 0
+      top: 0
+      opacity: 0
+      width: 100%
+      height: 100%
+      +rwdmax(1200)
+        display: none
+    .text
+      min-height: 40px
+      padding-top: 25px
+      text-align: center
+      letter-spacing: 0.9px
+      line-height: 1.5
+      +fontSet2(px(18),$basic)
+      +rwdmax(800)
+        padding-bottom: 20px
+  .type-row1,
+  .type-row2
+    .block-wrap
+      overflow: visible
+  // 
+  .type-row1
+    // 不滿版
+    &.type-disVer
+      max-width: 1700px
+      width: 100%
+      margin: 0 auto
+      +rwdmax(767)
+        width: 80%
+  // 兩大圖樣式
+  .type-row2
+    padding: 200px 0
+    +rwdmax(1200)
+      padding: 0 0 100px !important
+    .block-wrap
+      align-items: center
+      +rwdmax(800)
+        flex-direction: column
+    // 不滿版
+    &.type-disVer
+      max-width: 1760px
+      width: 90%
+      margin: 0 auto
+      +rwdmax(767)
+        width: 80%
+    // 圖片比例
+    &[data-type="5X5"]
+      .block
+        width: 50%
+      .parallax-container
+        padding-bottom: 100%
+      +rwdmax(800)
+        .block
+          width: 100%
+    &[data-type="4X5"]
+      justify-content: space-between
+      .block:first-child
+        // max-width: 600px
+        max-width: 31.25vw
+        width: 100%
+        margin: 0 auto
+        .parallax-container
+          padding-bottom: 120%
+      .block:last-child
+        width: 50%
+        .parallax-container
+          padding-bottom: 100%
+      +rwdmax(800)
+        .block:first-child
+          max-width: none
+          width: 60%
+        .block:last-child
+          width: 100%
+      +rwdmax(767)
+        .block:first-child
+          width: 80%
+
+    &[data-type="5X4"]
+      justify-content: space-between
+      .block:first-child
+        width: 50%
+        .parallax-container
+          padding-bottom: 100%
+      .block:last-child
+        max-width: 31.25vw
+        width: 100%
+        margin: 0 auto
+        .parallax-container
+          padding-bottom: 120%
+      +rwdmax(800)
+        .block:first-child
+          width: 100%
+        .block:last-child
+          max-width: none
+          width: 60%
+      +rwdmax(767)
+        .block:last-child
+          width: 80%
+    &[data-type="3X6"]
+      .block:first-child
+        max-width: 400px
+        width: 100%
+        margin: 0 auto
+        .parallax-container
+          padding-bottom: 128.75%
+      .block:last-child
+        width: 60%
+        .parallax-container
+          padding-bottom: 63.46%
+      +rwdmax(1500)
+        .block:first-child
+          max-width: 350px
+      +rwdmax(1200)
+        .block:first-child
+          max-width: 250px
+          &.pos-reset
+            transform: translateZ(0) !important
+      +rwdmax(800)
+        .block
+          padding-bottom: 20px
+        .block:first-child
+          max-width: none
+          width: 50%
+        .block:last-child
+          width: 100%
+          padding-bottom: 0
+      +rwdmax(767)
+        .block:first-child
+          width: 80%
+    &[data-type="6X3"]
+      .block:first-child
+        width: 60%
+        .parallax-container
+          padding-bottom: 63.46%
+      .block:last-child
+        max-width: 400px
+        width: 100%
+        margin: 0 auto
+        .parallax-container
+          padding-bottom: 128.75%
+      +rwdmax(1500)
+        .block:last-child
+          max-width: 350px
+      +rwdmax(1366)
+        .block:last-child
+          max-width: 300px
+      +rwdmax(1200)
+        .block:last-child
+          max-width: 250px
+          &.pos-reset
+            transform: translateZ(0) !important
+      +rwdmax(1024)
+        .block:last-child
+          max-width: 200px
+      +rwdmax(800)
+        .block
+          padding-bottom: 20px
+        .block:last-child
+          max-width: 250px
+          width: 50%
+          padding-bottom: 20px
+        .block:first-child
+          width: 100%
+      +rwdmax(767)
+        .block:first-child
+          padding-bottom: 75px
+        .block:last-child
+          width: 80%
+
+
+    // 內物件設定
+    .parallax-container
+      .obj 
+        &[data-path="right"]
+          right: -28%
+        &[data-path="left"]
+          left: -20%
+        &[data-path="top"]
+          top: 20%
+        &[data-path="bottom"]
+          bottom: 0% 
+
+  .type-row3,
+  .type-row4
+    padding: 200px 80px
+    // 滿版
+    &.type-fullVer
+      width: 100%
+      justify-content: space-between
+      +rwdmin(767)
+        .swiper-slide:first-child
+          .block
+            margin-left: 0
+        .swiper-slide:last-child
+          .block
+            margin-right: 0
+      +rwdmax(1200)
+        .swiper-slide:first-child,
+        .swiper-slide:last-child
+          .block
+            margin: 0 auto
+    // 不滿版
+    &.type-disVer
+      max-width: 1700px
+      width: 100%
+      margin: 0 auto
+    +rwdmin(1200)
+      .swiper-container
+        overflow: visible
+        .swiper-slide
+          display: block
+          flex-shrink: inherit
+          background-color: transparent
+      .swiper-pagination
+        display: none
+    +rwdmax(1200)
+      padding: 0 0 60px
+      .swiper-container
+        padding-bottom: 35px
+        .swiper-pagination
+          bottom: 0
+        .swiper-slide
+          opacity: 0 
+          background-color: #fff
+          transition: .5s ease-in-out
+          &.show
+            opacity: 1 
+      .block
+        &.pos-reset
+          transform: translateZ(0) !important
+          .img-bg
+            height: 120%
+    +rwdmax(767)
+      .swiper-container
+        padding-bottom: 15px
+    +rwdmax(575)
+      flex-direction: column
+    // 內物件設定
+    .parallax-container
+      .obj 
+        &[data-path="right"]
+          right: -30%
+        &[data-path="left"]
+          left: -20%
+        &[data-path="top"]
+          top: 20%
+        // &[data-path="0"]
+        //   top: 0
+        //   +rwdmax(1200)
+        //     top: 15%
+        //   +rwdmax(900)
+        //     top: 18%
+        //   +rwdmax(575)
+        //     top: 23%
+      
+      
+
+  // 三圖樣式
+  .type-row3
+    display: flex
+    .block
+      max-width: 400px
+      width: 100%
+      margin: 0 auto
+    .parallax-container
+      padding-bottom: 128.75%
+    +rwdmax(1500)
+      .block
+        max-width: 350px
+    +rwdmax(1366)
+      .block
+        max-width: 300px
+    +rwdmax(767)
+      .block
+        max-width: 250px
+
+  // 四圖樣式
+  .type-row4
+    display: flex
+    .block 
+      max-width: 320px
+      width: 100%
+      margin: 0 auto 
+    .parallax-container
+      padding-bottom: 143.75%
+    .swiper-slide:nth-child(1)
+      .block
+        transform: translateY(20%)
+    .swiper-slide:nth-child(2)
+      .block
+        transform: translateY(60%)
+        // transform: translateY(80%)
+    .swiper-slide:nth-child(3)
+      .block
+        transform: translateY(-10%)
+    .swiper-slide:nth-child(4)
+      .block
+        transform: translateY(45%)
+    +rwdmax(1500)
+      .block
+        max-width: 250px
+    +rwdmax(1200)
+      .type-row-swiper
+        width: 50%
+        margin: 0 auto 
+      .swiper-slide:nth-child(1),
+      .swiper-slide:nth-child(2),
+      .swiper-slide:nth-child(3),
+      .swiper-slide:nth-child(4)
+        .block
+          transform: translate(0)
+    +rwdmax(1024)
+      .block
+        max-width: 300px
+    +rwdmax(767)
+      .block
+        max-width: 250px
+
+  // 單大圖
+  // 位置: 左中右
+  // 比例: 小中大
+  .type-row1
+    padding: 100px 0
+    +rwdmax(1200)
+      padding: 0 0 60px
+    .parallax-container
+      padding-bottom: 67.18%
+      .img-bg
+        background-size: 100%
+    &[data-size="small"]
+      .block
+        // width: 50%
+        width: 30%
+        +rwdmax(1200)
+          width: 40%
+        +rwdmax(800)
+          width: 50%
+        +rwdmax(767)
+          width: 67%
+    &[data-size="middle"]
+      .block
+        // width: 60%
+        width: 50%
+        +rwdmax(800)
+          width: 60%
+        +rwdmax(767)
+          width: 75%
+    &[data-size="large"]
+      .block
+        // width: 80%
+        width: 70%
+        +rwdmax(800)
+          width: 80%
+        +rwdmax(767)
+          width: 90%
+    &[data-size="full"]
+      .block
+        width: 100%
+    &.center
+      .block
+        margin: 0 auto 
+    &.right
+      .block
+        margin-left: auto
+    // 單大圖樣式手機版
+    &:not(.type-mix)
+      .title-type
+        &[data-type="right-top"],
+        &[data-type="right-center"],
+        &[data-type="right-bottom"],
+        &[data-type="left-top"],
+        &[data-type="left-center"],
+        &[data-type="left-bottom"]
+          +rwdmax(767)
+            align-items: center
+
+  // 滾動換圖樣式
+  .type-mix
+    position: relative
+    overflow: hidden
+    margin-top: 100px
+    margin-bottom: 100px
+    padding: 0
+    .title-type
+      &[data-type="center-top"]
+        transform: translate(-50%,0)
+    +rwdmax(1200)
+      margin-top: 0
+    +rwdmax(800)
+      margin-bottom: 0
+    &.type-fullVer
+      .fix-wrap
+        &.active
+          left: 0
+    &.type-disVer
+      .fix-wrap.active
+        max-width: 1700px
+        width: 100%
+        left: 50%
+        transform: translateX(-50%)
+        +rwdmax(767)
+          width: 80%
+      .block-wrap
+        &.left
+          .block
+            margin-left: 100px
+      .block-wrap
+        &.right
+          .block
+            margin-right: 100px
+    .title-type
+      &[data-type="left-top"],
+      &[data-type="left-center"],
+      &[data-type="left-bottom"],
+      &[data-type="right-top"],
+      &[data-type="right-center"],
+      &[data-type="right-bottom"]
+      width: 100%
+      +rwdmax(767)
+        padding: 0
+    .fix-wrap
+      &.active
+        width: 100vw
+        height: 100%
+        position: fixed
+        top: 0
+        left: 0
+        // pointer-events: none
+    .block-wrap
+      display: flex
+      align-items: center
+      height: 100vh
+      position: absolute
+      left: 0
+      top: 0
+      opacity: 0
+      z-index: -1
+      pointer-events: none
+      transition: .5s ease-in-out
+      &.left
+        .img-normal,.img-cover 
+          margin-right: auto
+      // 置中    
+      &.center
+        justify-content: center
+        .img-normal,.img-cover 
+          margin: 0 auto
+      // 靠右
+      &.right
+        justify-content: flex-end
+        margin-left: auto
+      &.show
+        opacity: 1
+        z-index: 1
+        pointer-events: auto
+      &[data-size="small"]
+        .block
+          width: 30%
+          +rwdmax(1200)
+            width: 40%
+          +rwdmax(800)
+            width: 50%
+          +rwdmax(767)
+            width: 67%
+      &[data-size="middle"]
+        .block
+          width: 50%
+          +rwdmax(800)
+            width: 60%
+          +rwdmax(767)
+            width: 75%
+      &[data-size="large"]
+        .block
+          width: 70%
+          +rwdmax(800)
+            width: 80%
+          +rwdmax(767)
+            width: 90%
+      &[data-size="full"]
+        .block
+          width: 100%
+      
+
+      .img-cover
+        left: 50%
+        transform: translateX(-50%)
+      +rwdmax(1200)
+        height: calc(100vh - 200px)
+        top: 120px
+      +rwdmax(800)
+        height: calc(100vh - 300px)
+    .block
+      z-index: 1
+      &.hover
+        +rwdmin(1200)
+          &:hover 
+            .img-normal
+              opacity: 0
+            .img-cover
+              opacity: 1
+    .parallax-container
+      padding-bottom: 114.58%
+      .img-bg
+        height: 100%
+        top: 0
+
+  // 底部跑馬燈
+  .type-bottom
+    padding-top: 400px
+    padding-bottom: 200px
+    .block
+      position: relative
+      padding: 40px 0
+      .text
+        min-height: 100px
+        display: flex
+        align-items: center
+        color: #ccc
+        +fontSet2(px(90),$basic)
+      .img-wrap
+        max-width: 1080px
+        width: 100%
+        margin: 0 auto
+        display: flex
+        align-items: center
+        position: absolute
+        top: 50%
+        .img
+          padding: 0 30px
+          &.small
+            // max-width: 10.41vw
+            max-width: 190px
+          &.large
+            // max-width: 18.75vw
+            max-width: 380px
+      &.waypoint
+        +opacity
+      &.show
+        +opacity1
+    .block:nth-child(1),
+    .block:nth-child(3)
+      .img-wrap
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
+    .block:nth-child(2)
+      .img-wrap
+        justify-content: flex-end
+        right: 50%
+        transform: translateX(50%) translateY(-50%)
+    // .block:nth-child(3)
+    //   .img-wrap
+    //     left: 50%
+    //     transform: translateX(-50%)
+    +rwdmax(1500)
+      padding-top: 300px
+      .block
+        .img-wrap
+          .img 
+            &.small
+              max-width: 11.41vw
+            &.large
+              max-width: 20.75vw
+    +rwdmax(1366)
+      padding-top: 200px
+    +rwdmax(1200)
+      padding-top: 30px
+      padding-bottom: 150px
+      .block
+        .text
+          font-size: px(70)
+        .img-wrap
+          width: 60%
+          .img 
+            padding: 0 10px
+            &.small
+              max-width: 15.41vw
+            &.large
+              max-width: 25.75vw
+    +rwdmax(1024)
+      .block
+        .text
+          font-size: px(40)
+        .img-wrap
+          .img 
+            padding: 0 5px
+    +rwdmax(1000)
+      padding-bottom: 100px
+      .block
+        .img-wrap
+          .img 
+            &.small
+              max-width: 18.41vw
+            &.large
+              max-width: 28.75vw
+    +rwdmax(800)
+      .block
+        padding: 20px 0
+        .img-wrap
+          .img 
+            padding: 0 5px
+            &.small
+              max-width: 15.41vw
+    +rwdmax(767)
+      .block
+        padding: 5px 0
+        .text
+          font-size: px(52)
+        .img-wrap
+          width: 100%
+          .img
+            padding: 0 10px
+            &.small
+              max-width: 20.41vw
+              padding: 0
+            &.large
+              max-width: 36.75vw
+              padding: 0
+      .block:nth-child(1),
+      .block:nth-child(3)
+        .img-wrap
+          left: 3%
+          transform: translate(0,-50%)
+      .block:nth-child(2)
+        .img-wrap
+          justify-content: flex-end
+          left: auto 
+          right: 3%
+          transform: translate(0,-50%)
+

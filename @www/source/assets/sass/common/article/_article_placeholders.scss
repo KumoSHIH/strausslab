@@ -1,0 +1,1135 @@
+////////////////////////////////////////////////////////////////////////////
+//
+//  WDD Article 2.1 Placeholders
+//  version: 2.0
+//  Update: 2020.09.14
+//  Last Coding: Wade, 2020.09.14
+//  
+////////////////////////////////////////////////////////////////////////////
+
+/* ._articleBlock */
+
+%_articleBlock {
+    width: 100%;
+    * {
+        outline: none;
+    }
+}
+._articleBlock.text-white{
+    article ._contentWrap ._wordWrap ._subH,
+    article ._contentWrap ._wordWrap ._P{
+        color: #fff;
+    }
+}
+
+
+////////////////////////////////////////////////////
+
+/* article */
+
+%_article {
+    width: 100%;
+    height: 100%; //IE 11 
+    padding: 0 !important;
+    margin: 0 0 35px 0; // 每一個段落上方的間距
+    @include _articleRWD_default {
+        display: block;
+        margin: 0 0 15px 0; // 每一個段落上方的間距
+        // flex-direction: column; IE11 2020.01.12
+    }
+    &:last-child {
+        margin: 0; // 每一個段落上方的間距
+    }
+}
+
+
+/* typeFull 相鄰 article 間距*/
+
+%_typeF_basic {
+    margin-top: 35px !important;
+    @include _articleRWD_default {
+        margin-top: 50px !important;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* _contentWrap */
+
+%_contentWrap {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+// -typeFull > ._contentWrap
+%_typeFull_contentWrap {
+    width: 90%;
+    @include _articleRWD_default {
+        position: static;
+        width: 100% !important;
+        padding: 0;
+        background-color: transparent !important;
+    }
+}
+
+// -typeFull-Box > ._contentWrap
+%_typeFullBox_contentWrap {
+    width: 100%;
+    padding: 60px 70px;
+    // background-color: #fff;
+    @include _articleRWD_default {
+        padding: 20px !important;
+        border: none !important;
+        background-color: transparent !important;
+    }
+}
+
+// -typeFull-BoxSlice_L_R > ._contentWrap
+%_typeFull_half_box_slice_L_R_contentWrap {
+    width: 50% !important;
+    padding: 80px;
+}
+
+// -typeFull-BoxSlice > ._contentWrap
+%_typeFull_half_box_slice_contentWrap {
+    width: 60% !important;
+}
+
+// [typeFull-size=s] > ._contentWrap
+%_typeFull_size_S_contentWrap {
+    width: 50%;
+    @include _articleRWD_default {
+        width: 100% !important;
+    }
+}
+
+// [typeFull-size=m] > ._contentWrap
+%_typeFull_size_M_contentWrap {
+    width: 65%;
+    @include _articleRWD_default {
+        width: 100% !important;
+        padding: 0;
+    }
+}
+
+// [typeFull-size=l] > ._contentWrap
+%_typeFull_size_L_contentWrap {
+    width: 75%;
+    @include _articleRWD_default {
+        width: 100% !important;
+        padding: 0;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* ._wordWrap */
+
+%_wordWrap {
+    width: 100%;
+    // background-color: #ccc;
+    @include _articleRWD_default {
+        width: 100% !important;
+    }
+}
+
+// ._articleL > ._wordWrap
+%_article_L_wordWrap {
+    width: 50%;
+}
+
+// ._articleR > ._wordWrap
+%_article_R_wordWrap {
+    width: 50%;
+}
+
+// typeSwiper_L_R > _wordWrap
+%_typeSwiper_swiper_wordwrap {
+    width: 50%;
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+// typeSwiper_R > _wordWrap
+%_typeSwiper_swiper_R_wordwrap {
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+// typeOverlap_L > _wordWrap
+%_typeOverlap_L_wordWrap {
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 360px;
+    @include _articleRWD(1330) {
+        padding-right: 33%;
+    }
+    @include _articleRWD_default {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+// typeOverlap_LD > _wordWrap
+%_typeOverlap_LD_wordWrap {
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 360px;
+    @include _articleRWD(1330) {
+        padding-right: 33%;
+    }
+    @include _articleRWD_default {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+// typeOverlap_R > _wordWrap
+%_typeOverlap_R_wordWrap {
+    padding-top: 50px;
+    padding-left: 360px;
+    padding-right: 50px;
+    @include _articleRWD_default {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+// typeOverlap_RD > _wordWrap
+%_typeOverlap_RD_wordWrap {
+    padding-bottom: 50px;
+    padding-left: 360px;
+    padding-right: 50px;
+    @include _articleRWD_default {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* ._H */
+
+%_H {
+    font-family: 'Ubuntu-Bold','微軟正黑體','微軟正黑體修正',serif;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    line-height: 2.5rem;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+    margin-left: 0;
+    // position: relative;
+}
+
+%_H_RWD {
+    @include _articleRWD_default {
+        color: #000;
+        width: 100% !important;
+        margin: 0 0 15px 0 !important;
+    }
+}
+
+//._articleLR_RR_H > _H
+%_articleLR_RR_H {
+    width: calc(50% + 0px);
+    // width: calc(50% + 20px);
+    @include _articleRWD_default {
+        width: 50%;
+    }
+}
+
+// ._articleUL_UR_DL_DR > ._H
+%_articleUL_UR_DL_DR_H {
+    width: 35%;
+}
+
+//_typeFullimg ._H
+%_typeFullimg_H_RWD {
+    @include _articleRWD_default {
+        width: auto !important;
+        min-height: 180px;
+        padding: 40px 30px;
+        margin: 40px;
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+    }
+    @include _articleRWD(500) {
+        min-height: 150px;
+        padding: 30px 20px;
+        margin: 20px;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* ._subH */
+
+%_subH {
+    font-family: 'Ubuntu-Medium','微軟正黑體','微軟正黑體修正',serif;
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.6;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+    margin-left: 0;
+    @include _articleRWD_default {
+        width: 100% !important;
+    }
+}
+
+// ._articleLR_RR > ._subH
+%_articleLR_RR_subH {
+    width: 50%;
+    // width: calc(50% + 20px);
+    @include _articleRWD_default {
+        width: 50%;
+    }
+}
+
+// ._articleSL_SR > ._subH
+%_articleSL_SR_subH {
+    width: 35%
+}
+
+// ._articleUL_UR_DL_DR > ._subH
+%_articleUL_UR_DL_DR_subH {
+    width: 60%
+}
+
+// ._articleUL_DL > ._subH
+%_articleUL_DL_subH {
+    margin-left: 5%;
+}
+
+// ._articleUR_DR > ._subH
+%_articleUL_DL_subH {
+    margin-right: 5%;
+}
+
+// typeFull=Box > ._subH
+%_typeFull_subH_RWD {
+    width: auto !important;
+    @include _articleRWD_default {
+        color: #000 !important;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* ._P */
+
+%_P {
+    // font-family: '微軟正黑體','微軟正黑體修正';
+    font-size: 0.875rem;
+    letter-spacing: 0.7px;
+    line-height: 1.5625rem;
+    color: #000;
+    padding: 0;
+    margin: 0;
+    @include _articleRWD_default {
+        color: #000;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+}
+
+// ._articleSL_SR > ._P
+%_articleSL_SR_P {
+    width: 60%;
+}
+
+// ._articleSL > ._P
+%_articleSL_P {
+    margin-left: 5%
+}
+
+// ._articleSR > ._P
+%_articleSR_P {
+    margin-right: 5%
+}
+
+// typeFull=Box RWD > ._P
+%_typeFull_P_RWD {
+    @include _articleRWD_default {
+        color: #000 !important;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* ._buttonCover */ //wade 2020.03.18
+%_buttonCover {
+    display: block;
+    width: 100%;
+}
+
+////////////////////////////////////////////////////
+
+/* ._button */
+
+%_button {
+    font-family: 'Ubuntu-Medium','微軟正黑體','微軟正黑體修正',serif;
+    font-size: 0.875rem;
+    color: #000;
+    border-bottom: solid 2px;
+    // max-width: 260px; wade 2020.03.15
+    width: 125px;
+    min-height: 40px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 0;
+    letter-spacing: 0.7px;
+    font-weight: bold;
+    transition: .5s;
+    &:after{
+        display: block;
+        font-family: 'icomoon' !important;
+        content: '\e915';
+        font-size: 20px;
+        font-weight: bold;
+        padding-left: 20px;
+        transition: .5s;
+    }
+    &:hover {
+        &:after{
+            transform: translateX(10px);
+        }
+    }
+    @include _articleRWD_default {
+        margin-top: 30px;
+        &:after{
+            font-size: 28px;
+            padding-left: 10px;
+        }
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* ._imgCover */
+
+%_imgCover {
+    // width: calc(100% + 20px);
+    margin: 0 -10px;
+    padding: 0;
+    padding-bottom: 20px;
+    // background-color: #f10;
+    @include _articleRWD_default {
+        // width: calc(100% + 10px) !important;
+        margin: 0 -5px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 20px;
+        float: none !important;
+    }
+}
+
+// ._articleL_LR_R_RR > imgCover
+%_article_L_LR_R_RR_imgCover {
+    width: 50%;
+    @include _articleRWD_default {
+        width: 100%;
+    }
+}
+
+%_article_L_imgCover {
+    padding-left: 45px;
+    @extend %_article_L_LR_R_RR_imgCover;
+}
+
+%_articleR_imgCover {
+    padding-right: 45px;
+    @extend %_article_L_LR_R_RR_imgCover;
+}
+
+%_articleLR_imgCover {
+    padding-left: 45px;
+    padding-bottom: 30px;
+    @extend %_article_L_LR_R_RR_imgCover;
+}
+
+%_articleRR_imgCover {
+    padding-right: 45px;
+    padding-bottom: 30px;
+    @extend %_article_L_LR_R_RR_imgCover;
+}
+
+// ._articleU_UL_UR > imgCover
+%_articleU_UL_UR_imgCover {
+    padding-top: 20px;
+    @include _articleRWD_default {
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
+}
+
+// ._articleD_DL_DR > imgCover
+%_articleD_DL_DR_imgCover {
+    padding-bottom: 20px;
+    @include _articleRWD_default {
+        padding-bottom: 15px;
+    }
+}
+
+// [ articleSwiper=on ] > imgCover
+%_articleSwiper_on_imgCover {
+    margin-left: 0;
+    margin-right: 0;
+    @include _articleRWD_default {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* ._cover */
+
+%_cover {
+    width: 100%;
+    padding-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    @include _articleRWD_default {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 15px !important;
+    }
+}
+
+// typeOverlap > _cover
+%_typeOverlap_cover {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+%_typeOverlap_cover_down {
+    width: 100% !important;
+    margin: 0!important;
+}
+
+%_typeOverlap_cover_up {
+    min-width: 120px;
+    max-width: 300px;
+    width: 50%!important;
+    @include _articleRWD(1330) {
+        width: 100%!important;
+        max-width: 250px;
+    }
+    @include _articleRWD_default {
+        width: 80%!important;
+        max-width: 200px;
+    }
+    @include _articleRWD(650) {
+        width: 100%!important;
+        max-width: 100px;
+    }
+}
+
+// typeOverlap_L > _cover
+%_typeOverlap_L_cover_down {
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 130px !important;
+    @include _articleRWD(1330) {
+        padding-right: 50px !important;
+    }
+}
+
+%_typeOverlap_L_cover_up {
+    bottom: -35%;
+    right: 0;
+    @include _articleRWD_default {
+        bottom: -8%;
+    }
+}
+
+// typeOverlap_LD > _cover
+%_typeOverlap_LD_cover_down {
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 130px !important;
+    @include _articleRWD(1330) {
+        padding-right: 50px !important;
+    }
+}
+
+%_typeOverlap_LD_cover_up {
+    top: -35%;
+    right: 0;
+    @include _articleRWD_default {
+        top: -20%;
+    }
+}
+
+// typeOverlap_R > _cover
+%_typeOverlap_R_cover_down {
+    padding-top: 0 !important;
+    padding-left: 130px !important;
+    padding-right: 0 !important;
+    @include _articleRWD(1330) {
+        padding-left: 50px !important;
+    }
+}
+
+%_typeOverlap_R_cover_up {
+    bottom: -35%;
+    left: 0;
+    @include _articleRWD_default {
+        bottom: -8%;
+    }
+}
+
+// typeOverlap_RD > _cover
+%_typeOverlap_RD_cover_down {
+    padding-top: 0 !important;
+    padding-left: 130px !important;
+    padding-right: 0 !important;
+    @include _articleRWD(1330) {
+        padding-left: 50px !important;
+    }
+}
+
+%_typeOverlap_RD_cover_up {
+    top: -35%;
+    left: 0;
+    @include _articleRWD_default {
+        top: -20%;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* ._photo */
+
+%_photo {
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    padding: 0;
+}
+
+//imageSize_x11_x34_x43_x169 > ._photo
+%imageSize_x11_x34_x43_x169_photo {
+    width: 100% !important;
+    height: 0 !important;
+    overflow: hidden;
+}
+
+//imageSize_x11 > ._photo
+%imageSize_x11_photo {
+    padding-bottom: 100% !important;
+}
+
+//imageSize_x34 > ._photo
+%imageSize_x34_photo {
+    padding-bottom: 133.3% !important;
+}
+
+//imageSize_x43 > ._photo
+%imageSize_x43_photo {
+    padding-bottom: 75% !important;
+}
+
+//imageSize_x169 > ._photo
+%imageSize_x169_photo {
+    padding-bottom: 56.25% !important;
+}
+
+////////////////////////////////////////////////////
+
+/* ._photo > img */
+
+// ._imgCover > ._cover > ._photo > img
+%_photo_img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    transition: none;
+}
+
+//imageSize_x11_x34_x43_x169 > ._photo > img
+%_imageSize_x11_x34_x43_x169_img {
+    width: 100%;
+    height: auto !important;
+    padding: 0;
+    margin-top: 0.05rem; //為了減少比例計算上的誤差
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+////////////////////////////////////////////////////
+
+/* ._cover > _description */
+
+%_description {
+    font-family: 'Ubuntu-Medium','微軟正黑體','微軟正黑體修正',serif;
+    font-size: 0.875rem;
+    color: #000;
+    width: 100%;
+    padding: 24px 0 0 0;
+    letter-spacing: 0.7px;
+    line-height: 1.5625rem;
+}
+@include _articleRWD(500){
+    %_description{
+        padding-top: 10px;
+    }
+}
+
+//typeFull_Box > _imgCover > _cover > _description
+%_typeFull_Box_RWD_description {
+    @include _articleRWD_default {
+        color: #000 !important;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* img-row */
+
+//img-row=x2 :
+%_imgRow_x2 {
+    width: 50%;
+    @extend %_imgRow_RWD;
+}
+
+//img-row=x3 :
+%_imgRow_x3 {
+    width: 33.3%;
+    @extend %_imgRow_RWD;
+}
+
+//img-row=x4 :
+%_imgRow_x4 {
+    width: 25%;
+    @extend %_imgRow_RWD;
+}
+
+//img-row=x5 :
+%_imgRow_x5 {
+    width: 20%;
+    @extend %_imgRow_RWD;
+}
+
+%_imgRow_RWD {
+    @include _articleRWD_default {
+        width: 50%;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* -typeFull */
+
+%_typeFull {
+    padding: 80px !important;
+    @include _articleRWD_default {
+        padding: 40px !important;
+        background-image: none !important;
+    }
+}
+
+// typeFull 相鄰 article 間距
+%_typeF_typeF {
+    @include _articleRWD_default {
+        // margin-top: 40px !important;
+        margin-top: 15px !important;
+    }
+}
+
+// [typeFull-img]
+%_typeFull_all_typeFullimg {
+    width: 100%;
+    height: 100%;
+    // min-height: 450px;
+    // padding: 30px;
+    // margin: 0;
+    @include _articleRWD_default {
+        padding: 0 !important;
+        display: flex !important;
+    }
+    @include _articleRWD(500) {
+        min-height: 200px; //wade 2020.03.17
+    }
+}
+
+// [typeFull-img] RWD
+%_typeFull_all_typeFullimg_RWD {
+    width: 100%;
+    height: 100%;
+    min-height: 350px; // min-height: 450px;
+    margin-bottom: 10px; //rwd
+    @include _articleRWD_default {
+        padding: 0 !important;
+        display: flex !important;
+    }
+    @include _articleRWD(500) {
+        min-height: 225px;
+    }
+    @include _articleRWD(380) {
+        min-height: 200px;
+    }
+}
+
+////////////////////////////////////////////////////
+
+/* -typeSwiper */
+
+// -typeSwiper connom
+%_typeSwiper_swiper_container {
+    width: 100%;
+    padding: 80px 0;
+    @include _articleRWD_default {
+        padding: 25px 0 90px;
+    }
+}
+
+%_typeSwiper_swiper_slide {
+    padding: 0 80px;
+}
+
+%_typeSwiper_swiper_slide_RWD {
+    @include _articleRWD_default {
+        padding: 0 25px;
+    }
+}
+
+%_typeSwiper_swiper_photoWrap {
+    padding-left: 20px;
+    padding-right: 0;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include _articleRWD_default {
+        width: 100% !important;
+        height: 100% !important; // IE11 2020.01.12
+        padding: 0!important;
+        margin-top: 0!important;
+        margin-right: 0!important;
+        margin-left: 0!important;
+        margin-bottom: 30px !important;
+    }
+}
+
+%_typeSwiper_swiper_R_photoWrap {
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+//切換按鈕定位
+%_typeSwiper_swiper_bullets {
+    bottom: 30px;
+}
+
+////////////////////////////////////////////////////
+
+/* Swiper Basic Setting */
+
+//Swiper Nav
+%_swiper_nav_cover {
+    width: 100%;
+    padding: 0;
+    bottom: 10px;
+    left: 0;
+}
+
+%_swiper_nav_bt {
+    width: 7px;
+    height: 7px;
+    margin: 0 6px;
+    display: inline-block;
+    border-radius: 100%;
+    border: solid 1px #000;
+    background: transparent;
+}
+
+%_swiper_nav_active {
+    background-color: #000;
+}
+
+//Swiper Prev Next Button
+%_swiper_nav_prev_button {
+    width: 50px;
+    height: 50px;
+    color: #000;
+    background-image: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% - 63px);
+    bottom: auto;
+    left: 10px;
+    right: auto;
+    z-index: 10;
+    display: none;
+    &:before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        border: 3px solid #000;
+        border-radius: 50%;
+    }
+    &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 8px 5px 0;
+        border-color: transparent #000 transparent transparent;
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+    &:hover {
+        //your setting
+    }
+    @include _articleRWD_default {
+        display: none;
+    }
+}
+
+%_swiper_nav_next_button {
+    width: 50px;
+    height: 50px;
+    color: #000;
+    background-image: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% - 63px);
+    bottom: auto;
+    right: 10px;
+    left: auto;
+    z-index: 10;
+    display: none;
+    &:before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        border: 3px solid #000;
+        border-radius: 50%;
+    }
+    &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 8px;
+        border-color: transparent transparent transparent #000;
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+    &:hover {
+        //your setting
+    }
+    @include _articleRWD_default {
+        display: none;
+    }
+}
+
+%_typeSwiper_prev_button {
+    top: calc(50% - 25px);
+}
+
+%_typeSwiper_next_button {
+    top: calc(50% - 25px);
+}
+
+//Swiper Scrollbar
+%_typeSwiper_scrollBar {
+    border-radius: 0;
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+%_typeSwiper_scrollBar_horizontal {
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+    z-index: 50;
+    height: 5px;
+    width: 100%;
+}
+
+////////////////////////////////////////////////////
+// 20200729更新 //
+
+/* Swiper Basic Setting for swiper4-outside */
+
+//Swiper Nav
+%_swiper_nav_cover_outside {
+    width: 100%;
+    padding: 0;
+    bottom: 35px;
+    left: 0;
+}
+
+%_swiper_nav_bt_outside {
+    width: 6px;
+    height: 6px;
+    margin: 0 10px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #000;
+    opacity: 0.2;
+}
+
+%_swiper_nav_active_outside {
+    background-color: #000;
+    opacity: 1;
+}
+
+//Swiper Prev Next Button
+%_swiper_nav_prev_button_outside {
+    width: 50px;
+    height: 50px;
+    color: #000;
+    background-image: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% - 69px);
+    bottom: auto;
+    left: 0;
+    right: auto;
+    z-index: 10;
+    &:before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        border: 3px solid #000;
+        border-radius: 50%;
+    }
+    &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 8px 5px 0;
+        border-color: transparent #000 transparent transparent;
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+    &:hover {
+        //your setting
+    }
+    @include _articleRWD_default {
+        display: none;
+    }
+}
+
+//Swiper Prev Next Button for _articleL _articleLR
+%_articleLLR_swiper_nav_prev_button_outside {
+    left: 45px;
+}
+
+%_swiper_nav_next_button_outside {
+    width: 50px;
+    height: 50px;
+    color: #000;
+    background-image: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% - 69px);
+    bottom: auto;
+    right: 0;
+    left: auto;
+    z-index: 10;
+    &:before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        border: 3px solid #000;
+        border-radius: 50%;
+    }
+    &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 8px;
+        border-color: transparent transparent transparent #000;
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+    &:hover {
+        //your setting
+    }
+    @include _articleRWD_default {
+        display: none;
+    }
+}
+
+//Swiper Prev Next Button for _articleR _articleRR
+%_articleRRR_swiper_nav_prev_button_outside {
+    right: 45px;
+}
+
+//typeSwiper swiper outside
+%_typeSwiper_prev_button_outside {
+    top: calc(50% - 25px);
+}
+
+%_typeSwiper_next_button_outside {
+    top: calc(50% - 25px);
+}
+
+////////////////////////////////////////////////////

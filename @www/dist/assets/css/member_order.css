@@ -1,0 +1,536 @@
+@charset "UTF-8";
+.libox-inner[data-name=service] .content {
+  padding: 52px 50px 32px;
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  height: calc(100% - 130px);
+  background-color: #202020;
+}
+.libox-inner[data-name=service] .content .cir-btn {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.libox-inner[data-name=service] .content .top-title {
+  text-align: center;
+}
+.libox-inner[data-name=service] .content .top-title .tit {
+  color: #98c213;
+}
+.libox-inner[data-name=service] .content .top-title .tit .en {
+  font-size: 2.1875rem;
+}
+.libox-inner[data-name=service] .content .top-title .tit .ch {
+  margin-left: 5px;
+  letter-spacing: 0.95px;
+  font-size: 1.25rem;
+}
+.libox-inner[data-name=service] .content .top-title .text {
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+.libox-inner[data-name=service] .content .top-title .text .ch {
+  margin-right: 9px;
+  color: #b2b2b6;
+  letter-spacing: 0.46px;
+  font-family: "Ubuntu-Bold", "微軟正黑體修正", "Microsoft JhengHei Bold", "Microsoft JhengHei", sans-serif;
+  font-size: 0.875rem;
+}
+.libox-inner[data-name=service] .content .top-title .text .en {
+  color: #fff;
+  letter-spacing: 0.45px;
+  font-size: 0.875rem;
+}
+.libox-inner[data-name=service] .content .text-box {
+  margin-bottom: 5px;
+  padding: 30px;
+  background-color: #252525;
+}
+.libox-inner[data-name=service] .content .text-box .tit {
+  color: #fff;
+  letter-spacing: 0.6px;
+  font-family: "Ubuntu-Bold", "微軟正黑體修正", "Microsoft JhengHei Bold", "Microsoft JhengHei", sans-serif;
+  font-size: 0.875rem;
+}
+.libox-inner[data-name=service] .content .text-box .write-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.libox-inner[data-name=service] .content .text-box .write-wrap .textarea {
+  width: 100%;
+  padding-top: 19px;
+}
+.libox-inner[data-name=service] .content .text-box .write-wrap .textarea textarea {
+  height: 60px;
+  color: #fff;
+}
+.libox-inner[data-name=service] .content .text-box .write-wrap .btn-send {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  flex-shrink: 0;
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  border: 0;
+  background-color: #e8c330;
+}
+.libox-inner[data-name=service] .content .text-box .write-wrap .btn-send:hover {
+  background-color: #cea917;
+}
+.libox-inner[data-name=service] .content .text-box .write-wrap .btn-send span {
+  color: #fff;
+  letter-spacing: 0.4px;
+  -webkit-transition: letter-spacing 0.5s ease-in-out;
+  -o-transition: letter-spacing 0.5s ease-in-out;
+  transition: letter-spacing 0.5s ease-in-out;
+  font-family: "Ubuntu-Bold", "微軟正黑體修正", "Microsoft JhengHei Bold", "Microsoft JhengHei", sans-serif;
+  font-size: 0.75rem;
+}
+.libox-inner[data-name=service] .content .text-box .write-wrap .btn-send:hover span {
+  letter-spacing: 1px;
+}
+.libox-inner[data-name=service] .content .text-box .text-wrap {
+  margin-top: 25px;
+}
+.libox-inner[data-name=service] .content .text-box .text-wrap .scrollbar-inner {
+  max-height: 400px !important;
+}
+.libox-inner[data-name=service] .content .text-box .text-wrap .scrollbar-inner > .scroll-element.scroll-y {
+  width: 4px;
+  border-radius: 0px;
+}
+.libox-inner[data-name=service] .content .text-box .text-wrap .scrollbar-inner > .scroll-element.scroll-y .scroll-element_outer {
+  border-radius: 0px;
+}
+.libox-inner[data-name=service] .content .text-box .text-wrap .scrollbar-inner > .scroll-element.scroll-y .scroll-element_track {
+  width: 1px;
+  left: 1px;
+}
+.libox-inner[data-name=service] .content .text-box .text-wrap .scrollbar-inner > .scroll-element.scroll-y .scroll-bar {
+  width: 3px;
+  background-color: #98c213;
+  opacity: 1;
+  border-radius: 0px;
+}
+.libox-inner[data-name=service] .content .text-box .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: 12px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+}
+.libox-inner[data-name=service] .content .text-box .box .message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15px;
+  position: relative;
+}
+.libox-inner[data-name=service] .content .text-box .box .message-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 460px;
+  width: 100%;
+  letter-spacing: 0.7px;
+  font-size: 0.875rem;
+}
+.libox-inner[data-name=service] .content .text-box .box .message-wrap p {
+  display: inline-block;
+  position: relative;
+  padding: 12px 25px;
+  border-radius: 10px;
+  line-height: 1.5;
+  z-index: 1;
+}
+.libox-inner[data-name=service] .content .text-box .box .message-wrap p::after {
+  content: "";
+  position: absolute;
+  border-style: solid solid solid;
+  border-width: 7px 25px 7px 25px;
+  top: 15px;
+}
+.libox-inner[data-name=service] .content .text-box .box .img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.libox-inner[data-name=service] .content .text-box .box p.date {
+  width: 100%;
+  padding-top: 10px;
+  color: #666;
+  letter-spacing: 0.6px;
+  font-size: 0.75rem;
+}
+.libox-inner[data-name=service] .content .text-box .box-right {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.libox-inner[data-name=service] .content .text-box .box-right .message {
+  margin-left: auto;
+  margin-right: 40px;
+}
+.libox-inner[data-name=service] .content .text-box .box-right .message-wrap p {
+  margin-left: auto;
+  color: #fff;
+  background-color: #202020;
+  border: solid 1px #404040;
+}
+.libox-inner[data-name=service] .content .text-box .box-right .message-wrap p::after {
+  border-color: transparent transparent transparent #404040;
+  right: -50px;
+}
+.libox-inner[data-name=service] .content .text-box .box-right .message-wrap p::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: -48px;
+  border-style: solid solid solid;
+  border-width: 7px 25px 7px 25px;
+  border-color: transparent transparent transparent #202020;
+  z-index: 1;
+}
+.libox-inner[data-name=service] .content .text-box .box-right p.date {
+  text-align: right;
+}
+.libox-inner[data-name=service] .content .text-box .box-left {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.libox-inner[data-name=service] .content .text-box .box-left .message {
+  margin-right: auto;
+  margin-left: 40px;
+}
+.libox-inner[data-name=service] .content .text-box .box-left .message-wrap p {
+  margin-right: auto;
+  background-color: #eee;
+}
+.libox-inner[data-name=service] .content .text-box .box-left .message-wrap p::after {
+  border-color: transparent #eeeeee transparent transparent;
+  left: -48px;
+}
+.libox-inner[data-name=service] .content .text-box:nth-child(4) {
+  min-height: 450px;
+}
+@media only screen and (max-width: 1500px) {
+  .libox-inner[data-name=service] .content {
+    height: 600px;
+  }
+  .libox-inner[data-name=service] .content .text-box {
+    padding: 25px;
+  }
+  .libox-inner[data-name=service] .content .text-box .text-wrap .scrollbar-inner {
+    max-height: 200px !important;
+  }
+  .libox-inner[data-name=service] .content .text-box:nth-child(4) {
+    min-height: 250px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .libox-inner[data-name=service] .content {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .libox-inner[data-name=service] .content {
+    width: 100%;
+    height: calc(100% - 65px);
+    margin-top: 65px;
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+  .libox-inner[data-name=service] .content .text-box {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  .libox-inner[data-name=service] .content .text-box .tit {
+    padding-left: 20px;
+  }
+  .libox-inner[data-name=service] .content .text-box .write-wrap .textarea {
+    padding-left: 20px;
+  }
+  .libox-inner[data-name=service] .content .text-box .write-wrap .btn-send {
+    width: 45px;
+    height: 45px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .libox-inner[data-name=service] .content .text-box .write-wrap .btn-send span {
+    letter-spacing: 0.33px;
+    font-size: 0.625rem;
+  }
+  .libox-inner[data-name=service] .content .text-box .text-wrap .scrollbar-inner {
+    max-height: 200px !important;
+  }
+  .libox-inner[data-name=service] .content .text-box .box {
+    padding-left: 7px;
+    padding-right: 5px;
+    padding-bottom: 20px;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .libox-inner[data-name=service] .content .text-box .box .message-wrap p {
+    padding: 16px 20px;
+  }
+  .libox-inner[data-name=service] .content .text-box .box .img {
+    width: 60px;
+    height: 60px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  .libox-inner[data-name=service] .content .text-box .box-right .img {
+    margin-right: 10px;
+  }
+  .libox-inner[data-name=service] .content .text-box .box-right p.date {
+    padding-right: 30px;
+  }
+  .libox-inner[data-name=service] .content .text-box .box-left p.date {
+    padding-left: 30px;
+  }
+  .libox-inner[data-name=service] .content .text-box:nth-child(3) {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .libox-inner[data-name=service] .content .text-box:nth-child(4) {
+    padding-top: 30px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .libox-inner[data-name=service] .content .text-box .text-wrap .scrollbar-inner {
+    max-height: 150px !important;
+  }
+}
+
+.member_order {
+  background-color: #ffe4ab;
+}
+.member_order .mouse-container .circle {
+  border: solid 1px rgba(0, 0, 0, 0.5);
+}
+.member_order .footer {
+  background-color: #ffe4ab;
+}
+.member_order main {
+  padding-top: 240px;
+  padding-bottom: 200px;
+}
+.member_order main .member-title .title .right .link-text a:not(.active) .en, .member_order main .member-title .title .right .link-text a:not(.active) .ch {
+  color: rgba(0, 0, 0, 0.2);
+}
+.member_order main .member-title .title .right .link-text a.active .en, .member_order main .member-title .title .right .link-text a.active .ch {
+  color: #000;
+}
+@media only screen and (max-width: 1100px) {
+  .member_order main {
+    padding-top: 180px;
+    padding-bottom: 250px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .member_order main {
+    padding-top: 150px;
+    padding-bottom: 140px;
+  }
+}
+.member_order .range {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1500px) {
+  .member_order .range {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .member_order .range {
+    width: 100%;
+  }
+}
+.member_order .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-position: center 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1100px) {
+  .member_order .bg {
+    background-size: 120%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .member_order .bg {
+    background-size: 250%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .member_order .bg {
+    background-size: 500%;
+  }
+}
+.member_order .member-status {
+  padding-top: 60px;
+}
+.member_order .member-status .scrollbar-inner {
+  width: 100% !important;
+}
+.member_order .member-status ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.member_order .member-status ul li {
+  margin-right: 8px;
+  border-top: solid 6px;
+  border-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  -webkit-transition: border-color 0.5s ease-in-out;
+  -o-transition: border-color 0.5s ease-in-out;
+  transition: border-color 0.5s ease-in-out;
+}
+.member_order .member-status ul li a {
+  height: 100%;
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.member_order .member-status ul li span {
+  letter-spacing: 0.46px;
+  font-size: 0.875rem;
+}
+.member_order .member-status ul li div {
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #000;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  -o-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  letter-spacing: 0.4px;
+  font-size: 0.75rem;
+}
+.member_order .member-status ul li:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 1100px) {
+  .member_order .member-status {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+  .member_order .member-status .scrollbar-inner {
+    position: relative;
+    width: 98% !important;
+    overflow-x: scroll;
+    margin: 0 auto;
+  }
+  .member_order .member-status .scrollbar-inner > .scroll-element.scroll-x {
+    height: 5px;
+    border-radius: 0px;
+  }
+  .member_order .member-status .scrollbar-inner > .scroll-element.scroll-x .scroll-element_outer {
+    border-radius: 0px;
+  }
+  .member_order .member-status .scrollbar-inner > .scroll-element.scroll-x .scroll-element_track {
+    width: 1px;
+    left: 1px;
+  }
+  .member_order .member-status .scrollbar-inner > .scroll-element.scroll-x .scroll-bar {
+    width: 3px;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    border-radius: 5px;
+  }
+  .member_order .member-status .scrollbar-inner ul li {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    max-width: 205px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .member_order .member-status .scrollbar-inner ul li {
+    max-width: 160px;
+  }
+}
+.member_order .button-wrap .form-btn:not(:first-child) {
+  position: relative;
+}
+.member_order .button-wrap .form-btn:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 14px;
+  background-color: #fff;
+  opacity: 0.8;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+@media only screen and (max-width: 767px) {
+  .member_order .button-wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .member_order .button-wrap .form-btn:nth-child(3) {
+    margin-top: -20px;
+  }
+}
+/*# sourceMappingURL=member_order.css.map */

@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/member_detail.css")
+  body.member_detail(data-page="member_detail")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        main
+          .top
+            a.cir-btn.black.hover-cir(href="./member_order.html" data-hover="blue")
+              .cross
+          // 訂單紀錄
+          section.order-top.range
+            .member-bgtext.center
+              span Order
+              .text 
+                .en Order Record
+                .ch.bold 訂單紀錄
+            // 訂單訊息列表
+            .order-list
+              ul 
+                li
+                  .thead 
+                    .date
+                      span.tit DATE 訂單成立日期
+                      span.en 2020-12-25
+                    .num
+                      span.tit NO. 訂單編號
+                      span.en JDI2020110225
+                    .status
+                      span.tit STATUS 訂單狀態
+                      span.ch 處理中
+                    .payment 
+                      span.tit PAYMENT 付款狀態
+                      span.ch 未付款
+                    .shipping
+                      span.tit SHIPPING 運送狀態
+                      span.ch 宅配中 |
+                        a.hover-cir(href="javascript:;" data-hover="yellowBig") 貨號 1574589632
+                  // 金額 & 訂單詳情
+                  .detail.flex-wrap.hover-cir(data-hover="yellowBig")
+                    .price.flex-aic.w100
+                      span PRICE 訂單金額
+                      span $ 20,800
+                      .btn-cir
+                        span.icon-trangle-down
+                    // 結帳明細
+                    .detail-text.w100
+                      .wrap
+                        span.fz-14 DETAIL 結帳明細
+                        .center
+                          div 
+                            span SUBTOTAL 商品小計
+                            span NTD$  109,578
+                          div 
+                            span DISCOUNT  訂單優惠
+                            span - NTD$  21,916
+                          div 
+                            span ADDITIONAL PURCHASE  訂單加價購
+                            span + NTD$ 1,999
+                        .right
+                          div 
+                            span SHIPPING 運費
+                            span + NTD$  60
+                          div 
+                            span CLIMB FEE 搬運費
+                            span + NTD$  30
+            // 切換明細 & 訂單資訊
+            .order-explore
+              span EXPLORE
+              .btn-text.active.hover-cir(data-hover="blue" data-tab="detail")
+                a(href="javascript:;") 購買明細
+              .btn-text.hover-cir(data-hover="blue" data-tab="info")
+                a(href="javascript:;") 訂單資訊
+              .btn-text.hover-cir(data-hover="blue")
+                a(href="./member_evaluation_detail.html") 填寫評價
+              .btn-text.hover-cir(data-hover="blue")
+                a(href="javascript:;" onclick="_common.openliboxInner('service')") 客服問答
+            // 取消訂單 / 退換貨
+            .order-cancle
+              .button-wrap
+                // 開啟取消訂單燈箱 : onclick="_common.openliboxInner('cancle')"
+                // p CANCEL 取消訂單
+                // ---
+                // 已到貨出現退換貨按鈕 : onclick="_common.openliboxInner('return')"
+                // p RETURN 申請退貨
+                //- .form-btn.form-done.hover-cir.bd0-dark(data-hover="yellowBig" onclick="_common.openliboxInner('cancle')")
+                //-   p CANCEL 取消訂單
+                //-   span.icon-arrAngle
+                .form-btn.form-done.hover-cir.bd0-dark.other(data-hover="yellowBig" onclick="_common.openliboxInner('return')")
+                  p RETURN 申請退貨
+                  span.icon-arrAngle
+                // 退貨成功送出後的按鈕結構
+                .status-btn
+                  .form-btn.form-done.hover-cir.bd0-dark.returnSuccess(data-hover="yellowBig" onclick="_common.openliboxInner('returnSuccess')")
+                    p 退貨申請中
+                    span.icon-arrAngle
+
+          section
+            // 購買明細
+            .order-detail.range.active
+              .item-wrap
+                // 項目敘述
+                .item-head
+                  .img 購買項目
+                  .item
+                  .qty 數量
+                  .price 價格
+                
+                // 一項
+                .item-body
+                  // 大圖 380X250 <div class="img"> + large
+                  // 小圖 190X250 <div class="img"> + small
+                  .img.large
+                    figure
+                      img(src="../../../uploads/product/detail-obj05-380X250.png", alt="")
+                  // 項目明細
+                  // 標準品
+                  .item-box
+                    h2
+                      span 已申請退貨
+                      span 乘風沙發 雙人座
+                    .color-wrap
+                      .color
+                        span.strong SPEC：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                          span.fz-14 綠紫色 + 自然木色
+                  // 數量
+                  .qty x 1
+                  // 價格
+                  .price
+                    span.fz-14 VIP 售價
+                    .money
+                      span $40,800
+                    .origin
+                      span 原價
+                      span $50,800
+                  // 加購
+                  .extra-block.bg-none
+                    .thead.no-bg
+                      .img
+                      .item ADDITIONAL 加價購
+                      .qty 
+                      .price
+                    ul
+                      li
+                        .img
+                        // 標準品
+                        .item-box.return-tag
+                          .txt-name.px-0 
+                            span 已申請退貨
+                            span 雲起時沙發 腳几
+                          .txt-color
+                            .img-cir
+                              img(src="../../../uploads/product/color10-20X20.jpg", alt="")
+                            p 綠色 x 自然木色
+                        .qty x 2
+                        .price.type + $ 1,999
+                      li
+                        .img
+                        // 客製品
+                        .item-box.return-tag
+                          .txt-name.px-0 
+                            span 已申請退貨
+                            // 項目名:雙色抱枕 客製品 + 規格: S
+                            span 雙色抱枕 客製品 S
+                          .txt-color
+                            .img-cir
+                              img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                            p.after 布色：紅色
+                            .img-cir
+                              img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                            p 木色：原木色
+                        .qty x 1
+                        .price.type + $ 1,999
+                  // 贈品
+                  .extra-block.bg-none
+                    .thead.no-bg
+                      .img
+                      .item GIVEAWAY 贈品
+                      .qty.qty-2
+                      .price
+                    ul
+                      li
+                        .img
+                        // 客製品
+                        .item-box
+                          .txt-name.px-0 雙色抱枕 客製品
+                            // 客製品 有多包一個規格欄位
+                            span.norm F
+                          .txt-color
+                            .img-cir
+                              img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                            p 藍色
+                        .qty x 1
+                        // 空的 DIV 要留著
+                        .price.type
+                      li
+                        .img
+                        // 客製品
+                        .item-box
+                          .txt-name.px-0 明月香氛盤 客製品
+                            // 客製品 有多包一個規格欄位
+                            span.norm S
+                          .txt-color
+                            .img-cir
+                              img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                            p 自然木色
+                        .qty x 1
+                        // 空的 DIV 要留著
+                        .price.type
+                    // 已放棄商品數量
+                    ul.giveup
+                      li
+                        .img
+                        .item
+                          p 已放棄贈品數量
+                        .qty x 1
+                        // 空的 DIV 要留著
+                        .price.type
+                
+                // 一項
+                // 一般原價
+                // 客製品
+                .item-body
+                  .img.large
+                    figure
+                      img(src="../../../uploads/product/detail-obj05-380X250.png", alt="")
+                  // 項目明細
+                  .item
+                    h2 乘風沙發 客製品
+                    .normal
+                      span.fz-14.strong SPEC：
+                      span.fz-14 大 W52xD30xH52 (cm)
+                    .color-wrap
+                      .color
+                        span.strong COLOR：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                          span.fz-14 紅色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色 
+                      .color  
+                        span.strong COLOR：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                          span.fz-14 綠色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色
+                    .color-wrap
+                      .color
+                        span.strong WOOD：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color10-120X120.jpg", alt="")
+                          span.fz-14 鯨木色
+                  // 數量
+                  .qty x 1
+                  // 價格
+                  .price
+                    span.fz-14 PRICE 原價
+                    .money
+                      span $20,800
+                // 一項
+                // 一般原價
+                // 標準品
+                .item-body
+                  .img.large
+                    figure
+                      img(src="../../../uploads/product/detail-obj05-380X250.png", alt="")
+                  // 項目明細
+                  .item
+                    h2 乘風沙發 雙人座
+                    .color-wrap
+                      .color
+                        span.strong SPEC：
+                        div
+                          .img-cir
+                            img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                          span.fz-14 綠紫色 + 自然木色
+                  // 數量
+                  .qty x 1
+                  // 價格
+                  .price
+                    span.fz-14 PRICE 原價
+                    .money
+                      span $20,800
+                // 一項
+                // 組合優惠
+                .item-packpage
+                  .top 
+                    .tit
+                      span.en EVENT PACKAGE：
+                      // 組合敘述可自訂
+                      span.ch 書臥 life 生活任選三件享八折
+                  .item-body
+                    .img.large
+                      figure
+                        img(src="../../../uploads/product/sofa05-380X250.png", alt="")
+                    // 項目明細
+                    .item.return-tag
+                      h2 
+                        span 已申請退貨
+                        span 恰恰好沙發
+                      .normal
+                        span.fz-14.strong SPEC：
+                        span.fz-14 雙人座 SH42.5 / W155.5xD88.5xH100
+                      .color-wrap
+                        .color
+                          span.strong COLOR：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color03-120X120.jpg", alt="")
+                            span.fz-14 紫色
+                        .color
+                          span.strong COLOR：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color05-120X120.jpg", alt="")
+                            span.fz-14 綠色
+                      .color-wrap
+                        .color
+                          span.strong WOOD：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color10-120X120.jpg", alt="")
+                            span.fz-14 鯨木色
+                    // 數量
+                    .qty x 1
+                    // 價格
+                    .price
+                      span.fz-14 DISCOUNT 優惠價
+                      .money
+                        span $40,800
+                      .origin.line-through
+                        span 原價  
+                        span $50,800
+                  .item-body
+                    .img.small
+                      figure
+                        img(src="../../../uploads/product/cart02-190X250.png", alt="")
+                    // 項目明細
+                    .item
+                      h2 
+                        span 已申請退貨
+                        span 加菲收納筒 - 木蓋
+                      .normal
+                        span.fz-14.strong SPEC：
+                        span.fz-14 F W46×D40×H42(cm)
+                      .color-wrap
+                        .color
+                          span.strong COLOR：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color03-120X120.jpg", alt="")
+                            span.fz-14 紫色
+                    // 數量
+                    .qty x 1
+                    // 價格
+                    .price
+                      span.fz-14 DISCOUNT 優惠價
+                      .money
+                        span $3,000
+                      .origin.line-through
+                        span 原價  
+                        span $4,500
+                  .item-body
+                    .img.small
+                      figure
+                        img(src="../../../uploads/product/cart01-190X250.png", alt="")
+                    // 項目明細
+                    .item
+                      h2
+                        span 已申請退貨 
+                        span 奇畦餐椅
+                      .normal
+                        span.fz-14.strong SPEC：
+                        span.fz-14 SH 43.5 / W51xD67xH73(cm)
+                      .color-wrap
+                        .color
+                          span.strong COLOR：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                            span.fz-14 紅色
+                      .color-wrap
+                        .color
+                          span.strong WOOD：
+                          div
+                            .img-cir
+                              img(src="../../../uploads/product/color10-120X120.jpg", alt="")
+                            span.fz-14 鯨木色
+                    // 數量
+                    .qty x 1
+                    // 價格
+                    .price
+                      span.fz-14 DISCOUNT 優惠價
+                      .money
+                        span $3,180
+                      .origin.line-through
+                        span 原價  
+                        span $4,800
+
+                // 一項
+                // 結帳金額優惠
+                .item-body.code
+                  .sub-tit
+                    span.en Order Discount
+                    span.ch 結帳金額優惠
+                  // 折扣碼優惠
+                  .img 輸入折扣碼
+                  // 優惠明細
+                  .item.item-select
+                    span 請輸入折扣碼，享有專屬優惠
+                    //- // 手機版 折扣碼 
+                    //- span.mob-show.code JDSF58D
+                    .pick-wrap.allow-pick.spread.border-0
+                      // 優惠敘述可自訂
+                      .desc
+                        .pick-dropdown
+                          // 滿額折抵 & 滿額折扣 >> tag + dark
+                          // 贈品 >> tag + blue
+                          // 加價購 >> tag + pink
+                          // 免運 >> tag + warm
+                          ul 
+                            li 
+                              .tag.dark 滿額折抵滿額折抵滿額折抵滿額折抵
+                              .wrap
+                                span 結帳金額享八折優惠！結帳金額享八折優惠結帳金額享八折優惠結帳金額享八折優惠
+                            li 
+                              .tag.blue 贈品好禮
+                              span Straus Lab 新品 - 趣味抱枕 款式任意挑
+                            li 
+                              .tag.pink 專屬加價購
+                              span 專屬加價購等您來挑選
+                            li 
+                              .tag.warm 免運費
+                              span 消費滿千免運費
+                  .qty.d-md-none
+                  // 折扣碼
+                  .price
+                    span.fz-14 JDSF58D
+                    span.fz-14 - NTD$ 21,916
+
+                  // 加購
+                  .extra-block.bg-none
+                    .thead.no-bg
+                      .img
+                      .item ADDITIONAL 加價購
+                      .qty 
+                      .price.d-md-none
+                    ul
+                      li
+                        .img
+                        // 標準品
+                        .item-box
+                          .txt-name.px-0 雲起時沙發 腳几
+                          .txt-color
+                            .img-cir
+                              img(src="../../../uploads/product/color10-20X20.jpg", alt="")
+                            p 綠色 x 自然木色
+                        .qty  x 2
+                        .price.type + $ 1,999
+                      li
+                        .img
+                        // 客製品
+                        .item-box
+                          .txt-name.px-0 雲起時沙發 客製品
+                            // 客製品 有多包一個規格欄位
+                            span.norm 單人座
+                          .txt-color
+                            .img-cir
+                              img(src="../../../uploads/product/color06-120X120.jpg", alt="")
+                            p.after 布色：紅色
+                            .img-cir
+                              img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                            p 木色：原木色
+                        .qty x 1
+                        .price.type + $ 1,999
+                      
+                  // 贈品
+                  .extra-block.bg-none
+                    .thead.no-bg
+                      .img
+                      .item GIVEAWAY 贈品
+                      .qty.qty-2
+                      .price
+                    ul
+                      li
+                        .img
+                        // 標準品
+                        .item-box
+                          .txt-name.px-0 雙色抱枕
+                          .txt-color
+                            .img-cir
+                              img(src="../../../uploads/product/color10-20X20.jpg", alt="")
+                            p 綠色
+                        .qty x 2
+                        // 空的 DIV 要留著
+                        .price.type
+                      li
+                        .img
+                        // 客製品
+                        .item-box
+                          .txt-name.px-0 明月香氛盤
+                          .txt-color
+                            .img-cir
+                              img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                            p 原木色
+                        .qty x 2
+                        .price.type
+                      
+                    // 已放棄商品數量
+                    ul.giveup
+                      li
+                        .img
+                        .item
+                          p 已放棄贈品數量
+                        .qty x 1
+                        // 空的 DIV 要留著
+                        .price.type.d-md-none
+                    
+                .item-body.code
+                  // 活動優惠
+                  .img 活動折扣
+                  // 活動名稱
+                  .item.item-select
+                    span 書臥生活，系列家具享優惠
+                    .pick-wrap.allow-pick.spread.border-0
+                      // 優惠敘述可自訂
+                      .desc
+                        .pick-dropdown
+                          ul 
+                            li 
+                              .tag.dark 滿額折抵
+                              .wrap
+                                span 結帳金額享八折優惠！
+                                //- // 手機版 折扣金額
+                                //- span.mob-show.discount - NTD$ 21,916
+                  .qty.d-md-none
+                  .price.d-md-none
+                    // 空的div要留著
+                    span.fz-14
+                    span.fz-14 - NTD$ 21,916   
+            // 訂單資訊
+            .order-info.range
+              .item-wrap
+                // 一項
+                // 結帳金額優惠-虛擬帳號付款
+                .item-body.code
+                  .member-bgtext.init
+                    .text 
+                      .en Payment
+                      .ch.bold 付款方式
+                  .img 虛擬帳號付款
+                  .discount
+                    div 
+                      .badge BANK CODE 銀行代碼
+                      span 014
+                    div 
+                      .badge ACOUNT 虛擬帳號
+                      span 12354789 - 51236544
+                    div 
+                      .badge DEADLINE 付款期限
+                      span 2020/12/30 16:30 
+                        span 前截止
+                // 一項
+                // 結帳金額優惠-信用卡付款
+                .item-body.code
+                  .member-bgtext.init
+                    .text 
+                      .en Payment
+                      .ch.bold 付款方式
+                  .img 信用卡付款
+                  .discount
+                    div 
+                      .badge 一次付清
+                      span $ 50,000
+                    div 
+                      .badge 分三期
+                      span $ 50,000
+
+                // 一項
+                // 發票資訊
+                .item-body
+                  .member-bgtext.init
+                    .text 
+                      .en Invioce
+                      .ch.bold 發票資訊
+                  // 兩聯式發票 沒有公司名稱欄位&公司統編欄位
+                  .item-form.border-none
+                    .title
+                      p 三聯式發票
+                    .desc
+                      span Recipient 收件人資料
+                      .form.mt-20
+                        // 一排
+                        .form-row
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span NAME
+                                span 姓名
+                              span.other 王小明
+                          .form-grid.yellow
+                            .form-group.yellow
+                              span.fz-14 先生
+                        // 一排
+                        .form-row.password
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span ADDRESS
+                                span 收件地址
+                              span.other 台中市 北區 台灣大道二段 100 號 12F
+                        // 一排
+                        .form-row
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span COMPANY
+                                span 公司名稱
+                              span.other 威德數位設計
+                        // 一排
+                        .form-row
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span TAX ID
+                                span 公司統編
+                              span.other 26270819
+                // 一項
+                // 發票資訊 - 捐贈發票
+                .item-body
+                  .member-bgtext.init
+                    .text 
+                      .en Invioce
+                      .ch.bold 發票資訊
+                  .item-form.border-none
+                    .title
+                      p 捐贈
+                    .desc
+                      span 感謝您的愛心捐贈
+                // 一項
+                // 收件與訂購資訊
+                .item-body
+                  .member-bgtext.init
+                    .text 
+                      .en Shipping Information
+                      .ch.bold 收件與訂購資訊
+                  .item-form.border-none
+                    .title
+                      p 宅配
+                    .desc
+                      .wrap
+                        span 我們會親自將商品送至您的家中，並且酌收登高費。
+                        span.bold + NTD$ 120
+                      // 訂購人資訊
+                      .form.mt-30.border-top
+                        span.desc Orderer 訂購人資訊
+                        // 一排
+                        .form-row
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span NAME
+                                span 姓名
+                              span.other 王小明
+                          .form-grid.yellow
+                            .form-group.yellow
+                              span.fz-14 先生
+                        // 一排
+                        .form-row
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span PHONE
+                                span 聯繫電話
+                              span.other.bold +886 912 345 678
+                        // 一排
+                        .form-row
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span E-mail
+                                span
+                              span.other example@strausslab.com
+                      // 收件資訊
+                      .form.mt-30.border-top
+                        span.desc Receiving information 收件資訊
+                        // 一排
+                        .form-row
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span NAME
+                                span 姓名
+                              span.other 王小明
+                          .form-grid.yellow
+                            .form-group.yellow
+                              span.fz-14 先生
+                        // 一排
+                        .form-row
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span PHONE
+                                span 聯繫電話
+                              span.other.bold +886 912 345 678
+                        // 一排
+                        .form-row
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span E-mail
+                                span
+                              span.other example@strausslab.com
+                        // 一排
+                        .form-row.password
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span ADDRESS
+                                span 收件地址
+                              span.other 台中市 北區 台灣大道二段 100 號 12F
+                      // +++++新增
+                      // 運費
+                      .form.mt-30.border-top.floor
+                        span.desc Shipping fee 運費
+                        .item-body
+                          // 購買品項
+                          .extra-block.floor
+                            .thead
+                              .item 購買品項
+                              .qty 件數
+                              .price 費用
+                            ul 
+                              // 標準品
+                              li 
+                                .item 乘風沙發 雙人座
+                                .qty 
+                                  span x 1
+                                .price +NTD$ 300
+                              // 客製品
+                              li 
+                                .item 乘風沙發 客製品
+                                  span.norm 雙人座
+                                .qty
+                                  span x 2
+                                .price +NTD$ 600
+                              // 客製品
+                              li 
+                                .item 恰恰好沙發 客製品
+                                  span.norm 雙人座
+                                .qty
+                                  span x 1
+                                .price +NTD$ 300
+                              // 客製品
+                              li 
+                                .item 加菲收納筒 客製品  
+                                  span.norm 木蓋
+                                .qty
+                                  span x 1
+                                .price +NTD$ 100
+                              // 客製品
+                              li 
+                                .item 奇畦餐椅 客製品
+                                  span.norm 單人椅
+                                .qty
+                                  span x 1
+                                .price +NTD$ 100
+                            
+                          // 加購品項
+                          .extra-block.floor
+                            .thead
+                              .item 加購品項
+                              .qty 件數
+                              .price 費用
+                            ul 
+                              // 標準品
+                              li 
+                                .item 雲起時沙發　抱枕
+                                .qty
+                                  span x 1
+                                .price +NTD$ 300
+                      // 樓層費
+                      .form.mt-30.border-top.floor
+                        span.desc Floor fee 樓層費
+                        // 一排
+                        .form-row
+                          .form-grid.transparent
+                            .form-group.transparent
+                              p.subject 無電梯，需運送至
+                              .block 12F
+                              span.bold.fz-14 +NTD$ 3,600
+                        .item-body
+                          // 購買品項
+                          .extra-block.floor
+                            .thead
+                              .item 購買品項
+                              .qty 件數
+                              .price 費用
+                            ul 
+                              // 標準品
+                              li 
+                                .item 乘風沙發 雙人座
+                                .qty 
+                                  span x 1
+                                .price +NTD$ 300
+                              // 客製品
+                              li 
+                                .item 乘風沙發 客製品
+                                  span.norm 雙人座
+                                .qty
+                                  span x 2
+                                .price +NTD$ 600
+                              // 客製品
+                              li 
+                                .item 恰恰好沙發 客製品
+                                  span.norm 雙人座
+                                .qty
+                                  span x 1
+                                .price +NTD$ 300
+                              // 客製品
+                              li 
+                                .item 加菲收納筒 客製品  
+                                  span.norm 木蓋
+                                .qty
+                                  span x 1
+                                .price +NTD$ 100
+                              // 客製品
+                              li 
+                                .item 奇畦餐椅 客製品
+                                  span.norm 單人椅
+                                .qty
+                                  span x 1
+                                .price +NTD$ 100
+                            
+                          // 加購品項
+                          .extra-block.floor
+                            .thead
+                              .item 加購品項
+                              .qty 件數
+                              .price 費用
+                            ul 
+                              // 標準品
+                              li 
+                                .item 雲起時沙發　抱枕
+                                .qty
+                                  span x 1
+                                .price +NTD$ 300
+                      // 進階資訊
+                      .form.border-top.adv-info
+                        span.desc Advanced Information 進階資訊
+                        // 一排
+                        .form-row.info
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span
+                                span.px-0 電梯口高度
+                              span.other 300 cm
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span
+                                span.px-0 電梯口寬度
+                              span.other 120 cm
+                        // 一排
+                        .form-row.info
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span
+                                span.px-0 電梯高度
+                              span.other 350 cm
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span
+                                span.px-0 電梯寬度
+                              span.other 200 cm
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span
+                                span.px-0 電梯深度
+                              span.other 100 cm
+                        // 一排
+                        .form-row.mt-20.info  
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span
+                                span.px-0 門口高度
+                              span.other 200 cm
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span
+                                span.px-0 門口寬度
+                              span.other 120 cm
+                        // 一排
+                        .form-row.mt-20  
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span TIME
+                                span 收貨時間
+                              span.other.bold 14:00 - 16:00
+                        // 一排
+                        .form-row.note
+                          p.subject
+                            span.bold NOTE
+                            span 其他備註
+                          .textarea
+                            |請小心運送，避免碰撞與商品毀損
+
+                  // 門市自取
+                  .item-form.border-none
+                    .title
+                      p 門市取貨
+                    .desc
+                      .wrap
+                        p.fz-14 門市資訊
+                      .form.mt-20.border-top
+                        // 一排
+                        .form-row.mt-20
+                          .form-grid.yellow
+                            .form-group.yellow
+                              p.subject
+                                span COUNTY
+                                span 地區
+                              span.other 台中市
+                          .form-grid.yellow
+                            .form-group.yellow
+                              span.fz-14 柳川門市
+          // go top
+          .bottom
+            .cir-btn.black.goTop.hover-cir(data-hover="blue")(
+              data-aost data-aost-class="show" data-aost-offset="100"
+              data-anchor-speed="1200"
+              data-anchor)
+              .icon
+                .icon-trangle-up
+        // 取消訂單
+        // 開啟: _common.openliboxInner('cancle');
+        .libox-inner(data-name="cancle")
+          .libox-common
+            .cir-wrap.login
+              .cir-bg 
+                .bg-text OOPS
+                h5 Notice!
+                h6 取消訂單
+                p 訂單即將取消，請問您確定要取消訂單嗎？
+                .wrap
+                  .btn-close.hover-cir(data-hover="yellowSmall")
+                    p OK 確認
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p BACK 返回
+        // 訂單客服紀錄
+        .libox-inner(data-name="service")
+          .libox-common
+            .content
+              .cir-btn.mainGreen.ajax_close.hover-cir(data-hover="blue")
+                .cross
+              .top-title
+                .tit
+                  span.en Hello! 
+                  span.ch.bold 訂單客服紀錄
+                .text
+                  span.ch NO. 訂單編號
+                  span.en JDI2020110225
+              // 訊息輸入框
+              .text-box
+                .tit WRITE MESSAGE 您的訊息
+                .write-wrap
+                  .textarea
+                    textarea(placeholder="請填寫您的想法或建議於此...")
+                  .btn-send.hover-cir(data-hover="blue")
+                    span SEND
+              // 對話紀錄
+              .text-box
+                .tit MESSAGE RECORD 對話紀錄
+                .text-wrap
+                  .scrollbar-inner(data-scrollbody)
+                    .text-h
+                      // 顧客訊息 box-right
+                      .box.box-right
+                        .message
+                          .message-wrap
+                            // 可斷行
+                            p 您好，請問我的商品預計什麼時候出貨呢？是否可於過年前到貨～？
+                          // 留言時間
+                          p.date 2020/12/28 08:00
+                        // 會員照片
+                        .img
+                          .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+                          img(src="../../../uploads/member/person-320X320.jpg", alt="")
+                        
+                      // 客服訊息 box-left
+                      .box.box-left
+                        .message
+                          .message-wrap
+                            p Strauss Lab :<br>
+                              | 親愛的會員您好，由於我們的商品是接單訂製，整體而言算是半客製化的品項，製作時間大概需要 7-20 個工作天不等。<br>一旦出貨我們會立刻發送通知給您，希望能夠將最好的體驗帶到你們的家中，敬請耐心等候，非常感謝！
+                          p.date 2020/12/28 08:15
+                        // 客服照片
+                        .img 
+                          .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+                        
+                      // 顧客訊息 box-right
+                      .box.box-right
+                        .message
+                          .message-wrap
+                            p 了解
+                          p.date 2020/12/31 18:00
+                        .img
+                          .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+                        
+                      // 顧客訊息 box-right
+                      .box.box-right
+                        .message
+                          .message-wrap
+                            p 感謝回覆
+                          p.date 2020/12/31 18:01
+                        .img
+                          .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+                      
+        // 新增
+        // 申請退貨
+        .libox-inner(data-name="return")
+          .libox-common
+            .content
+              .cir-btn.mainGreen.ajax_close.hover-cir(data-hover="blue")
+                .cross
+              // 上半部標題
+              .content-top
+                .title
+                  p.en Application for Return
+                  p.ch 申請退貨
+                .item-number 
+                  span NO. 訂單編號
+                  span JDI2020110225
+                p 請選擇您要退貨整筆訂單，或是單筆品項有問題需要退貨，
+                  |<br>以利我們加速處理作業！
+              // 內容
+              .content-text
+                .item-select
+                  // 整筆訂單退貨
+                  .pick-wrap(data-pick="main")
+                    .btn-cir.chk-btn.large
+                      span.icon-check
+                    .desc.flex-row
+                      p 整筆訂單退貨
+                  // 指定品項退貨
+                  .pick-wrap.appoint(data-pick="main")
+                    .btn-cir.chk-btn.large
+                      span.icon-check
+                    .desc.flex-row
+                      p 指定品項退貨
+                    // 退貨項目
+                    section 
+                      .notice
+                        span.fz-16 ITEM 購買項目
+                        // 敘述可改
+                        p NOTICE：若商品有附送贈品，退貨時將連帶收回贈品品項。
+                      .return-wrap
+                        // 一項 - 項目包含 贈品 /加購
+                        .return-box
+                          // 標準品
+                          // 可選取的項目 data-pick="item"
+                          .return-item(data-pick="item")
+                            .left
+                              p 乘風沙發 雙人座
+                              .color-wrap
+                                .color
+                                  span.strong SPEC：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 綠紫色 + 自然木色
+                            .btn-cir.chk-btn.small
+                              span.icon-check
+                          // 贈品
+                          .return-extra
+                            span GIVEAWAY 贈品
+                            ul 
+                              // 一項 - 標準品
+                              li
+                                .left
+                                  .txt-name 雙色抱枕
+                                  .txt-color
+                                    .img-cir
+                                      img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                    p 藍色
+                              // 一項 - 客製品
+                              li
+                                .left
+                                  .txt-name 明月香氛盤
+                                  .txt-color
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                                    p 木色：原木色
+                          // 加價購
+                          .return-extra
+                            span ADDITIONAL 加價購
+                            ul
+                              // 一項 -標準品
+                              li(data-pick="item")
+                                .left
+                                  .txt-name 雙色抱枕
+                                  .txt-color
+                                    .img-cir
+                                      img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                    p 藍色
+                                .btn-cir.chk-btn.small
+                                  span.icon-check
+                              // 一項 -客製品
+                              li(data-pick="item")
+                                .left
+                                  .txt-name 雲起時沙發  客製品
+                                    // 客製品 有多包一個規格欄位
+                                    span.norm 雙人椅
+                                  .txt-color
+                                    .img-cir
+                                      img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                    p 藍色
+                                .btn-cir.chk-btn.small
+                                  span.icon-check
+                        // 一項 - 客製品
+                        .return-box
+                          // 客製品
+                          .return-item(data-pick="item")
+                            .left
+                              p 乘風沙發 客製品
+                              .normal
+                                span.fz-14.strong SPEC：
+                                span 雙人座 W52xD30xH52 (cm)
+                              .color-wrap
+                                .color
+                                  span.strong COLOR：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 紫色
+                                .color
+                                  span.strong COLOR：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 綠色
+                              .color-wrap
+                                .color
+                                  span.strong WOOD：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 原木色
+                            .btn-cir.chk-btn.small
+                              span.icon-check
+                        // 一項 - 標準品
+                        .return-box
+                          // 標準品
+                          .return-item(data-pick="item")
+                            .left
+                              p 乘風沙發
+                              .normal
+                                span.fz-14.strong SPEC：
+                                span 雙人座 W52xD30xH52 (cm)
+                              .color-wrap
+                                .color
+                                  span.strong COLOR：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 紫色
+                            .btn-cir.chk-btn.small
+                              span.icon-check
+
+                        // 一項 - 商品組合
+                        .return-box(data-mode="group" data-pick="item")
+                          // 組合標題
+                          .group-title
+                            .notice.left-transparent
+                              .txt-wrap
+                                span EVENT PACKAGE：
+                                span.fz-16 書臥 life 生活任選三件享八折
+                              // 敘述可改
+                              p NOTICE：若商品有附送贈品，退貨時將連帶收回贈品品項。
+                            .btn-cir.chk-btn.small
+                              span.icon-check
+                          // 一項 - 客製品
+                          .return-item
+                            .left
+                              p 恰恰好沙發
+                              .normal
+                                span.fz-14.strong SPEC：
+                                span 雙人座 SH42.5 / W155.5xD88.5xH100
+                              .color-wrap
+                                .color
+                                  span.strong COLOR：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 紫色
+                              .color-wrap
+                                .color
+                                  span.strong WOOD：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 原木色
+                          // 一項 - 標準品
+                          .return-item
+                            .left
+                              p 加菲收納筒 - 木蓋
+                              .normal
+                                span.fz-14.strong SPEC：
+                                span F W46×D40×H42(cm)
+                              .color-wrap
+                                .color
+                                  span.strong COLOR：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 紫色
+                          // 一項 - 客製品
+                          .return-item
+                            .left
+                              p 奇畦餐椅
+                              .normal
+                                span.fz-14.strong SPEC：
+                                span SH 43.5 / W51xD67xH73(cm)
+                              .color-wrap
+                                .color
+                                  span.strong COLOR：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 紫色
+                                .color
+                                  span.strong COLOR：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 紫色
+                              .color-wrap
+                                .color
+                                  span.strong WOOD：
+                                  div
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-20X20.jpg", alt="")
+                                    span.fz-14 原木色
+                        // 一項 - 優惠項目
+                        .return-box(data-mode="discount")
+                          .notice
+                            span.fz-16 DISCOUNT ITEM 優惠項目
+                            // 敘述可改
+                            p NOTICE：若商品退貨導致贈品資格失效，下方贈品需連帶收回。
+                          // 贈品
+                          .return-extra
+                            span GIVEAWAY 贈品
+                            ul 
+                              // 一項 - 標準品
+                              li(data-pick="item")
+                                .left
+                                  .txt-name 雙色抱枕
+                                  .txt-color
+                                    .img-cir
+                                      img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                    p 布色：藍色
+                              // 一項 - 標準品
+                              li(data-pick="item")
+                                .left
+                                  .txt-name 明月香氛盤
+                                  .txt-color
+                                    .img-cir
+                                      img(src="../../../uploads/product/color09-120X120.jpg", alt="")
+                                    p 木色：原木色
+                          // 加價購
+                          .return-extra
+                            span ADDITIONAL 加價購
+                            ul
+                              // 一項 -標準品
+                              li(data-pick="item")
+                                .left
+                                  .txt-name 雲起時沙發  腳几
+                                  .txt-color
+                                    .img-cir
+                                      img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                    p 藍色
+                                .btn-cir.chk-btn.small
+                                  span.icon-check
+                              // 一項 -客製品
+                              li(data-pick="item")
+                                .left
+                                  .txt-name 雲起時沙發  客製品
+                                    // 客製品 有多包一個規格欄位
+                                    span.norm 雙人椅
+                                  .txt-color
+                                    .img-cir
+                                      img(src="../../../uploads/product/color06-20X20.jpg", alt="")
+                                    p.after 布色：紅色
+                                    .img-cir
+                                      img(src="../../../uploads/product/color04-120X120.jpg", alt="")
+                                    p 木色：原木色
+                                .btn-cir.chk-btn.small
+                                  span.icon-check
+              // 確定送出
+              .btn-wrap(onclick="_member_detail.liboxReturnSuccess()")
+                a.btn-cir.hover-cir(href="javascript:;" data-hover="blue")
+                  span.icon-check
+                  span 確定送出
+              .cir-btn.black.goTop.hover-cir(data-hover="blue")(data-anchor-target="" data-anchor-container=".libox-inner[data-name='return'] .libox-common" data-anchor)
+                .icon
+                  .icon-trangle-up
+
+        // 新增
+        // 退貨成功送出燈箱
+        .libox-inner(data-name="returnSuccess")
+          .libox-common
+            .cir-wrap.shortage
+              .cir-btn.mainGreen.ajax_close.returnSuccess.hover-cir(data-hover="blue")
+                .cross
+              .cir-bg 
+                h5 Send Successfully
+                h6 您的申請已送出
+                  |<br>請加入 line@ 進行下一步服務
+                .stoke-wrap
+                  .scrollbar-inner
+                    // 敘述可換
+                    p 我們需要請您提供詳細的產品與發票照片，並說明退貨原因，後續將有專人與您即時對談處理，敬請加入我們的 line@，謝謝！
+                    // 圖可換
+                    // 建議尺寸 200X200 png
+                    .qr-code
+                      img(src="../../../uploads/member/qrcode.png", alt="")
+                    span.fz-16 掃描以加入我們的 LINE@
+                    a(href="https://reurl.cc/zbj7V0") 或點此加入好友
+                    .btn-txt.ajax_close.returnSuccess.hover-cir(data-hover="blue")
+                      span CLOSE 關閉
+
+
+
+  //引入的script
+  include ../layouts/_script.pug  

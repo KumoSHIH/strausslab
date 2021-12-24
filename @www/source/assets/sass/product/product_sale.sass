@@ -1,0 +1,841 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/components/_product_common
+@import ../common/components/_dropdown
+@import ../common/components/_product_info
+
+.product_sale_body
+  .main-wrapper
+    background-color: #fff
+  .product_sale
+    padding-top: 40px
+    +rwdmax(767)
+      padding-top: 25px
+    // 內容
+    >ul 
+      max-width: 1380px
+      width: 100%
+      margin: 0 auto
+      display: flex
+      flex-wrap: wrap
+      +rwdmax(1400)
+        width: 85%
+      +rwdmax(1150)
+        width: 80%
+      +rwdmax(900)
+        width: 90%
+      >li 
+        width: 33.333%
+        display: flex
+        flex-direction: column
+        padding-bottom: 50px
+        +rwdmax(1150)
+          width: 50%
+        +rwdmax(767)
+          width: 100%
+        &[data-aost]
+          +yWaypoint(50)
+        &.show
+          +zWaypoint
+        .top 
+          display: block
+          text-align: center
+        .img
+          position: relative
+          margin: 0 auto
+          img
+            +posCenter
+          &.small
+            width: 150px
+            padding-bottom: 43.47%
+          &.large
+            width: 300px
+            padding-bottom: 43.47%
+          &.soldout-mask
+            &::after
+              content: ''
+              width: 100%
+              height: 100%
+              background-color: rgba(255,255,255,.8)
+              +posCenter
+          .soldout
+            +posCenter
+          .tag
+            width: 60px
+            height: 60px
+            border-radius: 50%
+            overflow: hidden
+            position: absolute
+            left: -30px
+            top: 0
+            z-index: 1
+            display: flex
+            align-items: center
+            justify-content: center
+            span 
+              z-index: 1
+              color: #fff
+              +fontSet2(px(12),$basicbold)
+          .cus-tag
+            width: 60px
+            height: 60px
+            border-radius: 50%
+            overflow: hidden
+            position: absolute
+            // left: -20px
+            // top: 0
+            display: flex
+            align-items: center
+            justify-content: center
+            &.both 
+              top: 65px
+            .bg
+              width: 100%
+              height: 100%
+              position: absolute
+              top: 0
+              left: 0
+              background-image: url(../../../dist/uploads/product/cus-bg-s.jpg)
+              background-repeat: no-repeat
+              background-size: cover
+              animation: rotate 6s linear infinite
+          img 
+            margin: 0 auto
+          +rwdmax(1400)
+            display: flex
+            align-items: center
+            &.large
+              display: flex
+              align-items: center
+          +rwdmax(767)
+            .tag
+              left: -20px
+        .text
+          padding-bottom: 20px
+          padding-top: 35px
+          h2 
+            padding-bottom: 30px
+            font-weight: bold
+            letter-spacing: 0.9px
+            +fontSet2(px(18),$basic)
+          .des
+            padding-bottom: 9px
+            font-weight: bold
+            letter-spacing: 0.46px
+            +fontSet2(px(14),$basicbold)
+          .price
+            padding-bottom: 13px
+            letter-spacing: 0.79px
+            +fontSet2(px(24),$basicbold)
+            span 
+              color: #ee4c4c
+              +fontSet2(px(24),$basicbold)
+            &.dark
+              span
+                color: #000
+          p 
+            span:first-child
+              letter-spacing: 0.7px
+              +fontSet2(px(14),$basic)
+            span.origin
+              letter-spacing: 0.53px
+              +fontSet2(px(16),$basicR)
+          p:not(.des)
+            position: relative
+            span
+              text-decoration: line-through
+          +rwdmax(1200)
+            padding-top: 20px
+            h2 
+              padding-bottom: 18px
+          +rwdmax(767)
+            padding-top: 10px
+        .filter
+          width: 75%
+          margin: 0 auto
+          flex-wrap: wrap
+          justify-content: space-between
+          +rwdmax(1400)
+            width: 85%
+          +rwdmax(1100)
+            width: 90%
+
+        .filter-count input
+          width: 50px
+        .filter-container
+          margin-right: 0
+          &.w100
+            width: 100%
+            .filter-dropdown
+              top: 56px
+              +rwdmax(1200)
+                top: 55px
+          &.w50
+            width: 48%
+        .filter-container:not(:first-child)
+          .filter-dropdown
+            top: 85px
+          .filter-name
+            flex-direction: column
+            align-items: start
+            >span 
+              padding-bottom: 15px
+            .filter-replace
+              padding-left: 0
+          .icon
+            align-self: flex-end
+          +rwdmax(1200)
+            .filter-dropdown
+              top: 85px
+          +rwdmax(767)
+            .filter-dropdown
+              top: 80px
+            .filter-name
+              >span 
+                padding-bottom: 13px
+        .filter-title
+          padding: 15px
+          .icon 
+            margin-right: 0
+          +rwdmax(1400)
+            padding: 15px 10px
+          +rwdmax(1100)
+            padding: 15px 6px
+          +rwdmax(767)
+            padding: 15px 8px
+        .filter-dropdown li
+          padding: 15px 30px
+        .bottom
+          width: 70%
+          padding-top: 10px
+          margin: 0 auto
+          display: flex
+          align-items: center
+          justify-content: center
+          >span 
+            font-size: px(14)
+          .filter-count
+            margin-left: 13px
+          .addcart
+            // flex-shrink: 0
+            // margin-left: auto
+            // width: 58px
+            // height: 58px
+            // border-radius: 50%
+            // display: flex
+            // align-items: center
+            // justify-content: center
+            // border: 0
+            // background-color: #202020
+            // color: #fff
+            // cursor: pointer
+            // transition: .5s ease-in-out
+            // &:hover 
+            //   background-color: $main
+            // span 
+            //   font-weight: normal
+            //   font-size: px(20)
+            flex-shrink: 0
+            margin-left: auto
+            width: 120px
+            height: 45px
+            border-radius: 23px
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 0
+            background-color: #202020
+            color: #fff
+            cursor: pointer
+            transition: .3s ease-in-out
+            &:hover 
+              background-color: $main
+            span
+              position: relative
+              padding-right: 18px
+              letter-spacing: 0.7px
+              font-size: px(14)
+              &::after
+                content: '\e90e'
+                font-family: 'icomoon' !important
+                font-size: px(42)
+                position: absolute
+                right: -18px
+                top: -15px
+          +rwdmax(1400)
+            width: 85%
+            padding: 10px 10px 0
+          +rwdmax(1100)
+            width: 90%
+            padding-left: 5px
+            padding-right: 0
+          +rwdmax(767)
+            padding: 5px 0 0 5px
+    
+  // 已選商品  
+  .pro_selected
+    padding: 18px 90px
+    height: 106px
+    position: fixed
+    bottom: -80%
+    left: 0
+    width: 100%
+    z-index: 5
+    background-image: url(../../../dist/uploads/product/bg-3.jpg)
+    background-size: 100%
+    background-position: 50% 60%
+    background-repeat: no-repeat
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #fff
+    cursor: default
+    transition: .5s ease-in-out
+    +rwdmax(1400)
+      padding: 18px 40px
+    +rwdmax(1200)
+      height: auto
+      flex-direction: column
+      padding: 20px 25px
+      background-size: 260%
+      background-position: 0 60%
+      &::-webkit-scrollbar
+        display: none
+    +rwdmax(900)
+      background-size: 220%
+    +rwdmax(767)
+      background-size: cover
+    &.show
+      bottom: 0
+    &.active
+      +rwdmin(1201)
+        .left
+          align-items: center
+          .selected-block
+            margin-top: 0
+          .cir-btn
+            margin-top: 0
+            top: 50%
+            transform: translateY(-50%)
+      +rwdmax(1200)
+        bottom: 0
+        padding: 40px 25px
+        height: 100vh
+        max-height: calc(var(--vh, 1vh) * 100)
+        .right
+          margin-left: 0
+        .center
+          .selected-block:nth-child(2)
+            .space
+              margin-right: 25px
+            .fz-14
+              margin-right: auto
+            .fz-24
+              margin-right: 10px
+      +rwdmax(767)
+        padding: 35px 25px 40px
+        .right
+          justify-content: center
+    // 共用
+    .selected-block
+      display: flex
+      flex-direction: column
+      flex-shrink: 0
+      transition: height .5s ease-in-out
+      &.mob-hide
+        +rwdmax(1200)
+          display: none
+          // height: 0
+      span 
+        letter-spacing: 0.7px
+        font-family: $basicbold
+      span:first-child
+        padding-bottom: 15px
+      .strong
+        letter-spacing: 0.79px
+        font-size: px(24)
+      .meidum
+        font-size: px(16)
+      
+    .left
+      position: relative
+      display: flex
+      align-self: baseline
+      margin-left: 150px
+      transition: height .5s ease-in-out
+      &.mob-hide
+        +rwdmax(1200)
+          display: none
+      +rwdmax(1500)
+        margin-left: 100px
+      +rwdmax(1400)
+        margin-left: 80px
+      +rwdmax(1200)
+        width: 100%
+        margin: 0 auto
+        order: 2
+        padding-bottom: 90px
+        flex-direction: column 
+        align-items: center
+        border-top: solid 4px #fff
+      +rwdmax(767)
+        max-height: 360px
+        overflow-y: scroll
+      .cir-btn
+        margin-right: 30px
+        width: 41px
+        height: 41px
+        display: flex
+        flex-shrink: 0
+        align-items: center
+        justify-content: center
+        font-size: px(12)
+        position: absolute
+        left: -70px
+        top: 0
+        span 
+          transition: transform .5s ease-in-out
+        &.hide
+          display: none
+        &.active
+          span 
+            transform: rotateX(180deg)
+      .cir-btn,
+      .selected-block
+        margin-top: 10px
+        +rwdmax(1200)
+          margin: 24px 0
+      .selected-img
+        margin-left: 40px
+        position: relative
+        width: 400px
+        +rwdmax(1400)
+          margin-left: 30px
+        +rwdmax(1200)
+          margin: 0
+          width: 100%
+        
+      ul
+        width: 100%
+        height: 100%
+        display: flex
+        flex-wrap: wrap
+        +rwdmax(1200)
+          padding: 0 10px
+          justify-content: center
+      li  
+        width: 70px
+        height: 70px
+        position: relative
+        margin-right: 7px
+        margin-bottom: 7px
+        .btn-cir
+          display: none
+        .img
+          width: 70px
+          height: 70px
+          position: relative
+          overflow: hidden
+          display: flex
+          align-items: center
+          justify-content: center
+        img 
+          padding: 0 5px
+        &.active
+          background-color: #fff
+          .btn-cir
+            display: block
+            position: absolute
+            right: -5px
+            top: -5px
+            width: 18px
+            height: 18px
+            background-color: #000
+            cursor: pointer
+            opacity: 0
+            transition: opacity .5s ease-in-out
+            +rwdmax(767)
+              opacity: 1
+          .cross
+            padding: 13px 15px
+            &::after,
+            &:before
+              height: 8px
+          &:hover 
+            .btn-cir
+              opacity: 1
+      li:nth-child(-n+5)
+        background-image: url(../../../dist/uploads/product/frame.png)
+        background-repeat: no-repeat
+        background-size: 100%
+      li:nth-child(4n)
+        +rwdmax(767)
+          margin-right: 0
+    .center
+      margin-left: auto
+      display: flex
+      .selected-block:first-child
+        margin-right: 75px
+      .selected-block
+        .fz-14
+          margin-bottom: 19px
+      +rwdmax(1400)
+        .selected-block:first-child
+          margin-right: 55px
+      +rwdmax(1200)
+        width: 50%
+        margin: 0 auto
+        padding-bottom: 15px
+        order: 1
+        flex-direction: column-reverse
+        .selected-block:first-child
+          margin-right: 0
+        .selected-block
+          flex-direction: row
+          justify-content: center
+          align-items: center
+          .space
+            margin-right: 25px
+          .fz-14
+            margin-right: auto
+            margin-bottom: 0
+          .fz-24 
+            margin-right: 0
+            letter-spacing: 0.66px
+            font-size: px(20)
+          .fz-16
+            margin-right: 10px
+        .space
+          display: block
+          width: 35px
+          height: 35px
+          margin-right: 25px
+        .selected-block:last-child
+          .space
+            margin-right: 0
+          .fz-14
+            margin-right: 10px
+      +rwdmax(767)
+        width: 100%
+        margin: 0
+        padding-bottom: 10px
+        .selected-block:last-child
+          .space
+            margin-right: auto
+    .right
+      margin-left: 150px
+      margin-right: 90px
+      display: flex
+      .btn-wrap
+        flex-shrink: 0
+        display: flex
+        align-items: center
+        cursor: pointer
+        .btn-cir
+          width: auto 
+          height: auto 
+          border-radius: 25px
+          padding: 14px 16px
+        span 
+          font-family: $basic
+      .btn-wrap:nth-child(2)
+        margin-right: 20px
+        .btn-cir
+          background-color: #fff
+          color: #000
+        &:hover
+          .btn-cir
+            background-color: darken(#fff,10%)
+        +rwdmax(1400)
+          margin-right: 25px
+        +rwdmax(1200)
+          margin-right: 14px
+      .btn-wrap:nth-child(3)
+        .btn-cir
+          background-color: $main
+          color: #fff
+        &:hover
+          .btn-cir
+            background-color: darken($main,5%)
+            // color: #000
+      .btn-cir
+        margin-right: 9px
+        width: auto 
+        height: auto
+        display: flex
+        align-items: center
+        justify-content: center
+        border: 0
+        font-size: px(20)
+        span:first-child
+          padding-right: 7px
+      .mobile-show
+        display: none
+        .icon-trangle-up
+          transition: .5s ease-in-out
+          font-size: px(12)
+        +rwdmax(1200)
+          position: absolute
+          left: 33%
+          bottom: 50%
+          transform: translate(50%)
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 35px
+          height: 35px
+          transition: .5s ease-in-out
+          font-size: px(10)
+          &.active
+            bottom: auto 
+            top: 60px
+            left: 20%
+            .icon-trangle-up
+              transform: rotateX(180deg)
+        +rwdmax(1000)
+          left: 25%
+        +rwdmax(767)
+          left: 0
+          bottom: 45.5px
+          &.active
+            left: 0
+            top: 30px
+      +rwdmax(1800)
+        margin-left: 100px
+        margin-right: 0
+      +rwdmax(1200)
+        width: 50%
+        margin-right: 0
+        margin-left: 0
+        justify-content: center
+        order: 3
+      +rwdmax(767)
+        width: 100%
+        margin-left: auto
+        justify-content: flex-end
+
+  // AJAX 商品內頁
+  .libox-ajax-detail
+    padding-top: 45px
+    padding-bottom: 100px
+    max-width: 1200px
+    width: 100%
+    margin-left: auto
+    .title
+      width: 90%
+      margin: 0 auto
+      padding-top: 30px
+      padding-bottom: 40px
+      text-align: center
+      h2 
+        padding-bottom: 20px
+        line-height: 1.5
+        letter-spacing: 1.55px
+        +fontSet2(px(31),$basic)
+      p
+        line-height: 1.5
+        letter-spacing: 1px
+        +fontSet2(px(20),$basic)
+    .product_detail_swiper
+      position: relative
+      max-width: 650px
+      width: 100%
+      margin: 0 auto
+      padding-bottom: 30px
+      .content
+        .img 
+          width: 430px
+      .swiper-pagination
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+      .swiper-pagination-bullet
+        margin: 0 6px
+      .swiper-arrow-wrap
+        position: absolute
+        z-index: 2
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 100%
+        pointer-events: none
+        +flex($x: space-between)
+        +rwdmax(900)
+          width: 120%
+        +rwdmax(767)
+          display: none
+        a
+          position: relative
+          display: block
+          width: 60px
+          height: 60px
+          border-radius: 50%
+          overflow: hidden
+          transition: .3s
+          pointer-events: auto
+          +flex
+          +rwdmax(1024)
+            width: 40px
+            height: 40px
+          &.prev-btn
+            padding-right: 5px
+          &.next-btn
+            padding-left: 5px
+          &::before
+            z-index: 0
+            content: ""
+            display: block
+            width: 0
+            height: 0
+            border-radius: 50%
+            background-color: #000
+            transition: .5s
+            +posCenter
+            +rwdmax(1024)
+              display: none
+          &:hover
+            &::before
+              width: 60px
+              height: 60px
+            i
+              color: #fff
+              +rwdmax(1024)
+                color: #000
+          i
+            position: relative
+            z-index: 1
+            font-size: px(28)
+            transition: .3s
+      +rwdmax(900)
+        width: 60%
+        .content
+          .img 
+            width: 70%
+            margin: 0 auto
+      +rwdmax(767)
+        width: 90%
+        .content
+          .img
+            // width: 330px
+            width: 280px
+    .product_detail_info
+      width: 85%
+      flex-direction: column-reverse
+      .intro, 
+      .spec
+        width: 100%
+        padding: 40px 50px
+      .spec
+        border-top: solid 5px
+        display: flex
+        .common-title
+          width: 27%
+        .spec-brand
+          margin-top: 0
+      .spec-brand .logo
+        padding: 0
+      +rwdmax(1200)
+        width: 88%
+        flex-direction: column
+        .intro, 
+        .spec
+          padding: 50px 0
+        .spec 
+          border-top: 0
+          .common-title,
+          .right
+            width: 70%
+            margin: 0 auto
+          .spec-brand
+            margin-top: 30px
+      +rwdmax(767)
+        .intro, 
+        .spec
+          padding: 45px 0 10px
+    .product_detail_photo
+      padding-top: 30px
+      .type-swiper
+        padding: 0 0 100px
+      .type-row1,
+      .type-row2
+        max-width: none
+        width: 85%
+      .type-row1
+        .block
+          &.horizon
+            max-width: 930px
+            // width: 100%
+          &.straight
+            max-width: 610px
+            // width: 100%
+      .type-row2
+        .block
+          max-width: 420px
+      +rwdmax(1200)
+        padding-top: 50px
+        .type-swiper
+          padding-top: 80px
+        .type-row1
+          width: 100%
+        .type-row2
+          width: 100%
+      +rwdmax(767)
+        .type-swiper
+          padding-top: 10px
+          padding-bottom: 80px
+    .product_detail_fare .img
+      max-width: 930px
+    .parallax-container .img-bg
+      height: 100%
+      top: 0
+    
+    .cir-btn
+      &.ajax_close
+        margin-left: auto 
+        margin-right: 30px
+      &.go-top
+        margin: 0 auto
+        display: flex
+        align-items: center
+        justify-content: center
+        border: 0
+        font-size: px(10)
+        +rwdmax(900)
+          margin-top: 30px
+        +rwdmax(767)
+          margin-top: 50px
+    .go-back
+      position: fixed
+      bottom: 0
+      right: 0
+      max-width: 1200px
+      width: 100%
+      height: 65px
+      background-position: 0 80%
+      background-size: 120%
+      background-image: url(../../../dist/uploads/product/event-bg.jpg)
+      z-index: 10
+      display: flex
+      align-items: center
+      justify-content: center
+      color: #fff
+      box-shadow: 0px 5px 32px 0 rgba(0, 0, 0, 0.4)
+      transform: translateY(100px)
+      transition: transform .5s ease-in-out
+      .icon
+        transition: .5s ease-in-out
+        font-size: px(30)
+      span 
+        margin-left: 15px
+        font-size: px(14)
+      &:hover 
+        .icon 
+          transform: translateX(-5px)
+      &.show
+        transform: translateY(0)
+      
+
+.libox-container
+  .scrollbar-macosx > .scroll-element .scroll-bar
+    width: 12px
+    left: -12px

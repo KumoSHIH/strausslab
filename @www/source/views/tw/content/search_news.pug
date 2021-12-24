@@ -1,0 +1,89 @@
+-
+  var news = [
+    {
+      img: '../../../uploads/news/img01-340X552.jpg',
+      date: '2020-10-11',
+      title: '貓咪 X 色彩，絕佳的共生空間'},
+    {
+      img: '../../../uploads/news/img02-340X552.jpg',
+      date: '2020-10-08',
+      title: '2021 色彩趨勢，Stauss Lab 先幫你預測！'},
+    {
+      img: '../../../uploads/news/img03-340X552.jpg',
+      date: '2020-09-30',
+      title: '熱銷商品三件 95 折，一起團購享受美好生活品質折，一起團購享受美好生活品質'},
+    {
+      img: '../../../uploads/news/img03-340X552.jpg',
+      date: '2020-09-30',
+      title: '熱銷商品三件 95 折，一起團購享受美好生活品質折，一起團購享受美好生活品質'},
+    {
+      img: '../../../uploads/news/img03-340X552.jpg',
+      date: '2020-09-30',
+      title: '熱銷商品三件 95 折，一起團購享受美好生活品質折，一起團購享受美好生活品質'},
+  ]
+
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/search.css")
+  body.search-result.search_news(data-page="search_news")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        main
+          a.cir-btn.mainGreen.hover-cir(href="javascript:;" data-hover="blue")
+            .cross
+          .top 
+            .bgText
+              p(data-aost data-aost-class="show") News
+            .detail 
+              // 顯示筆數: 串兩個
+              .num(data-aost data-aost-class="show")
+                span 3
+                span 3
+              p(data-aost data-aost-class="show") Search Result
+                span 搜尋結果
+              // input內容
+              .keyword(data-aost data-aost-class="show")
+                span # 新品訊息
+            // 返回搜尋燈箱
+            .cir-btn.mainGreen.back-search(
+              data-aost data-aost-class="show"
+              data-ajax-route="./ajax_search.html" 
+              data-ajax-container=".libox-container" 
+              data-ajax-callback="_search.openSearchNews"
+              data-ajax)
+              .icon-search
+          .result
+            ul
+              each val in news
+                li(data-aost data-aost-class="show")
+                  a.block.hover-cir(href="./news_detail.html" data-hover="yellowBig")
+                    .top-wrap
+                      .parallax-container(data-parallax-container)
+                        .img-bg.b-lazy(src="../../../assets/img/blazy.gif" data-src=`${val.img}` data-parallax data-parallax-bg) 
+                      .date
+                        p= val.date
+                    h2= val.title
+          // 搜尋沒有結果
+          //.no-result(data-aost data-aost-class="show")
+            p.fz-14 Try again!
+          // go top
+          .cir-btn.black.goTop(
+            data-aost data-aost-class="show" data-aost-offset="100"
+            data-anchor-speed="1200"
+            data-anchor)
+            .icon-trangle-up
+
+  
+  //引入的script
+  include ../layouts/_script.pug

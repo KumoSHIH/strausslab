@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <!-- head標籤 & 網站設定-->
+  <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <!--共用設定-->
+    <!-- 網站語系及語言宣告-->
+    <meta http-equiv="content-language" content="zh-TW"/>
+    <meta charset="UTF-8"/>
+    <!-- RWD設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 瀏覽器設定-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- 網站關鍵字-->
+    <meta name="keywords" content="網站關鍵字"/>
+    <!-- 網頁內容描述-->
+    <meta name="description" content="網頁內容描述，中文 80 個字元、英文 160 個字元"/>
+    <!-- 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="robots" content="noindex"/>
+    <!-- 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="googlebot" content="noindex"/>
+    <!-- Open Graph Protocol for facebook-->
+    <meta property="og:title" content="網頁Title"/>
+    <meta property="og:description" content="網頁內容描述"/>
+    <meta property="og:url" content="主要網址"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="網頁內容描述"/>
+    <!-- Open Graph Protocol for google plus-->
+    <meta itemprop="name" content="網站名稱或標題"/>
+    <meta itemprop="image" content="分享的影像位址"/>
+    <meta itemprop="description" content="網頁描述"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="分享的影像位址"/>
+    <meta name="twitter:site" content="網站名稱"/>
+    <meta name="twitter:title" content="網頁標題"/>
+    <meta name="twitter:description" content="網頁描述 200 個字元以內"/>
+    <meta name="twitter:creator" content="客戶公司或品牌名稱"/>
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content=" http://www.example.com/image.html"/>
+    <title>有情門 Strausslab</title>
+    <!-- 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中-->
+    <link rel="canonical" href="主要網址" itemprop="url"/>
+    <link rel="shortcut icon" href="../../../assets/img/logo-w.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
+    <!-- Google Tag Manager-->
+    <!-- 以下script 後端自行打開-->
+    <!-- script.-->
+    <!--   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+    <!--   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+    <!--   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+    <!--   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+    <!--   })(window,document,'script','dataLayer','GTM編號');-->
+    <!--獨立CSS-->
+    <link rel="stylesheet" href="../../../assets/css/member_detail.css"/>
+  </head>
+  <body class="member_detail" data-page="member_evaluation_detail">
+    <div class="pub">
+      <div class="center">
+        <div class="pub-wrap"> 
+          <!-- 開啟生日會員gif-->
+          <!-- _gif.init();-->
+          <!-- 關閉廣告-->
+          <!-- _ad.closeEvent();-->
+          <div class="cir-btn black close-menu hover-cir" data-hover="yellowSmall" onclick="_ad.closeEvent()">
+            <div class="cross"></div>
+          </div>
+          <div class="pub-swiper">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:;">
+                    <div class="img"> <img src="../../../assets/img/1200X720.jpg" alt=""/></div></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mouse-container">
+      <div id="mouse"> 
+        <div class="circle"></div>
+        <div class="mark"><img src="../../../assets/img/cursor.png" alt=""/></div>
+      </div>
+    </div>
+    <div class="main-wrapper">
+      <div class="all-wrapper">
+        <main class="white range">
+          <div class="top"><a class="cir-btn black hover-cir" href="./member_evaluation.html" data-hover="blue">
+              <div class="cross"></div></a></div>
+          <!-- 大標-->
+          <div class="title">
+            <div class="title-left">
+              <div class="bgtext"><span>Evaluation</span></div>
+              <div class="text"> <span class="en">Product Evaluation</span><span class="ch">產品評價</span></div>
+            </div>
+            <!-- 已評 & 待評筆數-->
+            <div class="title-right">
+              <div> <span class="num">2</span><span class="ch">待評價商品</span></div>
+              <div> <span class="num">3</span><span class="ch">已評價商品</span></div>
+            </div>
+          </div>
+          <!-- 訂單編號-->
+          <div class="order-number"><span class="ch">NO. 訂單編號</span><span class="en">JDI2020110225</span></div>
+          <!-- 訂單內容-->
+          <div class="order-detail">
+            <div class="item-wrap">
+              <!-- 項目敘述-->
+              <div class="item-head">
+                <div class="img">購買項目</div>
+                <div class="item"></div>
+                <div class="qty">數量</div>
+                <div class="price">價格</div>
+              </div>
+              <!-- 一項-->
+              <div class="item-body">
+                <!-- 大圖 380X250 <div class="img"> + large-->
+                <!-- 小圖 190X250 <div class="img"> + small-->
+                <div class="img large">
+                  <figure><img src="../../../uploads/product/detail-obj05-380X250.png" alt=""/></figure>
+                </div>
+                <!-- 項目明細-->
+                <div class="item">
+                  <h2>乘風沙發</h2>
+                  <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">雙人座 W52xD30xH52 (cm)</span></div>
+                  <div class="color-wrap">
+                    <div class="color"><span class="strong">COLOR：</span>
+                      <div>
+                        <div class="img-cir"><img src="../../../uploads/product/color03-120X120.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                      </div>
+                    </div>
+                    <div class="color"><span class="strong">COLOR：</span>
+                      <div>
+                        <div class="img-cir"><img src="../../../uploads/product/color05-120X120.jpg" alt=""/></div><span class="fz-14">綠色</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="color-wrap">
+                    <div class="color"><span class="strong">WOOD：</span>
+                      <div>
+                        <div class="img-cir"><img src="../../../uploads/product/color10-120X120.jpg" alt=""/></div><span class="fz-14">鯨木色</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 數量-->
+                <div class="qty">x 1</div>
+                <!-- 價格-->
+                <div class="price"><span class="fz-14">VIP 售價</span>
+                  <div class="money"><span>$40,800</span></div>
+                  <div class="origin"><span>原價  </span><span>$50,800</span></div>
+                </div>
+                <!-- 評分-->
+                <div class="item-score">
+                  <div class="img"></div>
+                  <div class="score-wrap normal">
+                    <div class="score-cont"><span>SCORE 您的評分</span>
+                      <ul>
+                        <li>
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                          </svg>
+                        </li>
+                        <li>
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                          </svg>
+                        </li>
+                        <li>
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                          </svg>
+                        </li>
+                        <li>
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                          </svg>
+                        </li>
+                        <li>
+                          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                          </svg>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="textarea">
+                      <textarea placeholder="請填寫您的商品評價於此..."></textarea>
+                    </div>
+                    <div class="form-btn form-done hover-cir bd0-dark" data-hover="yellowBig" onclick="_common.openliboxInner('send')">
+                      <p>SEND 送出評價</p><span class="icon-arrAngle"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 一項-->
+              <div class="item-body">
+                <div class="img small">
+                  <figure><img src="../../../uploads/product/pro01-190X250.jpg" alt=""/></figure>
+                </div>
+                <!-- 項目明細-->
+                <div class="item">
+                  <h2>阡陌套几</h2>
+                  <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">大 W52xD30xH52 (cm)</span></div>
+                  <div class="color-wrap">
+                    <div class="color"><span class="strong">WOOD：</span>
+                      <div>
+                        <div class="img-cir"><img src="../../../uploads/product/color10-120X120.jpg" alt=""/></div><span class="fz-14">鯨木色</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 數量-->
+                <div class="qty">x 1</div>
+                <!-- 價格-->
+                <div class="price"><span class="fz-14">PRICE 原價</span>
+                  <div class="money"><span>$20,800</span></div>
+                </div>
+                <!-- 評分 - 查看評價-->
+                <div class="item-score hover-cir" data-hover="blueBig" data-ajax-route="./ajax_evaluation.html" data-ajax-container=".libox-container" data-ajax-callback="_ajaxCallback.evaLibox" data-ajax="data-ajax">
+                  <div class="img"></div>
+                  <div class="score-wrap done">
+                    <div class="left"><span class="date">2020-12-31</span><span class="ch">評價已成功發布</span></div>
+                    <div class="form-btn form-done bd0-white">
+                      <p>VIEW 查看評價</p><span class="icon-arrAngle"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 一項-->
+              <!-- 組合優惠-->
+              <div class="item-packpage">
+                <div class="top"> 
+                  <div class="tit"><span class="en">EVENT PACKAGE：</span><span class="ch">書臥 life 生活任選三件享八折</span></div>
+                </div>
+                <div class="item-body">
+                  <div class="img large">
+                    <figure><img src="../../../uploads/product/sofa05-380X250.png" alt=""/></figure>
+                  </div>
+                  <!-- 項目明細-->
+                  <div class="item">
+                    <h2>恰恰好沙發</h2>
+                    <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">雙人座 SH42.5 / W155.5xD88.5xH100</span></div>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">COLOR：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color03-120X120.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                        </div>
+                      </div>
+                      <div class="color"><span class="strong">COLOR：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color05-120X120.jpg" alt=""/></div><span class="fz-14">綠色</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">WOOD：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color10-120X120.jpg" alt=""/></div><span class="fz-14">鯨木色</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 數量-->
+                  <div class="qty">x 1</div>
+                  <!-- 價格-->
+                  <div class="price"><span class="fz-14">DISCOUNT 優惠價</span>
+                    <div class="money"><span>$40,800</span></div>
+                    <div class="origin line-through"><span>原價  </span><span>$50,800</span></div>
+                  </div>
+                  <!-- 評分-->
+                  <div class="item-score">
+                    <div class="img"></div>
+                    <div class="score-wrap normal">
+                      <div class="score-cont"><span>SCORE 您的評分</span>
+                        <ul>
+                          <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                            </svg>
+                          </li>
+                          <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                            </svg>
+                          </li>
+                          <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                            </svg>
+                          </li>
+                          <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                            </svg>
+                          </li>
+                          <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                            </svg>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="textarea">
+                        <textarea placeholder="請填寫您的商品評價於此..."></textarea>
+                      </div>
+                      <div class="form-btn form-done hover-cir bd0-dark" data-hover="yellowBig" onclick="_common.openliboxInner('send')">
+                        <p>SEND 送出評價</p><span class="icon-arrAngle"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-body">
+                  <div class="img small">
+                    <figure><img src="../../../uploads/product/cart02-190X250.png" alt=""/></figure>
+                  </div>
+                  <!-- 項目明細-->
+                  <div class="item">
+                    <h2>加菲收納筒 - 木蓋</h2>
+                    <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">F W46×D40×H42(cm)</span></div>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">COLOR：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color03-120X120.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 數量-->
+                  <div class="qty">x 1</div>
+                  <!-- 價格-->
+                  <div class="price"><span class="fz-14">DISCOUNT 優惠價</span>
+                    <div class="money"><span>$3,000</span></div>
+                    <div class="origin line-through"><span>原價  </span><span>$4,500</span></div>
+                  </div>
+                  <!-- 評分 - 評價已送出-->
+                  <div class="item-score">
+                    <div class="img"></div>
+                    <div class="score-wrap sended">
+                      <div class="left"><span class="date">2020-12-15</span><span class="ch">評價已送出</span></div>
+                      <p>AUDIT 評價審核中</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-body">
+                  <div class="img small">
+                    <figure><img src="../../../uploads/product/cart01-190X250.png" alt=""/></figure>
+                  </div>
+                  <!-- 項目明細-->
+                  <div class="item">
+                    <h2>奇畦餐椅</h2>
+                    <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">SH 43.5 / W51xD67xH73(cm)</span></div>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">COLOR：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div><span class="fz-14">紅色</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">WOOD：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color10-120X120.jpg" alt=""/></div><span class="fz-14">鯨木色</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 數量-->
+                  <div class="qty">x 1</div>
+                  <!-- 價格-->
+                  <div class="price"><span class="fz-14">DISCOUNT 優惠價</span>
+                    <div class="money"><span>$3,180</span></div>
+                    <div class="origin line-through"><span>原價  </span><span>$4,800</span></div>
+                  </div>
+                  <!-- 評分 - 評價審核未通過-->
+                  <div class="item-score">
+                    <div class="img"></div>
+                    <div class="score-wrap edit">
+                      <div class="left hover-cir" onclick="_common.openliboxInner('failed')" data-hover="yellowBig">
+                        <div><span class="date">2020-12-18</span><span class="ch">評價審核未通過，請重新編輯</span></div>
+                        <div class="btn">
+                          <div></div>
+                        </div>
+                      </div>
+                      <div class="score-cont"><span>SCORE 您的評分</span>
+                        <ul>
+                          <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                            </svg>
+                          </li>
+                          <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                            </svg>
+                          </li>
+                          <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                            </svg>
+                          </li>
+                          <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                            </svg>
+                          </li>
+                          <li>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.542px" height="19.417px" viewBox="0 0 19.542 19.417" enable-background="new 0 0 19.542 19.417" xml:space="preserve">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M9.122,1.267c0.12-0.317,0.412-0.525,0.737-0.525c0.325,0,0.617,0.208,0.739,0.525l2.021,5.363l5.496,0.356c0.324,0.021,0.605,0.247,0.704,0.571c0.102,0.325,0.002,0.679-0.249,0.896l-4.246,3.67l1.374,5.583c0.082,0.33-0.037,0.678-0.302,0.878c-0.262,0.2-0.615,0.211-0.89,0.029l-4.648-3.095l-4.648,3.095c-0.274,0.182-0.627,0.171-0.891-0.029c-0.263-0.2-0.382-0.548-0.301-0.878l1.375-5.583l-4.247-3.67C0.896,8.236,0.798,7.882,0.898,7.557c0.101-0.324,0.38-0.55,0.705-0.571L7.1,6.629L9.122,1.267z"></path>
+                            </svg>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="textarea">
+                        <textarea placeholder="請填寫您的商品評價於此..."></textarea>
+                      </div>
+                      <div class="form-btn form-done hover-cir bd0-dark" data-hover="yellowBig" onclick="_common.openliboxInner('send')">
+                        <p>SEND 送出評價</p><span class="icon-arrAngle"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <!-- go top-->
+            <div class="cir-btn black goTop hover-cir" data-hover="blue" data-aost="data-aost" data-aost-class="show" data-aost-offset="100" data-anchor-speed="1200" data-anchor="data-anchor">
+              <div class="icon">
+                <div class="icon-trangle-up">           </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- 評價送出燈箱-->
+        <!-- 開啟: _common.openliboxInner('send');-->
+        <div class="libox-inner" data-name="send">
+          <div class="libox-common">
+            <div class="cir-wrap member">
+              <div class="bg"></div>
+              <div class="cir-bg">
+                <h5 class="white">Success</h5>
+                <h6 class="white">您的評價已送出！</h6>
+                <div class="wrap">
+                  <div class="btn-close ajax_close hover-cir" data-hover="yellowSmall">
+                    <p>OK 確認</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 審核未通過燈箱-->
+        <!-- 開啟: _common.openliboxInner('failed');-->
+        <div class="libox-inner" data-name="failed">
+          <div class="libox-common">
+            <div class="cir-wrap middle shortage">
+              <div class="cir-btn mainGreen ajax_close hover-cir" data-hover="yellowSmall">
+                <div class="cross"></div>
+              </div>
+              <div class="cir-bg">
+                <div class="scrollbar-inner">
+                  <div>
+                    <h5 class="white">About Failed</h5>
+                    <h6 class="white">關於審核未通過</h6>
+                    <p>
+                      若您的評價被審核未通過，有可能是因為內容中包含粗俗、色情、鄙視等不雅字眼，或者是對於商品和服務流程有不當的指證。
+                      若您的評價被審核未通過，有可能是因為內容中包含粗俗、色情、鄙視等不雅
+                      字眼，或者是對於商品和服務流程有不當的指證。
+                      若您的評價被審核未通過，有可能是因為內容中包含粗俗、色情、鄙視等不雅
+                      字眼，或者是對於商品和服務流程有不當的指證。
+                      <br>
+                      <br>
+                      我們歡迎您重新編輯此評價，若對於本次的審核有任何疑問，都可以透過網站
+                      「聯繫單元」與我們聯繫，謝謝！
+                    </p>
+                  </div>
+                </div>
+                <!--.wrap
+                .btn-close.hover-cir(data-hover="yellowBig" data-anchor-container=".libox-inner[data-name='failed'] .scrollbar-inner" data-anchor)
+                  p TOP 
+                  span.icon-trangle-up
+                
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!--引入的script-->
+  <script>document.createElement( "picture" );</script>
+  <script src="../../../assets/js/plugins-dist.js"></script>
+  <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
+  <script src="../../../assets/js/fesdDB.1.0-dist.js"></script>
+  <script src="../../../assets/js/fesd.2.0.min.js"></script>
+  <script src="../../../assets/js/aost-dist.js"></script>
+  <script src="../../../assets/js/methods-dist.js"></script>
+  <script src="../../../assets/js/main-dist.js"></script><!-- microdata : professional service -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "ProfessionalService",
+      "name": "網站名子",
+      "email": "mailto:email",
+      "url": "本站網址",
+      "image": "favicon logo路徑",
+      "priceRange":"商品價格區間",
+      "telephone": "電話",
+      "logo": "logo路徑",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "地址",
+        "addressLocality": "區",
+        "addressRegion": "成市",
+        "postalCode": "郵遞區號",
+        "addressCountry": "中華民國 (台灣)"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.619435",
+        "longitude": "120.296034"
+      },
+      "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+      "openingHours": [
+        "Mo-Th 11:00-22:00",
+        "Fr 11:00-22:30",
+        "Sa 10:30-22:30",
+        "Su 10:30-22:00"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+886-00-12345678"
+      },
+      "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+    }
+    
+    
+  </script><!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://example.com/dresses",
+            "name": "Dresses"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "https://example.com/dresses/real",
+            "name": "Real Dresses"
+          }
+        }
+      ]
+    }
+  </script>
+</html>

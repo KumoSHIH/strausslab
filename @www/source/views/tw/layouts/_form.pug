@@ -1,0 +1,223 @@
+form.wdd-form
+  // 一排兩個以上input
+  .form-row
+    .form-grid.required
+      label.form-group
+        p.subject
+          span.tip *
+          |First Name
+        input(type="text" placeholder="KUMO")
+    .form-grid.required
+      label.form-group
+        p.subject 
+          span.tip *
+          |Last Name
+        input(type="text" placeholder="Shih")
+  // 一排一個input
+  .form-row
+    .form-grid.required
+      label.form-group
+        p.subject 
+          span.tip *
+          |Address
+        input(type="text" placeholder="Please enter your address")
+  // subject with Chinese & English
+  .form-row
+    .form-grid.required
+      label.form-group
+        p.subject
+          span.tip *
+          span 地址
+          span Address
+        input(type="text" placeholder="Please enter your address")
+  // 下拉(type-fullbox)
+  .form-row
+    .form-grid.required
+      .form-select.type-fullbox
+        .select-head
+          p.subject 
+            span.tip *
+            |Country
+          p.option 
+            span Please choose your country
+          span.arrow-icon
+        .select-content
+          ul.scrollbar-inner
+            li Taiwan
+            li United States
+            li United Kingdom
+            li France
+            li Japan
+            li Korea
+  // 下拉(type-normal)
+  .form-row
+    .form-grid.required
+      .form-select.type-normal
+        .select-head
+          p.option 
+            span.tip *
+            span Inquiry type
+          span.arrow-icon
+        .select-content
+          ul.scrollbar-inner
+            li Business
+            li Personal
+    .form-grid.required
+      .form-select.type-normal
+        .select-head
+          p.option 
+            span.tip *
+            span Inquiry type
+          span.arrow-icon
+        .select-content
+          ul.scrollbar-inner
+            li Business
+            li Personal
+  // subject + 下拉(type-normal)
+  .form-row
+    .form-grid.required
+      label.form-group
+        p.subject 
+          span.tip *
+          |Industry
+        .form-select.type-normal(style="width: 100%")
+          .select-head
+            p.option 
+              span Please select Industry
+            span.arrow-icon
+          .select-content
+            ul.scrollbar-inner
+              li Awards & Recognition
+              li Educational Facility 
+              li Engraving Services
+              li Fabrics & Textiles
+              li Architectural & Model Maker
+  // subject + 下拉(type-normal) + input
+  .form-row
+    .form-grid.required
+      label.form-group
+        p.subject 
+          span.tip *
+          |Phone Number
+        .form-select.type-normal(style="flex-shrink: 0")
+          .select-head
+            p.option 
+              span Area code
+            span.arrow-icon
+          .select-content
+            ul.scrollbar-inner
+              li +886
+              li +86
+              li +852
+              li +62
+              li +81
+              li +82
+        input(type="tel" inputmode="tel" placeholder="Please enter your Phone Number")
+
+  // checkbox
+  .form-row
+    .form-grid
+      .form-group
+        p.subject 
+          span.tip *
+          |Checkbox
+        .form-check
+          .check-wrap
+            input#checkbox1(type="checkbox")
+            label.form-fakebox(for="checkbox1")
+              .form-box
+                span
+            label.word(for="checkbox1") checkbox1
+          .check-wrap
+            input#checkbox2(type="checkbox")
+            label.form-fakebox(for="checkbox2")
+              .form-box
+                span
+            label.word(for="checkbox2") checkbox2
+          .check-wrap
+            input#checkbox3(type="checkbox")
+            label.form-fakebox(for="checkbox3")
+              .form-box
+                span
+            label.word(for="checkbox3") checkbox3
+  // radio
+  // (name="test") 記得改
+  .form-row
+    .form-grid.required
+      .form-group
+        p.subject 
+          span.tip *
+          |Radio
+        .form-check
+          .check-wrap
+            input#radio1(type="radio" name="test" checked)
+            label.form-fakebox(for="radio1")
+              .form-box
+                span
+            label.word(for="radio1") radio1
+          .check-wrap
+            input#radio2(type="radio" name="test")
+            label.form-fakebox(for="radio2")
+              .form-box
+                span
+            label.word(for="radio2") radio2
+  // file 上傳檔案
+  .form-row
+    // 需填入檔案大小限制 data-limit=""
+    .form-grid.form-file(data-limit="2MB")
+      label.form-group
+        p.subject 
+          span.tip *
+          |Files
+        .file-wrap 
+          p.file-name File size is mainly below 
+            span
+          .form-icon.file-input
+            span.icon
+            input(type="file")
+  // 選擇日期
+  .form-row.date-picker
+    .form-grid
+      label.form-group
+        p.subject 
+          span.tip *
+          |Datepicker
+        .form-date
+          input#datepicker(type="text" name="date" placeholder="YYYY/MM/DD" readonly)
+  // textarea
+  // type 1
+  .form-row
+    .form-grid
+      label.form-group.type-row
+        p.subject 
+          span.tip *
+          |Textarea 1
+        textarea(placeholder="enter something ...")
+  // type 2
+  .form-row
+    .form-grid
+      label.form-group.type-column
+        p.subject 
+          span.tip *
+          |Textarea 2
+        textarea(placeholder="enter something ...")
+  
+  // 輸入驗證碼
+  .form-row
+    .form-grid.required
+      label.form-group.form-require
+        p.subject 
+          span.tip *
+          |Require
+        input(type="text" placeholder="enter 4142...")
+        // 重新整理按鈕
+        .form-icon
+          span.icon
+        img(src="https://test.wellcare.com.tw/captcha/default", alt="")
+
+  // 送出&清除按鈕
+  .form-row
+    .form-btn.form-clear 
+      p 清除全部
+    .form-btn.form-done(onclick="_form.submitCheck()")
+      p 送出

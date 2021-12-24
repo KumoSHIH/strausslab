@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/shopping_other.css")
+  body.shopping_success(data-page="shopping_success")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main.account.success
+          // 標題&敘述可改
+          section.top-title(data-aost data-aost-class="show" data-aost-offset="90")
+            .unit-title 
+              .left
+                span.en Success!
+                span.ch 您的訂單已成立
+            // 信用卡付款完成內容
+            p.fz-14 感謝您完成本次消費，若欲了解訂單詳情，可前往會員中心查看多。<br>提醒您！後續收到商品後有7天鑑賞期，若需退貨請於7日內申請，鑑賞期內請妥善保管商品包裝、發票以及商品。
+            // 虛擬帳號付款
+            //p.fz-14 感謝您完成本次訂購，請帶著以下匯款資訊於期限內至 ATM 或銀行進行繳款。
+            // 虛擬帳號付款資訊
+            .pay-info
+              .col 
+                p BANK CODE 銀行代碼
+                span 014
+              .col
+                p ACOUNT 虛擬帳號
+                span 12354789 - 51236544
+              .col 
+                p DEADLINE 付款期限
+                span 2020/12/30 16:30 
+                  span.ch 前截止
+              .col
+                p TOTAL 付款金額
+                span $10,000
+            .bottom
+              // 訂單編號
+              .item-code
+                span ORDER NO. 訂單編號
+                span JDI2020110225
+              // 按鈕
+              .btn-wrap(data-aost data-aost-class="show" data-aost-offset="90")
+                a.btn-cir.hover-cir(href="./index.html" data-hover="blue")
+                  .cross-plus
+                  span 返回首頁
+                a.btn-cir.hover-cir(href="./member.html" data-hover="blue")
+                  .cross-plus
+                  span 會員中心
+          // 詢問表單
+          section.wdd-form.virtual
+            .top.top-ask
+              // 圖片可換: 建議尺寸 85X85 以內
+              .img(data-aost data-aost-class="show" data-aost-offset="90") 
+                img(src="../../../assets/img/letter-82X83.png", alt="")
+              p(data-aost data-aost-class="show" data-aost-offset="90") 
+                span.en Experience Inquiry 
+                span.ch 網站體驗詢問
+              span(data-aost data-aost-class="show" data-aost-offset="90") 我們想要更了解您的品牌體驗，期盼您快速填寫以下問題讓我們了解
+
+            .top.top-success
+              // 圖片可換: 建議尺寸 85X85 以內
+              .img 
+                img(src="../../../assets/img/letter-82X46.png", alt="")
+              p 
+                span.en Success!
+                span.ch 表單已成功送出
+              span 感謝您的填寫，讓我們的品牌能夠更貼近消費者心聲。
+
+            // 選項是固定的
+            // 一項
+            .form-list(data-aost data-aost-class="show" data-aost-offset="90")
+              .form-row
+                .form-grid.h-auto
+                  .form-group.type-column.transparent.h-auto
+                    p.subject 
+                      span 01
+                      span.ch 進到這個網站什麼最吸引您？（可複選）
+                    .form-check
+                      .check-wrap
+                        input#checkbox1(type="checkbox")
+                        label.form-fakebox(for="checkbox1")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox1") 活潑大膽的色彩
+                      .check-wrap
+                        input#checkbox2(type="checkbox")
+                        label.form-fakebox(for="checkbox2")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox2") 多元的商品款式
+                      .check-wrap
+                        input#checkbox3(type="checkbox")
+                        label.form-fakebox(for="checkbox3")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox3") 新穎的購物方式
+            // 一項
+            .form-list(data-aost data-aost-class="show" data-aost-offset="90")
+              .form-row
+                .form-grid.h-auto
+                  .form-group.type-column.transparent.h-auto
+                    p.subject 
+                      span 02
+                      span.ch 怎麼得知這個品牌？（可複選）
+                    .form-check
+                      .check-wrap
+                        input#checkbox4(type="checkbox")
+                        label.form-fakebox(for="checkbox4")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox4") 臉書粉專
+                      .check-wrap
+                        input#checkbox5(type="checkbox")
+                        label.form-fakebox(for="checkbox5")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox5") IG
+                      .check-wrap
+                        input#checkbox6(type="checkbox")
+                        label.form-fakebox(for="checkbox6")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox6") 親友推薦
+                      .check-wrap
+                        input#checkbox7(type="checkbox")
+                        label.form-fakebox(for="checkbox7")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox7") 實體門市
+                      .check-wrap.w100
+                        input#checkbox8(type="checkbox")
+                        label.form-fakebox(for="checkbox8")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox8") 網路廣告/平台
+                        input(type="text" placeholder="請填寫於此")
+            // 一項
+            .form-list(data-aost data-aost-class="show" data-aost-offset="90")
+              .form-row
+                .form-grid.h-auto
+                  .form-group.type-column.transparent.h-auto
+                    p.subject 
+                      span 03
+                      span.ch 你想要找什麼空間的東西（可複選）
+                    .form-check
+                      .check-wrap
+                        input#checkbox9(type="checkbox")
+                        label.form-fakebox(for="checkbox9")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox9") 客廳
+                      .check-wrap
+                        input#checkbox10(type="checkbox")
+                        label.form-fakebox(for="checkbox10")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox10") 餐廳
+                      .check-wrap
+                        input#checkbox11(type="checkbox")
+                        label.form-fakebox(for="checkbox11")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox11") 書房
+                      .check-wrap
+                        input#checkbox12(type="checkbox")
+                        label.form-fakebox(for="checkbox12")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox12") 臥房
+                      .check-wrap.w100
+                        input#checkbox13(type="checkbox")
+                        label.form-fakebox(for="checkbox13")
+                          .form-box.gray
+                            span.icon-check
+                        label.word(for="checkbox13") 其他
+                        input(type="text" placeholder="請填寫於此")
+
+            // 送出表單按鈕
+            .form-row.button-wrap(data-aost data-aost-class="show" data-aost-offset="90")
+              .form-btn.dark.form-clear.hover-cir(data-hover="blueBig")
+                .cross
+                p REWRITE 重新填寫
+              // 送出JS: _shopping.successAnimate();
+              .form-btn.dark.form-done.hover-cir(data-hover="blueBig" onclick="_shopping.successAnimate()")
+                p SEND 確認送出
+                span.icon-arrAngle
+            
+
+
+
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

@@ -1,0 +1,331 @@
+// 轉場
+.transbox
+  position: fixed
+  left: 0
+  top: 0
+  width: 100vw
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  z-index: 9999
+  background-color: #fff
+  .big-text
+    max-width: 1500px
+    width: 100%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    position: relative
+    margin: 0 auto
+    .text
+      position: absolute
+      font-weight: bold
+      font-family: $basic
+      >div
+        &::after,&:before
+          content: ''
+          position: absolute
+          right: 0
+          top: 0
+          width: 100%
+          height: 100%
+          background-color: #fff
+        &:before
+          width: 0
+          height: 100%
+          top: auto 
+          right: auto 
+          left: 0
+          bottom: 0
+          z-index: 1
+          transition: 1.5s ease-in-out
+    .text:nth-child(1)
+      right: 33.8%
+      top: 21%
+      padding-bottom: 10px
+      border-bottom: solid 10px 
+      font-size: px(250)
+      >div
+        letter-spacing: 20.8px
+        animation: leftIn .7s ease-in-out both
+        &::after
+          height: 105%
+          animation: w100 .6s .2s ease-in-out both
+        &::before
+          height: 105%
+          left: -5px
+          bottom: -10px
+    .text:nth-child(2)
+      height: 100vh
+      height: calc(var(--vh, 1vh) * 100)
+      width: 100%
+      // right: 1.2vw
+      right: 7.2vw
+      top: 0
+      font-size: px(140)
+      >div
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: space-around
+        writing-mode: vertical-rl
+        animation: topIn .7s ease-in-out both
+        &::after
+          top: auto 
+          bottom: 0
+          animation: h100 .6s ease-in-out both
+          animation-delay: .3s
+      span:nth-child(5),
+      span:nth-child(6)
+        color: #b8de6f
+    .text:nth-child(3)
+      left: 6.2vw
+      top: 51.5vh
+      color: #fff
+      mix-blend-mode: difference
+      font-size: px(180)
+      >div 
+        letter-spacing: 20px
+        animation: rightIn .7s ease-in-out both
+        &::after,&:before
+          background-color: #000
+        &::after
+          height: 105%
+          left: -5px
+          animation: w100 .5s ease-in-out both
+          animation-delay: .4s
+    +rwdmax(1500)
+      width: 91%
+      .text:nth-child(1)
+        left: 1vw
+        font-size: px(200)
+      .text:nth-child(2)
+        right: 10vw
+      .text:nth-child(3)
+        left: 10vw
+        top: 45vh
+        font-size: px(150)
+    +rwdmax(1400)
+      .text:nth-child(2)
+        right: 13vw
+      .text:nth-child(3)
+        left: 8vw
+        top: 52vh
+        font-size: px(140)
+    +rwdmax(1200)
+      .text:nth-child(1)
+        left: 2vw
+        font-size: px(150)
+      .text:nth-child(2)
+        font-size: px(122)
+      .text:nth-child(3)
+        letter-spacing: 10px
+        top: 52%
+        transform: translateY(-50%)
+        font-size: px(110)
+    +rwdmax(800)
+      .text:nth-child(1)
+        top: 40%
+        transform: translateY(-50%)
+        font-size: px(120)
+        >div 
+          letter-spacing: 12px
+      .text:nth-child(2)
+        height: 80vh
+        width: 90%
+        right: 50%
+        top: 50%
+        transform: translate(50%,-50%)
+        span:nth-child(5)
+          color: #b8de6f
+      .text:nth-child(3)
+        color: #fff
+        mix-blend-mode: difference
+        top: 52%
+        font-size: px(100)
+        &::after
+          background-color: #000
+        >div 
+          letter-spacing: 10px
+    +rwdmax(767)
+      .text:nth-child(1)
+        position: relative
+        display: inline-block
+        left: 50%
+        padding-bottom: 7px
+        border-bottom: solid 5px
+        color: #fff
+        mix-blend-mode: difference
+        transform: translate(-50%,-50%)
+        font-size: px(70)
+        &::after
+          left: 0
+          top: auto
+          bottom: -10px
+          background-color: #000
+        &::before
+          left: 0
+        
+      .text:nth-child(2)
+        height: 77vh
+        z-index: -2
+        font-size: px(90)
+        span:nth-child(3),
+        span:nth-child(4)
+          color: #b8de6f
+      .text:nth-child(3)
+        left: 50%
+        transform: translate(-50%,-50%)
+        font-size: px(40)
+        
+
+  .title-type
+    padding: 0
+    top: 20%
+    left: 50%
+    transform: translateX(-50%)
+    >div
+      text-align: center
+      display: inline-flex
+      flex-direction: column
+      justify-content: center
+    .en
+      &.border-bottom
+        border: 0
+        padding-bottom: 10px
+        position: relative
+        &::after
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 0
+          background-color: #000
+          width: 100%
+          height: 4px
+    span 
+      font-weight: bold
+      font-size: px(90)
+    span:nth-child(1),
+    span:nth-child(2),
+    span:nth-child(3)
+      animation: objUp .5s ease-in-out both
+    span:nth-child(1)
+      animation-delay: .7s
+    span:nth-child(2)
+      animation-delay: .5s
+    span:nth-child(3)
+      animation-delay: .3s
+    +rwdmax(1200)
+      top: 15%
+    +rwdmax(860)
+      width: 100%
+      text-align: center
+    +rwdmax(800)
+      top: 23%
+      span
+        font-size: px(86)
+    +rwdmax(767)
+      top: 29%
+      .en
+        &.border-bottom
+          &::after
+            height: 3px
+      span
+        font-size: px(50)
+  .img
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    z-index: 10
+    &-wrap 
+      padding: 0 10px
+      max-height: 250px
+    &.type-shake
+      .img-wrap
+        animation: objDown .8s ease-in-out both
+      .img-wrap:nth-child(1)
+        img
+          animation: rotate1 .8s .5s ease-in-out both
+      .img-wrap:nth-child(2)
+        animation-delay: .2s
+        img
+          animation: rotate2 .8s .5s ease-in-out both
+      .img-wrap:nth-child(3)
+        animation-delay: .4s
+        img
+          animation: rotate1 .8s .5s ease-in-out both
+    +rwdmax(1200)
+      width: 85%
+      &-wrap
+        padding: 0 15px
+    +rwdmax(900)
+      width: 95%
+    +rwdmax(767)
+      width: 100%
+      top: 52%
+      &-wrap
+        padding: 0 5px
+
+  &.out
+    .title-type
+      span:nth-child(1),
+      span:nth-child(2),
+      span:nth-child(3)
+        animation: opacity0 .5s ease-in-out both
+      span:nth-child(1)
+        animation-delay: .35s
+      span:nth-child(2)
+        animation-delay: .2s
+      span:nth-child(3)
+        animation-delay: 0s
+    .img
+      &.type-shake
+        .img-wrap 
+          animation: opacity0 .5s .5s ease-in-out both
+    .big-text
+      .text:nth-child(1)
+        opacity: 0
+        transition: 1.9s ease-in-out
+      .text:nth-child(2)
+        opacity: 0
+        transition: .5s ease-in-out
+      .text:nth-child(3)
+        opacity: 0
+        transition: 1s ease-in-out
+
+// 區塊轉場
+.white-after
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 1
+    width: 110%
+    height: 110%
+    background-color: #fff
+    animation: coverIn 1s .8s cubic-bezier(.19,1,.22,1) both
+  &.in
+    &.en,
+    &.ch
+      animation: imgIn 1s cubic-bezier(.19,1,.22,1) .5s 1 both
+      &::after
+        width: 0
+        height: 0
+        animation: none
+  &.out
+    animation: imgOut 1s cubic-bezier(.19,1,.22,1) .6s 1 both
+    &.en,
+    &.ch
+      animation: imgOut 1s cubic-bezier(.19,1,.22,1) .6s 1 both
+      animation-delay: 0s
+  &.en,
+  &.ch
+    animation-delay: .7s
+
+.white-after-index
+  &::after
+    animation: coverIn 1s 3.2s cubic-bezier(.19,1,.22,1) both

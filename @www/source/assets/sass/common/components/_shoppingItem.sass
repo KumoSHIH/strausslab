@@ -1,0 +1,1494 @@
+@import ./_addtion
+.item-wrap
+  margin-left: 75px
+  >div 
+    >div
+      // border: solid 1px red
+  .img
+    width: 17.3%
+    height: auto
+    min-height: 26px
+  .item
+    // 540+8 / 1180
+    width: 46.44%
+  .qty
+    width: calc(17.8% - 8px)
+    .btn-cir
+      width: 23px
+      height: 23px
+  .price
+    // width: calc(18% - 8px)
+    width: 18%
+    padding-right: 12px
+  +rwdmax(1200)
+    margin-left: 0
+.item-head
+  display: flex
+  >div 
+    // border: solid 1px
+    border-top: solid 4px
+    padding-top: 35px
+    text-align: center
+    +fontSet2(px(14),$basicbold)
+  .item,.qty
+    margin-right: 8px
+  .price
+    text-align: right
+    padding-right: 12px
+  +rwdmax(1200)
+    border-top: solid 4px
+    >div
+      display: none
+
+.item-body
+  border-bottom: solid 4px 
+  position: relative
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  padding-bottom: 30px
+  padding-top: 40px
+  >div 
+    // border: solid 1px
+  .item,.qty
+    margin-right: 8px
+    // margin-left: 8px
+  .img 
+    figure
+      height: 136px
+      display: flex
+      justify-content: center
+      align-items: center
+      margin: 0 auto
+    &.large
+      figure
+        width: 160px
+    &.small
+      figure
+        width: 100px
+      img
+        width: auto 
+        height: 100%
+  .item,
+  .item-box
+    width: calc(46.44% - 33px)
+    margin-left: 30px
+    margin-right: 8px
+    &.opt
+      width: calc(46.44% - 33px)
+      margin-left: 30px
+    // 庫存不足
+    &.alert
+      h2
+        color: $alert
+        &::after
+          font-family: 'icomoon'
+          content: '\e922'
+          padding-left: 10px
+          color: $alert
+      .txt-name
+        color: $alert
+      .txt-color
+        color: $alert
+        &::after
+          font-family: 'icomoon'
+          content: '\e922'
+          padding-left: 10px
+          color: $alert
+    // 退貨申請中
+    &.return-tag
+      h2,
+      .txt-name
+        display: flex
+        align-items: flex-start
+        span:first-child 
+          min-width: 100px
+          height: 35px
+          padding: 10px
+          margin-right: 14px
+          display: flex
+          align-items: center
+          justify-content: center
+          color: #fff
+          background-color: #686868
+          font-weight: bold
+          letter-spacing: 0.73px
+          font-size: px(14)
+          +mozhack
+            font-weight: normal
+        span:nth-child(2)
+          line-height: 1.2
+      h2 
+        padding-bottom: 15px
+        span:nth-child(2)
+          padding-top: 8px
+      .txt-name
+        span:nth-child(2)
+          padding-top: 10px
+    h2,
+    .txt-name
+      span.norm
+        padding-top: 5px
+        padding-left: 5px
+    h2
+      padding-bottom: 20px
+      font-weight: bold
+      line-height: 1.2
+      letter-spacing: 1px
+      +fontSet2(px(20),$basic)
+    span.strong
+      letter-spacing: 0.46px
+      +fontSet2(px(14),$basicbold)
+    span:not(.strong)
+      letter-spacing: 0.7px
+    >div,
+    a > div
+      display: flex
+      padding-bottom: 14px
+    .color-wrap
+      display: flex
+      .color 
+        // border: solid 1px blue
+        display: flex
+        align-items: center
+        >span 
+          padding-right: 5px
+          flex-shrink: 0
+          line-height: 1.3
+        >div 
+          display: flex
+          align-items: center
+          span 
+            display: block
+            padding-left: 12px
+            line-height: 1.3
+        &:nth-child(2)
+          margin-left: 30px
+      .img-cir
+        flex-shrink: 0
+        width: 22px
+        height: 22px
+        border-radius: 100%
+        border: solid 2px #fff
+        overflow: hidden
+      +rwdmax(900)
+        flex-direction: column
+        .color:nth-child(2)
+          margin-left: 0
+          margin-top: 14px
+    
+  .qty
+    display: flex
+    justify-content: center
+    align-items: center
+    input 
+      width: 80px
+      height: 25px
+      text-align: center
+      background-color: transparent
+      +fontSet2(px(20),$basicbold)
+  .price
+    text-align: right
+    >span 
+      font-weight: bold
+      font-family: $basicbold
+      +mozhack
+        font-weight: normal
+    .money
+      padding-top: 25px
+      padding-bottom: 15px
+      span 
+        font-family: $basicbold
+        font-size: px(24)
+    .origin
+      text-decoration: line-through
+      span 
+        letter-spacing: 0.41px
+        +fontSet2(px(13),$basic)
+
+  // 加購
+  .extra-block
+    // border-top: solid 1px
+    padding: 0
+    margin-left: auto
+    margin-top: 0px
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      width: calc(82.7% - 30px)
+      height: 1px
+      background-color: #000
+    .extra-name
+      .img 
+        min-height: auto
+    >ul 
+      .item 
+        >div 
+          padding-bottom: 0
+    >ul>li
+      padding-bottom: 20px
+      >div 
+        // border: solid 1px
+      .item-box
+        .txt-name
+          padding-left: 13px
+          padding-bottom: 0
+        .txt-color
+          padding-bottom: 0
+          .img-cir
+            border-color: #fff
+          &:before 
+            background-color: rgba(0,0,0,.3)
+      .dropdown-item
+        li 
+          .opt
+            padding: 13px 0 13px 8px
+    .extra-name 
+      display: flex
+      padding-top: 25px
+      .img
+        width: 17.3%
+      >span 
+        margin-left: 30px
+        padding-left: 16px
+    .thead
+      justify-content: start
+      margin: 0 0 20px
+      background-color: transparent
+      position: relative
+      z-index: 0
+      &::after
+        content: ''
+        position: absolute
+        right: 0
+        top: 0
+        width: calc(82.7% - 30px)
+        height: 100%
+        background-color: #202020
+        z-index: -1
+      &.no-bg
+        // margin-bottom: 7px
+        margin-bottom: 0
+        margin-top: 7px
+        color: #000
+        &::after
+          width: 0
+          height: 0
+          background-color: transparent
+        .item
+          padding-left: 0
+      .item,.qty,.price
+        display: flex
+        align-items: center
+      .price
+        justify-content: flex-end
+      .item
+        padding-left: 16px
+      +rwdmax(1200)
+        background-color: #202020
+        &::after
+          width: 0
+          height: 0
+        &.no-bg
+          background-color: transparent
+          
+    >div 
+      padding: 13px 0
+      >div
+        // border: solid 1px blue
+    .qty-2
+      margin-top: -4px
+      div:not(.qty-line)
+        // width: 35%
+        width: 45%
+    .qty-line
+      // margin: 0 15px
+      margin: 0 10px
+    li 
+      >div
+        // border: solid 1px
+      .item
+        display: flex
+      .item-opt 
+        display: flex
+        align-items: center
+        padding-bottom: 0
+        .img-cir
+          width: 20px
+          height: 20px
+          border-radius: 50%
+          overflow: hidden
+          border: solid 2px #fff
+          margin-right: 7px
+        p 
+          margin-right: 7px
+      .type
+        padding-right: 13px
+      .dropdown-item
+        margin-right: 0px
+        // margin-top: 15px
+        li 
+          justify-content: start
+        .space
+          position: relative
+          width: 100%
+          margin-left: 0
+          &::after
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            width: calc(82.7% - 65px)
+            height: 100%
+            background-color: #f3f3f3
+        .opt,.qty,.price
+          background-color: #f3f3f3
+        .opt,.qty
+          position: relative
+          &::after
+            content: ''
+            position: absolute
+            right: -9px
+            top: 0
+            width: 9px
+            height: 100%
+            background-color: #f3f3f3
+        +rwdmin(1201)
+          // margin-top: 20px
+  // 活動
+  .pro-event
+    width: calc(82.7% - 30px)
+    margin-left: auto
+    display: flex
+    justify-content: flex-start
+    padding: 12px 18px
+    // .icon
+    //   padding-top: 0
+    //   font-size: px(24)
+    // li 
+    //   padding: 0
+  +rwdmax(1360)
+    .item
+      margin-left: 29px
+  +rwdmax(1200)
+    width: 100%
+    padding: 40px 15%
+    margin: 0 auto
+    flex-direction: column 
+    >.item-box
+      width: 100%
+      margin-left: 0
+    >.item 
+      padding-top: 20px
+    >.qty
+      padding-top: 15px
+      padding-bottom: 15px
+    >.price
+      padding-top: 15px
+      padding-bottom: 15px
+    .extra-name
+      .img 
+        display: none
+    .thead
+      align-items: flex-start
+    .img 
+      width: 100%
+      padding: 0
+    .item
+      // margin: 0 !important
+      margin: 0
+      // width: 60%
+      width: 100%
+      h2 
+        padding-top: 0
+        padding-bottom: 15px
+    .qty
+      margin-right: 0
+      width: 100%
+      &::before
+        display: block
+        content: '數量'
+        margin-right: auto
+    .price
+      position: relative
+      padding-right: 0
+      width: 100%
+      >span 
+        position: absolute
+        left: 0
+        top: 20px
+      .money
+        padding-top: 0
+        padding-bottom: 10px
+    .qty,.price
+      border-top: solid 1px rgba(0,0,0,0.2)
+    .extra-block
+      width: 100%
+      margin: 0 auto
+      &::after
+        width: 100%
+        background-color: #333
+      .item-box
+        width: 56%
+        margin-left: 0
+        margin-right: 0
+      .item>div
+        padding-bottom: 0
+      >div 
+        // padding-top: 20px
+        // padding-bottom: 12px
+      .extra-name
+        >span 
+          padding-left: 16px
+          margin-left: 0
+      .thead
+        background-color: #202020
+        &::after
+          width: 0
+          height: 0
+      .qty
+        &::before
+          margin-left: auto
+          margin-right: 0
+      .qty,.price
+        border-top: 0
+      .thead
+        .img,.price
+          display: none
+      >ul 
+        >li 
+          // padding: 10px 0
+          // padding-bottom: 10px
+          position: relative
+          justify-content: flex-start
+        >li:first-child
+          padding-top: 0
+          .qty
+            top: 5px
+        .img
+          display: none
+        .item
+          // flex-direction: column
+          span 
+            width: 100%
+            padding-bottom: 5px
+        .qty
+          position: absolute
+          right: 0
+          top: 25px
+          &::before
+            content: ''
+        .type
+          padding-right: 0
+          width: 30%
+          position: absolute
+          right: 0
+          bottom: 25px
+
+    .pro-event
+      width: 100%
+  +rwdmax(850)
+    padding: 40px 10%
+    .extra-block
+      >ul>li 
+        // padding: 15px 0
+      li
+        .item-opt
+          max-width: 250px
+          flex-wrap: wrap
+      
+    .pro-event
+      margin-top: 0
+  +rwdmax(767)
+    // width: 90%
+    padding: 40px 20px 20px
+    >.item-box
+      margin-right: 0
+    .extra-block
+      .thead
+        &.normal-give
+          .qty
+            visibility: hidden
+      .item-box
+        width: 100%
+        flex-direction: column
+      
+      li
+        .item-opt
+          max-width: 250px
+          flex-wrap: wrap
+      >ul
+        >li:first-child
+          .qty
+            position: static
+        .item
+          span 
+            padding-left: 16px
+        &.normal
+          // padding: 0 10px
+          >li 
+            justify-content: space-between
+            .item-box
+              width: 100%
+              margin-bottom: 5px
+            .qty
+              // margin-left: 30px
+              &::before
+                content: "數量"
+            .price
+              width: 30%
+        &.normal-give
+          .price
+            .btn-cir
+              margin-left: auto
+            &.type
+              align-items: flex-end
+      >ul>li
+        .item-box
+          margin-bottom: 10px
+          .txt-name
+            padding-left: 0
+        .qty-font
+          &::before
+            content: '數量'
+            display: block
+
+.item-type
+  flex-direction: column
+  align-items: flex-start
+  padding-top: 20px
+  .sub-tit
+    margin-bottom: 10px
+  .extra-block
+    border-top: 0
+    &::after
+      width: 0
+      height: 0
+    .thead
+      margin-top: 15px
+      background-color: #202020
+      .item
+        padding-left: 0
+    .item
+      margin-left: 15px
+      width: calc(63.74% - 18px)
+    .price
+      padding-right: 16px
+    >ul>li 
+      padding-bottom: 0
+      .item-box
+        max-width: 310px
+        flex-wrap: wrap
+    li
+      .dropdown-item 
+        margin-right: 0px
+        .space:after
+          // width: calc(100% - 95px)
+          width: calc(100% - 101px)
+        .img 
+          height: auto
+          width: 76px
+        .opt
+          width: 100%
+          height: 100%
+          margin-left: 10px
+    .item
+      display: flex
+      align-items: center
+      .img
+        display: flex
+        padding: 0
+        width: 76px
+        height: 70px
+      .item-box
+        margin-left: 0
+        margin-right: 0
+      span 
+        padding-left: 10px
+  +rwdmax(1360)
+    .extra-block 
+      .thead
+        .item
+          margin-left: 9px
+      .item
+        margin-left: 0
+  +rwdmax(1200)
+    .extra-block
+      .thead
+        .item
+          margin-left: 0
+          padding-left: 15px
+      .item
+        width: 60%
+      >ul
+        >li
+          .item-box
+            max-width: none
+            width: auto 
+            flex-direction: column
+            padding-right: 20px
+      ul:not(.cus-give)
+        >li
+          .item-box
+            .txt-color
+              margin-left: 0
+              &::before
+                width: 0
+                height: 0
+  +rwdmax(767)
+    .extra-block
+      .item
+        margin-left: 0
+        .img 
+          width: 55px
+          height: 55px
+      >ul
+        li
+          .item-box
+            margin-left: 10px
+            padding-right: 0
+          .qty-font
+            &::before
+              padding-right: 12px
+          .dropdown-item
+            .qty
+              justify-content: flex-start
+            .price
+              margin-left: 40px
+// 組合優惠
+.item-packpage
+  position: relative
+  .btn-cir.del
+    top: 43px
+  .top
+    padding: 57px 13px 20px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    // 左標
+    .tit
+      line-height: px(35)
+      .en
+        color: $main
+        +fontSet2(px(20),$basicbold)
+      .ch
+        letter-spacing: 1.03px
+        font-weight: bold
+        +fontSet2(px(20),$basic)
+        +mozhack
+          font-weight: normal
+    // 編輯按鈕
+    >a 
+      display: flex
+      align-items: center
+      padding-right: 5px
+      .icon 
+        padding-right: 9px
+        font-size: px(24)
+      span 
+        padding-bottom: 5px
+        border-bottom: solid 2px
+        font-weight: bold
+        +fontSet2(px(14.5),$basicbold)
+        +mozhack
+          font-weight: normal
+  .item-body
+    border-bottom: 0
+    padding-bottom: 10px
+    padding-top: 10px
+    position: relative
+    &::after
+      content: ''
+      width: calc(82.7% - 30px)
+      height: 1px
+      background-color: rgba(0,0,0,0.5)
+      position: absolute
+      bottom: 0
+      right: 0
+  .item-body:last-child
+    border-bottom: solid 4px
+    padding-bottom: 30px
+    &::after
+      width: 0
+      height: 0
+  +rwdmax(1200)
+    .top
+      width: 70%
+      margin: 0 auto 
+      padding: 40px 0 0
+    .item-body
+      padding-top: 30px
+      &::after
+        width: 70%
+        right: 50%
+        transform: translateX(50%)
+  +rwdmax(850)
+    .item-body
+      &::after
+        width: 80%
+  +rwdmax(767)
+    .top
+      width: 90%
+    .item-body
+      &::after
+        width: calc(100% - 40px)
+
+.pro-event
+  &.event
+    margin-top: 30px
+// 訂單金額
+.total-price
+  padding: 45px 15px 0
+  display: flex
+  justify-content: space-between
+  >div 
+    display: flex
+    flex-direction: column
+    span
+      font-family: $basicbold
+    span:first-child
+      padding-right: 8px
+      font-size: px(16)
+    span:last-child
+      font-size: px(24)
+  p
+    padding-top: 12px
+    font-weight: bold
+    +fontSet2(px(14),$basicbold)
+    +mozhack
+      font-weight: normal
+  .total
+    >div 
+      span:last-child
+        font-size: px(31)
+  +rwdmax(1200)
+    padding-left: 45px
+    padding-right: 45px
+  +rwdmax(950)
+    flex-direction: column
+    align-items: flex-start
+    padding-left: 25%
+    padding-right: 25%
+    padding-top: 35px
+    >div 
+      width: 100%
+      flex-direction: row-reverse
+      align-items: center
+      justify-content: space-between
+    .origin,
+    .saved
+      >div 
+        span:last-child
+          font-size: px(14)
+        p 
+          padding-top: 0
+    .total
+      >div 
+        span:last-child
+          font-size: px(24)
+  +rwdmax(767)
+    padding-left: 20px
+    padding-right: 20px
+// 商品小計
+.item-select
+  padding-top: 22px
+  padding-bottom: 30px
+  border-bottom: solid 4px
+  .pick-wrap
+    display: flex
+    flex-wrap: wrap
+    align-items: start
+    position: relative
+    padding-bottom: 20px
+    padding-top: 20px
+    &.border-0
+      &::after
+        width: 0 !important
+        height: 0 !important
+    >div 
+      // border: solid 1px
+    .btn-cir
+      display: none
+      margin: 0 auto
+      flex-shrink: 0
+      position: relative
+      +buttonCircle(36px,#eee)
+      span 
+        color: #bfbfbf
+        transition: .5s ease-in-out
+        font-size: px(40)
+        +posCenter
+        +mozhack 
+          top: 60%
+      &:hover 
+        background-color: #eee
+    .desc
+      position: relative
+      width: 91%
+      display: flex
+      flex-direction: column
+      >span,>p
+        padding: 5px 0
+        margin-top: 5px
+        font-weight: bold
+        letter-spacing: 0.8px
+        +fontSet2(px(16),$basic)
+        +mozhack
+          font-weight: normal
+      span.small
+        padding-left: 40px
+        font-size: px(14)
+    .input-wrap
+      position: absolute
+      right: 0
+      top: -10px
+      display: flex
+      align-items: center
+      .input
+        width: 400px
+        height: 55px
+        background-color: #eee
+        display: flex
+        align-items: center 
+        padding: 0 17px
+        input
+          // padding-left: 10px
+          width: 100%
+          // height: 40px
+          background-color: transparent
+          font-family: $basicbold
+        .btn-text
+          padding: 5px 8px
+    &[data-pick="common"]
+      &.active
+        .btn-cir
+          background-color: $main
+          span
+            color: #fff
+    &.allow-pick
+      .w9
+        .btn-cir
+          display: block
+    &.discount-code
+      .desc >p 
+        padding-bottom: 30px
+      .tip
+        display: none
+        padding-right: 12px
+        +fontSet2(px(11),$basicbold)
+        &.show
+          display: block
+    .pick-dropdown
+      position: relative
+      margin-top: 13px
+      display: none
+      >ul>li 
+        display: flex
+        align-items: center
+        margin-bottom: 8px
+        .tag 
+          margin-right: 14px
+          padding: 10px
+          max-width: 45%
+          min-width: 100px
+          display: flex
+          align-items: center
+          justify-content: center
+          font-weight: bold
+          letter-spacing: 0.73px
+          line-height: 1.5
+          font-size: px(15)
+          +mozhack
+            font-weight: normal
+          &.dark
+            background-color: #202020
+            color: $main 
+          &.blue 
+            background-color: #5463a4
+            color: #fff 
+          &.pink
+            background-color: #ec8ea4
+            color: #fff 
+          &.warm
+            background-color: #d9c1a7
+            color: #fff
+        span 
+          line-height: 1.5
+          letter-spacing: 0.73px
+          font-size: px(14.5)
+        +rwdmax(767)
+          .tag 
+            max-width: none
+      li:last-child
+        margin-bottom: 0
+      .saved
+        position: absolute
+        right: 0
+        top: 0
+        letter-spacing: 0.45px
+        +fontSet2(px(14),$basicbold)
+    .tip-block
+      width: 91%
+      padding: 11px 17px
+      margin-top: 8px
+      margin-left: auto
+      background-color: #eee
+      font-weight: bold
+      letter-spacing: 0.68px
+      +fontSet2(px(14),$basicbold)
+      +mozhack
+        font-weight: normal
+  .pick-wrap:not(:nth-child(1))
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      right: 0
+      top: 0
+      width: 91%
+      height: 1px
+      background-color: rgba(0,0,0,0.5)
+  +rwdmax(1200)
+    padding-left: 15%
+    padding-right: 15%
+    .sub-tit
+      padding-bottom: 10px
+    .pick-wrap
+      .desc
+        padding-bottom: 16px
+        >span 
+          padding-bottom: 0
+      .input-wrap
+        position: static
+        flex-direction: row-reverse
+        justify-content: flex-end
+      &.discount-code
+        .desc >p
+          padding-bottom: 20px
+        .tip
+          padding-right: 0
+          padding-left: 12px
+      .pick-dropdown
+        >ul
+          >li 
+            align-items: start
+            span 
+              line-height: 1.5
+            >span 
+              padding-top: 10px
+            .wrap
+              padding-top: 8px
+  +rwdmax(900)
+    padding-left: 10%
+    padding-right: 10%
+    padding-top: 60px
+    padding-bottom: 4px
+    .pick-wrap
+      flex-wrap: nowrap
+      &.flex-md-wrap
+        flex-wrap: wrap
+        .desc
+          margin-left: auto
+      .w9
+        position: absolute
+        left: 0
+        top: 20px
+      .desc
+        width: 100%
+        >span
+          margin-left: 56px
+      .input-wrap
+        .input 
+          width: 100%
+      &.discount-code
+        .desc
+          >p
+            margin-left: 56px
+            display: flex
+            flex-direction: column
+          span.small 
+            padding: 15px 0 0
+          .input-wrap
+            margin-left: 56px
+            position: relative
+        .tip 
+          position: absolute
+          right: 0
+          bottom: -25px
+      .pick-dropdown
+        margin-top: 25px
+      .tip-block
+        margin-left: 56px
+    .pick-wrap:not(:nth-child(1))
+      &::after
+        width: 100%
+  +rwdmax(767)
+    padding-left: 20px
+    padding-right: 20px
+    .pick-wrap
+      &.discount-code
+        .desc
+          >p 
+            display: flex
+            flex-wrap: wrap
+            span 
+              width: 100%
+              padding-left: 0
+              padding-top: 14px
+      .tip-block
+        width: 86%
+        padding: 10px 15px
+        p 
+          letter-spacing: 0.45px
+          line-height: 1.5
+    
+    
+// 訂購收件表格
+.tit-block
+  padding: 17px 15px
+  display: flex
+  justify-content: space-between
+  background-color: #202020
+  color: $main
+  p:first-child
+    font-weight: bold
+    letter-spacing: 0.7px
+    font-size: px(14)
+    +mozhack
+      font-weight: normal
+  p:last-child
+    +fontSet2(px(18),$basicbold)
+  +rwdmax(1200)
+    margin-bottom: 20px
+
+// 共用標題
+.sub-tit
+  padding: 18px 15px 0
+  // border: solid 1px rgba(0,0,0,0.1)
+  .en
+    +fontSet2(px(26),$basic)
+  .ch
+    padding-left: 10px
+    font-weight: bold
+    letter-spacing: 0.95px
+    +fontSet2(px(19),$basic)
+    
+  &.center
+    text-align: center
+  +rwdmax(1200)
+    padding: 20px 0 0
+  +rwdmax(767)
+    display: flex
+    flex-direction: column 
+    .ch 
+      padding-top: 15px
+      padding-left: 0
+// 收件&訂購資訊
+.item-info
+  .sub-tit
+    .en 
+      font-size: px(35)
+  .desc
+    .w10
+      flex-grow: 1
+    .w90
+      max-width: 900px
+      width: 100%
+      display: flex
+      justify-content: space-between
+      span.small 
+        padding-left: 0
+      p 
+        padding-right: 18px
+        font-family: $basicbold
+    &.flex-row
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+    &.store
+      flex-direction: row
+      align-items: flex-start
+      .w90
+        margin-top: 10px
+        flex-direction: column
+  .item-select
+    margin-top: 30px
+    margin-bottom: 15px
+    padding-top: 28px
+    padding-bottom: 18px
+    border-top: solid 4px
+    border-bottom: solid 4px
+  +rwdmax(1200)
+    .item-select
+      margin-bottom: 0
+  +rwdmax(900)
+    .desc
+      .w90
+        padding-top: 10px
+        >p
+          position: absolute
+          right: 0
+          top: 20px
+          font-weight: bold
+      &.store,
+      &.flex-row
+        flex-direction: column 
+        align-items: flex-start
+        position: relative
+        padding-bottom: 0
+      &.store
+        .w90
+          margin-top: 0
+    .item-select
+      border-top: 0
+      margin-top: 2px
+      padding-bottom: 0
+      padding-top: 20px
+      .pick-wrap
+        padding-top: 10px
+        padding-bottom: 40px
+
+// 訂購資訊
+.item-form
+  padding-top: 35px
+  display: flex
+  input.width 
+    width: calc(100% - 86px)
+  .form 
+    &.mt-20
+      margin-top: 20px
+    &.border-top
+      border-top: solid 1px
+    span.desc
+      padding-left: 24px
+      padding-top: 24px
+      padding-bottom: 24px
+      letter-spacing: 0.73px
+      +fontSet2(px(14.5),$basicbold)
+  >p 
+    padding-top: 30px
+    flex-grow: 1
+    font-weight: bold
+    +mozhack
+      font-weight: normal
+  .desc
+    padding-right: 10px
+    padding-top: 30px
+    // padding-bottom: 30px
+    max-width: 903px
+    width: 100%
+    display: flex
+    flex-direction: column
+    border-top: solid 1px 
+    >span 
+      padding-bottom: 3px
+      letter-spacing: 0.7px
+      +fontSet2(px(14),$basic)
+  .desc-tit
+    padding-top: 18px
+    padding-bottom: 18px
+    padding-left: 20px
+    padding-right: 5px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    >span 
+      +fontSet2(px(14),$basicbold)
+  .desc-btn
+    margin-top: 10px
+    display: flex
+    align-items: center
+    letter-spacing: 0.65px
+    transition: color .3s ease-in-out
+    +fontSet2(px(13),$basicbold)
+    span:nth-child(2)
+      padding-left: 8px
+    &:hover
+      color: rgba(0,0,0,0.6)
+      .btn-cir
+        transform: rotateY(360deg)
+    .btn-cir 
+      position: relative
+      margin-left: 5px
+      width: 25px
+      height: 25px
+      border: 0
+      background-color: $main
+      transition: transform .5s ease-in-out
+      &::after
+        content: '?'
+        color: #fff
+        +fontSet2(px(14),$basicbold)
+        +posCenter
+        +mozhack 
+          top: 55%
+  &.floor
+    .form
+      display: flex
+    .form-row
+      width: auto 
+    .desc-btn
+      margin-left: auto
+    .item-body
+      border-bottom: 0
+      padding: 18px 0 0
+      .item
+        margin-left: 0
+        width: 56%
+      .qty
+        width: 20%
+      .price
+        width: 24%
+      .extra-block
+        .thead
+          // justify-content: space-between
+          background-color: #202020
+          // >div 
+          //   border: solid 1px red
+      .extra-block:nth-child(3)
+        margin-top: 24px
+      >ul 
+        width: 100%
+      li 
+        display: flex
+        padding-bottom: 20px
+        .item
+          padding-left: 16px
+          font-weight: bold
+          letter-spacing: 0.7px
+          font-size: px(14)
+          +mozhack 
+            font-weight: normal
+          span 
+            position: relative
+            margin-left: 10px
+            padding-left: 10px
+            &::after
+              content: ''
+              position: absolute
+              left: 0
+              top: 50%
+              transform: translateY(-50%)
+              width: 1px
+              height: 13px
+              background-color: rgba(0,0,0,0.2)
+        .qty,
+        .price
+          letter-spacing: 0.46px
+          +fontSet2(px(14),$basicbold)
+        .price
+          padding-right: 12px
+      li:last-child
+        padding-bottom: 0
+    .form-group .form-select .select-head p.option
+      color: #000
+  &.fare
+    .desc
+      position: relative
+    .desc-btn
+      position: absolute
+      right: 10px
+      top: 24px
+      margin-top: 0
+    +rwdmax(1200)
+      .desc-btn
+        position: static
+        margin-top: 15px
+        margin-bottom: 15px
+    +rwdmax(767)
+      .desc-btn
+        margin-bottom: 10px
+  &.floor.ship
+    .desc
+      position: relative
+    .desc-btn
+      position: absolute
+      right: 10px
+      top: 24px
+      margin-top: 0
+    +rwdmax(1200)
+      .desc-btn
+        position: static
+        margin-top: 15px
+        margin-bottom: 15px
+    +rwdmax(767)
+      .desc-btn
+        margin-bottom: 10px
+  &.border-none
+    .desc
+      border-top: 0
+  +rwdmax(1450)
+    .w10
+      width: 5%
+  +rwdmax(1360)
+    .w10
+      width: 0
+  +rwdmax(1200)
+    &.floor
+      .form
+        position: relative
+        flex-direction: column
+      .desc-btn
+        position: absolute
+        right: 0
+        bottom: 15px
+      .extra-block
+        .thead
+          >div 
+            // border: solid 1px #fff
+      .item-body
+        li 
+          >div 
+            // border: solid 1px
+          .qty,
+          .price
+            border-top: 0
+          .qty
+            &::before
+              content: ''
+              display: none
+  +rwdmax(900)
+    .form
+      &.mt-20
+        margin-top: 15px
+    &.floor
+      .desc-btn
+        position: static
+        margin-top: 10px
+  +rwdmax(767)
+    .desc
+      >span
+        line-height: 1.5
+    .desc-tit
+      flex-direction: column
+      align-items: flex-start
+      .right
+        padding-top: 10px
+    &.floor
+      .desc-btn
+        margin-left: 0
+      .item-body
+        .extra-block
+          .thead
+            .item
+              padding-left: 10px
+        .extra-block:nth-child(3)
+          margin-top: 20px
+        li
+          padding-bottom: 15px
+          margin-bottom: 15px
+          flex-wrap: wrap 
+          justify-content: space-between
+          border-bottom: solid 1px rgba(0,0,0,0.3)
+          .item 
+            width: 100%
+            padding-left: 10px
+            margin-bottom: 10px
+          .qty,
+          .price
+            width: auto
+          .qty
+            padding-left: 10px
+            &::before
+              content: '件數'
+              display: block
+              padding-right: 12px
+        li:last-child
+          border-bottom: 0
+      
+    
+// 訂單金額
+.total-detail
+  border-top: solid 6px
+  padding: 50px 45px 0 
+  margin-top: 50px
+  width: 100%
+  display: flex
+  .left
+    width: 42%
+  .center
+    width: 30%
+  .right
+    flex-grow: 1
+  >div
+    // border: solid 1px
+    display: flex
+    flex-direction: column  
+    >div 
+      margin-bottom: 20px
+      span 
+        letter-spacing: 0.46px
+        font-weight: bold
+        +fontSet2(px(14),$basicbold)
+        +mozhack
+          font-weight: normal
+        &:nth-child(1)
+          padding-right: 10px
+          margin-right: 10px
+          position: relative
+          &::after
+            content: ''
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            right: 0
+            width: 2px
+            height: 13px
+            background-color: #000
+        &.line-none
+          padding-right: 0
+          margin-right: 0
+          &::after
+            width: 0
+            height: 0
+      &:last-child
+        margin-bottom: 0
+    >p 
+      span 
+        &:nth-child(1)
+          +fontSet2(px(16),$basicbold)
+        &:nth-child(2)
+          +fontSet2(px(24),$basicbold)
+  +rwdmax(950)
+    flex-direction: column
+    padding-left: 15%
+    padding-right: 15%
+    .left,
+    .center,
+    .right
+      width: 100%
+    .left
+      margin-bottom: 20px
+    .center
+      margin-bottom: 35px
+    .right
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+      >div 
+        margin-bottom: 0
+    >div
+      >div
+        margin-bottom: 20px
+        display: flex
+        justify-content: space-between
+        span:nth-child(1):after
+          width: 0
+          height: 0
+  +rwdmax(767)
+    padding-left: 20px
+    padding-right: 20px
+    margin-top: 40px
+    >div
+      >div
+        align-items: center
+        span:nth-child(1)
+          padding-right: 0
+          margin-right: 0
+          max-width: 180px
+          line-height: 1.5
+

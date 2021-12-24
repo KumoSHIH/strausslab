@@ -1,0 +1,337 @@
+-
+  var link = [
+    {
+      'en': 'Overview',
+      'ch': '會員總覽',
+      'link': './member_center.html'},
+    {
+      'en': 'Basic Information',
+      'ch': '帳號管理',
+      'link': './member_info.html'},
+    {
+      'en': 'Order',
+      'ch': '訂單查詢',
+      'link': './member_order.html'},
+    {
+      'en': 'Evaluation',
+      'ch': '商品評價',
+      'link': './member_evaluation.html'},
+    {
+      'en': 'Lovelist',
+      'ch': '商品收藏',
+      'link': './member_lovelist.html'},
+  ]
+
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/member_info.css")
+  body.member_info(data-page="member_info")
+    include ../layouts/_ad.pug
+    .mouse-container.libox-type
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          // 大標
+          section.member-title.type-detail
+            .title.range
+              .left-block(data-aost data-aost-class="show")
+                // 大標 & 敘述可改
+                .unit-title 
+                  .left
+                    span.ch 會員中心
+                    span.en WELCOME!
+                    p 歡迎來到會員中心，您可在此查看訂單，商品收藏，或是修改個人基本資料！
+                // 會員登出
+                // --
+                .logout.hover-cir(data-hover="blue" onclick="_common.openliboxInner('logout')")
+                  a.cir-btn.mainGreen(href="javascript:;")
+                    .icon-cirArrow-2
+                  span LOG OUT 會員登出
+              // 會員相關連結
+              .right(data-aost data-aost-class="show")
+                each val,index in link
+                  .link-text.hover-cir(data-hover="yellowBig")
+                    a(href=val.link)(class= index == 1 ? 'active': '')
+                      .en
+                        span= val.en
+                        span= val.ch
+                      .ch= val.ch
+          // 內容
+          section.content
+            // 會員照片
+            // 圖片建議尺寸 320X320
+            .photo
+              .bg-text 
+                span Photography
+              .photo-wrap.hover-cir(data-hover="yellowBig")
+                .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+                //- img(src="../../../uploads/member/person-320X320.jpg", alt="")
+                span EDIT 編輯頭像
+            // 帳號管理
+            // 一般登入 & FB/Google登入 顯示不同 
+            .account
+              // 一般登入
+              .account-wrap.account-common
+                .member-text 
+                  h6 ABOUT ACCOUNT 會員帳號管理
+                  p 您可以隨時更換帳號密碼，我們將會進行身分驗證流程，
+                    |<br>確定更換由您本人執行，完成後即可更新設定。
+                .form-row.button-wrap(data-aost data-aost-class="show" data-aost-offset="90")
+                  a.form-btn.form-done.hover-cir(href="./member_change_account.html" data-hover="yellowBig")
+                    p Change Account 修改帳號
+                    span.icon-arrAngle
+                  // 送出JS: _shopping.successAnimate();
+                  a.form-btn.form-done.hover-cir(href="./member_change_password.html" data-hover="yellowBig")
+                    p Change Password 修改密碼
+                    span.icon-arrAngle
+              // Google/Facebook 登入
+              .account-wrap.account-social 
+                .member-text 
+                  h6 ABOUT ACCOUNT 會員帳號管理
+                  // Google 字樣與 Facebook 替換
+                  p 此帳號與 Google 進行連動，為求後續正確的聯繫方式，
+                    |<br>請至少填寫您的手機號碼。
+                  // 社群icon顯示
+                  // <div class="img"> + google
+                  // <div class="img"> + fb
+                  .img.google
+                    img(src="../../../assets/font/icomoon/svg/Google__G__Logo.svg", alt="")
+                    span.icon-facebook
+
+                
+            // 編輯帳號資訊
+            .form
+              .member-text 
+                h6 EDIT INFORMATION 編輯帳號資訊
+                p 您的個人資訊將會用於購物流程，以及運送聯繫，也將成
+                  |<br>為我們提供您獨家優惠資訊的依據，敬請完整填寫！
+              // 姓名
+              .form-row
+                .form-grid
+                  label.form-group.gray
+                    p.subject
+                      span NAME
+                      span 姓名
+                    input(type="text" placeholder="請輸入姓名")
+                .form-grid
+                  label.form-group.gray
+                    p.subject
+                      span NICKNAME
+                      span 暱稱
+                    input(type="text" placeholder="請輸入暱稱")
+              // 稱謂
+              .form-row
+                .form-grid
+                  .form-select.type-normal.gray
+                    .select-head
+                      p.option 
+                        span SELECT 請選擇稱謂
+                      span.arrow-icon
+                    .select-content
+                      ul.scrollbar-inner
+                        li 先生
+                        li 小姐
+              // 輸入電話號碼
+              .form-row
+                .form-grid
+                  label.form-group.gray
+                    p.subject
+                      span MOBILE
+                      span 聯繫手機
+                      span + 886
+                    input(type="text" placeholder="0912 345 678" inputmode="numeric" autocomplete="off")
+              // email
+              .form-row
+                .form-grid
+                  label.form-group.gray
+                    p.subject
+                      span E-mail
+                      span
+                    input(type="email" placeholder="example@gmail.com")
+              // 出生年月
+              .form-row
+                .form-grid
+                  .form-select.type-normal.gray
+                    .select-head
+                      p.option.fakeline
+                        span BIRTH 生日
+                        span YEAR 年
+                      span.arrow-icon
+                    .select-content
+                      ul.scrollbar-inner
+                        li 1999
+                        li 2000
+                        li 2001
+                .form-grid
+                  .form-select.type-normal.gray
+                    .select-head
+                      p.option 
+                        span MONTH 月
+                      span.arrow-icon
+                    .select-content
+                      ul.scrollbar-inner
+                        li 1
+                        li 2
+                        li 3
+                        li 4
+                .form-grid
+                  .form-select.type-normal.gray
+                    .select-head
+                      p.option 
+                        span DATE 日
+                      span.arrow-icon
+                    .select-content
+                      ul.scrollbar-inner
+                        li 1
+                        li 2
+                        li 3
+                        li 4
+              // 收件住址
+              .form-row.mt-15
+                .form-grid
+                  .form-select.type-normal.gray
+                    .select-head
+                      p.option.fakeline
+                        span ADDRESS 收件地址
+                        span 選擇縣市
+                      span.arrow-icon
+                    .select-content
+                      ul.scrollbar-inner
+                        li 台北市
+                        li 新北市
+                .form-grid
+                  .form-select.type-normal.gray
+                    .select-head
+                      p.option 
+                        span 選擇鄉鎮
+                      span.arrow-icon
+                    .select-content
+                      ul.scrollbar-inner
+                        li 大同區
+              .form-row    
+                .form-grid
+                  label.form-group.gray
+                    input.px-0(type="text" placeholder="請輸入詳細住址")
+              // 儲存更新
+              // 成功開啟: _common.openliboxInner('update');
+              .btn-wrap.big
+                .btn-cir.btn-add.hover-cir(data-hover="blue")
+                  span.icon-check
+                  span 儲存更新
+            
+            // 申請帳號停用
+            .account-stop 
+              .member-text
+                h6.red ACCOUNT SUSPENSION 申請帳號停用
+                p 我們保留您的帳號管理權利，當您申請帳號停用時，我們將會
+                  |進行簡單的驗證流程，確保操作為本人進行。
+              .form-row.button-wrap.stop(data-aost data-aost-class="show" data-aost-offset="90")
+                .form-btn.form-done.hover-cir(data-hover="yellowBig")
+                  p Apply 停用帳號
+                  span.icon-arrAngle
+
+            
+
+        // 會員登出燈箱
+        // 開啟: _common.openliboxInner('logout');
+        .libox-inner(data-name="logout")
+          .libox-common
+            .cir-wrap.member
+              .bg
+              .cir-bg
+                h5.white Log out
+                h6.white 您已成功登出
+                p 歡迎隨時回來！
+                .wrap
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p OK 確認
+        // 編輯會員頭像燈箱
+        .libox-inner(data-name="edit")
+          .libox-common
+            .cir-wrap.no-close
+              a.cir-btn.mainGreen.ajax_close.hover-cir(href="javascript:;" data-hover="blue")
+                .cross
+              .img
+                .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+                //- img(src="../../../uploads/member/person-320X320.jpg", alt="")
+              .cir-bg
+                h5.mainGreen Edit Your Photography
+                h6.mainGreen 編輯會員頭像
+                p 請上傳 320x320 像素尺寸的 JPG x PNG 圖片檔案，
+                  |<br>並將容量控制在 5M 以下。
+              .tips 檔案超過 5M。
+              .btn-wrap.big(data-aost data-aost-class="show")
+                label.btn-cir.btn-add.gray.hover-cir(data-hover="blue" for="editImg")
+                  span.icon-update
+                  span 開始上傳
+                  input#editImg(type="file" accept="image/jpeg, image/png")
+        // 資料更新成功燈箱
+        // 開啟: _common.openliboxInner('update');
+        .libox-inner(data-name="update")
+          .libox-common
+            .cir-wrap.member
+              .bg
+              .cir-bg
+                h5.white Success
+                h6.white 資料更新成功
+                .wrap
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p OK 確認
+        // 帳號停用燈箱
+        .libox-inner(data-name="accountStop")
+          .box
+            a.cir-btn.red.ajax_close.hover-cir(href="javascript:;" data-hover="blue")
+              .cross
+            .modal-contain.modal-scroll-wrap.scrollbar-macosx(data-scroll-content)
+              // 停用帳號 - 輸入密碼
+              .box-validate
+                // 標題可改
+                .sec-title.red
+                  h6.en Account Suspension
+                  h6.ch 停用會員帳號
+                // 可自行斷行
+                p.fz-14
+                  |親愛的會員您好，如果停用帳號，代表您將無法享有會員權益，而他人
+                  |將無法看見您於網站中的活動資訊，或搜尋您的個人檔案。
+                  <br>
+                  <br>
+                  |在擁有登入帳號的使用之前提，您隨時可至帳號資訊中心重新啟用帳號。
+                  |<br>若確定要停用帳號，有再次輸入會員密碼，送出後，帳號將會立即停用。
+                .form-row    
+                  .form-grid
+                    label.form-group.gray
+                      input(type="password" placeholder="請輸入會員密碼")
+                
+                .form-row.button-wrap(data-aost data-aost-class="show" data-aost-offset="90")
+                  // 確定停用 JS : _member_info.stopSuccess();
+                  .form-btn.form-done.hover-cir(data-hover="yellowBig" onclick="_member_info.stopSuccess()")
+                    p OK 確定停用
+                    span.icon-arrAngle
+              // 停用帳號 - 成功
+              .box-success
+                // 標題可改
+                .sec-title.red
+                  h6.en Account has been Suspened
+                  h6.ch 帳號已成功停用
+                p.fz-14 您隨時可以回到會員中心，重新啟用帳號。
+
+
+
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

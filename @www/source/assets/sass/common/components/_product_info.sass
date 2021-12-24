@@ -1,0 +1,467 @@
+// 產品內頁(product_detail) & 產品行銷(product_sale) 
+// 共用部分
+.product_detail
+  position: relative
+  transition: .5s ease-in-out
+  &[data-text="white"]
+    color: #fff
+    .mouse-container
+      .circle
+        border-color: rgba(255,255,255,.6)
+    .nav-left
+      .btn-menu
+        div 
+          background-color: #fff
+      a[class*="btn-"]
+        color: #fff
+    .nav-center
+      a 
+        .en:after 
+          background-color: #fff
+    .footer
+      .go-top
+        border-color: rgba(255,255,255,.7)
+    .footer-social
+      li 
+        &:hover 
+          a
+            border: solid 1px rgba(255,255,255,0.5)
+          span 
+            transform: rotateY(180deg)
+    .footer-item
+      li 
+        .en:after
+          background-color: rgba(255,255,255,0.8)
+    .heart
+      background-color: #fff
+      svg 
+        stroke: #000
+      &.active,
+      &:hover
+        svg
+          fill: #000
+    .product-other .other-swiper .swiper-slide .cont .text-detail span:last-child:after
+      background-color: #fff
+    .btn-cir
+      border-color: rgba(255,255,255,.5)
+    .extra-block>ul>li 
+      .dropdown-item li .opt .img-cir
+        border-color: #fff
+      .qty input
+        color: #fff 
+    .btn-less:after
+      background-color: #fff
+    .btn-plus:after,
+    .btn-plus:before
+      background-color: #fff
+    .extra-block>ul>li .item-box .txt-color:before
+      background-color: #fff
+    .extra-block .qty-2 .qty-line
+      background-color: #1d0d0d80
+    .swiper-pagination-bullet
+      border-color: #fff
+      &-active
+        background-color: #fff
+    .product_detail_evaluate .left .icon-wrap .score
+      color: #000
+    
+    // 段落編輯器
+    article ._contentWrap ._wordWrap ._subH,
+    article ._contentWrap ._wordWrap ._P,
+    article ._contentWrap ._wordWrap ._H
+      color: #fff
+    article._article
+      &.-typeSwiper-L
+        ._contentWrap .swiper-container .swiper-pagination
+          .swiper-pagination-bullet,
+          .swiper-pagination-bullet-active
+            border-color: #fff
+          .swiper-pagination-bullet-active
+            background-color: #fff
+      &.-typeSwiper-R
+        ._contentWrap .swiper-container .swiper-pagination
+          .swiper-pagination-bullet,
+          .swiper-pagination-bullet-active
+            border-color: #fff
+          .swiper-pagination-bullet-active
+            background-color: #fff
+    article .swiper-container .swiper-pagination 
+      .swiper-pagination-bullet,
+      .swiper-pagination-bullet-active
+        border-color: #fff
+      .swiper-pagination-bullet-active
+        background-color: #fff
+
+  // 商品規格&介紹
+  &_info 
+    max-width: 1600px
+    width: 90%
+    margin: 0 auto
+    display: flex
+    border-top: solid 5px
+    .spec
+      width: 30%
+      padding: 85px 50px
+      .common-title
+        &[data-aost],
+        &.waypoint
+          +opacity
+        &.show
+          +opacity1
+      &-brand
+        position: relative
+        max-width: 380px
+        width: 100%
+        margin-top: 30px
+        margin-bottom: 30px
+        display: flex
+        align-items: center
+        cursor: pointer
+        .logo 
+          flex-shrink: 0
+          max-width: 80px
+          padding: 15px 0
+          margin-right: 20px
+        .text
+          span 
+            display: block
+            padding-bottom: 10px
+            +fontSet2(px(14),$basicbold)
+          h2
+            +fontSet2(px(24),$basicbold)
+        &[data-aost],
+        &.waypoint
+          +opacity
+        &.show
+          +opacity1
+      &-info
+        padding-bottom: 40px
+        .tit
+          display: block
+          padding-bottom: 8px
+          letter-spacing: 0.3px
+          +fontSet2(px(14),$basicbold)
+        p
+          line-height: 30px
+          +fontSet2(px(14),$basic)
+        &[data-aost],
+        &.waypoint
+          +yWaypoint(50)
+        &.show
+          +zWaypoint
+    .intro
+      width: 70%
+      padding: 85px 75px 50px
+      .share
+        display: none
+        justify-content: flex-end
+        margin-left: auto
+        >span 
+          text-transform: uppercase
+      &-text 
+        padding-top: 24px
+        padding-bottom: 25px
+        letter-spacing: 0.8px
+        line-height: 24px
+        +fontSet2(px(14),$basic)
+      .common-title
+        padding-bottom: 10px
+        &[data-aost],
+        &.waypoint
+          +opacity
+        &.show
+          +opacity1
+    +rwdmax(1200)
+      width: 88%
+      margin: 0 auto
+      flex-direction: column 
+      align-items: center
+      justify-content: center
+      .common-title
+        align-items: flex-start
+        width: 70%
+        margin: 0 
+      .spec
+        order: 2
+        width: 70%
+        display: flex
+        flex-direction: column 
+        align-items: flex-start
+        padding: 45px 0px 20px
+        &-info
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+          padding-bottom: 20px
+          .p-wrap
+            margin-top: -4px
+          .tit 
+            padding-right: 10px
+          p 
+            line-height: px(30)
+      .intro 
+        width: 100%
+        border-bottom: solid 5px
+        padding-top: 50px
+        padding-left: 0
+        padding-right: 0
+        .common-title
+          width: 70%
+          margin: 0 auto
+        &-text 
+          text-align: center
+      ._articleBlock
+        width: 70%
+        margin: 0 auto
+    +rwdmax(900)
+      .intro
+        .share
+          display: flex
+    +rwdmax(767)
+      .spec
+        width: 100%
+        padding-left: 0
+        padding-right: 0
+        padding-bottom: 0
+        &-brand 
+          margin-bottom: 40px
+          .logo
+            padding: 0
+            margin-right: 30px
+        &-info 
+          padding-bottom: 45px
+      .intro
+        width: 100%
+        padding-left: 0
+        padding-right: 0
+        padding-top: 45px
+        padding-bottom: 10px
+        .common-title
+          width: 100%
+          padding-bottom: 15px
+      ._articleBlock
+        width: 100%
+
+  // 商品照片牆
+  &_photo
+    position: relative
+    overflow: hidden
+    padding-top: 120px
+    +rwdmax(1200)
+      padding-top: 75px
+    .marquee
+      margin-bottom: 40px
+      +rwdmax(900)
+        margin-bottom: 0
+      +rwdmax(767)
+        height: 40px
+        margin-bottom: 10px
+        p 
+          font-size: px(33)
+    // swiper樣式
+    .type-swiper
+      padding: 80px 0
+      .swiper-slide
+        opacity: 0
+        transition: .5s ease-in-out
+      .swiper-slide-active
+        &.show
+          opacity: 1
+      .swiper-pagination
+        bottom: 3%
+      .parallax-container
+        padding-bottom: 46.875%
+        .img-bg
+          &.mobile
+            display: none
+      &[data-aost],
+      &.waypoint
+        +opacity
+      &.show
+        +opacity1
+      +rwdmax(900)
+        padding-top: 45px
+      +rwdmax(767)
+        padding-top: 10px
+        .swiper-pagination
+          bottom: 25px
+        .parallax-container
+          padding-bottom: 109%
+          .img-bg
+            &.desktop
+              display: none
+            &.mobile
+              display: block
+    .type-row1,
+    .type-row2
+      .block
+        .text
+          line-height: 1.5
+          padding: 25px 20px
+          +rwdmax(1100)
+            padding: 10px 20px
+        &[data-aost],
+        &.waypoint
+          +yWaypoint(50)
+        &.show
+          +zWaypoint
+    // 2圖
+    // 左上 右上
+    .type-row2
+      display: flex
+      justify-content: space-between
+      padding: 40px 0
+      max-width: 1320px
+      width: 100%
+      margin: 0 auto
+      .block
+        width: 28.125vw
+        .text
+          +fontSet2(px(14),$basic)
+        +rwdmin(1921)
+          max-width: 540px
+          width: 100%
+      .block:last-child
+        .text
+          text-align: right
+      .parallax-container
+        padding-bottom: 112.9%
+      &[data-type="left-top"]
+        .block:first-child
+          margin-top: -60px
+        .block:last-child
+          margin-top: 40px
+        +rwdmax(767)
+          .block:first-child
+            margin-top: 0
+          .block:last-child
+            margin-top: 25px
+      &[data-type="right-top"]
+        .block:first-child
+          margin-top: 40px
+        .block:last-child
+          margin-top: -60px
+        +rwdmax(767)
+          .block:first-child
+            margin-top: 0
+          .block:last-child
+            margin-top: 25px
+      +rwdmax(1600)
+        justify-content: space-around
+      +rwdmax(1200)
+        .block
+          width: 35vw
+      +rwdmax(767)
+        flex-direction: column 
+        align-items: center
+        padding: 0 40px
+        .block
+          width: 100%
+          .text
+            padding: 15px 0
+    // 1圖
+    // 左中右
+    .type-row1
+      max-width: 1500px
+      width: 100%
+      margin: 0 auto 
+      display: flex
+      padding: 40px 0
+      .block
+        position: relative
+        display: block
+        &.horizon
+          width: 62.5vw
+          .parallax-container
+            padding-bottom: 62.5%
+        &.straight
+          width: 40.88vw
+          .parallax-container
+            padding-bottom: 114.64%
+        .title-type
+          width: auto 
+          display: flex
+          flex-direction: column
+        .text
+          font-size: px(14)
+      &[data-type="center"]
+        justify-content: center
+      &[data-type="right"]
+        justify-content: flex-end
+      +rwdmax(767)
+        padding-top: 25px
+        .block
+          display: flex
+          flex-direction: column
+          &.horizon
+            // width: 82.5vw
+            width: 100%
+            margin: 0 20px
+          &.straight
+            // width: 69.88vw
+            width: 100%
+            margin: 0 20px
+          .parallax-container
+            order: 1
+          .text
+            order: 3
+            padding: 15px 0
+          // 動態文字樣式
+          .title-move.type-over
+            &[data-type="left-top"],
+            &[data-type="left-bottom"],
+            &[data-type="left-center"],
+            &[data-type="right-top"],
+            &[data-type="right-bottom"],
+            &[data-type="right-center"],
+            &[data-type="center-top"],
+            &[data-type="center-center"],
+            &[data-type="center-bottom"]
+              order: 2
+              position: static
+              transform: translate(0,-15px)
+
+    .title-move.title-type .en.border-bottom span
+      border-bottom: solid 3px
+
+  // 運費規則表
+  &_fare
+    .img 
+      max-width: 960px
+      width: 100%
+      margin: 0 auto
+      padding-top: 25px
+      padding-bottom: 75px
+      +rwdmax(1200)
+        width: 70%
+      +rwdmax(800)
+        width: 85%
+        padding-bottom: 20px
+      +rwdmax(767)
+        width: 90%
+        padding-bottom: 0px
+    &.waypoint
+      +opacity
+    &.show
+      +opacity1
+  
+  // 段落編輯器
+  ._articleBlock ._articleU ._contentWrap>._imgCover
+    padding-top: 0
+    padding-bottom: 0
+  ._articleBlock article ._contentWrap ._wordWrap ._P
+    padding: 15px 0 25px
+  ._articleBlock ._articleLR ._contentWrap ._wordWrap ._H,
+  ._articleBlock ._articleRR ._contentWrap ._wordWrap ._H
+    width: calc(50% + 20px)
+    +rwdmax(900)
+      width: 50%
+
+  ._imgCover,._wordWrap
+    &[data-aost]
+      +opacity
+    &.show
+      +opacity1
+
+
+

@@ -1,0 +1,637 @@
+@charset "UTF-8";
+.contact {
+  background-color: #202020;
+  cursor: default;
+}
+.contact .nav, .contact .footer {
+  color: #fff;
+}
+.contact .nav-left .btn-menu div {
+  background-color: #fff;
+}
+.contact .nav-left a[class*=btn-] {
+  color: #fff;
+}
+.contact .nav-center a .en:after {
+  background-color: #fff;
+}
+.contact .footer .go-top {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.contact .footer-social li:hover a {
+  border: solid 1px rgba(255, 255, 255, 0.5);
+}
+.contact .footer-social li:hover span {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.contact .footer-item li .en:after {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.contact .mouse-container .circle {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.contact main {
+  padding: 295px 0 250px;
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 1200px) {
+  .contact main {
+    padding-top: 260px;
+    padding-bottom: 150px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .contact main {
+    padding-top: 150px;
+    width: 90%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .contact main {
+    width: 100%;
+    padding-bottom: 100px;
+  }
+}
+.contact .left-title {
+  padding-left: 40px;
+  position: relative;
+  width: 24%;
+  z-index: 1;
+}
+.contact .left-title .unit-title {
+  max-width: none;
+  width: auto;
+  position: absolute;
+  left: 120px;
+  top: -80px;
+  z-index: 2;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contact .left-title .unit-title .en, .contact .left-title .unit-title .ch {
+  color: #98c213;
+}
+.contact .left-title p {
+  padding-top: 185px;
+  color: #fff;
+  -webkit-transform: translateX(80px);
+      -ms-transform: translateX(80px);
+          transform: translateX(80px);
+  letter-spacing: 0.46px;
+  line-height: 1.5rem;
+  font-family: "Ubuntu-Medium", "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  font-size: 0.875rem;
+}
+.contact .left-title[data-aost] .unit-title, .contact .left-title[data-aost] p {
+  -webkit-animation: imgOut 0.6s ease-in-out;
+          animation: imgOut 0.6s ease-in-out;
+}
+.contact .left-title.show .unit-title, .contact .left-title.show p {
+  -webkit-animation: imgIn 0.6s ease-in-out forwards;
+          animation: imgIn 0.6s ease-in-out forwards;
+}
+@media only screen and (max-width: 1200px) {
+  .contact .left-title .unit-title {
+    width: 100%;
+  }
+  .contact .left-title p {
+    padding-top: 100px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .contact .left-title {
+    width: 100%;
+  }
+  .contact .left-title .unit-title {
+    position: static;
+  }
+  .contact .left-title p {
+    width: 70%;
+    padding-top: 35px;
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .contact .left-title {
+    padding: 0 20px;
+  }
+  .contact .left-title p {
+    width: 100%;
+    padding-top: 30px;
+  }
+}
+.contact .right {
+  width: 75%;
+  position: relative;
+}
+.contact .right .img {
+  max-width: 83px;
+  width: 100%;
+  position: absolute;
+  right: 6.5104166667vw;
+  top: -40px;
+}
+.contact .right .img[data-aost] {
+  opacity: 0;
+  -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px);
+          transform: translateX(20px);
+  -webkit-transition: 0.8s ease-in-out;
+  -o-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+.contact .right .img.show {
+  opacity: 1;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+.contact .right .wdd-form {
+  max-width: none;
+  padding: 150px 120px;
+  background-color: #252525;
+}
+@media only screen and (max-width: 1200px) {
+  .contact .right .wdd-form {
+    padding: 80px 120px 120px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .contact .right {
+    width: 100%;
+    margin-top: -20px;
+  }
+  .contact .right .img {
+    display: none;
+  }
+  .contact .right .wdd-form {
+    padding: 50px 40px 60px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .contact .right {
+    margin-top: -10px;
+  }
+  .contact .right .wdd-form {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+  }
+}
+.contact .form-row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 900px) {
+  .contact .form-row[data-class=textarea] .form-group {
+    position: relative;
+  }
+  .contact .form-row[data-class=textarea] .form-group::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 3px;
+    height: 50px;
+    background-color: #fff;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .contact .form-row[data-class=textarea] .form-group {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .contact .form-row[data-class=textarea] .form-group::after {
+    top: 60px;
+  }
+}
+.contact .form-row.certification .img-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.contact .form-row.certification .form-group.form-require img {
+  margin-left: 0;
+}
+@media only screen and (max-width: 767px) {
+  .contact .form-row.certification .form-group {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .contact .form-row.certification .form-group p.subject {
+    padding-bottom: 10px;
+  }
+  .contact .form-row.certification .form-group .form-refresh {
+    margin-left: 0;
+    padding: 8px;
+  }
+  .contact .form-row.certification input[type=text] {
+    padding-left: 0;
+    width: calc(100% - 120px);
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .contact .form-row:first-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.contact .form-grid {
+  height: 100%;
+  padding: 0px 8px 5px;
+  margin-bottom: 0;
+}
+.contact .form-group {
+  height: 100%;
+  position: relative;
+  border-bottom: solid 5px #3a3a3a;
+}
+.contact .form-group:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 5px;
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  background-color: #98c213;
+  bottom: -5px;
+}
+.contact .form-group p.subject, .contact .form-group p.option {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  font-family: "Ubuntu-Bold", "微軟正黑體修正", "Microsoft JhengHei Bold", "Microsoft JhengHei", sans-serif;
+  font-size: 1rem;
+}
+.contact .form-group p.subject span:last-child, .contact .form-group p.option span:last-child {
+  padding-left: 10px;
+  font-family: "Ubuntu-Medium", "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+}
+.contact .form-group p.subject:after, .contact .form-group p.option:after {
+  width: 0;
+  height: 0;
+}
+.contact .form-group img {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.contact .form-group p.option span {
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  font-family: "Ubuntu-Medium", "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  font-size: 1rem;
+}
+.contact .form-group span.arrow-icon {
+  border-color: #fff transparent transparent transparent;
+}
+.contact .form-group.focus::after {
+  width: 100%;
+}
+.contact .form-group.focus p.subject,
+.contact .form-group.focus p.option,
+.contact .form-group.focus p.option span {
+  font-size: 1rem;
+}
+.contact .form-group.full-box {
+  padding: 0;
+}
+.contact .form-group input {
+  color: #fff;
+}
+.contact .form-group textarea {
+  height: 480px;
+  margin: 10px;
+  padding: 0 15px;
+  border: 0;
+  color: #fff;
+  font-size: 1.25rem;
+}
+.contact .form-group textarea::-webkit-input-placeholder {
+  letter-spacing: 0.46px;
+  font-family: "Ubuntu-Medium", "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  font-size: 0.875rem;
+}
+.contact .form-group textarea::-moz-placeholder {
+  letter-spacing: 0.46px;
+  font-family: "Ubuntu-Medium", "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  font-size: 0.875rem;
+}
+.contact .form-group textarea:-ms-input-placeholder {
+  letter-spacing: 0.46px;
+  font-family: "Ubuntu-Medium", "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  font-size: 0.875rem;
+}
+.contact .form-group textarea::-ms-input-placeholder {
+  letter-spacing: 0.46px;
+  font-family: "Ubuntu-Medium", "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  font-size: 0.875rem;
+}
+.contact .form-group textarea::placeholder {
+  letter-spacing: 0.46px;
+  font-family: "Ubuntu-Medium", "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  font-size: 0.875rem;
+}
+.contact .form-group .form-refresh {
+  margin-left: 15px;
+  cursor: pointer;
+  color: #98c213;
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 1440px) {
+  .contact .form-group textarea {
+    height: 350px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .contact .form-group p.subject, .contact .form-group p.option {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .contact .form-group textarea {
+    margin: 0;
+    padding-top: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .contact .form-group {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .contact .form-group p.subject, .contact .form-group p.option {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .contact .form-group p.subject span:last-child, .contact .form-group p.option span:last-child {
+    padding-left: 5px;
+  }
+}
+.contact .form-select .select-content {
+  background-color: #202020;
+}
+.contact .form-select .select-content ul.scrollbar-inner li {
+  padding: 20px;
+  color: #fff;
+  background-color: #999999;
+}
+.contact .form-select .select-content ul.scrollbar-inner li:hover {
+  background-color: #b3b3b3;
+}
+.contact .form-select .select-head {
+  padding: 0 0 0 20px;
+}
+.contact .form-select .select-head span.arrow-icon {
+  right: 25px;
+}
+@media only screen and (max-width: 1200px) {
+  .contact .form-select .select-head {
+    padding-left: 15px;
+  }
+}
+.contact .form-select.type-normal {
+  width: 100%;
+}
+.contact .form-select.type-normal .select-head p.option {
+  color: #fff;
+  font-family: "Ubuntu-Bold", "微軟正黑體修正", "Microsoft JhengHei Bold", "Microsoft JhengHei", sans-serif;
+  font-size: 2.5rem;
+}
+.contact .form-group.swiper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  border: 0;
+}
+.contact .form-group.swiper::after {
+  width: 0;
+  height: 0;
+}
+.contact .form-group.swiper p.subject {
+  padding-bottom: 0;
+}
+@media only screen and (max-width: 767px) {
+  .contact .form-group.swiper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.contact .form-swiper {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  padding-left: 50px;
+}
+.contact .form-swiper p {
+  padding-bottom: 12px;
+  color: #fff;
+  position: relative;
+  letter-spacing: 0.98px;
+  font-family: "Ubuntu-Bold", "微軟正黑體修正", "Microsoft JhengHei Bold", "Microsoft JhengHei", sans-serif;
+  font-size: 1.25rem;
+}
+.contact .form-swiper p:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  background-color: #98c213;
+}
+@-moz-document url-prefix() {
+  .contact .form-swiper p {
+    font-family: "Ubuntu-Medium", "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  }
+}
+.contact .form-swiper .swiper-container {
+  mask-image: gradient(linear, left 60%, left bottom, from(white), to(rgba(255, 255, 255, 0)));
+  -webkit-mask-image: -webkit-gradient(linear, left 60%, left bottom, from(white), to(rgba(255, 255, 255, 0)));
+}
+@-moz-document url-prefix() {
+  .contact .form-swiper .swiper-container {
+    mask-image: unset;
+  }
+}
+.contact .form-swiper .swiper-slide {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+.contact .form-swiper .swiper-slide-active p {
+  color: #98c213;
+}
+.contact .form-swiper .swiper-slide-active p:after {
+  width: 100%;
+}
+.contact .form-swiper .swiper-button {
+  position: absolute;
+  right: 0;
+  width: 16px;
+  height: 20px;
+  z-index: 2;
+  color: white;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.contact .form-swiper .swiper-button span {
+  display: block;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  font-size: 1.5rem;
+}
+.contact .form-swiper .swiper-button.swiper-button-disabled {
+  color: rgba(255, 255, 255, 0.5);
+}
+.contact .form-swiper .swiper-next {
+  top: calc(55% + 15px);
+}
+.contact .form-swiper .swiper-prev {
+  top: calc(55% - 15px);
+}
+@media only screen and (max-width: 767px) {
+  .contact .form-swiper {
+    padding-left: 15px;
+    height: 150px;
+  }
+  .contact .form-swiper p {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.125rem;
+  }
+}
+.contact .button-wrap {
+  padding: 40px 20px 0;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.contact .button-wrap .form-btn {
+  border: 0;
+}
+@media only screen and (max-width: 767px) {
+  .contact .button-wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 40px 0 0;
+  }
+  .contact .button-wrap .cross::after, .contact .button-wrap .cross::before {
+    top: 8px;
+  }
+}
+.contact .inner-text {
+  position: absolute;
+  left: 110px;
+  top: 0;
+  color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+.contact .inner-text span {
+  opacity: 0;
+}
+.contact .inner-text.hi {
+  font-size: 8.125rem;
+}
+.contact .inner-text.tks {
+  color: #98c213;
+  font-size: 7.1875rem;
+}
+.contact .inner-text.show span {
+  opacity: 1;
+}
+.contact .inner-text.active span {
+  opacity: 0;
+}
+.contact .inner-text.active span:nth-child(2) {
+  -webkit-transition-delay: 0.1s;
+       -o-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+.contact .inner-text.active span:nth-child(1) {
+  -webkit-transition-delay: 0.3s;
+       -o-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+.contact .inner-text.in span {
+  opacity: 1;
+}
+.contact .inner-text.in span:nth-child(2) {
+  -webkit-transition-delay: 0.1s;
+       -o-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+.contact .inner-text.in span:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+       -o-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+.contact .inner-text.in span:nth-child(4) {
+  -webkit-transition-delay: 0.5s;
+       -o-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+.contact .inner-text.hide {
+  opacity: 0;
+}
+@media only screen and (max-width: 900px) {
+  .contact .inner-text {
+    display: none;
+  }
+}
+/*# sourceMappingURL=contact.css.map */

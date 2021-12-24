@@ -1,0 +1,875 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+// 會員註冊 memeber_register
+// 忘記密碼 member_forget_assword
+// 修改密碼 memeber_change_password
+// 修改帳號 memeber_change_account
+
+.member_step
+  input:-webkit-autofill
+    -webkit-text-fill-color: #000 !important
+  main 
+    // max-height: 1245px
+    min-height: 1080px
+    +rwdmax(1250)
+      min-height: 100vh
+    .cir-btn
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      z-index: 1
+      &.close
+        top: 66px
+      &.goTop 
+        bottom: 60px
+
+  // 共同
+  .step-title
+    width: 100%
+    position: absolute
+    left: 50%
+    top: 10%
+    transform: translateX(-50%)
+    z-index: 1
+    pointer-events: none
+    >.title
+      padding-top: 100px
+      color: #fff
+      .unit-title
+        max-width: 1360px
+        width: 80%
+        align-items: center
+      .right
+        margin: 0
+      .left
+        p 
+          max-width: 350px
+    +rwdmax(1700)
+      >.title
+        margin-right: 13vw
+        .unit-title
+          &.step2
+            width: 90%
+            margin-right: 0
+    +rwdmax(1250)
+      position: static
+      transform: translateX(0)
+      padding-bottom: 50px
+      >.title
+        margin: 0
+        padding-top: 150px
+        .step-num 
+          display: none
+        .unit-title
+          flex-direction: column
+          &.step2
+            margin: 0 auto
+    +rwdmax(900)
+      >.title
+        .step-num 
+          display: none
+    +rwdmax(767)
+      padding-bottom: 40px
+      >.title
+        // padding-top: 100px
+  .step-num 
+    margin-top: 25px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    color: #333
+    .num
+      font-size: px(92)
+    .text
+      letter-spacing: 0.54px
+      font-weight: bold
+      font-size: px(16)
+    +rwdmax(1250)
+      margin-right: 0
+      margin-top: 0
+      padding-top: 50px
+      padding-bottom: 40px
+    +rwdmax(767)
+      .num
+        padding-bottom: 10px
+        font-size: px(46)
+  .mob-show
+    display: none
+    +rwdmax(1250)
+      display: block
+  .step-content
+    display: none
+    .wrap
+      position: relative
+      width: 100%
+      height: 100%
+    .cir 
+      position: absolute
+      border-radius: 50%
+      &-small
+        width: 405px
+        height: 405px
+        padding-top: 210px
+        +rwdmax(1250)
+          width: 300px
+          height: 300px
+          padding-top: 150px
+        +rwdmax(900)
+          width: 405px
+          height: 405pxc
+        +rwdmax(767)
+          width: 300px
+          height: 300px
+          padding-top: 145px
+      &-middle
+        width: 710px
+        height: 710px
+        padding-top: 210px
+        +rwdmax(1250)
+          padding-top: 150px
+        +rwdmax(767)
+          padding-top: 145px
+          width: 90%
+          height: 100%
+      &-middle2
+        width: 615px
+        height: 615px
+        padding-top: 210px
+        +rwdmax(1250)
+          width: 550px
+          height: 550px
+          padding-top: 150px
+        +rwdmax(900)
+          width: 615px
+          height: 615px
+        +rwdmax(767)
+          width: 480px
+          height: 480px
+          padding-top: 145px
+      &-big
+        width: 1190px
+        height: 1190px
+        +rwdmax(1250)
+          width: 1000px
+          height: 1000px
+        +rwdmax(767)
+          width: 1230px
+          height: 1230px
+      &-big2 
+        width: 1070px
+        height: 1070px
+
+    &.cir-xl
+      display: block
+      .bd0-dark
+        margin-left: auto
+        margin-top: 80px
+        padding: 0
+      .wrap
+        padding-bottom: 61.97%
+        max-width: 1300px
+        width: 100%
+        margin-left: auto
+        margin-right: 120px
+      .cir
+        &-small
+          top: -5%
+        &-big
+          right: 0
+          top: 7%
+          padding-top: 355px
+          .range
+            max-width: 45.83vw
+            width: 100%
+            margin: 0 auto
+            >p 
+              padding-left: 20px
+              padding-bottom: 28px
+      +rwdmax(1600)
+        .cir-big
+          .range
+            margin-left: 20vw
+      +rwdmax(1500)
+        .wrap
+          padding-bottom: 88.97%
+        .cir-big
+          .range
+            margin-left: 25vw
+      +rwdmax(1400)
+        .cir-big
+          .range
+            margin-left: 30vw
+      +rwdmax(1250)
+        .bd0-dark
+          margin: 60px auto 0
+        .wrap
+          display: flex
+          flex-direction: column
+          margin: 0
+          padding-bottom: 0
+        .cir-small
+          display: none
+        .cir-big
+          padding: 0
+          position: relative
+          top: 0
+          right: auto 
+          left: 50%
+          transform: translateX(-50%)
+          .range
+            max-width: none
+            margin: 0 auto
+            >p 
+              padding-left: 0
+              text-align: center
+          .mob-show + .range
+            width: 70%
+      +rwdmax(900)
+        .cir-big
+          .mob-show + .range
+      +rwdmax(767)
+        .wrap 
+          align-items: center
+          padding-bottom: 0
+        .cir-big
+          position: static
+          transform: translateX(0)
+          z-index: 0
+          .mob-show + .range
+            width: 30%
+      +rwdmax(410)
+        .cir-big
+          .mob-show + .range
+            width: 29%
+      +rwdmax(360)
+        .cir-big
+          .mob-show + .range
+            width: 26%
+    &.cir-l
+      &.active
+        display: block
+      .bd0-dark
+        margin-left: auto
+        margin-top: 80px
+        padding: 0
+      .wrap
+        padding-bottom: 61.97%
+        max-width: 1300px
+        width: 100%
+        margin-left: auto
+        margin-right: 120px
+      .cir
+        &-small
+          top: -5%
+        &-big2
+          right: 4%
+          top: 7%
+          padding-top: 34%
+          .range
+            max-width: 45.83vw
+            width: 100%
+            margin: 0 auto
+            >p 
+              padding-left: 20px
+              padding-bottom: 28px
+      +rwdmax(1500)
+        .wrap
+          padding-bottom: 88.97%
+      +rwdmax(1250)
+        .bd0-dark
+          margin: 60px auto 0
+        .wrap
+          display: flex
+          flex-direction: column
+          margin: 0
+          padding-bottom: 0
+        .cir-small
+          display: none
+        .cir-big2
+          padding: 0
+          position: relative
+          top: 0
+          right: auto 
+          left: 50%
+          transform: translateX(-50%)
+          .range
+            max-width: none
+            margin: 0 auto
+            >p 
+              padding-left: 0
+              text-align: center
+          .mob-show + .range
+            width: 70%
+      +rwdmax(900)
+        .cir-big2
+          .mob-show + .range
+            width: 55%
+      +rwdmax(767)
+        max-height: 660px
+        .wrap 
+          align-items: center
+          padding-bottom: 0
+        .cir-big2
+          position: static
+          transform: translateX(0)
+          z-index: 0
+          .mob-show + .range
+            width: 30%
+      +rwdmax(410)
+        .cir-big2
+          .mob-show + .range
+            width: 29%
+      +rwdmax(360)
+        .cir-big2
+          .mob-show + .range
+            width: 26%
+
+    &.cir-m
+      .wrap
+        max-width: 1100px
+        width: 100%
+        display: flex
+        flex-direction: column
+        margin-left: auto 
+        margin-right: 15%
+        margin-top: 10%
+        padding-bottom: 4%
+      .cir
+        &-small
+          left: 0
+          top: 0
+        &-middle
+          padding-top: 210px
+          position: static
+          margin-left: auto
+          margin-top: 9%
+          margin-right: 7%
+          .range
+            max-width: 545px
+            width: 100%
+            margin: 0 auto
+            >p 
+              text-align: center
+              letter-spacing: 0.7px
+              line-height: px(25)
+              span 
+                letter-spacing: 1px
+                font-size: px(20)
+
+      .button-wrap
+        // border: solid 1px #fff
+        max-width: 900px
+        width: 100%
+        display: flex
+        justify-content: space-between
+        margin-left: auto
+        transform: translateY(-80px)
+        .form-btn
+          padding-left: 0
+          padding-right: 0
+          &.d-none
+            display: none
+        .form-btn:nth-child(1)
+          &.form-done
+            span 
+              margin-left: 0
+              margin-right: 5px
+            &:hover 
+              span
+                transform: translateX(-10px)
+      +rwdmax(1600)
+        .wrap
+          margin-right: 9%
+      +rwdmax(1400)
+        .wrap
+          margin-right: 3%
+      +rwdmax(1250)
+        .wrap
+          margin: 0 auto
+          padding-bottom: 15%
+        .cir
+          &-small
+            display: none
+          &-middle
+            margin: 0 auto
+            padding: 0
+        .button-wrap
+          width: 50%
+          margin: 0 auto
+          transform: translateY(0)
+      +rwdmax(900)
+        .wrap
+          padding-bottom: 20%
+      +rwdmax(767)
+        .cir-middle
+          background-color: transparent
+          position: relative
+          &::after
+            content: ''
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
+            z-index: -1
+            width: 565px
+            height: 565px
+            border-radius: 50%
+        .button-wrap
+          width: 90%
+          padding-top: 130px
+          padding-bottom: 80px
+      
+    &.cir-s
+      .cir-wrap
+        max-width: 1200px
+        width: 100%
+        position: relative
+        display: flex
+        margin-right: auto
+        margin-left: 14vw
+      .wrap
+        height: 38.54vw
+        max-width: 890px
+        position: absolute
+        top: 24%
+        right: 0
+        .cir
+          &-small
+            left: 0
+            top: 0
+            animation: rotateReverse 25s linear infinite
+          &-middle2
+            right: 0
+            top: 16%
+            animation: rotate 20s linear infinite
+
+      .title-type
+        display: flex
+        flex-direction: column
+        position: static
+        transform: translateX(0)
+      .unit-title 
+        .left 
+          .en
+            border-bottom: 0
+            text-align: left
+          .en:last-child
+            span
+              border-bottom: solid 4px
+      .right
+        margin-top: auto
+        .btn-wrap
+          padding-top: 0
+          transform: translateY(30px)
+          margin-left: auto
+          margin-right: 110px
+          .btn-cir
+            box-shadow: 21.5px 27.6px 25.8px 3.2px rgba(0, 0, 0, 0.14)
+            .icon-cart
+              font-size: px(30)
+            .icon-send
+              font-size: px(36)
+              margin-bottom: 5px
+            span 
+              margin-bottom: 10px
+        +ieHack
+          display: flex
+          .btn-wrap
+            align-self: flex-end
+      +rwdmax(1400)
+        .cir-wrap
+          margin-left: 6vw
+      +rwdmax(1250)
+        .wrap
+          max-width: 780px
+          .cir-middle2
+            right: 10%
+        .unit-title 
+          max-width: none
+      +rwdmax(900)
+        .cir-wrap
+          flex-direction: column
+          margin-left: 0
+        .wrap 
+          position: relative
+          transform: translateY(-140%)
+          .cir-small
+            left: -10%
+          .cir-middle2
+            right: -9%
+            top: 48%
+        .unit-title 
+          flex-direction: column 
+          align-items: center
+        .right
+          margin: 0
+          .btn-wrap
+            padding-top: 100px
+            margin: 0 auto 
+            transform: translateY(0)
+      +rwdmax(767)
+        padding-top: 140px
+        .wrap
+          height: 480px
+          transform: translateY(-58%)
+          .cir-small
+            left: -45%
+          .cir-middle2
+            right: auto
+            left: 15%
+            top: 15%
+        .unit-title 
+          padding: 0 20px
+        .right
+          .btn-wrap
+            padding-top: 185px
+    
+  input[type="text"], input[type="password"], input[type="tel"], input[type="email"]
+    &::placeholder
+      color: rgba(0,0,0,0.6)
+      font-family: $basicbold
+
+
+  // 註冊碼
+  .form-code
+    padding: 20px 0
+    input,
+    input[type="text"]::placeholder
+      letter-spacing: 16.5px
+      +fontSet2(px(83),$basic)
+    input
+      width: 100%
+      text-align: center
+      background-color: transparent
+      color: #fff
+    input[type="text"]
+      &::placeholder
+        color: rgba(255,255,255,.5)
+    +rwdmax(767)
+      input,
+      input[type="text"]::placeholder
+        letter-spacing: 12px
+        font-size: px(66)
+    +rwdmax(320)
+      input,
+      input[type="text"]::placeholder
+        font-size: px(60)
+
+  // 倒數計時
+  .countdown-wrap 
+    height: 60px
+    max-width: 520px
+    width: 100%
+    margin: 0 auto
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 15px 0
+    background-color: #3da6ff
+    color: #fff
+    &.gray
+      background-color: #3e4149
+    p
+      text-align: center
+      letter-spacing: 0.7px
+      +fontSet2(px(14),$basicbold)
+    .countdown
+      padding-left: 10px
+      +fontSet2(px(25),$basic)
+    +rwdmax(767)
+      .countdown
+        font-size: px(27)
+    +rwdmax(320)
+      flex-wrap: wrap
+      height: auto
+      .countdown
+        // padding-left: 0
+        padding-top: 10px
+
+  // 重新發送驗證碼
+  .resend
+    padding-top: 25px
+    display: flex
+    justify-content: center
+    opacity: .2
+    &.active
+      opacity: 1
+      &:hover 
+        .btn-resend
+          transform: rotateY(360deg)
+    >div
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      padding-bottom: 10px
+      border-bottom: solid 5px
+    p 
+      letter-spacing: 0.7px
+      +fontSet2(px(14),$basicbold)
+    .countdown 
+      padding: 0 8px
+      +fontSet2(px(18),$basic)
+    .btn-resend
+      width: 36px
+      height: 36px
+      border-radius: 50%
+      display: flex
+      align-items: center
+      justify-content: center
+      background-color: #000
+      transition: transform .5s ease-in-out
+      span 
+        color: #fff
+        +mozhack
+          margin-top: 4px
+    +rwdmax(767)
+      .countdown 
+        font-size: px(20)
+
+  // 會員註冊
+  &[data-page="member_register"]
+    background-color: #455b71
+    .cir
+      background-color: #fcd1b5
+    .step-title>.title
+      +rwdmax(767)
+        padding-top: 150px
+    [data-step="1"]
+      &.cir-xl
+        .wrap
+          +rwdmax(1400)
+            padding-bottom: 96.97%
+          +rwdmax(1300)
+            padding-bottom: 100%
+          +rwdmax(1250)
+            padding-bottom: 10%
+          +rwdmax(767)
+            padding-bottom: 0
+    [data-step="2"]
+      .right
+        .range
+          +rwdmax(1500)
+            margin-top: 3%
+          +rwdmax(1250)
+            margin-top: 6%
+          +rwdmax(767)
+            margin-top: 0
+      .cir-middle
+        &::after
+          background-color: #fcd1b5
+    [data-step="3"]
+      .title
+        width: 100%
+        padding-top: 17%
+        color: #fff
+        z-index: 1
+      .cir
+        background-image: url(../../uploads/member/reg-bg.jpg)
+        &-small
+          background-position: 80% 0
+        &-middle2 
+          background-position: 40% 80%
+      +rwdmax(767)
+        .title
+          padding-top: 0
+    .form-row
+      &.birth
+        .form-select.type-normal .select-head p.option span:nth-child(2)
+          font-family: $basicbold
+        +rwdmax(1400)
+          flex-wrap: wrap 
+          .form-grid:nth-child(1)
+            width: 100%
+            margin-bottom: 4px
+          .form-grid:nth-child(2),
+          .form-grid:nth-child(3)
+            width: 100%
+          .form-grid:nth-child(2)
+            margin-bottom: 4px
+  // 會員修改密碼
+  &[data-page="member_change_password"]
+    main 
+      min-height: 100vh 
+      background-color: #eba444
+      // max-height: 1080px
+    .cir
+      background-color: #b0d5d1
+    .step-title
+      >.title
+        .unit-title
+          width: 90%
+          padding-top: 70px
+          &.step2
+            padding-top: 0
+      +rwdmax(767)
+        >.title
+          .unit-title
+            padding-top: 0px
+    [data-step="1"]
+      +rwdmax(1250)
+        max-height: 600px
+    [data-step="2"]
+      .right
+        .range
+          +rwdmax(1500)
+            margin-top: 3%
+          +rwdmax(1250)
+            margin-top: 6%
+          +rwdmax(767)
+            margin-top: 0
+      .cir-middle
+        &::after
+          background-color: #b0d5d1
+      .button-wrap
+        justify-content: flex-end
+      +rwdmax(1250)
+        .button-wrap
+          justify-content: center
+    [data-step="3"]
+      .title
+        width: 100%
+        padding-top: 17%
+        color: #fff
+        z-index: 1
+        .right
+          .btn-wrap
+            transform: translateY(50px)
+            margin-right: 90px
+      .cir
+        background-image: url(../../uploads/member/ch-pasw-bg.jpg)
+        &-small
+          background-position: 80% 0
+        &-middle2 
+          background-position: 40% 80%
+      +rwdmax(1250)
+        .title
+          .right
+            .btn-wrap
+              margin-right: 110px
+              transform: translateY(0px)
+              .btn-cir 
+                margin-right: 0
+      +rwdmax(900)
+        .title
+          .right
+            .btn-wrap
+              margin-right: 0
+      +rwdmax(767)
+        .title
+          padding-top: 0 
+    
+
+
+  // 會員忘記密碼
+  &[data-page="member_forget_password"]
+    main 
+      min-height: 100vh 
+      background-color: #556f59
+    .cir
+      background-color: #ced19a
+    .step-title
+      >.title
+        .unit-title
+          width: 90%
+          padding-top: 70px
+          &.step2
+            padding-top: 0
+      +rwdmax(767)
+        >.title
+          .unit-title
+            padding-top: 0px
+    [data-step="1"]
+      +rwdmax(1250)
+        max-height: 600px
+      +rwdmax(767)
+        .form-row.password
+          input 
+            width: 50%
+            padding-left: 0
+          img 
+            margin-left: auto
+
+    [data-step="4"]
+      .title
+        width: 100%
+        padding-top: 17%
+        color: #fff
+        z-index: 1
+        .right
+          .btn-wrap
+            transform: translateY(50px)
+            margin-right: 90px
+      .cir
+        background-image: url(../../uploads/member/fg-pasw-bg.jpg)
+        &-small
+          background-position: 80% 0
+        &-middle2 
+          background-position: 40% 80%
+      +rwdmax(1250)
+        .title
+          .right
+            .btn-wrap
+              margin-right: 0
+              transform: translateY(0px)
+              .btn-cir 
+                margin-right: 0
+      +rwdmax(767)
+        .title
+          padding-top: 0 
+
+  // 會員修改帳號
+  &[data-page="member_change_account"]
+    main 
+      min-height: 100vh 
+      background-color: #9d9db9
+    .cir
+      background-color: #95bdff
+    .step-title
+      >.title
+        .unit-title
+          width: 90%
+          padding-top: 70px
+          &.step2
+            padding-top: 0
+      +rwdmax(767)
+        >.title
+          .unit-title
+            padding-top: 0px
+    [data-step="3"]
+      .title
+        width: 100%
+        padding-top: 17%
+        color: #fff
+        z-index: 1
+      .cir
+        background-image: url(../../uploads/member/ch-acc-bg.jpg)
+        &-small
+          background-position: 35% 15%
+        &-middle2 
+          background-position: 30% 70%
+      +rwdmax(767)
+        .title
+          padding-top: 0
+
+  &[data-page="member_change_password"],
+  &[data-page="member_forget_password"]
+    [data-step="2"]
+      +rwdmax(767)
+        .right
+          &::after
+            z-index: 0
+          .mob-show
+            position: relative
+            z-index: 1
+          .range
+            p,div 
+              position: relative
+              z-index: 1
+  [data-name="unfinish"]
+    .cir-bg 
+      h5
+        padding-top: 50px
+      p 
+        text-align: center

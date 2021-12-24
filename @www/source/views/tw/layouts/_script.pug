@@ -1,0 +1,78 @@
+script.
+  document.createElement( "picture" );
+script(src="../../../assets/js/plugins-dist.js")
+script(src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js")
+script(src="../../../assets/js/fesdDB.1.0-dist.js")
+script(src="../../../assets/js/fesd.2.0.min.js")
+script(src="../../../assets/js/aost-dist.js")
+script(src="../../../assets/js/methods-dist.js")
+script(src="../../../assets/js/main-dist.js")
+
+<!-- microdata : professional service -->
+script(type="application/ld+json").
+  {
+    "@context": "http://www.schema.org",
+    "@type": "ProfessionalService",
+    "name": "網站名子",
+    "email": "mailto:email",
+    "url": "本站網址",
+    "image": "favicon logo路徑",
+    "priceRange":"商品價格區間",
+    "telephone": "電話",
+    "logo": "logo路徑",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "地址",
+      "addressLocality": "區",
+      "addressRegion": "成市",
+      "postalCode": "郵遞區號",
+      "addressCountry": "中華民國 (台灣)"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "22.619435",
+      "longitude": "120.296034"
+    },
+    "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+    "openingHours": [
+      "Mo-Th 11:00-22:00",
+      "Fr 11:00-22:30",
+      "Sa 10:30-22:30",
+      "Su 10:30-22:00"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+886-00-12345678"
+    },
+    "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+  }
+
+
+<!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+script(type="application/ld+json").
+  {
+    "@context": "http://www.schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement":
+    [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item":
+        {
+          "@id": "https://example.com/dresses",
+          "name": "Dresses"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item":
+        {
+          "@id": "https://example.com/dresses/real",
+          "name": "Real Dresses"
+        }
+      }
+    ]
+  }

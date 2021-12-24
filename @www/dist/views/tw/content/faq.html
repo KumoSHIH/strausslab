@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <!-- head標籤 & 網站設定-->
+  <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <!--共用設定-->
+    <!-- 網站語系及語言宣告-->
+    <meta http-equiv="content-language" content="zh-TW"/>
+    <meta charset="UTF-8"/>
+    <!-- RWD設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 瀏覽器設定-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- 網站關鍵字-->
+    <meta name="keywords" content="網站關鍵字"/>
+    <!-- 網頁內容描述-->
+    <meta name="description" content="網頁內容描述，中文 80 個字元、英文 160 個字元"/>
+    <!-- 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="robots" content="noindex"/>
+    <!-- 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="googlebot" content="noindex"/>
+    <!-- Open Graph Protocol for facebook-->
+    <meta property="og:title" content="網頁Title"/>
+    <meta property="og:description" content="網頁內容描述"/>
+    <meta property="og:url" content="主要網址"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="網頁內容描述"/>
+    <!-- Open Graph Protocol for google plus-->
+    <meta itemprop="name" content="網站名稱或標題"/>
+    <meta itemprop="image" content="分享的影像位址"/>
+    <meta itemprop="description" content="網頁描述"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="分享的影像位址"/>
+    <meta name="twitter:site" content="網站名稱"/>
+    <meta name="twitter:title" content="網頁標題"/>
+    <meta name="twitter:description" content="網頁描述 200 個字元以內"/>
+    <meta name="twitter:creator" content="客戶公司或品牌名稱"/>
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content=" http://www.example.com/image.html"/>
+    <title>有情門 Strausslab</title>
+    <!-- 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中-->
+    <link rel="canonical" href="主要網址" itemprop="url"/>
+    <link rel="shortcut icon" href="../../../assets/img/logo-w.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
+    <!-- Google Tag Manager-->
+    <!-- 以下script 後端自行打開-->
+    <!-- script.-->
+    <!--   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+    <!--   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+    <!--   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+    <!--   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+    <!--   })(window,document,'script','dataLayer','GTM編號');-->
+    <!--獨立CSS-->
+    <link rel="stylesheet" href="../../../assets/css/faq.css"/>
+  </head>
+  <body class="faq" data-page="faq">
+    <div class="pub">
+      <div class="center">
+        <div class="pub-wrap"> 
+          <!-- 開啟生日會員gif-->
+          <!-- _gif.init();-->
+          <!-- 關閉廣告-->
+          <!-- _ad.closeEvent();-->
+          <div class="cir-btn black close-menu hover-cir" data-hover="yellowSmall" onclick="_ad.closeEvent()">
+            <div class="cross"></div>
+          </div>
+          <div class="pub-swiper">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:;">
+                    <div class="img"> <img src="../../../assets/img/1200X720.jpg" alt=""/></div></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mouse-container">
+      <div id="mouse"> 
+        <div class="circle"></div>
+        <div class="mark"><img src="../../../assets/img/cursor.png" alt=""/></div>
+      </div>
+    </div>
+    <div class="main-wrapper">
+      <div class="all-wrapper">
+        <!-- 導覽列-->
+        <nav class="nav waypoint" data-aost="data-aost" data-aost-class="show">
+          <div class="nav-wrap"> 
+            <div class="nav-left"><a class="btn-menu hover-cir" href="javascript:;" data-hover="blueBig" data-menu="menu" aria-label="menu">
+                <div></div>
+                <div></div>
+                <div></div></a><a class="btn-cart hover-cir" href="./shopping.html" data-hover="blueBig" aria-label="shopping cart"><i class="icon-cart">
+                  <!-- 購物車商品數-->
+                  <div class="num"> <span>9</span></div></i></a><a class="btn-fav hover-cir" href="./member_lovelist.html" data-hover="blueBig" aria-label="lovelist"><i class="icon-heart-o"></i></a><a class="btn-search hover-cir" href="javascript:;" data-hover="blueBig" data-ajax-route="./ajax_search.html" data-ajax-container=".libox-container" data-ajax-callback="_search.callback" data-ajax="data-ajax" aria-label="search"><i class="icon-search"></i></a><a class="btn-login login hover-cir" href="./member.html" data-hover="blueBig" aria-label="login"><i class="icon-member-1"></i></a></div>
+            <div class="nav-center">
+              <ul>
+                <li><a class="hover-cir" href="./product.html" data-hover="blueBig" aria-label="PRODUCT"><span class="en">PRODUCT</span><span class="ch">探索產品</span></a></li>
+                <li><a class="hover-cir" href="javascript:;" data-hover="blueBig" aria-label="SPACE"><span class="en">SPACE</span><span class="ch">探索空間</span></a></li>
+                <li><a class="hover-cir" href="javascript:;" data-hover="blueBig" aria-label="INSPIRATION"><span class="en">INSPIRATION</span><span class="ch">探索靈感</span></a></li>
+              </ul>
+            </div><a class="nav-logo hover-cir" href="./index.html" data-hover="blueBig" aria-label="home"><img src="../../../assets/img/logo-w.png" alt=""/></a>
+          </div>
+        </nav>
+        <!-- 選單-->
+        <div class="libox-menu" data-name="menu">
+          <div class="menu-box">
+            <div class="cir-btn mainGreen close-menu">
+              <div class="cross"></div>
+            </div>
+            <!-- 會員登入-->
+            <!-- 背景圖建議尺寸: 電腦版- 510X1080 / 平板- 1100X500 /手機- 380X550-->
+            <div class="login-wrap" data-desktop="../../../uploads/navbar/nav-bg-510X1080.jpg" data-pad="../../../uploads/navbar/nav-bg-1100X500.jpg" data-mobile="../../../uploads/navbar/nav-bg-380X550.jpg">
+              <div class="top">
+                <!-- 會員頭像-->
+                <div class="member-photo">
+                  <div class="headshot" style="background-image: url(../../../assets/img/logo-255X255.png)"></div>
+                </div>
+                <!-- 未登入: MEMBER-->
+                <!-- 已登入: WELCOME!-->
+                <p>MEMBER </p>
+                <div class="member-link">
+                  <!-- 未登入顯示--><a class="hover-cir" href="./member.html" data-hover="blue">會員登入</a>
+                  <!-- 已登入顯示--><a class="hover-cir" href="./member_center.html" data-hover="blue">會員中心</a><a class="hover-cir" href="./member_order.html" data-hover="blue">訂單紀錄</a>
+                </div>
+              </div>
+              <div class="page-link"><a class="hover-cir" href="./about.html" data-hover="blueBig"><span class="en">Brand Story</span><span class="ch">品牌故事</span></a><a class="hover-cir" href="./news.html" data-hover="blueBig"><span class="en">News</span><span class="ch">最新消息</span></a><a class="hover-cir" href="./product.html" data-hover="blueBig"><span class="en">Product</span><span class="ch">探索產品</span></a><a class="hover-cir" href="./faq.html" data-hover="blueBig"><span class="en">Q&amp;A</span><span class="ch">疑難排解</span></a><a class="hover-cir" href="./contact.html" data-hover="blueBig"><span class="en">Contact</span><span class="ch">與我們聯繫</span></a>
+              </div>
+            </div>
+            <!-- 商品分類 & 活動-->
+            <div class="other-wrap">
+              <div class="scrollbar-inner">
+                <div class="wrap">
+                  <div class="category-box">
+                    <div class="mob-wrap">
+                      <div class="sub-tit"><span class="en">Category</span><span class="ch">商品分類</span></div>
+                      <div class="btn-arrow"> <span class="icon-arrowDown"></span></div>
+                    </div>
+                    <ul> 
+                      <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall">
+                          <div class="text noneImg"><span class="ch">床組</span><span class="en">Bed Series</span></div></a></li>
+                      <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall">
+                          <div class="text noneImg"><span class="ch">桌子</span><span class="en">Table</span></div></a></li>
+                      <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall">
+                          <div class="img"> <img src="../../../uploads/navbar/img-04.png" alt=""/></div>
+                          <div class="text"><span class="ch">沙發</span><span class="en">Sofa</span></div></a></li>
+                      <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall">
+                          <div class="text noneImg"><span class="ch">單椅</span><span class="en">Chair</span></div></a></li>
+                      <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall">
+                          <div class="img"> <img src="../../../uploads/navbar/img-05.png" alt=""/></div>
+                          <div class="text"><span class="ch">收納</span><span class="en">Storage</span></div></a></li>
+                    </ul>
+                  </div>
+                  <div class="explore-box">
+                    <div class="sub-tit"><span class="en">Special</span><span class="ch">探索更多</span></div>
+                    <div class="explore-wrap">
+                      <div class="txt-wrap hover-cir" data-hover="blue">
+                        <div class="small-tit"> <span class="en">HOT SALES</span><span class="ch">促銷特惠</span></div>
+                        <div class="open">
+                          <div class="cross-plus"></div>
+                        </div>
+                      </div>
+                      <ul>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">NT$ 2000 Bonus</span><span class="ch">沙發系列滿萬現折 2000！</span></a></li>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">Nov. Pop-up Event</span><span class="ch">十一月快閃活動，前往查看活動商品頁！</span></a></li>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">Hot Sale</span><span class="ch">熱銷商品三件 95 折，一起團購享受美好生活品質</span></a></li>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">08.28 Fri. - 10.20 Tue.</span><span class="ch">書臥生活，系列家具享優惠</span></a></li>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">NT$ 2000 Bonus</span><span class="ch">沙發系列滿萬現折 2000！</span></a></li>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">Nov. Pop-up Event</span><span class="ch">十一月快閃活動，前往查看活動商品頁！</span></a></li>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">Hot Sale</span><span class="ch">熱銷商品三件 95 折，一起團購享受美好生活品質</span></a></li>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">08.28 Fri. - 10.20 Tue.</span><span class="ch">書臥生活，系列家具享優惠</span></a></li>
+                      </ul>
+                    </div>
+                    <div class="explore-wrap">
+                      <div class="txt-wrap hover-cir" data-hover="blue">
+                        <div class="small-tit"> <span class="en">INSPIRATION</span><span class="ch">促銷特惠</span></div>
+                        <div class="open">
+                          <div class="cross-plus"></div>
+                        </div>
+                      </div>
+                      <ul>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">Color Inspiration</span><span class="ch">驚喜配色  黃色沙發背牆</span></a></li>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">Color Inspiration</span><span class="ch">驚喜配色  黃色沙發背牆</span></a></li>
+                      </ul>
+                    </div>
+                    <div class="explore-wrap"> 
+                      <div class="txt-wrap hover-cir" data-hover="blue">
+                        <div class="small-tit"> <span class="en">SPACE</span><span class="ch">探索空間</span></div>
+                        <div class="open">
+                          <div class="cross-plus"></div>
+                        </div>
+                      </div>
+                      <ul>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">Dining Room</span><span class="ch">餐廳空間</span></a></li>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">Dining Room</span><span class="ch">餐廳空間</span></a></li>
+                        <li> <a class="hover-cir" href="./product_list.html" data-hover="yellowSmall"><span class="en">Dining Room</span><span class="ch">餐廳空間</span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <main class="common-padding">
+          <!-- 標題&敘述可改-->
+          <section class="top-title" data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+            <div class="unit-title"> 
+              <div class="left"><span class="en">Q&A</span><span class="ch">疑難排解</span></div>
+            </div>
+            <p class="fz-14">
+              我們整理了幾個常見的問題，希望能夠解決您的疑問，請透過下方的按鈕，快速找到欲詢問的類別！</p>
+          </section>
+          <!-- 錨點-->
+          <!-- 項目可新增-->
+          <section class="category" data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+            <div class="category-list">
+              <!-- data-anchor-target=".qa-{{ index }}"-->
+              <!-- 幫我帶index 從1開始-->
+              <ul>
+                <li><a href="javascript:;" data-anchor-target=".qa-1" data-anchor-speed="1200" data-anchor="data-anchor">PRODUCTS</a></li>
+                <li><a href="javascript:;" data-anchor-target=".qa-2" data-anchor-speed="1200" data-anchor="data-anchor">SHOPPING</a></li>
+                <li><a href="javascript:;" data-anchor-target=".qa-3" data-anchor-speed="1200" data-anchor="data-anchor">MEMBER</a></li>
+                <li><a href="javascript:;" data-anchor-target=".qa-4" data-anchor-speed="1200" data-anchor="data-anchor">OTHER</a></li>
+              </ul>
+            </div>
+            <div class="btn-wrap hover-cir" data-hover="border"><a class="unit-link dark link-open" href="javascript:;">
+                <div class="text"> 
+                  <p class="en fz-14">MORE</p>
+                  <p class="ch fz-14"> <span>所有訊息分類</span></p>
+                </div>
+                <div class="icon rotate"><i class="icon-trangle-down"></i></div></a></div>
+          </section>
+          <!-- QA內容-->
+          <section class="qa-1">
+            <div class="left" data-aost="data-aost" data-aost-class="show" data-aost-offset="90"><span class="en">Product</span><span class="ch">關於產品</span></div>
+            <div class="right">
+              <ul> 
+                <li data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+                  <div class="item-title hover-cir" data-hover="blue">
+                    <div class="num">01</div>
+                    <p>退換貨說明</p>
+                    <div class="open">
+                      <div class="cross-plus"></div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <p>※訂購前敬請詳閱退換貨說明，您送出訂單的同時將視同您已詳閱、同意以下規定。以下說明僅適用於網購門市，不適用於實體門市。</p>
+                    <p>1.當您收到商品，卻發現和訂單內容不符，或有瑕疵等情況時，敬請在商品到貨隔日起算2天內與客服人員聯繫，我們將協助您處理退換貨事宜。</p>
+                    <p>2.當物流團隊將商品送至您家中時，請馬上與物流士一同拆開包裝檢查，以保障您的購買權益。拆包裝後，若發現商品有瑕疵、損傷或錯誤，請於當下讓物流士收回，我們將指派客服人員與您聯繫。</p>
+                    <p>3.若您的商品為暫寄於管理室，也請務必於到貨日起算2日內拆包裝，若有瑕疵也請於到貨2日內向客服人員反應，以免影響您的權益。</p>
+                    <p>4.依據消費者保護法規定，顧客自收到商品第二天起計算（請留意為到達指定地址第二天起），有七天的猶豫期間，可與我們聯絡申請退換貨，但【七天猶豫期間非試用期或鑑賞期】，若退換商品的本體、隨附配件、隨附文件、贈品、內外包裝、吊牌及標籤等，有受損、髒污、缺件、變更之情形，可能會被認定為已逾越檢查商品之必要程度，而使您行使退換貨的權利受到影響，或需負擔商品所喪失價值之費用。</p>
+                    <p>5.退換貨時，請於有情門 Lab購物網站平台中申請退貨，並且透過指定通道提供欲退貨之完整商品、包裝之照片，後續將由客服人員向您回覆商品及包裝狀態，是否予以退換貨。</p>
+                    <p>6.退換貨時請務必提供完整的商品、訂單發票以及包裝，若包裝已丟棄，則需負擔商品售價15%的二次包裝費，將透過客服人員提供包裝費補購網址。在物流到府收回商品時須配合簽立折讓單、收貨單以及收回或更換發票，缺其一則不給予退貨。</p>
+                    <p>7.七天猶豫期過後，則不受理退換貨。</p>
+                    <p>8.退換貨不接受更換其他商品(商品編號不同即為不同商品)，請於退貨後另外訂購(運費及優惠計算方式以新訂單為準)。</p>
+                    <p>
+                      9.退換貨流程：<br>(1) 請至『會員中心→退貨申請』點選「退貨」服務選項，確認所要取消或辦理退貨的商品後，按下「退貨」鈕，送出「退貨」申請表，並透過Line@回饋商品照片，客服人員將為您辦理訂單退貨事宜。若有退貨問題，請透過粉絲專頁或Line@訊息，客服人員將為您服務。
+<br>(2) 商品運送到府上後，商品有誤或有瑕疵，請與物流士反映，物流士將立即收回，並將由客人人員協助換貨。
+                    </p>
+                    <p>
+                      10.退款方式<br>(1) 若為信用卡付款則以退刷方式退款，若為虛擬帳號付款方式，將會退款至您於退款通知信中所回覆的退款帳戶。因此請您留意個人基本資料以利退款與通知順利。
+<br>(2) 退款時間約為14-21個工作，9:00~18:00且未含假日(遇假日將順延)。
+<br>(3) 若遇特殊狀況無法依原付款方式退款，確認商品沒有問題後，將透過您所提供之退款帳號辦理退款。
+                    </p>
+                  </div>
+                </li>
+                <li data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+                  <div class="item-title hover-cir" data-hover="blue">
+                    <div class="num">02</div>
+                    <p>商品木紋與畫面為什麼會呈現不一致</p>
+                    <div class="open">
+                      <div class="cross-plus"></div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <div class="img"> <img src="../../../uploads/faq/img02-645X400.jpg" alt=""/></div>
+                  </div>
+                </li>
+                <li data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+                  <div class="item-title hover-cir" data-hover="blue">
+                    <div class="num">03</div>
+                    <p>我該如何保養傢俱？</p>
+                    <div class="open">
+                      <div class="cross-plus"></div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <div class="img"><img src="../../../uploads/faq/img02-645X400.jpg" alt=""/></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="qa-2">
+            <div class="left" data-aost="data-aost" data-aost-class="show" data-aost-offset="90"><span class="en">Shopping</span><span class="ch">關於購物</span></div>
+            <div class="right">
+              <ul> 
+                <li data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+                  <div class="item-title hover-cir" data-hover="blue">
+                    <div class="num">01</div>
+                    <p>購物流程說明</p>
+                    <div class="open">
+                      <div class="cross-plus"></div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <p>
+                      放置食物、飲料務必使用隔熱墊、桌巾或玻璃，以免溫度、水漬或油漬損傷商品表面。<br>請避免金屬(尖銳)製品，直接接觸商品表面，以免造成刮傷、損傷。</p>
+                    <div class="img"> <img src="../../../uploads/faq/img01-645X400.jpg" alt=""/></div>
+                  </div>
+                </li>
+                <li data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+                  <div class="item-title hover-cir" data-hover="blue">
+                    <div class="num">02</div>
+                    <p>付款方式說明</p>
+                    <div class="open">
+                      <div class="cross-plus"></div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <p>
+                      若您欲保養木質家具，可以先將上光蠟涂在一個乾凈的白色軟布上，純棉等天然纖維。使用實木保養油輕輕擦拭，只需少量實木保養油就可以使家具保持較長時間美觀。 
+                      順著木材紋理的方向將保養油擦到家具上，再用另一塊軟布擦掉家具表面多餘的實木保養油。
+                    </p>
+                  </div>
+                </li>
+                <li data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+                  <div class="item-title hover-cir" data-hover="blue">
+                    <div class="num">03</div>
+                    <p>如何取消訂單？</p>
+                    <div class="open">
+                      <div class="cross-plus"></div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <p></p>
+                    <div class="img"></div>
+                  </div>
+                </li>
+                <li data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+                  <div class="item-title hover-cir" data-hover="blue">
+                    <div class="num">04</div>
+                    <p>商品加入購物車後，為何無法結帳？</p>
+                    <div class="open">
+                      <div class="cross-plus"></div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <p></p>
+                    <div class="img"></div>
+                  </div>
+                </li>
+                <li data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+                  <div class="item-title hover-cir" data-hover="blue">
+                    <div class="num">05</div>
+                    <p>鑑賞期有多久？</p>
+                    <div class="open">
+                      <div class="cross-plus"></div>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <p></p>
+                    <div class="img"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <!--section.qa-3
+          .left(data-aost data-aost-class="show" data-aost-offset="90")
+            span.en Member
+            span.ch 關於會員
+          .right
+            ul 
+              li(data-aost data-aost-class="show" data-aost-offset="90")
+                .item-title.hover-cir(data-hover="blue")
+                  .num 01
+                  p 如何加入會員？
+                  .open
+                    .cross-plus
+                .item-content
+                  p 放置食物、飲料務必使用隔熱墊、桌巾或玻璃，以免溫度、水漬或油漬損傷商品表面。
+                    |<br>請避免金屬(尖銳)製品，直接接觸商品表面，以免造成刮傷、損傷。
+                  p 若您欲保養木質家具，可以先將上光蠟涂在一個乾凈的白色軟布上，純棉等天然纖維。
+                    |<br>使用實木保養油輕輕擦拭，只需少量實木保養油就可以使家具保持較長時間美觀。 
+                    |<br>順著木材紋理的方向將保養油擦到家具上，再用另一塊軟布擦掉家具表面多餘的實木保養油。
+              li(data-aost data-aost-class="show" data-aost-offset="90")
+                .item-title.hover-cir(data-hover="blue")
+                  .num 02
+                  p 忘記帳號密碼怎麼辦？
+                  .open
+                    .cross-plus
+                .item-content
+                  p
+                  .img
+              li(data-aost data-aost-class="show" data-aost-offset="90")
+                .item-title.hover-cir(data-hover="blue")
+                  .num 03
+                  p 我如何重新啟用自己的帳號？
+                  .open
+                    .cross-plus
+                .item-content
+                  .img
+                    img(src="../../../uploads/faq/img02-645X400.jpg", alt="")
+          
+          -->
+        </main>
+        <!-- 頁尾-->
+        <footer class="footer waypoint" data-aost="data-aost" data-aost-class="show" data-aost-offset="90">
+          <div class="go-top light" data-anchor-target="" data-anchor-speed="1800" data-anchor-callback="_home.anchorCallback" data-anchor="data-anchor">
+            <div><i class="icon-trangle-up"></i></div>
+          </div>
+          <div class="footer-left">
+            <ul class="footer-item"> 
+              <li> <a class="hover-cir" href="./about.html" data-hover="blueBig" aria-label="Story"><span class="en">Story</span><span class="ch">品牌故事</span></a></li>
+              <li> <a class="hover-cir" href="./member_center.html" data-hover="blueBig" aria-label="Member"><span class="en">Member</span><span class="ch">會員中心</span></a></li>
+              <li> <a class="hover-cir" href="./news.html" data-hover="blueBig" aria-label="News"><span class="en">News</span><span class="ch">發佈中心</span></a></li>
+              <li> <a class="hover-cir" href="./faq.html" data-hover="blueBig" aria-label="Q&amp;A"><span class="en">Q&amp;A</span><span class="ch">常見問題</span></a></li>
+              <li> <a class="hover-cir" href="./product.html" data-hover="blueBig" aria-label="Products"><span class="en">Products</span><span class="ch">商品專區</span></a></li>
+              <li> <a class="hover-cir" href="./contact.html" data-hover="blueBig" aria-label="Contact"><span class="en">Contact</span><span class="ch">聯絡我們</span></a></li>
+            </ul>
+            <ul class="footer-social">
+              <li><a class="hover-cir" href="javascript:;" data-hover="blueBig" target="_blank" aria-label="facebook" rel="noreferrer noopener"><span class="icon-facebook"></span></a></li>
+              <li><a class="hover-cir" href="javascript:;" data-hover="blueBig" target="_blank" aria-label="instagram" rel="noreferrer noopener"><span class="icon-instagram"></span></a></li>
+              <li><a class="hover-cir" href="javascript:;" data-hover="blueBig" target="_blank" aria-label="line" rel="noreferrer noopener"><span class="icon-line"></span></a></li>
+              <li><a class="hover-cir" href="javascript:;" data-hover="blueBig" target="_blank" aria-label="youtube" rel="noreferrer noopener"><span class="icon-youtube-dark"></span></a></li>
+              <li><a class="hover-cir" href="javascript:;" data-hover="blueBig" target="_blank" aria-label="pinkoi" rel="noreferrer noopener"><span class="icon-pinkoi"></span></a></li>
+              <li><a class="hover-cir" href="javascript:;" data-hover="blueBig" target="_blank" aria-label="momo" rel="noreferrer noopener"><span class="icon-momo"></span></a></li>
+            </ul>
+            <div class="footer-contact">
+              <div class="footer-mail"><span class="icon-mail"></span>
+                <p>service@twucm.com</p>
+              </div>
+              <div class="copyright"> 
+                <p>© 2020 Strauss lab all right reserved. Design by <a class="hover-cir" href="https://www.wddgroup.com/" data-hover="blueBig">WDD.</a><a class="privacy hover-cir" href="javascript:;" data-hover="blueBig" data-libox="privacy">PRIVACY POLIVY</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-right"><a class="logo hover-cir" href="./index.html" data-hover="blueBig" aria-label="home"> <img src="../../../assets/img/logo-w.png" alt=""/></a></div>
+        </footer>
+        <!-- 隱私權政策-->
+        <div class="common-lightbox privacy-lightbox">
+          <div class="modal-contain">
+            <div class="scrollbar-macosx" data-scroll-wrapper="data-scroll-wrapper">
+              <div class="modal-dialog normal"><a class="btn-cir mainGreen hover-cir" href="javascript:;" data-hover="blue">
+                  <div class="cross"></div></a>
+                <div class="modal-inner">
+                  <div class="sec-content white">
+                    <div class="scrollbar-inner mainGreen" data-modal-content="data-modal-content">
+                      <div class="sec-title mainGreen">
+                        <div class="en">Privacy Policy</div>
+                        <div class="ch">隱私權政策</div>
+                      </div>
+                      <div class="content-wrap">
+                        <p>歡迎光臨「有情門 Lab網路商城」（以下簡稱本網站），為了讓您能夠安心使用有情門 Lab網站提供的各項服務與資訊，特此向您說明本網站的隱私權保護政策，以保障您的權益，請您詳閱下列內容：</p>
+                        <ul>
+                          <li>
+                            <div class="title">一、隱私權保護政策的適用範圍</div>
+                            <p>
+                              隱私權保護政策內容，包括本網站如何處理在您使用網站服務時蒐集到的個人識別資料。<br>提醒您：隱私權保護政策，不適用於本網站以外的相關連結網站，也不適用於非本網站所委託或參與管理的人員。</p>
+                          </li>
+                          <li>
+                            <div class="title">二、個人資料的蒐集、處理及利用方式</div>
+                            <ul>
+                              <li>當您造訪有情門 Lab網路商城並使用本網站所提供之功能服務時，我們將視服務功能與性質，請您提供必要的個人資料，並在該特定目的範圍內，處理及利用您的個人資料。並確實遵守非經您書面同意，不會將個人資料用於其他用途。</li>
+                              <li>在您使用服務信箱、問卷調查等互動性功能時，會保留您所提供的姓名、電子郵件地址、聯絡方式及使用時間等。</li>
+                              <li>於一般瀏覽時，伺服器會自行記錄相關行徑，包括您使用連線設備的IP位址、使用時間、使用的瀏覽器、瀏覽及點選資料記錄等，做為我們強化網站服務的參考依據，此記錄僅供內部運用，不會對外公佈。</li>
+                              <li>為提供更精確的服務，我們會將收集的問卷調查內容，進行統計與分析。分析結果之統計數據或說明文字，除供內部研究外，我們將視需要，公佈統計數據及說明文字，但不會涉及個人基本或特定資料之揭露。如若您有下列需求：</li>
+                            </ul>
+                            <p>一、查詢或請求閱覽。</p>
+                            <p>二、請求製給複製本。</p>
+                            <p>三、請求補充或更正。</p>
+                            <p>四、請求停止蒐集、處理或利用。</p>
+                            <p>五、請求刪除。</p>
+                            <p>請來信 servicelab@twucm.com.tw</p>
+                          </li>
+                          <li>
+                            <div class="title">三、資料之保護</div>
+                            <ul>
+                              <li>有情門 Lab網路商城及您的個人資料，採用嚴格的保護措施。主機設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施。經過授權的人員，才有機會接觸您的個人資料，相關人員並簽署保密合約，如有違反保密義務者，將會受到相關的法律制約與處分。</li>
+                              <li>如因業務需求，有必要委託其他單位提供服務時，亦會嚴格要求其遵守保密義務，並且採取必要檢查程序以確定其將確實遵守。</li>
+                              <li>於會員基本資料管理部份，您可以透過此功能停用與開啟您的會員帳號。如果停用帳號，代表您無法享有會員權益及相關服務等，而除了有情門Lab網路商城會員管理中心外，他人將無法看見您於網站中的活動資訊，或搜尋您的個人檔案。在擁有登入帳號的使用之前提，您隨時可至會員基本資料管理重新啟用帳號。</li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="title">四、網站對外的相關連結</div>
+                            <p>有情門 Lab網路商城之網頁，將視業務需求提供其他網站的網路連結，您也可經由本網站所提供的連結，點選進入其他網站。特別提醒您：該連結網站並不保證適用本網站的隱私權保護政策，您必須參考該連結網站中的隱私權保護政策。</p>
+                          </li>
+                          <li>
+                            <div class="title">五、與第三人共用個人資料之政策</div>
+                            <p>有情門 Lab網路商城，不會主動提供、交換、出租、出借或出售..您的個人資料給其他個人、團體、私人企業或公務機關，但有法律依據或合約義務者，不在此限。</p>
+                            <p>前項但書之情形包括不限於：</p>
+                            <ul>
+                              <li>經由您書面同意。</li>
+                              <li>法律明文規定。</li>
+                              <li>為免除您生命、身體、自由或財產上之危險。</li>
+                              <li>與公務機關或學術研究機構合作，基於公共利益為統計或學術研究而有必要，且資料經過提供者處理或蒐集者依其揭露方式無從識別特定之當事人。</li>
+                              <li>當您在網站的行為，違反服務條款或可能損害或妨礙網站與其他使用者權益或導致任何人遭受損害時，經網站管理單位研析揭露您的個人資料是為了辨識、聯絡或採取法律行動所必要者。</li>
+                              <li>有利於您的權益。</li>
+                            </ul>
+                            <p>有情門 Lab網路商城委託廠商協助蒐集、處理或利用您的個人資料時，將對委外廠商或個人善盡監督管理之責。</p>
+                          </li>
+                          <li>
+                            <div class="title">六、Cookie之使用</div>
+                            <p>為了提供您最佳的服務，本網站會在您的電腦中放置並取用我們的Cookie，若您不願接受Cookie的寫入，您可在您使用的瀏覽器功能項中設定隱私權等級為高，即可拒絕Cookie的寫入，但可能會導至網站某些功能無法正常執行。</p>
+                          </li>
+                          <li>
+                            <div class="title">七、隱私權保護政策之修正</div>
+                            <p>有情門 Lab網路商城隱私權保護政策，將因應需求隨時進行修正，修正後的條款將刊登於網站上。</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div><a class="gotop-btn hover-cir" href="javascript:;" data-hover="borderGreen" data-anchor="data-anchor" data-anchor-container=".scrollbar-inner[data-modal-content]"><span>TOP</span><i class="arrow"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!--引入的script-->
+  <script>document.createElement( "picture" );</script>
+  <script src="../../../assets/js/plugins-dist.js"></script>
+  <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
+  <script src="../../../assets/js/fesdDB.1.0-dist.js"></script>
+  <script src="../../../assets/js/fesd.2.0.min.js"></script>
+  <script src="../../../assets/js/aost-dist.js"></script>
+  <script src="../../../assets/js/methods-dist.js"></script>
+  <script src="../../../assets/js/main-dist.js"></script><!-- microdata : professional service -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "ProfessionalService",
+      "name": "網站名子",
+      "email": "mailto:email",
+      "url": "本站網址",
+      "image": "favicon logo路徑",
+      "priceRange":"商品價格區間",
+      "telephone": "電話",
+      "logo": "logo路徑",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "地址",
+        "addressLocality": "區",
+        "addressRegion": "成市",
+        "postalCode": "郵遞區號",
+        "addressCountry": "中華民國 (台灣)"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.619435",
+        "longitude": "120.296034"
+      },
+      "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+      "openingHours": [
+        "Mo-Th 11:00-22:00",
+        "Fr 11:00-22:30",
+        "Sa 10:30-22:30",
+        "Su 10:30-22:00"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+886-00-12345678"
+      },
+      "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+    }
+    
+    
+  </script><!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://example.com/dresses",
+            "name": "Dresses"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "https://example.com/dresses/real",
+            "name": "Real Dresses"
+          }
+        }
+      ]
+    }
+  </script>
+</html>

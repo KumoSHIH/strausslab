@@ -1,0 +1,1616 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/components/_shoppingItem
+@import ../common/components/_libox_service
+
+.member_detail
+
+  main 
+    padding-top: 80px
+    padding-bottom: 65px
+    background-color: #ffe4ab
+    &.white
+      background-color: #fff
+    +rwdmax(767)
+      padding-top: 50px
+      padding-bottom: 60px
+  .top,.bottom
+    .cir-btn
+      margin: 0 auto
+  .range
+    max-width: 1130px
+    width: 100%
+    margin: 0 auto
+  .order-top
+    padding-top: 70px
+    position: relative
+    +rwdmax(1200)
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding-top: 40px
+    +rwdmax(767)
+      padding-top: 30px
+      width: 100%
+      .member-bgtext
+        .text
+          flex-shrink: 0
+          flex-wrap: nowrap
+  .order-detail,.order-info
+    display: none
+    &.active
+      display: block
+  .order-list
+    ul li
+      padding-top: 40px
+      padding-bottom: 40px
+    .detail
+      padding: 0
+      background-color: transparent
+      &.active
+        .btn-cir span 
+          transform: rotateX(180deg)
+      .price
+        padding: 15px 35px
+        background-color: #31333e
+      .btn-cir span 
+        transition: transform .5s ease-in-out
+      
+    .detail-text
+      .wrap>div>div:last-child
+        padding-bottom: 0
+        +rwdmax(1200)
+          padding-bottom: 20px
+    +rwdmax(1200)
+      order: 2
+      width: 70%
+      margin: 0 auto
+    +rwdmax(900)
+      width: 80%
+    +rwdmax(767)
+      ul li
+        padding-bottom: 25px
+      .detail
+        .price
+          padding: 15px 16px
+    +rwdmax(575)
+      width: 100%
+
+  // 切換明細 & 訂單資訊
+  .order-explore
+    display: flex
+    padding: 0 0 0 25px
+    letter-spacing: 0.46px
+    +fontSet2(px(14),$basicbold)
+    >span 
+      margin-right: 15px
+      padding: 30px 0
+    .btn-text
+      display: flex
+      align-items: center
+      >a 
+        padding: 30px 0
+      &.active
+        color: #434553
+    .btn-text:not(:first-child):not(:nth-child(2))
+      position: relative
+      margin-left: 15px
+      &::after
+        content: ''
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: 2px
+        height: 13px
+        background-color: #000
+      >a
+        padding-left: 15px
+    +rwdmax(1200)
+      order: 3
+    +rwdmax(767)
+      padding: 0
+      >span 
+        display: none
+      .btn-text
+        >a
+          padding: 20px 0
+
+  // 取消訂單
+  .order-cancle
+    position: absolute
+    bottom: 0
+    right: 0
+    .button-wrap
+      position: relative
+    .form-btn
+      padding-right: 0
+    .status-btn
+      display: none
+    +rwdmax(1200)
+      position: relative
+      padding-bottom: 60px
+      width: 100%
+      order: 1
+      .button-wrap
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+      .form-btn
+        display: inline-flex
+        padding-left: 0
+    +rwdmax(767)
+      .form-btn
+        padding-top: 0
+  // 購買明細
+  .order-detail
+    .extra-block>ul>li .item-box .txt-name
+      padding-bottom: 14px
+      +rwdmax(1100)
+        padding-bottom: 7px
+    .item-select .pick-wrap
+      padding-bottom: 27px
+    .item-body .extra-block .giveup
+      .price
+        &.d-md-none
+          +rwdmax(1100)
+            display: none !important
+
+  // 訂單資訊
+  .order-info
+    border-top: solid 4px
+    .item-body
+      padding: 50px 0
+      .img
+        width: 20%
+      .discount
+        flex-grow: 1
+        display: flex
+        flex-direction: column 
+        >div 
+          display: flex
+          align-items: center
+          margin-bottom: 4px
+          .badge
+            width: 185px
+            margin-right: 15px
+            padding: 10px 15px
+            background-color: #000
+            letter-spacing: 0.98px
+            color: $main
+            +fontSet2(px(14),$basicbold)
+          span 
+            font-size: px(18)
+            span 
+              font-weight: bold
+              font-size: px(14)
+              +mozhack
+                font-weight: normal
+        >div:last-child
+          margin-bottom: 0
+      
+    +rwdmax(1200)
+      .item-body
+        padding: 40px 15%
+        .img
+          text-align: center
+        .discount
+          margin: 0 auto
+          >div
+            flex-direction: column
+            .badge
+              margin-right: 0
+              text-align: center
+            span 
+              padding: 15px 0
+          >div:last-child
+            span 
+              padding-bottom: 0
+    +rwdmax(800)
+      .item-body
+        padding: 40px 10%
+    +rwdmax(767)
+      .item-body
+        padding: 40px 5%
+  .item-wrap
+    margin-left: 0
+  .item-body
+    // padding: 50px 0
+    // 新增已申請退貨
+    .item-box
+      h2,
+      .txt-name
+        span:first-child
+          display: none
+      &.return-tag
+        h2,
+        .txt-name
+          span:first-child
+            display: flex
+    .extra-block
+      .item-box
+        flex-direction: column
+        .txt-color
+          margin-left: 0
+          padding-left: 0
+          &::before
+            width: 0
+            height: 0
+          .img-cir:not(:first-child)
+            margin: 0 7px
+          p 
+            &.after
+              position: relative
+              padding-right: 15px
+              &::after
+                content: 'x'
+                position: absolute
+                right: 0
+                top: 50%
+                transform: translateY(-50%)
+                font-weight: bold
+                letter-spacing: 0.46px
+                +fontSet2(px(14),$basicbold)
+                +mozhack
+                  font-weight: normal
+        
+    .qty
+      +fontSet2(px(14),$basicbold)
+    &.code
+      align-items: flex-start
+      // >div 
+      //   border: solid 1px
+      .sub-tit
+        width: 100%
+        padding-top: 0
+        padding-bottom: 45px
+      .img 
+        font-weight: bold
+        text-align: center
+        letter-spacing: 0.8px
+        +mozhack
+          font-weight: normal
+      .item-select
+        width: calc(64.7% - 38px)
+        border-bottom: 0
+        >span 
+          line-height: 1.5
+          letter-spacing: 0.73px
+          font-size: px(14.5)
+        .mob-show
+          font-weight: bold
+          &.code
+            position: absolute
+            right: 0
+            top: 0
+          &.discount
+            width: 100%
+          +rwdmin(1201)
+            display: none
+      .qty.d-md-none
+        display: none
+      .price
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        span 
+          display: block
+        span:nth-child(1)
+          padding-top: 7px
+        span:nth-child(2)
+          padding-top: 30px
+      +rwdmax(1200)
+        .item-select
+          width: 100%
+    .extra-block:not(.floor)
+      +rwdmin(1200)
+        ul
+          li
+            padding-top: 15px
+            position: relative
+            &::after
+              content: ''
+              position: absolute
+              right: 0
+              bottom: 0
+              width: calc(83.7% - 40px)
+              height: 1px
+              background-color: rgba(0,0,0,0.3)
+          li:first-child
+            padding-top: 0
+          li:last-child
+            &::after
+              width: 0
+              height: 0
+    +rwdmax(1200)
+      .item-box
+        margin-right: 0
+      .extra-block
+        .thead
+          .qty
+            display: none
+          .price
+            display: block
+        >ul
+          >li
+            padding-left: 0
+            padding-right: 0
+            &:not(:first-child) 
+              padding: 15px 0
+          .item-box
+            width: 100%
+            margin-bottom: 10px
+          .qty
+            justify-content: flex-start
+            &::before
+              content: '件數'
+              margin-left: 0
+              padding-right: 5px
+          .qty,
+          .price
+            position: static
+            width: 50%
+          >li 
+            flex-wrap: wrap
+            justify-content: space-between
+        >ul 
+          >li:first-child
+            padding-top: 5px
+          >li:not(:first-child)
+            border-top: solid 1px rgba(0,0,0,0.2)
+        ul.giveup 
+          li 
+            padding-top: 0
+            padding-bottom: 0
+            align-items: center
+            background-color: #434553
+          .item
+            align-items: center
+            p
+              padding-top: 0
+          .qty
+            width: auto
+            justify-content: flex-end
+            &::before
+              content: ''
+              margin-left: auto
+            &::after
+              width: 0
+              height: 0
+          .item-box
+            width: 100%
+            margin-bottom: 10px
+          .qty
+            justify-content: flex-start
+            &::before
+              content: ''
+              padding-right: 5px
+              margin-left: 0
+      &.code
+        align-items: center
+        .discount
+          padding: 0
+        .img 
+          padding-bottom: 14px
+          width: 100%
+        .item-select
+          position: relative
+          .wrap
+            display: flex
+            flex-direction: column
+        .qty,.price
+          &.d-md-none
+            // display: none
+        .price
+          >span 
+            position: static
+            &:first-child
+              display: none
+            &:last-child
+              padding-top: 0
+              
+    +rwdmax(767)
+      .extra-block
+        >ul 
+          >li:not(:first-child)
+            border-top: 0
+  // .item-body:last-child
+  //   border-bottom: 0
+  .item-select 
+    padding: 0
+    .pick-wrap 
+      .pick-dropdown
+        display: block
+        margin-top: 0
+  // 組合退貨
+  .item-packpage
+    border-bottom: solid 4px
+    .item-body
+      .item
+        span:first-child
+          display: none
+        &.return-tag
+          span:first-child
+            display: flex
+  .item-form
+    width: 100%
+    padding-top: 0
+    .title
+      width: 20%
+      text-align: center
+      font-weight: bold
+      +mozhack
+        font-weight: normal
+    .desc
+      padding-top: 0
+      padding-right: 0
+      padding-left: 20px
+      >span 
+        padding-left: 20px
+        letter-spacing: 0.78px
+        font-size: px(16)
+      .wrap
+        padding-left: 20px
+        padding-right: 10px
+        display: flex
+        span 
+          font-size: px(14)
+        span:last-child
+          margin-left: auto
+      .form
+        span.desc 
+          padding-left: 20px
+          padding-top: 26px
+          padding-bottom: 26px
+          font-size: px(16)
+        &.mt-30
+          margin-top: 30px
+        &.mt-10
+          margin-top: 10px !important
+    .form
+      // 樓層費
+      &.floor
+        .form-row
+          margin-bottom: 22px
+        .form-grid
+          padding-right: 0
+        .form-group
+          padding-right: 15px
+          p.subject
+            letter-spacing: 0.7px
+            font-size: px(14)
+            &:after 
+              width: 0
+              height: 0
+          >span 
+            margin-left: auto
+        .block
+          width: 225px
+          padding: 20px 22px
+          background-color: rgba(255,255,255,.3)
+          letter-spacing: 0.7px
+          +fontSet2(px(14),$basic)
+        .item-body
+          border-bottom: 0
+          padding-bottom: 0
+          padding-top: 0
+          .item
+            margin-left: 20px
+          .extra-block
+            background-color: transparent
+            .thead
+              margin-bottom: 25px
+              justify-content: space-between
+              .item
+                padding-left: 0
+              >div 
+                // border: solid 1px #fff 
+              &::after
+                width: 100%
+            ul 
+              padding-bottom: 5px
+              li
+                .norm
+                  padding-left: 10px
+                  margin-left: 10px
+                  width: auto 
+                  position: relative
+                  &::before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: 1px
+                    height: 13px
+                    background-color: rgba(0,0,0,0.3)
+                >div 
+                  // border: solid 1px 
+          .item 
+            span
+              width: 24%
+          .item-box
+            flex-direction: column
+            .txt-name
+              padding-left: 0
+            .txt-color
+              margin-left: 0
+              padding-left: 0
+              &::before
+                width: 0
+                height: 0
+              .img-cir:not(:first-child)
+                margin: 0 7px
+            .norm
+              padding-left: 12px
+              margin-left: 12px
+              font-weight: normal
+              position: relative
+              &::after
+                content: ''
+                position: absolute
+                left: 0
+                top: 50%
+                transform: translateY(-50%)
+                width: 1px
+                height: 13px
+                background-color: rgba(0,0,0,0.3)
+          .qty
+            span
+              font-size: px(14)
+      // 進階資訊
+      &.adv-info
+        margin-top: 0
+    +rwdmax(1200)
+      flex-direction: column
+      align-items: center
+      .title
+        width: 100%
+      .desc
+        padding-left: 0
+        padding-top: 25px
+        text-align: center
+        >span 
+          padding-left: 0
+        .wrap
+          flex-direction: column
+          padding-left: 0
+          span:last-child
+            margin: 0
+            padding-top: 15px
+        .form
+          padding-right: 0
+          span.desc 
+            padding-left: 0
+            text-align: left
+      .form
+        &.floor
+          .form-row
+            margin-bottom: 12px
+          .item-body
+            padding: 0
+            .item
+              margin-left: 16px
+            .price
+              padding-right: 16px
+          .extra-block
+            margin-top: 10px
+            ul 
+              li 
+                .item 
+                  margin-bottom: 10px
+                .qty
+                  padding-left: 16px
+    +rwdmax(767)
+      .desc
+        .form
+          span.desc 
+            padding-left: 0
+            text-align: left
+      .form
+        &.floor
+          .form-grid
+            height: auto
+          .form-group
+            padding: 0 10px 0 0
+            flex-wrap: wrap
+            height: auto
+            >span 
+              width: 100%
+              text-align: left
+              margin-top: 5px
+          .block
+            width: 150px
+          .extra-block
+            .thead
+            ul 
+              li 
+                border-top: 0
+              
+  .form-row
+    &.stair
+      display: flex
+      align-items: center
+      .form-group
+        padding-right: 0
+      .other
+        padding-left: 11px
+        +fontSet2(px(14),$basicbold)
+      .block
+        margin-left: 12px
+        text-align: left
+        width: 220px
+        padding: 20px
+        background-color: #ffecc4
+      .block + span
+        margin-left: auto
+        letter-spacing: 0.46px
+    &.info
+      .other
+        margin-left: auto
+        font-family: $basicbold
+    &.note
+      padding: 25px 20px
+      display: flex
+      flex-direction: column
+      background-color: #ffecc4
+      p.subject
+        padding-bottom: 27px
+        font-size: px(14)
+        span:nth-child(2)
+          padding-left: 5px
+      .textarea
+        min-height: 160px
+        letter-spacing: 0.7px
+        font-size: px(14)
+    +rwdmax(1200)
+      &.stair
+        .block
+          width: 150px
+      &.note
+        align-items: flex-start
+        padding-left: 15px
+        padding-right: 15px
+    +rwdmax(800)
+      &.stair
+        .form-grid,
+        .form-group
+          height: auto 
+        .form-group
+          flex-wrap: wrap
+          padding-left: 0
+          p.subject 
+            padding-left: 15px
+          .other
+            width: 50%
+            text-align: left
+          .block 
+            margin-left: 0
+            padding: 20px 15px
+    +rwdmax(575)
+      &.password
+        .form-group
+          span.other 
+            width: 100%
+            text-align: left
+            padding-left: 0
+            padding-bottom: 20px
+    +rwdmax(500)
+      &.stair
+        .form-group
+          .other
+            width: auto
+        
+  .bottom
+    padding-top: 130px
+    +rwdmax(850)
+      padding-top: 80px
+  // 評價內頁
+  &[data-page="member_evaluation_detail"]
+    // 大標
+    .title
+      padding-top: 65px
+      display: flex
+      align-items: flex-end
+      justify-content: space-between
+      position: relative
+      +rwdmax(1200)
+        padding: 65px 60px 0
+      +rwdmax(900)
+        flex-direction: column
+        align-items: center
+        padding-top: 40px
+      +rwdmax(767)
+        padding: 18px 0px 0
+    .title-left
+      .bgtext
+        span 
+          color: rgba(0,0,0,0.1)
+          +fontSet2(px(131),$basic)
+      .text 
+        position: absolute
+        bottom: 12px
+        left: 8px
+        .en
+          +fontSet2(px(35),$basic)
+        .ch
+          font-weight: bold
+          letter-spacing: 0.95px
+          +fontSet2(px(20),$basic)
+          +mozhack
+            font-weight: normal
+      +rwdmax(1200)
+        .bgtext
+          span
+            font-size: px(110)
+        .text
+          left: 70px
+      +rwdmax(900)
+        position: relative
+        .text
+          width: 100%
+          text-align: center
+          left: 50%
+          transform: translateX(-50%)
+      +rwdmax(767)
+        width: 100%
+        .bgtext
+          text-align: center
+          span
+            font-size: px(80)
+        .text
+          position: static
+          transform: translateX(0)
+          margin-top: -38px
+          display: flex
+          flex-direction: column
+          .en
+            padding-bottom: 20px
+            font-size: px(35)
+    // 已評 & 待評筆數
+    .title-right
+      display: flex
+      >div
+        display: flex
+        flex-direction: column
+        align-items: center
+        .num
+          padding-bottom: 10px
+          letter-spacing: 1.65px
+          color: $main
+          +fontSet2(px(50),$basicbold)
+        .ch 
+          padding-bottom: 15px
+          letter-spacing: 0.46px
+          font-size: px(14)
+      >div:first-child
+        padding-right: 40px
+      >div:last-child
+        padding-left: 40px
+        position: relative
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          top: 50%
+          transform: translateY(-50%)
+          width: 1px
+          height: 40px
+          background-color: #000
+      +rwdmax(900)
+        order: 3
+      +rwdmax(767)
+        >div
+          .ch
+            padding-bottom: 0
+    // 訂單編號
+    .order-number
+      padding-top: 5px
+      padding-left: 10px
+      .ch 
+        letter-spacing: 0.46px
+        +fontSet2(px(14),$basicbold)
+      .en
+        padding-left: 10px
+        letter-spacing: 0.45px
+        font-size: px(14)
+      +rwdmax(1200)
+        padding: 0 70px
+      +rwdmax(900)
+        &.outside
+          display: none
+    .clone-order-number
+      display: none
+      +rwdmax(900)
+        display: block
+        order: 2
+        padding-bottom: 30px
+      +rwdmax(767)
+        .order-number
+          padding: 24px 0 0 0
+    .order-detail
+      display: block
+      padding-top: 25px
+      +rwdmax(767)
+        padding-top: 40px
+    .item-packpage
+      .top 
+        padding-bottom: 0
+        padding-top: 45px
+      .item-body
+        padding-top: 40px
+        padding-bottom: 10px
+        &::after
+          width: calc(82.7% - 24px)
+      +rwdmax(767)
+        .item-body
+          padding-top: 30px
+          &::after
+            width: calc(100% - 40px)
+    // 評分
+    .item-score
+      width: 100%
+      display: flex
+      padding-bottom: 15px
+      .score-wrap
+        width: 82.7%
+        margin-left: 30px
+        margin-top: 12px
+        display: flex
+        cursor: pointer
+        // 評價
+        &.normal
+          flex-direction: column
+          border-top: solid 3px #eee
+        // 評價成功送出
+        &.done
+          justify-content: space-between
+          align-items: center
+          background-image: url(../../../dist/uploads/member/eva-bg2.jpg)
+          background-repeat: no-repeat
+          background-position: 52% 35%
+          background-size: 200%
+          .left
+            padding-left: 16px
+            color: #fff
+            span 
+              letter-spacing: 0.7px
+              font-size: px(14)
+            .ch 
+              padding-left: 12px
+          +rwdmax(767)
+            align-items: flex-start
+            background-position: 32% 35%
+            background-size: 400%
+            .form-btn
+              margin-left: 0
+        // 評價已送出
+        &.sended
+          padding: 18px 16px
+          margin-bottom: 35px
+          justify-content: space-between
+          align-items: center
+          background-color: #434553
+          color: #fff
+          font-size: px(14)
+          .left
+            span 
+              letter-spacing: 0.7px
+            .ch 
+              padding-left: 10px
+          p 
+            letter-spacing: 0.46px
+          +rwdmax(767)
+            margin-top: 14px
+            margin-bottom: 20px
+            flex-direction: row
+        // 評價審核未通過
+        &.edit
+          // display: block
+          flex-direction: column
+          .left
+            margin-bottom: 28px
+            padding: 14px 16px
+            width: 100%
+            display: flex
+            align-items: center
+            background-color: #ea5c59
+            color: #fff
+            span
+              letter-spacing: 0.7px
+              font-size: px(14)
+            .ch 
+              padding-left: 10px
+            .btn 
+              width: 30px
+              height: 30px
+              border-radius: 50%
+              background-color: #000
+              margin-left: auto
+              div
+                width: 30px
+                height: 30px
+                position: relative
+                transition: transform .5s ease-in-out
+                &::after
+                  content: "?"
+                  color: #fff
+                  +posCenter
+              &:hover
+                div 
+                  transform: rotateY(360deg)
+          .score-cont
+            border-top: solid 3px #eee
+          +rwdmax(767)
+            .left
+              >div
+                margin-right: 28px
+                line-height: 1.5
+              .btn 
+                margin-right: 0
+            .score-cont
+              padding-top: 25px
+      .score-cont
+        padding: 25px 0
+        display: flex
+        justify-content: space-between
+        span 
+          padding-left: 5px
+          letter-spacing: 0.7px
+          +fontSet2(px(14),$basicbold)
+        ul 
+          display: flex
+        li
+          margin-right: 11px
+          path 
+            fill: none
+            stroke: #666
+          &.active,
+          &.scored
+            path 
+              fill: #dd4425
+              stroke: none
+      .textarea
+        textarea
+          height: 225px
+          background-color: #eee
+          padding: 30px 25px
+      .form-btn
+        display: inline-flex
+        margin-left: auto
+    +rwdmax(1200)
+      .item-score
+        .img 
+          display: none
+        .score-wrap
+          width: 100%
+          margin: 0
+    +rwdmax(900)
+      .item-score
+        .score-cont
+          align-items: center
+        .score-wrap.done
+          .form-btn
+            padding-right: 20px
+        .form-btn
+          padding-right: 0
+    +rwdmax(767)
+      .item-score
+        padding-bottom: 0
+        .score-wrap
+          padding-top: 17px
+          flex-direction: column
+          align-items: flex-start
+        .score-cont,
+        .textarea
+          width: 100%
+        .textarea
+          margin-bottom: 10px
+        .score-cont
+          padding-top: 8px
+        .form-btn
+          padding-left: 16px
+
+
+// 審核未通過燈箱
+.libox-inner[data-name="failed"]
+  .cir-wrap
+    justify-content: flex-start
+    .cir-btn
+      margin-top: 40px
+      flex-shrink: 0
+  .cir-bg
+    padding-top: 100px
+    height: 100%
+    .scrollbar-inner
+      // max-height: 350px !important
+      >.scroll-element.scroll-y
+        width: 4px
+        border-radius: 0px
+        .scroll-element_outer
+          border-radius: 0px
+        .scroll-element_track
+          width: 1px
+          left: 1px
+        .scroll-bar
+          width: 3px
+          background-color: $main
+          opacity: 1
+          border-radius: 0px
+    h5,h6
+      text-align: center
+      color: $main
+    h5 
+      font-size: px(49)
+    h6
+      padding-top: 15px
+      font-size: px(24)
+    p 
+      max-width: 490px
+      width: 100%
+      margin: 0 auto
+      line-height: 1.5
+      letter-spacing: 0.46px
+      font-size: px(14)
+    .btn-close
+      margin-top: 140px 
+      margin-bottom: 110px
+      display: flex
+      align-items: center
+      p, 
+      span 
+        color: $main
+      p 
+        letter-spacing: 0.53px
+        +fontSet2(px(16),$basicbold)
+      span 
+        padding-left: 10px
+  +rwdmax(1100)
+    .cir-bg
+      padding-top: 50px
+  +rwdmax(767)
+    .cir-wrap
+      .cir-btn
+        margin-top: 0
+    .cir-bg
+      p 
+        max-width: none
+        padding: 0 10px 0 5px
+      .btn-close
+        margin-top: 0
+        margin-bottom: 85px
+        bottom: 0px
+        left: 50%
+        transform: translateX(-50%)
+  +rwdmax(450)
+    .cir-bg
+      .scrollbar-inner
+        max-height: 280px !important
+
+// 退換貨
+.libox-inner[data-name="return"]
+  &.show
+    .libox-common
+      transform: translateY(0%)
+  .libox-common
+    overflow-y: scroll
+    display: block
+    transform: translateY(-100%)
+    transition: transform .7s ease-in-out
+    &::-webkit-scrollbar-track
+      border-radius: 10px
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+    &::-webkit-scrollbar
+      // display: none
+      width: 6px
+      +rwdmax(767)
+        display: none
+    &::-webkit-scrollbar-thumb
+      border-radius: 10px
+      background-color: rgba(108, 110, 113, 1)
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  // 共同
+  .chk-btn
+    margin: 0
+    display: block
+    background-color: #434553
+    span 
+      color: #202020
+    &.large
+      margin-left: 23px
+    &.small 
+      width: 25px
+      height: 25px
+      span
+        font-size: px(32)
+    &:hover
+      background-color: #434553
+    +rwdmax(767)
+      &.large
+        margin-left: 10px
+  .img-cir
+    width: 20px
+    height: 20px
+    border-radius: 100%
+    border: solid 2px #fff 
+    overflow: hidden
+  // 退貨內容
+  .content
+    max-width: 800px
+    width: 100%
+    padding: 80px 50px 60px
+    margin: 10% auto 70px
+    // margin-top: 0
+    position: relative
+    background-color: #202020
+    .cir-btn.ajax_close
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      top: -25px
+    +rwdmax(767)
+      padding-left: 10px
+      padding-right: 10px
+
+    // 上半部標題
+    &-top
+      padding-bottom: 40px
+      border-bottom: solid 6px $main
+      .title
+        p 
+          font-weight: bold
+          text-align: center
+          color: $main
+          +mozhack 
+            font-weight: normal
+        .en
+          padding-bottom: 15px
+          line-height: px(40)
+          +fontSet2(px(35),$basicR)
+        .ch
+          letter-spacing: 1.43px
+          +fontSet2(px(19),$basic)
+      .item-number
+        padding: 25px 0
+        text-align: center
+        span
+          &:first-child
+            padding-right: 10px
+            color: #b2b2b6
+            letter-spacing: 0.46px
+            +fontSet2(px(14),$basicbold)
+          &:last-child
+            color: #fff
+            letter-spacing: 0.7px
+            +fontSet2(px(13.5),$basic)
+      p 
+        text-align: center
+        color: #fff
+        letter-spacing: 1.05px
+        line-height: px(25)
+        +fontSet2(px(14),$basic)
+      +rwdmax(767)
+        .title
+          .en 
+            padding-bottom: 20px
+        .item-number
+          padding: 20px 0
+        p 
+          padding: 0 10px
+    // 內容
+    &-text
+      .item-select
+        border: 0
+      .pick-wrap
+        padding-left: 50px
+        padding-right: 50px
+        transition: .5s ease-in-out
+        .desc
+          padding-left: 25px
+          width: auto
+          p
+            color: #fff
+            letter-spacing: 0.8px
+            font-size: px(16)
+        section 
+          width: 100%
+          margin-top: 28px
+          display: none
+          .notice
+            padding: 20px 0
+            text-align: center
+            background-color: rgba(255,255,255,.2)
+            span
+              letter-spacing: 0.8px
+              color: #fff
+              font-family: $basicbold
+            p 
+              padding-top: 13px
+              letter-spacing: 0.7px
+              line-height: 1.2
+              font-size: px(14)
+              color: $main
+            &.left-transparent
+              text-align: left
+              background-color: transparent
+              span.fz-16
+                font-family: $basicR
+          .return-box
+            padding: 0 23px
+            border-bottom: solid 2px #fff
+            .return-item
+              padding: 20px 0
+              display: flex
+              justify-content: space-between
+              align-items: center
+              .left
+                display: flex
+                flex-direction: column
+                p 
+                  margin-bottom: 16px
+                  color: #fff
+                  letter-spacing: 0.8px
+                  font-size: px(16)
+                .normal
+                  padding-left: 16px
+                  line-height: 1.2
+                  span
+                    color:  rgba(255,255,255,.3)
+                    &:first-child
+                      font-family: $basicbold
+                    &:last-child
+                      letter-spacing: 0.7px
+                      font-size: px(15)
+                      font-family: $basicR
+                .color-wrap
+                  padding-left: 16px
+                  display: flex
+                  .color
+                    display: flex
+                    align-items: center
+                    span.strong
+                      color: rgba(255,255,255,.3)
+                      letter-spacing: 0.46px
+                      +fontSet2(px(14),$basicbold)
+                    >div 
+                      display: flex
+                      align-items: center
+                      .img-cir
+                        margin-right: 13px
+                      span 
+                        color:  rgba(255,255,255,.3)
+                  .color:nth-child(2)
+                    padding-left: 35px
+                >div 
+                  margin-bottom: 12px
+                >div:last-child
+                  margin-bottom: 0
+            // 贈品
+            .return-extra
+              padding-top: 20px
+              >span
+                display: block
+                padding-left: 16px
+                letter-spacing: 0.46px
+                color: $main
+                +fontSet2(px(14),$basicbold)
+              ul
+                li
+                  padding: 20px 0 20px 16px
+                  display: flex
+                  justify-content: space-between
+                  align-items: center
+                  color: #fff
+                  border-bottom: solid 1px rgba(255,255,255,.2)
+                  .left
+                    flex: 1
+                  .txt-name
+                    margin-bottom: 12px
+                    letter-spacing: 0.7px
+                    font-size: px(14)
+                    .norm
+                      padding-left: 10px
+                      margin-left: 5px
+                      position: relative
+                      &::before
+                        content: ''
+                        position: absolute
+                        width: 1px
+                        height: 13px
+                        left: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                        background-color: rgba(255,255,255,.2)
+                  .txt-color
+                    display: flex
+                    align-items: center
+                    p 
+                      color:  rgba(255,255,255,.3)
+                      letter-spacing: 0.46px
+                      +fontSet2(px(14),$basicbold)
+                      &.after
+                        position: relative
+                        padding-right: 15px
+                        &::after
+                          content: 'x'
+                          position: absolute
+                          right: 0
+                          top: 50%
+                          transform: translateY(-50%)
+                          font-weight: bold
+                          letter-spacing: 0.46px
+                          +fontSet2(px(14),$basicbold)
+                          +mozhack
+                            font-weight: normal
+
+                  .img-cir 
+                    margin: 0 7px
+                    flex-shrink: 0
+                  .img-cir:first-child
+                    margin-left: 0
+            .return-extra:nth-child(2)
+              border-top: solid 1px #454545
+            .return-extra:nth-child(3)
+              padding-bottom: 20px
+              li:last-child
+                border-bottom: 0
+            // 商品組合
+            &[data-mode="group"]
+              .group-title
+                display: flex
+                align-items: center
+                justify-content: space-between
+                .notice
+                  padding-top: 27px
+                  padding-bottom: 3px
+              .return-item
+                border-bottom: solid 1px rgba(255,255,255,.2)
+            // 優惠項目
+            &[data-mode="discount"]
+              padding: 40px 0 0
+              .return-extra
+                padding: 0 23px
+                >span 
+                  padding-top: 26px
+              .return-extra:last-child
+                li:last-child
+                  border-bottom: 0
+          .return-box:last-child
+            border-bottom: 0
+
+          // item hover & active
+          [data-pick="item"]
+            &.desktop
+              &:hover
+                .chk-btn
+                  background-color: $main
+            &.active
+              .chk-btn
+                background-color: $main
+        &.active
+          box-shadow: 7.4px 9.5px 25.8px 3.2px rgba(0, 0, 0, 0.31)
+          >.chk-btn
+            background-color: $main
+        &:hover
+          >.chk-btn
+            background-color: $main
+      +rwdmax(900)
+        .pick-wrap
+          flex-wrap: wrap
+      +rwdmax(767)
+        margin-top: 15px
+        .pick-wrap
+          padding-left: 0px
+          padding-right: 0px
+          .desc
+            padding-bottom: 0
+          section
+            .notice
+              padding: 20px 10px
+              p
+                line-height: px(26)
+            .return-box
+              padding: 0
+              .return-item
+                padding: 20px 10px
+                .left 
+                  p 
+                    margin-bottom: 14px
+                  .color-wrap
+                    flex-direction: column
+                    .color:nth-child(2)
+                      padding-left: 0
+                      margin-top: 12px
+              .return-extra
+                >span 
+                  padding-left: 26px
+                ul
+                  li
+                    padding-right: 10px
+                    padding-left: 26px
+              &[data-mode="group"]
+                .group-title
+                  position: relative
+                  .notice
+                    padding: 20px 10px 0
+                    width: calc(100% - 50px)
+                    p 
+                      padding-top: 10px
+                  .txt-wrap
+                    line-height: 1.5
+                  .chk-btn
+                    position: absolute
+                    right: 10px
+                    top: 20px
+              &[data-mode="discount"]
+                .return-extra
+                  padding: 0
+                  >span
+                    padding-top: 20px
+                    padding-left: 12px
+                  ul 
+                    li
+                      padding-left: 12px
+              
+        [data-pick="main"]
+
+      .pick-wrap:not(:first-child)
+        &::after
+          width: 0
+          height: 0
+        section
+          >div:last-child
+            padding-bottom: 45px
+            .return-box
+              >div:last-child
+                border-bottom: 0
+
+  // 確定送出按鈕
+  .btn-wrap
+    padding-top: 45px
+    +flexCenter
+    .btn-cir
+      position: relative
+      display: flex
+      flex-direction: column 
+      align-items: center
+      justify-content: center
+      color: #fff
+      .icon-check
+        position: absolute
+        top: 40%
+        left: 50%
+        transform: translate(-50%,-40%)
+        font-size: px(66)
+      span:last-child
+        padding-top: 40px
+        display: block
+        letter-spacing: 0.46px
+        +fontSet2(px(14),$basic)
+    .btn-cir
+      +buttonCircle(115px,$main)
+    &[data-aost]
+      +opacity
+    &.show
+      +opacity1   
+  // go top
+  .goTop   
+    margin: 60px auto 0
+
+.libox-inner[data-name="returnSuccess"]
+  display: block
+  .cir-wrap
+    width: 817px
+    height: 817px
+    +rwdmax(1400)
+      width: 750px
+      height: 750px
+      padding: 50px 0
+      .cir-btn
+        margin-top: 0
+      .btn-close
+        margin-bottom: 10px
+      .stoke-wrap
+        max-width: 500px
+        .scrollbar-inner
+          max-height: 250px !important
+      .form-btn.goTop
+        margin-bottom: 5%
+    +rwdmax(1350)
+      width: 650px
+      height: 650px
+      .cir-bg
+        h5 
+          padding-top: 40px
+      .stoke-wrap
+        max-width: 450px
+        .scrollbar-inner
+          max-height: 200px !important
+    +rwdmax(700)
+      padding: 50px 120px
+      .stoke-wrap
+        margin-top: 35px
+      .cir-bg
+        position: initial
+        h5 
+          padding-top: 28px
+      .btn-close
+        position: absolute
+        bottom: 55px
+        margin-bottom: 0
+    +rwdmax(550)
+      width: 620px
+      height: 620px
+    +rwdmax(450)
+      padding: 55px 135px
+    
+  .cir-bg
+    h5,
+    h6 
+      text-align: center
+    .stoke-wrap
+      margin-top: 5px
+      p 
+        max-width: 450px
+        width: 100%
+        margin: 0 auto
+        padding-bottom: 55px
+        text-align: center
+      .qr-code
+        max-width: 135px
+        width: 100%
+        margin: 0 auto 20px
+      span.fz-16
+        display: block
+        text-align: center
+        color: $main
+      .btn-txt.ajax_close
+        width: 100%
+        margin-top: 50px
+        display: inline-flex 
+        justify-content: center
+        color: #fff
+        letter-spacing: 1.05px
+        +fontSet2(px(14),$basicbold)
+        span
+          position: relative
+          padding-bottom: 8px
+          &::after
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 0
+            height: 2px
+            background-color: #fff
+            transition: width .5s linear
+          &:hover
+            &::after
+              width: 100%
+
+      a 
+        display: inline-block
+        margin-top: 20px
+        padding-bottom: 15px
+        position: relative
+        left: 50%
+        transform: translateX(-50%)
+        color: #fff
+        letter-spacing: 0.8px
+        font-size: px(16)
+        font-family: $basic
+        transition: .5s ease-in-out
+        &::after
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 5px
+          background-color: rgba(255,255,255,.2)
+          transition: .5s ease-in-out
+        &:hover 
+          opacity: .9
+          &::after
+            background-color: rgba(255,255,255,.8)

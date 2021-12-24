@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <!-- head標籤 & 網站設定-->
+  <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <!--共用設定-->
+    <!-- 網站語系及語言宣告-->
+    <meta http-equiv="content-language" content="zh-TW"/>
+    <meta charset="UTF-8"/>
+    <!-- RWD設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 瀏覽器設定-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- 網站關鍵字-->
+    <meta name="keywords" content="網站關鍵字"/>
+    <!-- 網頁內容描述-->
+    <meta name="description" content="網頁內容描述，中文 80 個字元、英文 160 個字元"/>
+    <!-- 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="robots" content="noindex"/>
+    <!-- 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="googlebot" content="noindex"/>
+    <!-- Open Graph Protocol for facebook-->
+    <meta property="og:title" content="網頁Title"/>
+    <meta property="og:description" content="網頁內容描述"/>
+    <meta property="og:url" content="主要網址"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="網頁內容描述"/>
+    <!-- Open Graph Protocol for google plus-->
+    <meta itemprop="name" content="網站名稱或標題"/>
+    <meta itemprop="image" content="分享的影像位址"/>
+    <meta itemprop="description" content="網頁描述"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="分享的影像位址"/>
+    <meta name="twitter:site" content="網站名稱"/>
+    <meta name="twitter:title" content="網頁標題"/>
+    <meta name="twitter:description" content="網頁描述 200 個字元以內"/>
+    <meta name="twitter:creator" content="客戶公司或品牌名稱"/>
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content=" http://www.example.com/image.html"/>
+    <title>有情門 Strausslab</title>
+    <!-- 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中-->
+    <link rel="canonical" href="主要網址" itemprop="url"/>
+    <link rel="shortcut icon" href="../../../assets/img/logo-w.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
+    <!-- Google Tag Manager-->
+    <!-- 以下script 後端自行打開-->
+    <!-- script.-->
+    <!--   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+    <!--   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+    <!--   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+    <!--   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+    <!--   })(window,document,'script','dataLayer','GTM編號');-->
+    <!--獨立CSS-->
+    <link rel="stylesheet" href="../../../assets/css/shopping.css"/>
+  </head>
+  <body class="shopping" data-page="shopping">
+    <div class="pub">
+      <div class="center">
+        <div class="pub-wrap"> 
+          <!-- 開啟生日會員gif-->
+          <!-- _gif.init();-->
+          <!-- 關閉廣告-->
+          <!-- _ad.closeEvent();-->
+          <div class="cir-btn black close-menu hover-cir" data-hover="yellowSmall" onclick="_ad.closeEvent()">
+            <div class="cross"></div>
+          </div>
+          <div class="pub-swiper">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:;">
+                    <div class="img"> <img src="../../../assets/img/1200X720.jpg" alt=""/></div></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mouse-container">
+      <div id="mouse"> 
+        <div class="circle"></div>
+        <div class="mark"><img src="../../../assets/img/cursor.png" alt=""/></div>
+      </div>
+    </div>
+    <div class="main-wrapper">
+      <div class="all-wrapper">
+        <main>
+          <div class="bgtext fix"><span>Shopping List</span></div>
+          <div class="top hover-cir" data-hover="blue"><a class="cir-btn mainGreen" href="javascript:;" onclick="history.go(-1)">
+              <div class="cross"></div></a></div>
+          <div class="content">
+            <div class="text"> <span class="en">Today’s list</span><span class="ch">本次購買清單</span></div>
+            <div class="item-wrap">
+              <!-- 項目敘述-->
+              <div class="item-head">
+                <div class="img">購買項目</div>
+                <div class="item"></div>
+                <div class="qty">數量</div>
+                <div class="price">價格</div>
+              </div>
+              <!-- 一項-->
+              <div class="item-body">
+                <!-- 刪除按鈕-->
+                <div class="btn-cir del">
+                  <div class="cross"></div>
+                </div>
+                <!-- 大圖 380X250 <div class="img"> + large-->
+                <!-- 小圖 190X250 <div class="img"> + small-->
+                <div class="img large"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border"> 
+                    <figure><img src="../../../uploads/product/detail-obj05-380X250.png" alt=""/></figure></a></div>
+                <!-- 項目明細-->
+                <!-- 標準品-->
+                <!-- 庫存不足提示 item-box + alert-->
+                <div class="item-box alert"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border"> 
+                    <h2>乘風沙發 雙人座</h2>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">SPEC：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">綠紫色 + 自然木色</span>
+                        </div>
+                      </div>
+                    </div></a></div>
+                <!-- 數量-->
+                <div class="qty">
+                  <div class="btn-cir btn-less"></div>
+                  <input type="text" value="0" inputmode="numeric"/>
+                  <div class="btn-cir btn-plus"></div>
+                </div>
+                <!-- 價格-->
+                <div class="price"><span class="fz-14">VIP 售價</span>
+                  <div class="money"><span>$40,800</span></div>
+                  <div class="origin"><span>原價</span><span>$50,800</span></div>
+                </div>
+                <!-- 加購商品-->
+                <div class="extra-block">
+                  <div class="extra-name">
+                    <div class="img"></div><span>ADDITIONAL 加價購</span>
+                  </div>
+                  <!-- 標準品-->
+                  <div class="thead">
+                    <div class="img"></div>
+                    <div class="item">項目</div>
+                    <div class="qty">數量</div>
+                    <div class="price">價格</div>
+                  </div>
+                  <!-- 標準品-->
+                  <ul>
+                    <li>
+                      <div class="img"></div>
+                      <div class="item-box">
+                        <div class="txt-name">雲起時沙發 腳几</div>
+                        <div class="txt-color">
+                          <div class="img-cir"><img src="../../../uploads/product/color10-20X20.jpg" alt=""/></div>
+                          <p>綠色 x 自然木色</p>
+                        </div>
+                      </div>
+                      <div class="qty">
+                        <div class="btn-cir btn-less"></div>
+                        <input type="text" value="0" inputmode="numeric"/>
+                        <div class="btn-cir btn-plus"></div>
+                      </div>
+                      <div class="price type">+ $ 1,999</div>
+                    </li>
+                  </ul>
+                  <!-- 客製品-->
+                  <div class="thead">
+                    <div class="img"></div>
+                    <div class="item">客製化項目</div>
+                    <div class="qty">數量</div>
+                    <div class="price">款式</div>
+                  </div>
+                  <!-- 客製品 ul + cus-give-->
+                  <ul class="cus-give">
+                    <!-- 有展開選項的要 + spread-->
+                    <li class="spread">
+                      <div class="img"></div>
+                      <div class="item-box alert">
+                        <div class="txt-name">雲起時沙發 客製品</div>
+                        <div class="txt-color">
+                          <p>雙人座</p>
+                        </div>
+                      </div>
+                      <!-- qty - 單獨裡面一個數字的 + qty-font-->
+                      <div class="qty qty-font"><span class="fz-20">0</span></div>
+                      <div class="price type">
+                        <p class="hover-cir" data-hover="yellowSmall">選擇款式</p>
+                        <div class="btn-cir open hover-cir" data-hover="yellowSmall">
+                          <div class="icon-trangle-down"></div>
+                        </div>
+                      </div>
+                      <div class="dropdown-item"> 
+                        <div class="scrollbar-inner">
+                          <div class="mob-show">
+                            <p>SELECT 挑選款式</p>
+                            <div class="btn-cir open">
+                              <div class="icon-trangle-down"></div>
+                            </div>
+                          </div>
+                          <ul> 
+                            <li>
+                              <div class="img"></div>
+                              <div class="item opt">
+                                <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                <p class="after">布色：綠紫色</p>
+                                <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div>
+                                <p class="after">布色：紅色</p>
+                                <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                                <p>木色：原木色</p>
+                              </div>
+                              <div class="qty">
+                                <div class="btn-cir btn-less"></div>
+                                <input type="text" value="0" inputmode="numeric"/>
+                                <div class="btn-cir btn-plus"></div>
+                              </div>
+                              <div class="price type"><span>原價 NTD$ 1,999</span></div>
+                              <div class="mob-space"></div>
+                            </li>
+                            <li>
+                              <div class="img"></div>
+                              <div class="item opt">
+                                <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                <p class="after">布色：綠紫色</p>
+                                <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div>
+                                <p class="after">布色：紅色</p>
+                                <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                                <p>木色：原木色</p>
+                              </div>
+                              <div class="qty">
+                                <div class="btn-cir btn-less"></div>
+                                <input type="text" value="0" inputmode="numeric"/>
+                                <div class="btn-cir btn-plus"></div>
+                              </div>
+                              <div class="price type"><span>原價 NTD$ 1,999</span></div>
+                              <div class="mob-space"></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- 行動裝置 確定按鈕-->
+                        <div class="mob-check">
+                          <div> <span class="fz-14">確定挑選</span>
+                            <div class="cir-btn mainGreen">
+                              <div class="icon-check"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!-- 贈品-->
+                <div class="extra-block">
+                  <div class="extra-name"> 
+                    <div class="img"> </div><span>GIVEAWAY 贈品</span>
+                  </div>
+                  <!-- 標準品-->
+                  <div class="thead">
+                    <div class="img"></div>
+                    <div class="item">項目</div>
+                    <div class="qty">數量</div>
+                    <div class="price">價格</div>
+                  </div>
+                  <!-- 標準品-->
+                  <ul>
+                    <li>
+                      <div class="img"></div>
+                      <div class="item-box">
+                        <div class="txt-name">明月香氛盤</div>
+                        <div class="txt-color">
+                          <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                          <p>自然木色</p>
+                        </div>
+                      </div>
+                      <div class="qty">
+                        <div class="btn-cir btn-less"></div>
+                        <input type="text" value="0" inputmode="numeric"/>
+                        <div class="btn-cir btn-plus"></div>
+                      </div>
+                      <div class="price type">原價 $ 200</div>
+                    </li>
+                  </ul>
+                  <!-- 客製品-->
+                  <div class="thead">
+                    <div class="img"></div>
+                    <div class="item">客製化項目</div>
+                    <div class="qty qty-2">
+                      <div class="qty-text">可選數量</div>
+                      <div class="qty-line white"></div>
+                      <div class="qty-num">已選數量</div>
+                    </div>
+                    <div class="price">款式</div>
+                  </div>
+                  <!-- 客製品 + cus-give-->
+                  <ul class="cus-give">
+                    <!-- 有展開選項的要 + spread-->
+                    <li class="spread">
+                      <div class="img"></div>
+                      <div class="item-box">
+                        <div class="txt-name">雙色抱枕 客製品</div>
+                        <div class="txt-color">
+                          <p>F</p>
+                        </div>
+                      </div>
+                      <div class="qty qty-2">
+                        <div class="qty-text">1</div>
+                        <div class="qty-line"></div>
+                        <!-- 已選狀態 + active-->
+                        <div class="qty-num active">1</div>
+                      </div>
+                      <div class="price type">
+                        <p class="hover-cir" data-hover="yellowSmall">選擇款式</p>
+                        <div class="btn-cir open hover-cir" data-hover="yellowSmall">
+                          <div class="icon-trangle-down"></div>
+                        </div>
+                      </div>
+                      <div class="dropdown-item"> 
+                        <div class="scrollbar-inner">
+                          <div class="mob-show">
+                            <p>SELECT 挑選款式</p>
+                            <div class="btn-cir open">
+                              <div class="icon-trangle-down"></div>
+                            </div>
+                          </div>
+                          <ul> 
+                            <li>
+                              <div class="img"></div>
+                              <div class="item opt">
+                                <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                <p class="after">布色：綠紫色綠紫色綠紫色</p>
+                                <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div>
+                                <p class="after">布色：紅色綠紫色綠紫色</p>
+                                <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                                <p>木色：原木色</p>
+                              </div>
+                              <div class="qty">
+                                <div class="btn-cir btn-less"></div>
+                                <input type="text" value="0" inputmode="numeric"/>
+                                <div class="btn-cir btn-plus"></div>
+                              </div>
+                              <div class="price type"><span>原價 NTD$ 1,999</span></div>
+                              <div class="mob-space"></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- 行動裝置 確定按鈕-->
+                        <div class="mob-check">
+                          <div> <span class="fz-14">確定挑選</span>
+                            <div class="cir-btn mainGreen">
+                              <div class="icon-check"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- 有展開選項的要 + spread-->
+                    <li class="spread">
+                      <div class="img"></div>
+                      <div class="item-box">
+                        <div class="txt-name">明月香氛盤 客製品</div>
+                        <div class="txt-color">
+                          <p>S</p>
+                        </div>
+                      </div>
+                      <div class="qty qty-2">
+                        <div class="qty-text">2</div>
+                        <div class="qty-line"></div>
+                        <!-- 已選狀態 + active-->
+                        <div class="qty-num">0</div>
+                      </div>
+                      <div class="price type">
+                        <p class="hover-cir" data-hover="yellowSmall">選擇款式</p>
+                        <div class="btn-cir open hover-cir" data-hover="yellowSmall">
+                          <div class="icon-trangle-down"></div>
+                        </div>
+                      </div>
+                      <div class="dropdown-item"> 
+                        <div class="scrollbar-inner">
+                          <div class="mob-show">
+                            <p>SELECT 挑選款式</p>
+                            <div class="btn-cir open">
+                              <div class="icon-trangle-down"></div>
+                            </div>
+                          </div>
+                          <ul> 
+                            <li>
+                              <div class="img"></div>
+                              <div class="item opt">
+                                <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                <p>布色：綠紫色 x </p>
+                                <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div>
+                                <p>布色：紅色 x</p>
+                                <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                                <p>木色：原木色</p>
+                              </div>
+                              <div class="qty">
+                                <div class="btn-cir btn-less"></div>
+                                <input type="text" value="0" inputmode="numeric"/>
+                                <div class="btn-cir btn-plus"></div>
+                              </div>
+                              <div class="price type"><span>原價 NTD$ 1,999</span></div>
+                              <div class="mob-space"></div>
+                            </li>
+                            <li>
+                              <div class="img"></div>
+                              <div class="item opt">
+                                <div class="img-cir"><img src="../../../uploads/product/color04-120X120.jpg" alt=""/></div>
+                                <p>布色：綠紫色 x </p>
+                                <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div>
+                                <p>布色：紅色 x</p>
+                                <div class="img-cir"><img src="../../../uploads/product/color09-120X120.jpg" alt=""/></div>
+                                <p>木色：原木色</p>
+                              </div>
+                              <div class="qty">
+                                <div class="btn-cir btn-less"></div>
+                                <input type="text" value="0" inputmode="numeric"/>
+                                <div class="btn-cir btn-plus"></div>
+                              </div>
+                              <div class="price type"><span>原價 NTD$ 1,999</span></div>
+                              <div class="mob-space"></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- 行動裝置 確定按鈕-->
+                        <div class="mob-check">
+                          <div> <span class="fz-14">確定挑選</span>
+                            <div class="cir-btn mainGreen">
+                              <div class="icon-check"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!-- 商品活動-->
+                <div class="pro-event sale mb">
+                  <div class="left"> 
+                    <div class="icon"> 
+                      <div class="icon-speaker"></div>
+                    </div><span>SALE</span>
+                  </div>
+                  <ul class="hover-cir" data-hover="blue">
+                    <li><a href="javascript:;">十一月快閃活動，系列商品八折起，前往查看活動商品頁！</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- 一項-->
+              <!-- 一般原價-->
+              <!-- 客製品-->
+              <div class="item-body">
+                <div class="btn-cir del">
+                  <div class="cross"></div>
+                </div>
+                <div class="img large"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border">
+                    <figure><img src="../../../uploads/product/detail-obj05-380X250.png" alt=""/></figure></a></div>
+                <!-- 項目明細-->
+                <div class="item"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border">
+                    <h2>乘風沙發 客製品</h2>
+                    <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">大 W52xD30xH52 (cm)</span></div>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">布色1(主色)</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color06-20X20.jpg" alt=""/></div><span class="fz-14">紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色紫色</span>
+                        </div>
+                      </div>
+                      <div class="color"><span class="strong">布色2(輔色)</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color04-20X20.jpg" alt=""/></div><span class="fz-14">綠色紫色紫色紫色紫色紫色紫色</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">WOOD：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color08-24X24.jpg" alt=""/></div><span class="fz-14">鯨木色</span>
+                        </div>
+                      </div>
+                    </div></a></div>
+                <!-- 數量-->
+                <div class="qty">
+                  <div class="btn-cir btn-less"></div>
+                  <input type="text" value="0" inputmode="numeric"/>
+                  <div class="btn-cir btn-plus"></div>
+                </div>
+                <!-- 價格-->
+                <div class="price"><span class="fz-14">PRICE 原價</span>
+                  <div class="money"><span>$20,800</span></div>
+                </div>
+              </div>
+              <!-- 一項-->
+              <!-- 一般原價-->
+              <!-- 標準品-->
+              <div class="item-body">
+                <div class="btn-cir del">
+                  <div class="cross"></div>
+                </div>
+                <div class="img large"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border">
+                    <figure><img src="../../../uploads/product/detail-obj05-380X250.png" alt=""/></figure></a></div>
+                <!-- 項目明細-->
+                <div class="item"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border">
+                    <h2>乘風沙發 雙人座</h2>
+                    <div class="color-wrap">
+                      <div class="color"><span class="strong">SPEC：</span>
+                        <div>
+                          <div class="img-cir"><img src="../../../uploads/product/color09-20X20.jpg" alt=""/></div><span class="fz-14">綠紫色 + 自然木色</span>
+                        </div>
+                      </div>
+                    </div></a></div>
+                <!-- 數量-->
+                <div class="qty">
+                  <div class="btn-cir btn-less"></div>
+                  <input type="text" value="0" inputmode="numeric"/>
+                  <div class="btn-cir btn-plus"></div>
+                </div>
+                <!-- 價格-->
+                <div class="price"><span class="fz-14">PRICE 原價</span>
+                  <div class="money"><span>$20,800</span></div>
+                </div>
+              </div>
+              <!-- 一項-->
+              <!-- 組合優惠-->
+              <div class="item-packpage">
+                <!-- 刪除組合按鈕-->
+                <div class="btn-cir del">
+                  <div class="cross"></div>
+                </div>
+                <div class="top"> 
+                  <div class="tit"><span class="en">EVENT PACKAGE：</span>
+                    <!-- 組合敘述可自訂--><span class="ch">書臥 life 生活任選三件享八折</span>
+                  </div><a class="hover-cir" href="./product_sale.html" data-hover="">
+                    <div class="icon"> 
+                      <div class="icon-refresh"></div>
+                    </div><span>EDIT 重新編輯</span></a>
+                </div>
+                <div class="item-body">
+                  <div class="img large"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border">
+                      <figure><img src="../../../uploads/product/sofa05-380X250.png" alt=""/></figure></a></div>
+                  <!-- 項目明細-->
+                  <div class="item"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border">
+                      <h2>恰恰好沙發</h2>
+                      <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">雙人座 SH42.5 / W155.5xD88.5xH100</span></div>
+                      <div class="color-wrap">
+                        <div class="color"><span class="strong">COLOR：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color03-120X120.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                          </div>
+                        </div>
+                        <div class="color"><span class="strong">COLOR：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color05-120X120.jpg" alt=""/></div><span class="fz-14">綠色</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="color-wrap">
+                        <div class="color"><span class="strong">WOOD：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color10-120X120.jpg" alt=""/></div><span class="fz-14">鯨木色</span>
+                          </div>
+                        </div>
+                      </div></a></div>
+                  <!-- 數量-->
+                  <div class="qty">
+                    <div class="btn-cir btn-less"></div>
+                    <input type="text" value="0" inputmode="numeric"/>
+                    <div class="btn-cir btn-plus"></div>
+                  </div>
+                  <!-- 價格-->
+                  <div class="price"><span class="fz-14">DISCOUNT 優惠價</span>
+                    <div class="money"><span class="red">$40,800</span></div>
+                    <div class="origin line-through"><span>原價  </span><span>$50,800</span></div>
+                  </div>
+                </div>
+                <div class="item-body">
+                  <div class="img small"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border">
+                      <figure><img src="../../../uploads/product/cart02-190X250.png" alt=""/></figure></a></div>
+                  <!-- 項目明細-->
+                  <div class="item"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border">
+                      <h2>加菲收納筒 - 木蓋</h2>
+                      <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">F W46×D40×H42(cm)</span></div>
+                      <div class="color-wrap">
+                        <div class="color"><span class="strong">COLOR：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color03-120X120.jpg" alt=""/></div><span class="fz-14">紫色</span>
+                          </div>
+                        </div>
+                      </div></a></div>
+                  <!-- 數量-->
+                  <div class="qty">
+                    <div class="btn-cir btn-less"></div>
+                    <input type="text" value="0" inputmode="numeric"/>
+                    <div class="btn-cir btn-plus"></div>
+                  </div>
+                  <!-- 價格-->
+                  <div class="price"><span class="fz-14">DISCOUNT 優惠價</span>
+                    <div class="money"><span class="red">$3,000</span></div>
+                    <div class="origin line-through"><span>原價  </span><span>$4,500</span></div>
+                  </div>
+                </div>
+                <div class="item-body">
+                  <div class="img small"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border">
+                      <figure><img src="../../../uploads/product/cart01-190X250.png" alt=""/></figure></a></div>
+                  <!-- 項目明細-->
+                  <div class="item"><a class="cursor hover-cir" href="./product_detail.html" data-hover="border">
+                      <h2>奇畦餐椅</h2>
+                      <div class="normal"><span class="fz-14 strong">SPEC：</span><span class="fz-14">SH 43.5 / W51xD67xH73(cm)</span></div>
+                      <div class="color-wrap">
+                        <div class="color"><span class="strong">COLOR：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color06-120X120.jpg" alt=""/></div><span class="fz-14">紅色</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="color-wrap">
+                        <div class="color"><span class="strong">WOOD：</span>
+                          <div>
+                            <div class="img-cir"><img src="../../../uploads/product/color10-120X120.jpg" alt=""/></div><span class="fz-14">鯨木色</span>
+                          </div>
+                        </div>
+                      </div></a></div>
+                  <!-- 數量-->
+                  <div class="qty">
+                    <div class="btn-cir btn-less"></div>
+                    <input type="text" value="0" inputmode="numeric"/>
+                    <div class="btn-cir btn-plus"></div>
+                  </div>
+                  <!-- 價格-->
+                  <div class="price"><span class="fz-14">DISCOUNT 優惠價</span>
+                    <div class="money"><span class="red">$3,180</span></div>
+                    <div class="origin line-through"><span>原價  </span><span>$4,800</span></div>
+                  </div>
+                </div>
+              </div>
+              <!-- 新增結帳優惠-->
+              <!-- 商品活動-->
+              <div class="pro-event event">
+                <div class="left"> 
+                  <div class="icon"> 
+                    <div class="icon-money2"></div>
+                  </div><span>EVENT</span>
+                </div>
+                <ul>
+                  <li class="hover-cir" data-hover="blue"> <a href="javascript:;">年末優惠，消費滿 2,000 打八折享優惠贈品與加價購</a></li>
+                  <li class="hover-cir" data-hover="blue"> <a href="javascript:;">十一月快閃活動，系列商品八折起，前往查看活動商品頁！</a></li>
+                </ul>
+              </div>
+              <!-- 訂單金額-->
+              <div class="total-price">
+                <!-- 原價-->
+                <div class="origin">
+                  <div> <span>NTD$</span><span>135,698</span></div>
+                  <p>PRICE  訂單原價</p>
+                </div>
+                <!-- 省下金額-->
+                <div class="saved text-center"> 
+                  <div><span>NTD$</span><span class="red">-27,120</span></div>
+                  <p>DISCOUNT  本次省下金額</p>
+                </div>
+                <!-- 總金額-->
+                <div class="total text-right"> 
+                  <div><span>NTD$</span><span>109,578</span></div>
+                  <p>TOTAL  訂單小計</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 按鈕-->
+          <div class="btn-wrap"><a class="btn-cir hover-cir" href="./product.html" data-hover="blue">
+              <div class="cross-plus"></div><span>繼續逛逛</span></a>
+            <!-- 提示登入會員燈箱-->
+            <!-- _common.openAjax('./ajax_login.html','.libox-container', '_ajaxCallback.normalLightbox')--><a class="btn-cir hover-cir" href="./shopping_check.html" data-hover="blue"><span class="icon-money"> </span><span>前往結帳</span></a>
+          </div>
+          <div class="bottom">
+            <!-- go top-->
+            <div class="cir-btn black goTop hover-cir" data-hover="blue" data-anchor-speed="1200" data-anchor="data-anchor">
+              <div class="icon-trangle-up"></div>
+            </div>
+          </div>
+        </main>
+        <!-- delete 燈箱-->
+        <!-- _common.openliboxInner("delete")-->
+        <div class="libox-inner" data-name="delete">
+          <div class="libox-common">
+            <div class="cir-wrap login">
+              <div class="cir-bg"> 
+                <div class="bg-text">OOPS</div>
+                <h5>Delete Product</h5>
+                <h6>請問確定要移除此商品嗎？</h6>
+                <div class="wrap">
+                  <div class="btn-close ajax_close hover-cir" data-hover="yellowSmall">
+                    <p>CANCEL 取消</p>
+                  </div>
+                  <div class="btn-close hover-cir" data-hover="yellowSmall">
+                    <p>DELETE 刪除</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 加購與贈品重置燈箱-->
+        <!-- _common.openliboxInner("reset")-->
+        <div class="libox-inner" data-name="reset">
+          <div class="libox-common">
+            <div class="cir-wrap login">
+              <div class="cir-bg"> 
+                <div class="bg-text">OOPS</div>
+                <h5>Notice!</h5>
+                <h6>加購與贈品樣式即將重置</h6>
+                <p>
+                  由於商品購買數量減少，將影響加購與贈品可選數量，<br>原先選取的樣式將直接清空，需重新填寫。
+                  <br>請問確定繼續嗎？
+                </p>
+                <div class="wrap">
+                  <div class="btn-close ajax_close hover-cir" data-hover="yellowSmall">
+                    <p>BACK  返回</p>
+                  </div>
+                  <div class="btn-close hover-cir" data-hover="yellowSmall">
+                    <p>OK 確認</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!--引入的script-->
+  <script>document.createElement( "picture" );</script>
+  <script src="../../../assets/js/plugins-dist.js"></script>
+  <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
+  <script src="../../../assets/js/fesdDB.1.0-dist.js"></script>
+  <script src="../../../assets/js/fesd.2.0.min.js"></script>
+  <script src="../../../assets/js/aost-dist.js"></script>
+  <script src="../../../assets/js/methods-dist.js"></script>
+  <script src="../../../assets/js/main-dist.js"></script><!-- microdata : professional service -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "ProfessionalService",
+      "name": "網站名子",
+      "email": "mailto:email",
+      "url": "本站網址",
+      "image": "favicon logo路徑",
+      "priceRange":"商品價格區間",
+      "telephone": "電話",
+      "logo": "logo路徑",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "地址",
+        "addressLocality": "區",
+        "addressRegion": "成市",
+        "postalCode": "郵遞區號",
+        "addressCountry": "中華民國 (台灣)"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.619435",
+        "longitude": "120.296034"
+      },
+      "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+      "openingHours": [
+        "Mo-Th 11:00-22:00",
+        "Fr 11:00-22:30",
+        "Sa 10:30-22:30",
+        "Su 10:30-22:00"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+886-00-12345678"
+      },
+      "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+    }
+    
+    
+  </script><!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://example.com/dresses",
+            "name": "Dresses"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "https://example.com/dresses/real",
+            "name": "Real Dresses"
+          }
+        }
+      ]
+    }
+  </script>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/member_center.css")
+  body.member_center(data-page="member_center")
+    // 廣告
+    include ../layouts/_ad.pug
+    // 會員生日gif
+    .gif
+      .hide
+      .gif-wrap
+        .img
+          img(src="../../../uploads/member/member_gif.gif", alt="")
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          // 大標
+          section.member-title
+            .title.range
+              .left-block(data-aost data-aost-class="show")
+                // 大標 & 敘述可改
+                .unit-title 
+                  .left
+                    span.ch 會員中心
+                    span.en WELCOME!
+                    p 歡迎來到會員中心，您可在此查看訂單，商品收藏，或是修改個人基本資料！
+                // 會員登出
+                // _common.openliboxInner('logout');
+                // ++
+                .logout.hover-cir(data-hover="blue" onclick="_common.openliboxInner('logout')")
+                  a.cir-btn.mainGreen(href="javascript:;")
+                    .icon-cirArrow-2
+                  span LOG OUT 會員登出
+              // 目前會員等級資訊
+              .right(data-aost data-aost-class="show")
+                .level-info 
+                  // 目前會員等級
+                  div 
+                    span.ch 目前會員等級
+                    p.en VVIP 
+                  // 累積的消費金額
+                  div 
+                    span.ch 累積消費金額
+                    p.en 
+                      span NTD$ 
+                      |20,100
+                    // 開啟會員等級說明燈箱
+                    .open-level.hover-cir(data-hover="yellowBig")
+                      .btn-cir
+                // 下一等級$$$
+                p.text 距離下一個等級還差 
+                  span NTD$ 3,000
+          // 會員相關連結
+          section.content
+            .member-link.range(data-aost data-aost-class="show")
+              // 大頭照預設圖 person-320X320
+              // 會員更新大頭照這邊也會連動
+              .img
+                .headshot(style="background-image: url(../../../uploads/member/person-320X320.jpg)")
+                //- img(src="../../../uploads/member/person-320X320.jpg", alt="")
+              a(href="./member_info.html" data-type="info" data-text="dark")
+                .en Basic Information  
+                .ch 基本資料管理
+            .member-link.range(data-aost data-aost-class="show")
+              a.hover-cir(href="./member_order.html" data-hover="yellowBig" data-type="order" data-text="dark")
+                .en Order
+                .ch 訂單查詢
+            .member-link.range(data-aost data-aost-class="show")
+              a.hover-cir(href="./member_evaluation.html" data-hover="yellowBig" data-type="evaluation" data-text="dark")
+                .en Evaluation
+                .ch 商品評價
+            .member-link.range(data-aost data-aost-class="show")
+              a.hover-cir(href="./member_lovelist.html" data-hover="yellowBig" data-type="lovelist" data-text="dark")
+                .en Lovelist
+                .ch 商品收藏
+
+            // 背景
+            section.bg-wrap
+              .bg.bg-info
+              .bg.bg-order(data-bg="../../../uploads/member/bg-order.jpg")
+              .bg.bg-evaluation
+                .img 
+                  img(src="../../../uploads/member/bg-eva.jpg", alt="")
+              // 該會員最新收藏的商品項目(最多顯示四個)
+              // 沒有收藏的品項 結構可不出現
+              .bg.bg-lovelist
+                marquee(direction="left" scrollamount="20" loop="-1")
+                  .img-wrap
+                    .img.large
+                      img(src="../../../uploads/member/img01-380X250.png", alt="")
+                    .img.large
+                      img(src="../../../uploads/member/img02-380X250.png", alt="")
+                    .img.small
+                      img(src="../../../uploads/member/img03-190X250.png", alt="")
+                    .img.large
+                      img(src="../../../uploads/member/img01-380X250.png", alt="")
+                    .img.large
+                      img(src="../../../uploads/member/img02-380X250.png", alt="")
+                    .img.large
+                      img(src="../../../uploads/member/img01-380X250.png", alt="")
+                    .img.large
+                      img(src="../../../uploads/member/img02-380X250.png", alt="")
+                    .img.large
+                      img(src="../../../uploads/member/img01-380X250.png", alt="")
+                    .img.large
+                      img(src="../../../uploads/member/img02-380X250.png", alt="")
+                    .img.large
+                      img(src="../../../uploads/member/img01-380X250.png", alt="")
+                    
+
+        // 會員等級說明燈箱
+        // 標題 & 敘述可改
+        .libox-inner(data-name="level")
+          .box
+            a.cir-btn.mainGreen.ajax_close.hover-cir(href="javascript:;" data-hover="blue")
+              .cross
+            .modal-contain.modal-scroll-wrap.scrollbar-macosx(data-scroll-content)
+              .sec-title.green
+                h6.en Member Level Introduction
+                h6.ch 會員等級說明
+              .text-wrap
+                p.fz-14 我們的會員為累積金額制，隨著您消費所累計的越多，我們也將提供會員更好的回饋福利，<br>以下為各等級對應的規則與相關說明。
+                .thead
+                  .level LEVEL
+                  .intro INTRODUCTION
+                // 會員等級客戶可新增
+                // 一項
+                .tbody
+                  .item-title.hover-cir(data-hover="yellowSmall")
+                    .level VIP
+                    .intro 
+                      span.fz-14 累積消費金額
+                      .price 
+                        span NTD$
+                        p 10,000
+                    .open
+                      .cross-plus
+                  .item-content
+                    .level
+                    .intro
+                      .wrap
+                        p.fz-14
+                          |【消費積點，多元運用】<br>
+                          |◎於全台指定通路消費可累計誠品點，白卡會員單筆交易金額滿NT$50元(含稅)可累積1點。<br>
+                          |◎每10點可折抵消費金額NT$1元。<br>
+                          |◎多元點數兌換活動：生活好禮、藝文票劵、公益捐點等。<br>
+                          <br>
+                          |【跨界藝文，靈感尋路】<br>
+                          |◎年度精選推薦百家藝文團體、自策活動購票8折起，邀您體驗文創生活，日日好日!<br>
+                          <br>
+                          |*有情門保有修改有情門會員各項權益之權利，最新內容請以有情門官方網站或門市相關公告為準。
+                        p.fz-14
+                          |【消費積點，多元運用】<br>
+                          |◎於全台指定通路消費可累計誠品點，白卡會員單筆交易金額滿NT$50元(含稅)可累積1點。<br>
+                          |◎每10點可折抵消費金額NT$1元。<br>
+                          |◎多元點數兌換活動：生活好禮、藝文票劵、公益捐點等。<br>
+                          <br>
+                          |【跨界藝文，靈感尋路】<br>
+                          |◎年度精選推薦百家藝文團體、自策活動購票8折起，邀您體驗文創生活，日日好日!<br>
+                          <br>
+                          |*有情門保有修改有情門會員各項權益之權利，最新內容請以有情門官方網站或門市相關公告為準。
+                // 一項
+                .tbody
+                  .item-title.hover-cir(data-hover="yellowSmall")
+                    .level VVIP
+                    .intro 
+                      span.fz-14 累積消費金額
+                      .price 
+                        span NTD$
+                        p 50,000
+                    .open
+                      .cross-plus
+                  .item-content
+                    .level
+                    .intro
+                      .wrap
+                        p.fz-14
+                          |【消費積點，多元運用】<br>
+                          |◎於全台指定通路消費可累計誠品點，白卡會員單筆交易金額滿NT$50元(含稅)可累積1點。<br>
+                          |◎每10點可折抵消費金額NT$1元。<br>
+                          |◎多元點數兌換活動：生活好禮、藝文票劵、公益捐點等。<br>
+                          <br>
+                          |【跨界藝文，靈感尋路】<br>
+                          |◎年度精選推薦百家藝文團體、自策活動購票8折起，邀您體驗文創生活，日日好日!<br>
+                          <br>
+                          |*有情門保有修改有情門會員各項權益之權利，最新內容請以有情門官方網站或門市相關公告為準。          
+                // 一項
+                .tbody
+                  .item-title.hover-cir(data-hover="yellowSmall")
+                    .level Golden
+                    .intro 
+                      span.fz-14 累積消費金額
+                      .price 
+                        span NTD$
+                        p 100,000
+                    .open
+                      .cross-plus
+                  .item-content
+                    .level
+                    .intro
+                      .wrap
+                        p.fz-14
+                          |【消費積點，多元運用】<br>
+                          |◎於全台指定通路消費可累計誠品
+            .cir-btn.black.goTop.hover-cir(data-hover="blue")(data-anchor-container=".libox-inner[data-name='level'] .modal-contain[data-scroll-content]" data-anchor)
+              .icon
+                .icon-trangle-up
+        // 會員登出燈箱
+        // 開啟: _common.openliboxInner('logout');
+        .libox-inner(data-name="logout")
+          .libox-common
+            .cir-wrap.member
+              .bg
+              .cir-bg
+                h5.white Log out
+                h6.white 您已成功登出
+                p 歡迎隨時回來！
+                .wrap
+                  .btn-close.ajax_close.hover-cir(data-hover="yellowSmall")
+                    p OK 確認
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

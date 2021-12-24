@@ -1,0 +1,2539 @@
+//共用
+  
+*
+  outline: none
+
+html
+  font-size: 100%
+  scrollbar-width: thin //for Firefox
+  scrollbar-color: rgba(108, 110, 113, 1) transparent //for Firefox
+  &.scrollbarStyle
+    scrollbar-width: thin //for Firefox
+    scrollbar-color: rgba(108, 110, 113, 1) transparent //for Firefox
+    body
+      //↓↓↓卷軸樣式↓↓↓
+      &::-webkit-scrollbar-track
+        border-radius: 10px
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+      &::-webkit-scrollbar
+        // display: none
+        width: 12px
+        +rwdmax(767)
+          display: none
+      &::-webkit-scrollbar-thumb
+        border-radius: 10px
+        background-color: rgba(108, 110, 113, 1)
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  //Mac系統以外的設定
+  &:not(.isMac)
+    width: 100vw
+    body
+      width: 100vw
+      overflow-y: auto
+      overflow-x: hidden !important
+      -webkit-overflow-scrolling: touch
+  +rwdmax(1600)
+    font-size: 93.75%
+body
+  font-family: $basic
+  font-weight: normal
+  opacity: 0
+  cursor: none
+  a 
+    // cursor: none
+    &.cursor
+      cursor: pointer
+    &.cursor-none
+      cursor: none
+  &.lock
+    overflow-y: hidden !important
+
+.main-wrapper
+  position: relative
+  width: 100vw
+  z-index: 1
+input
+  letter-spacing: 0.46px
+  font-family: $basicR
+  &::placeholder
+    opacity: .7
+    color: #666
+    letter-spacing: 0.83px
+    font-size: px(16)
+    font-family: $basic
+  &[type='number']
+    -moz-appearance: textfield
+    &::-webkit-outer-spin-button,&::-webkit-inner-spin-button
+      -webkit-appearance: none
+
+.swiper-container
+  width: 100%
+  height: 100%
+.swiper-pagination
+  &.light
+    .swiper-pagination-bullet
+      border-color: #fff 
+      &-active
+        background-color: #fff
+  &.text-white
+    .swiper-pagination-bullet-active
+      background-color: #fff
+.swiper-pagination-bullet
+  width: 7px
+  height: 7px
+  background-color: transparent
+  border: solid 1px
+  opacity: 1
+  cursor: none !important 
+  &-active
+    background-color: #000
+.swiper-slide
+  text-align: center
+  font-size: 18px
+  background: transparent
+  /* Center slide text vertically */
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+
+//複製連結成功提示
+.notice-wrapper
+  position: absolute
+  transform: translate(-50%,100%)
+  z-index: 99999999
+  .text
+    position: relative
+    font-size: px(14)
+    padding: 10px
+    color: #fff
+    background-color: #006fcc
+    border-radius: 10px
+    white-space: nowrap
+    box-shadow: 2.5px 4.3px 20px 0 rgba(0, 0, 0, 0.1)
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translate(-50%,-100%)
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 7px 9px 7px
+      border-color: transparent transparent #006fcc transparent
+  #clipboard
+    position: absolute
+    width: 100%
+    min-width: 200px
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: -10
+    opacity: 0
+    cursor: default
+
+.go-top
+  flex-shrink: 0
+  position: relative
+  overflow: hidden
+  width: 56px
+  height: 56px
+  border-radius: 100%
+  border: solid 1px
+  cursor: pointer
+  transition: .5s ease-in-out
+  &::after
+    content: ''
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    width: 0
+    height: 0
+    z-index: -1
+    transition: .3s ease-in
+  >div
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+  i 
+    z-index: 1
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    font-size: px(16)
+  &:hover 
+    &:after 
+      width: 100%
+      height: 100%
+      border-radius: 100%
+    >div
+      animation: ymove 1s ease-in-out infinite
+  +rwdmax(1200)
+    width: 40px
+    height: 40px
+  &.light
+    border-color: #cecece 
+    &:hover 
+      border-color: darken(#eee,10%)
+      &:after 
+        background-color: #000
+      i 
+        color: #fff
+  &.dark
+    border-color: #000
+
+// 滾動視差圖片共用
+.parallax-container
+  display: block
+  position: relative
+  overflow: hidden
+  width: 100%
+  // padding-bottom: 
+  &.visible
+    overflow: visible
+  .img-bg 
+    position: absolute
+    width: 100%
+    height: 120%
+    left: 0
+    top: -40%
+    +bgcenter
+
+  .obj 
+    width: 100%
+    position: absolute
+    z-index: 1
+    &[data-path="right"],
+    &[data-path="left"]
+      top: 50%
+      transform: translateY(-50%)
+    &[data-path="top"],
+    &[data-path="bottom"]
+      left: 50%
+      transform: translateX(-50%)
+
+    // &[data-path="right"]
+    //   right: -40%
+    // &[data-path="left"]
+    //   left: -40%
+    &[data-path="top"]
+      top: 20%
+    // &[data-path="bottom"]
+    //   bottom: 0% 
+
+// 首頁大標題樣式
+.title-type
+  padding: 0 80px
+  position: absolute
+  z-index: 2
+  pointer-events: none
+  .en 
+    padding-bottom: 8px
+    display: inline-block
+    // display: block
+    word-break: inherit
+    letter-spacing: -1.5px
+    +fontSet2(px(120),$basic)
+    &.border-bottom
+      border-bottom: solid 4px
+      +rwdmax(767)
+        padding-bottom: 5px
+        border-bottom: solid 3px
+  .ch 
+    display: inline-block
+    margin-top: 25px
+    padding-bottom: 20px
+    line-height: 30px
+    letter-spacing: 1.33px
+    font-weight: bold
+    +fontSet2(px(27),$basic)
+    &.border-bottom
+      border-bottom: solid 4px
+      +rwdmax(767)
+        border-bottom: solid 3px
+  +rwdmax(1500)
+    padding: 0 50px
+    .en 
+      font-size: px(100)
+  +rwdmax(1400)
+    .ch 
+      margin-top: 15px
+      padding-bottom: 15px
+  +rwdmax(1366)
+    bottom: 3%
+    .en 
+      font-size: px(88)
+      line-height: 1
+    .ch
+      margin-top: 10px
+      line-height: 1.5
+  +rwdmax(1200)
+    .en
+      font-size: px(70)
+    .ch 
+      padding-bottom: 10px
+  +rwdmax(1024)
+    padding: 0 3%
+    .en
+      // padding: 0
+      letter-spacing: 1px
+  +rwdmax(800)
+    .en
+      font-size: px(86)
+    .ch
+      line-height: 36px
+      font-size: px(20)
+  +rwdmax(767)
+    padding: 0 20px
+    .en
+      // font-size: px(49) 
+      padding-bottom: 5px
+      letter-spacing: 0px
+      font-size: px(32)
+    .ch 
+      padding-bottom: 5px
+      margin-top: 2px
+      line-height: 26px
+  &[data-type="left-top"],
+  &[data-type="left-center"],
+  &[data-type="left-bottom"]
+    left: 0
+    width: 40%
+    +rwdmax(800)
+      width: 60%
+    +rwdmax(767)
+      width: 100%
+  &[data-type="left-center"],
+  &[data-type="right-center"],
+  &[data-type="center-center"]
+    top: 50%
+    transform: translateY(-50%)
+    +rwdmax(767)
+      top: 55%
+  &[data-type="left-bottom"],
+  &[data-type="center-bottom"],
+  &[data-type="right-bottom"]
+    bottom: 5%
+    +rwdmax(1200)
+      bottom: 2%
+  &[data-type="left-top"],
+  &[data-type="center-top"],
+  &[data-type="right-top"]
+    top: 0
+  &[data-type="center-top"],
+  &[data-type="center-center"],
+  &[data-type="center-bottom"]
+    text-align: center
+    left: 50%
+    // width: 90%
+    transform: translate(-50%,-50%)
+  &[data-type="right-top"],
+  &[data-type="right-center"],
+  &[data-type="right-bottom"]
+    text-align: right
+    right: 0
+    width: 40%
+    +rwdmax(800)
+      width: 60%
+    +rwdmax(767)
+      width: 100%
+  &[data-type="center-bottom"],
+  &[data-type="center-center"]
+    +rwdmax(767)
+      width: 100%
+  &[data-type="center-center"]
+    // top: 60vh
+    // transform: translate(-50%,-50%)
+.banner-text
+  &.type-row2
+    padding-top: 0 !important
+    padding-bottom: 0 !important
+  +rwdmax(800)
+    // position: static !important
+    [data-type="left-bottom"],
+    [data-type="center-bottom"],
+    [data-type="right-bottom"]
+      bottom: auto 
+      top: 50vh
+    [data-type="left-top"],
+    [data-type="center-top"],
+    [data-type="right-top"]
+      top: 120px
+  +rwdmax(767)
+    [data-type="left-bottom"],
+    [data-type="center-bottom"],
+    [data-type="right-bottom"]
+      top: 59vh
+    [data-type="left-top"],
+    [data-type="center-top"],
+    [data-type="right-top"]
+      top: 100px
+// 單元內大標
+.unit-title
+  max-width: 67.7vw
+  width: 100%
+  margin: 0 auto 
+  display: flex
+  justify-content: space-between
+  .left
+    .en 
+      border-bottom: solid 4px
+      line-height: 1.2
+      +fontSet2(px(104),$basic)
+    .ch 
+      display: block
+      padding-top: 30px
+      font-weight: bold
+      line-height: 1.2
+      letter-spacing: 1.33px
+      +fontSet2(px(26),$basicbold)
+    .wrap
+      transition: height .5s ease-in-out
+      &.mask
+        mask-image: gradient(linear, left 80%, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)))
+        -webkit-mask-image: -webkit-gradient(linear, left 80%, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)))
+      &.active
+        height: 97px
+        position: relative
+        overflow: hidden
+    p 
+      max-width: 420px
+      width: 100%
+      padding-top: 25px
+      line-height: 24px
+      letter-spacing: 0.46px
+      +fontSet2(px(14),$basic)
+  .right
+    margin-top: auto
+  +rwdmax(1500)
+    .left
+      .en
+        padding-bottom: 12px
+        font-size: px(110)
+  +rwdmax(1200)
+    .left 
+      .en
+        padding-bottom: 5px
+        line-height: 1.2
+        font-size: px(70)
+      .ch
+        padding-top: 20px
+  +rwdmax(900)
+    .left
+      .en
+        font-size: px(66)
+      .ch
+        padding-top: 30px
+        font-size: px(26)
+
+// 單元連結
+.unit-link 
+  position: relative
+  display: flex
+  align-items: center
+  &.poa 
+    position: absolute
+    right: 0
+    bottom: 10%
+  &.white
+    color: #fff
+    .text
+      .en:after
+        background-color: #fff
+      p span:after
+        background-color: #fff
+  &.link-close
+    display: none
+  &.reverse
+    .text
+      padding-right: 0
+      padding-left: 45px
+    .icon 
+      right: auto
+      left: 0
+  .text
+    display: flex
+    flex-direction: column
+    padding-right: 45px
+    .en 
+      position: relative
+      overflow: hidden
+      padding-bottom: 10px
+      letter-spacing: 0.7px
+      font-family: $basicbold
+      // +fontSet2(px(14),$basicbold)
+      &::after
+        content: ''
+        position: absolute
+        left: 0
+        top: 3px
+        width: 0
+        height: 5px
+        background-color: #000 
+        opacity: 0
+        // transition: .5s ease-in-out
+    .ch 
+      position: relative
+      letter-spacing: 0.7px
+      font-weight: bold
+      font-family: $basic
+      +fontSet2(px(14),$basic)
+      span
+        position: relative
+        padding-bottom: 8px
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          bottom: 0
+          width: 0
+          height: 2px
+          background-color: #000
+          transition: .5s ease-in-out
+    .en,.ch
+      position: relative
+      word-break: keep-all
+      transition: .5s ease-in-out
+  .icon 
+    position: absolute
+    top: 0
+    right: 0
+    font-size: px(16)
+    &.down
+      top: 50%
+      transform: translateY(-50%)
+    &.left,
+    &.right
+      top: 50%
+      transform: translateY(-50%)
+      font-size: px(26)
+      transition: .5s ease-in-out
+    &.left
+      
+    &.rotate
+      transition: .5s ease-in-out
+      &.active
+        transform: rotateX(180deg)
+  &:hover
+    .en
+      &::after
+        width: 100%
+        opacity: 1
+        transform: translateX(100%)
+    .ch
+      span:after 
+        width: 100%
+
+    .icon
+      &.down
+        animation: ymove .8s ease-in-out infinite
+      &.right
+        transform: translate(10px,-50%)
+      &.left
+        transform: translate(-10px,-50%)
+
+
+// 內頁通用大標
+.common-title
+  display: flex
+  flex-direction: column 
+  .en
+    padding-bottom: 12px
+    +fontSet2(px(34),$basicbold)
+  .ch
+    font-weight: bold
+    +fontSet2(px(20),$basic)
+
+.sec-title
+  display: flex
+  flex-direction: column 
+  .en
+    padding-bottom: 20px
+    +fontSet2(px(49),$basic)
+  .ch
+    font-weight: bold
+    letter-spacing: 1.2px
+    +fontSet2(px(24),$basic)
+  p 
+    padding: 40px 0
+    line-height: px(25)
+    letter-spacing: 0.46px
+    +fontSet2(px(14),$basic)
+  &.green
+    .en,.ch
+      color: $main
+    p 
+      color: #fff
+  &.red
+    .en,.ch
+      color: #ff6666
+    p 
+      color: #fff
+// 內頁小標
+.small-tit 
+  display: inline-block
+  line-height: 1.5
+  letter-spacing: 1.18px
+  +fontSet2(px(24),$basicbold)
+  a 
+    // display: block
+    padding-bottom: 15px
+    line-height: px(60)
+    border-bottom: solid 3px
+
+// 文字動態樣式
+.type-fullVer
+  .title-move
+    &[data-move="top"],
+    &[data-move="bottom"]
+      padding: 0 3%
+.title-move
+  display: flex
+  flex-direction: column
+  &.title-type
+    .en
+      border-bottom: 0
+      &.border-bottom
+        span 
+          padding-bottom: 10px
+          border-bottom: solid 4px
+          +rwdmax(767)
+            padding-bottom: 5px
+            border-bottom: solid 3px
+  &[data-type="left-top"],
+  &[data-type="left-center"],
+  &[data-type="left-bottom"],
+  &[data-type="right-top"],
+  &[data-type="right-center"],
+  &[data-type="right-bottom"]
+    width: 100%
+    padding: 0 40px
+  &[data-type="center-top"],
+  &[data-type="center-center"],
+  &[data-type="center-bottom"]
+    width: 100%
+    left: 50%
+    transform: translateX(-50%)
+  &[data-type="center-center"]
+    transform: translate(-50%,-50%)
+  &[data-type="left-top"],
+  &[data-type="left-center"],
+  &[data-type="left-bottom"]
+    align-items: flex-start
+  &[data-type="right-top"],
+  &[data-type="right-center"],
+  &[data-type="right-bottom"]
+    align-items: flex-end
+  &[data-move="loop"]
+    display: block
+    div 
+      display: none
+      &.show
+        display: inline-block
+  &[data-move="top"],
+  &[data-move="bottom"]
+    padding: 0
+    div
+      display: inline-block
+      opacity: 0
+    &.small
+      &[data-move="top"],
+      &[data-move="bottom"]
+        transform: translateY(0)
+      .en 
+        padding-bottom: 6px
+        font-family: $basicbold
+        font-size: px(50)
+        &.border-bottom
+          // border-bottom: solid 3px
+      .en:last-child
+        padding-bottom: 10px
+      +rwdmax(1400)
+        .en
+          font-size: px(40)
+      +rwdmax(767)
+        width: 100%
+        .en:last-child
+          padding-bottom: 5px
+
+    // 標題超出樣式
+    &.type-over
+      &[data-type="left-top"],
+      &[data-type="left-bottom"],
+      &[data-type="left-center"]
+        align-items: flex-start
+        transform: translateX(-85px) translateY(-60px)
+      &[data-type="right-top"],
+      &[data-type="right-bottom"],
+      &[data-type="right-center"]
+        align-items: flex-start
+        right: 0
+        left: auto
+        transform: translateX(85px) translateY(-60px)
+      &[data-type="center-top"],
+      &[data-type="center-center"],
+      &[data-type="center-bottom"]
+        align-items: center
+        left: 50%
+        transform: translateX(-50%)
+      .en
+        +rwdmax(800)
+          font-size: px(32)
+
+  &[data-move="top"]
+    div:nth-child(1)
+      animation: textAni 1.3s .4s ease-in-out infinite
+    div:nth-child(2)
+      animation: textAni 1.3s .2s ease-in-out infinite
+    div:nth-child(3)
+      animation: textAni 1.3s ease-in-out infinite
+  &[data-move="bottom"]
+    div:nth-child(1)
+      animation: textAni 1.3s ease-in-out infinite
+    div:nth-child(2)
+      animation: textAni 1.3s .2s ease-in-out infinite
+    div:nth-child(3)
+      animation: textAni 1.3s .4s ease-in-out infinite
+  +rwdmax(575)
+    position: relative
+    left: auto !important
+    right: auto !important
+    top: auto !important
+    bottom: auto !important
+    z-index: 2
+    &[data-type="center-top"],
+    &[data-type="center-center"],
+    &[data-type="center-bottom"]
+      transform: translateY(15px)
+    &[data-type="left-top"],
+    &[data-type="left-center"],
+    &[data-type="left-bottom"],
+    &[data-type="right-top"],
+    &[data-type="right-center"],
+    &[data-type="right-bottom"]
+      align-items: center
+      text-align: center
+      transform: translateY(20px)
+
+.pro-space
+  padding-top: 230px
+  +rwdmax(1200)
+    padding-top: 150px
+// b-lazy
+.img-blazy
+  .img
+    position: relative
+    // padding-bottom: 
+    img 
+      transition: .8s ease-in-out
+      +posCenter
+      &.b-lazy
+        opacity: 0
+      &.b-loaded
+        opacity: 1
+
+// loop跑馬燈
+.marquee
+  position: relative
+  height: 50px
+  .track
+    position: absolute
+    left: 0
+    top: 0
+    white-space: nowrap
+    will-change: transform
+    animation: marquee 13s linear infinite
+  p 
+    +fontSet2(px(50),$basicbold)
+
+// learn more按鈕
+.learn-more
+  padding: 20px
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  span 
+    padding-right: 22px
+    +fontSet2(px(16),$basicbold)
+  .bg-cir
+    opacity: 0
+    z-index: -1
+    transition: .1s
+    position: absolute
+    +hoverCircle($w: 120px, $bgc: #e7e7e7)
+    &.active
+      opacity: 1
+  .icon
+    &.plus
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+      transition: .5s
+  &:hover
+    // .cross-plus
+    //   transform: rotate(180deg)
+  
+.swiper-button-wrap    
+  .swiper-next,
+  .swiper-prev
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 1
+    width: 20%
+    height: 100%
+    display: flex
+    align-items: center
+    font-size: px(50)
+    opacity: 0
+    transition: .5s ease-in-out
+    &:hover
+      opacity: 1
+  .swiper-next
+    justify-content: flex-end
+    right: -30px
+  .swiper-prev
+    left: -30px
+    .icon-arrAngle
+      transform: rotateY(180deg)
+  +rwdmax(1200)
+    .swiper-next,
+    .swiper-prev
+      width: 30%
+    .swiper-next
+      right: -30px
+    .swiper-prev
+      left: -30px
+  +rwdmax(767)
+    .swiper-next,
+    .swiper-prev
+      width: 40%
+      font-size: px(26)
+    .swiper-next
+      right: 10px
+    .swiper-prev
+      left: 10px
+
+.mouse-container
+  width: 100vw
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 3
+  pointer-events: none
+  // mix-blend-mode: difference
+  &.mix-blend-mode
+    mix-blend-mode: difference
+  &.z-103
+    z-index: 103
+  &.libox-type
+    z-index: 103
+    .circle
+      border: solid 1px rgba(255,255,255,0.2)
+  .circle
+    border: solid 1px rgba(0,0,0,0.5)
+    transition: .5s ease-in-out
+    mix-blend-mode: difference
+    +posCenter
+    +hoverCircle($w: 50px, $bgc: inherit)
+  #mouse
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 10
+    pointer-events: none
+    .mark 
+      width: 20px
+      height: 20px
+      +posCenter
+    &.hover-border
+      .circle
+        border-color:rgba(0,0,0,0.2)
+        +hoverCircle($w: 124px, $bgc: rgba(255,255,255,.3))
+    &.hover-yBig
+      z-index: -1
+      .circle
+        border: 0
+        +hoverCircle($w: 120px, $bgc: #f2c94d)
+    &.hover-ySmall
+      z-index: 1
+      .circle
+        border: 0
+        mix-blend-mode: difference
+        +hoverCircle($w: 80px, $bgc: #f2c94d)
+    &.hover-gray
+      .circle
+        border: 0
+        +hoverCircle($w: 120px, $bgc: #e7e7e7)
+    &.hover-blue
+      z-index: -1
+      .circle
+        border: 0
+        +hoverCircle($w: 85px, $bgc: #0f3ece)
+    &.hover-blueBig
+      .circle
+        border: 0
+        +hoverCircle($w: 120px, $bgc: #0f3ece)
+    &.hover-borderGreen
+      .circle
+        border-color: rgba($main,.5)
+        +hoverCircle($w: 124px, $bgc: rgba(255,255,255,0))
+    &.hover-faq
+      .circle
+        border: 0
+        +hoverCircle($w: 85px, $bgc: #009999)
+
+// 圓形按鈕
+.cir-btn
+  display: block
+  position: relative
+  width: 48px
+  height: 48px
+  border-radius: 50%
+  cursor: pointer
+  &.gray
+    background-color: #333
+    .cross
+      &::after,
+      &:before
+        background-color: #fff
+  &.black
+    background-color: #000
+    color: #fff
+  &.green
+    background-color: green
+  &.mainGreen
+    background-color: $main
+  &.red
+    background-color: #ff6666
+  &.goTop
+    display: flex
+    align-items: center
+    justify-content: center
+    
+    .icon-arrowUp
+      +posCenter
+      font-size: px(12)
+    .icon-trangle-up
+      font-size: px(10)
+
+// X
+.cross
+  +crossBase(#fff)
+  +posCenter
+  &::after
+    transform: rotate(45deg)
+  &:before
+    transform: rotate(-45deg)
+  &:hover 
+    &::after
+      animation: cross1 .5s ease-in-out both
+    &:before
+      animation: cross2 .5s ease-in-out both
+  &-plus
+    +crossBase
+    &::after
+      transform: rotate(0)
+    &:before
+      transform: rotate(90deg)
+
+// gotop icon
+.goTop
+  .icon 
+    // position: relative
+    // left: auto
+    // top: 50%
+    // transform: translateY(-50%)
+  &:hover
+    .icon
+      animation: ymove .8s ease-in-out infinite
+
+// 麵包屑
+.breadcrumb
+  ul 
+    display: flex
+    justify-content: center
+  li
+    position: relative
+    padding: 0 20px
+    &:after
+      content: ''
+    a 
+      padding: 8px 5px
+      transition: letter-spacing .3s ease-in-out
+      +fontSet2(px(14),$basicbold)
+      &:hover 
+        letter-spacing: 1.8px
+  .first
+    &:after 
+      position: absolute
+      right: 0
+      top: 55%
+      transform: translateY(-50%)
+      width: 1px
+      height: 10px
+      background-color: #000
+  .sec
+    li 
+      padding: 0
+      &:after
+        content: '．'
+        top: 0
+        transform: translateY(0)
+    li:last-child
+      &:after
+        content: ''
+  &.dark,&.white
+    li:after
+      position: absolute
+      right: 0
+      top: 55%
+      transform: translateY(-50%)
+      width: 1px
+      height: 10px
+      +rwdmax(1200)
+        top: 50%
+        width: 2px
+        height: 14px
+    li:last-child:after
+      width: 0
+      height: 0
+  &.dark
+    li:after
+      background-color: #000
+  &.white
+    li:after
+      background-color: #fff
+  &.left
+    ul
+      justify-content: start
+    li:first-child
+      padding-left: 0
+  +rwdmax(1200)
+    li 
+      padding: 0 13px
+  +rwdmax(900)
+    ul 
+      flex-wrap: wrap
+      line-height: 1.5
+    li 
+      a:first-child
+        padding-left: 0
+// 分享連結
+.share
+  position: fixed
+  // display: flex
+  // flex-direction: column
+  // align-items: center
+  >span 
+    display: flex
+    margin: 0 auto
+    padding-bottom: 15px
+    letter-spacing: 1.2px
+    writing-mode: vertical-rl
+    +fontSet2(px(14),$basicbold)
+  a 
+    display: block
+    padding: 10px
+    transition: .5s ease-in-out
+    &:hover
+      transform: rotateY(180deg)
+      opacity: .6
+    span
+      padding-bottom: 10px
+      +fontSet2(px(20),$basicbold)
+  &.row
+    flex-direction: row
+    span
+      padding-bottom: 0
+      writing-mode: horizontal-tb
+    ul 
+      display: flex
+  &.normal
+    position: static
+  +mozhack
+    display: flex
+    flex-direction: column
+    align-items: center
+  +ieHack
+    display: flex
+    flex-direction: column
+    align-items: center
+// 商品+特價+原價
+.text-detail
+  h2 
+    font-weight: bold
+    letter-spacing: 0.9px
+    line-height: 1.5
+    +fontSet2(px(18),$basic)
+  .price
+    padding: 10px 0
+    letter-spacing: 0.79px
+    +fontSet2(px(24),$basicbold)
+    span:first-child
+      padding-right: 5px
+  .txt
+    font-weight: bold
+    letter-spacing: 0.7px
+    span:first-child
+    +fontSet2(px(14),$basicbold)
+    +mozhack
+      font-weight: normal
+  
+// 圓型按鈕
+.btn-cir
+  +buttonCircle(30px,transparent)
+  cursor: pointer
+
+.btn-less
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+  &::after
+    content: ''
+    width: 9px
+    height: 2px
+    background-color: #000
+    +posCenter
+
+.btn-plus
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+  &::after,&::before
+    content: ''
+    background-color: #000
+    +posCenter
+  &::after
+    width: 10px
+    height: 2px
+  &::before
+    width: 2px
+    height: 10px
+.soldout
+  width: 100px
+  height: 40px
+  background-color: #676767
+  color: #fff
+  z-index: 1
+  letter-spacing: 0.9px
+  font-size: px(18)
+  +flexCenter
+.heart
+  position: absolute
+  right: 0
+  top: 10%
+  z-index: 2
+  width: 48px
+  height: 48px
+  border-radius: 100%
+  background-color: #000 
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: .5s ease-in-out
+  svg 
+    position: absolute
+    left: 50%
+    top: 55%
+    width: 22px
+    height: 22px
+    transform: translate(-50%,-50%)
+    stroke: #fff
+    stroke-width: 2px
+    fill: transparent
+    transition: .5s ease-in-out
+  &.active,
+  &:hover
+    svg
+      fill: #fff
+  &.text-white
+    background-color: #fff
+    svg 
+      stroke: #000
+    &.active,
+    &:hover
+      svg
+        fill: #000
+  +rwdmax(767)
+    width: 47px
+    height: 47px
+// 搜尋共用
+.search-filter
+  span.num,span.ch,span.en
+    display: inline-block
+  span.num
+    letter-spacing: 0.92px
+    +fontSet2(px(28),$basicbold)
+    +rwdmax(1200)
+      font-size: px(24)
+    +rwdmax(800)
+      font-size: px(20)
+  span.en
+    margin-left: 5px
+    letter-spacing: 0.59px
+    +fontSet2(px(18),$basicbold)
+    +rwdmax(800)
+      font-size: px(14)
+  span.ch
+    margin-left: 5px
+    letter-spacing: 0.59px
+    +fontSet2(px(18),$basic)
+    +rwdmax(800)
+      font-size: px(16)
+
+// check button
+.btn-check  
+  +buttonCircle(36px,#3d3d3d)
+  span 
+    color: #202020
+// 方形按鈕
+.btn-square
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 55px
+  &.white
+    color: #fff
+// 共用大按鈕
+// 按鈕
+.btn-wrap.big
+  padding-top: 40px
+  +flexCenter
+  .btn-cir
+    display: flex
+    flex-direction: column 
+    align-items: center
+    justify-content: center
+    color: #fff
+    span 
+      display: block
+      letter-spacing: 0.46px
+      +fontSet2(px(14),$basic)
+    span:first-child
+      padding-bottom: 5px
+      font-size: px(34)
+    .cross-plus
+      position: relative
+      // padding: 17px
+      &::after,
+      &:before 
+        width: 2px
+        height: 18px
+        background-color: #fff
+  .btn-cir:first-child
+    margin-right: 18px
+    +buttonCircle(115px,#202121)
+    span 
+      margin-top: 10px
+  .btn-cir:last-child
+    +buttonCircle(115px,$main)
+  &[data-aost]
+    +opacity
+  &.show
+    +opacity1
+// 表單送出按鈕
+.form-btn
+  position: relative
+  color: #fff
+  border: 0
+  p 
+    position: relative
+    letter-spacing: 0.46px
+    font-size: px(14)
+    &:after
+      +fakeBottomLine(2px,#fff)
+      bottom: -8px
+  &.dark 
+    color: #000
+    p 
+      &:after
+        background-color: #000
+    .cross
+      &:after,&:before
+        background-color: #000
+  &.green 
+    color: $main
+    p:after 
+      background-color: $main
+  &.bd0
+    border: 0
+  &.form-clear
+    display: flex
+    align-items: center
+    p 
+      margin-left: 10px
+    .cross
+      padding: 8px
+      top: 14px
+      left: 0
+      transform: translateY(-50%)
+      &:after,&:before
+        height: 16px
+      &:hover
+        &:after,&:before
+          animation: unset
+    &:hover
+      p 
+        &:after
+          width: 100%
+      .cross
+        &::after
+          animation: cross1 .5s ease-in-out both
+        &:before
+          animation: cross2 .5s ease-in-out both
+  &.form-done
+    display: flex
+    align-items: center
+    span
+      margin-left: 5px
+      display: block
+      transition: .5s ease-in-out
+      font-size: px(26)
+    &:hover
+      p 
+        &:after
+          width: 100%
+      span 
+        transform: translateX(10px)
+        color: $main
+  &.bd0-dark
+    border: 0
+    color: #000
+    p:after
+      background-color: #000
+    span 
+      margin-left: 7px
+      font-size: px(30)
+  &.bd0-red
+    border: 0
+    color: #ff5252
+    p:after
+      background-color: #ff5252
+  &.bd0-white
+    border: 0
+  &.opt
+    opacity: .7
+    &:hover 
+      opacity: 1
+  &.disable
+    color: #66697c
+    cursor: none
+    p:after
+      width: 0
+      height: 0
+    &:hover
+      p:after
+        width: 0
+  &.fakeline
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      width: 1px
+      height: 14px
+      background-color: #fff
+      opacity: .8
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+
+// 會員共用大標
+.member-title
+  .title
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    .left-block
+      &[data-aost]
+        .unit-title 
+          clip-path: inset(0 100% 0 0)
+        .logout
+          +opacity
+      &.show
+        .unit-title 
+          animation: imgIn .6s linear forwards
+        .logout
+          +opacity1
+    .unit-title 
+      max-width: none
+      .left 
+        .ch 
+          padding-top: 0
+          padding-bottom: 20px
+        .en
+          padding-bottom: 10px
+          border-bottom: solid 3px
+          +fontSet2(px(50),$basicbold)
+        p 
+          max-width: none
+          padding-top: 35px
+      +rwdmax(767)
+        .left
+          .ch 
+            padding-bottom: 10px
+    // 會員登出 按鈕
+    .logout
+      padding-top: 20px
+      display: inline-flex
+      flex-wrap: nowrap
+      align-items: center
+      cursor: pointer
+      .cir-btn
+        margin-right: 15px
+        width: 50px
+        height: 50px
+        display: flex
+        align-items: center
+        justify-content: center
+        color: #fff
+        font-size: px(24)
+      span
+        flex-shrink: 0
+        letter-spacing: 0.73px
+        +fontSet2(px(14),$basicbold)
+
+    // 目前會員等級資訊
+    .right
+      .level-info
+        display: flex
+        align-items: baseline
+        >div 
+          display: flex
+          align-items: center
+          .ch 
+            align-self: flex-end
+            margin-bottom: 3px
+            padding-right: 9px
+            font-size: px(14)
+          .en 
+            font-size: px(24)
+          p 
+            >span 
+              font-size: px(16)
+        >div:nth-child(2)
+          position: relative
+          padding-left: 15px
+          margin-left: 15px
+          &::after
+            content: ''
+            position: absolute
+            top: 52%
+            left: 0
+            transform: translateY(-50%)
+            width: 1px
+            height: 15px
+            background-color: #000
+        // 開啟會員等級btn
+        .open-level
+          margin-left: 9px
+          .btn-cir
+            width: 25px
+            height: 25px
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 0
+            background-color: #000
+            &::after
+              content: '?'
+              color: $main
+              +fontSet2(px(16),$basicbold)
+      .text
+        margin-right: 35px
+        padding-top: 14px
+        text-align: right
+        letter-spacing: 0.6px
+        font-size: px(12)
+        span
+          font-size: px(12)
+      
+      // 會員連結
+      .link-text
+        position: relative
+        a
+          display: flex
+          flex-direction: column
+          text-align: right
+          &.active
+            padding-bottom: 10px
+            .en 
+              position: static
+              padding-bottom: 15px
+              color: $main
+              font-size: px(33)
+              span:last-child
+                display: none
+            .ch
+              position: static
+              font-weight: bold
+              color: $main
+              letter-spacing: 1.03px
+              font-size: px(21)
+            +rwdmax(1100)
+              .en
+                padding-bottom: 10px
+            +rwdmax(900)
+              padding-bottom: 0
+              .en
+                display: none
+              .ch
+                letter-spacing: unset
+                font-size: px(16)
+        a:not(.active)
+          padding: 10px 0
+          .en
+            display: inline-block
+            position: relative
+            transition: opacity .5s ease-in-out
+            color: rgba(255,255,255,0.2)
+            font-size: px(18)
+            span:first-child
+              
+            span:last-child
+              display: none
+          .ch
+            position: absolute
+            right: 0
+            top: 50%
+            transform: translateY(-50%)
+            overflow: hidden
+            color: rgba(255,255,255,0.2)
+            opacity: 0
+            transition: opacity .5s ease-in-out
+            font-size: px(16)
+            &::after
+              content: ''
+              position: absolute
+              left: 0
+              top: 50%
+              transform: translateY(-50%)
+              height: 6px
+              opacity: 0
+              background-color: rgba(255,255,255,0.8)
+              transition: .5s ease-in-out
+              animation: blockIn .3s forwards
+          +rwdmin(1101)
+            &:hover 
+              .ch
+                opacity: 1
+                &::after
+                  opacity: 1
+                  animation: blockOut 1s forwards
+              .en 
+                opacity: 0
+          +rwdmax(900)
+            padding: 0
+            .ch 
+              display: block 
+              opacity: 1
+              position: static
+              transform: translateY(0)
+            .en 
+              display: none
+      &[data-aost]
+        +opacity
+      &.show
+        +opacity1
+  +rwdmax(1100)
+    .title
+      flex-direction: column
+      align-items: center
+      >div
+        width: 90%
+      .left-block
+        padding-bottom: 30px
+      .right
+        display: flex
+        // align-items: flex-end
+        flex-direction: column
+        padding-bottom: 0
+        border-top: 0
+        border-bottom: 0
+        .level-info
+          flex-direction: column
+          >div:nth-child(1)
+            padding-bottom: 15px
+          >div:nth-child(2)
+            padding-left: 0
+            margin-left: 0
+            &::after
+              width: 0
+              height: 0
+        // 會員連結
+        .link-text
+          a
+            display: inline-flex
+        .text
+          margin-right: 0
+          text-align: left
+    &.type-detail
+      .title
+        flex-direction: row
+        .right
+          align-items: flex-end
+  +rwdmax(900)
+    .title
+      .right
+        .link-text
+          width: 50%
+          a 
+            text-align: left
+            .ch 
+              right: auto 
+              left: 0
+            &.active
+              .ch 
+                color: #000
+            &:not(.active)
+              .ch 
+                color: rgba(0,0,0,0.5)
+    .link-text:nth-child(odd)
+      position: relative
+      padding-right: 30px
+      text-align: right
+      &::after
+        content: ''
+        position: absolute
+        right: 0
+        top: 0
+        width: 1px
+        height: 15px
+        background-color: rgba(0,0,0,0.2)
+    .link-text:nth-child(even)
+      padding-left: 30px
+      text-align: left
+    .link-text:last-child
+      padding-top: 15px
+      &::after
+        width: 0
+        height: 0
+    .link-text:nth-child(1),
+    .link-text:nth-child(2)
+      padding-bottom: 15px
+    &.type-detail
+      .title
+        flex-direction: column
+        .right
+          width: 100%
+          padding: 20px 0
+          flex-wrap: wrap
+          flex-direction: row
+          align-items: center
+          background-color: lighten(#e1e1e1,5%)
+  +rwdmax(767)
+    &.type-detail
+      .title
+        .logout
+          width: 60%
+
+// 訂單紀錄
+.order-list
+  &.range
+    +rwdmax(1100)
+      width: 100% !important
+  ul 
+    display: flex
+    flex-direction: column
+    li 
+      width: 100%
+      margin-bottom: 6px
+      padding: 30px 40px 25px
+      background-color: #434553
+      &.no-result
+        margin: 0
+        padding: 110px 0 300px 0
+        background-color: transparent
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        .en 
+          font-size: px(36)
+        .ch
+          padding-top: 20px
+          font-weight: bold
+          letter-spacing: 1.5px
+          font-size: px(20)
+    li:last-child
+      margin-bottom: 0
+    +rwdmax(1100)
+      li 
+        padding-left: 50px
+        padding-right: 50px
+        &.no-result
+          padding: 110px 0 100px 0
+    +rwdmax(767)
+      li 
+        padding-left: 20px
+        padding-right: 20px
+  .thead 
+    display: flex
+    >div 
+      padding: 0 24px 24px
+      flex-grow: 1
+      display: flex
+      flex-direction: column
+      .tit
+        color: #b2b2b6
+        letter-spacing: 0.46px
+        +fontSet2(px(14),$basicbold)
+      .ch,.en
+        color: #fff
+        font-family: $basic
+      .ch
+        padding-top: 18px
+        letter-spacing: 0.59px
+        font-size: px(14)
+      .en
+        padding-top: 15px
+        letter-spacing: 0.45px
+        font-size: px(18)
+    .shipping
+      a 
+        margin-left: 10px
+        padding-bottom: 6px
+        position: relative
+        &::after
+          +fakeBottomLine(2px,#fff)
+        &:hover 
+          &::after
+            width: 100%
+
+    +rwdmax(1200)
+      flex-wrap: wrap
+      >div
+        padding: 15px 0
+        width: 50%
+        border-bottom: solid 1px #767781
+        .ch 
+          padding-top: 13px
+      >div:last-child
+        width: 100%
+        align-items: center
+        border-bottom: 0
+  .detail
+    padding: 0 20px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    background-color: #31333e
+    .price
+      >span:nth-child(1)
+        margin-right: 10px
+        color: #fff
+        letter-spacing: 0.46px
+        +fontSet2(px(14),$basicbold)
+      span:nth-child(2)
+        letter-spacing: 0.78px
+        color: $main
+        +fontSet2(px(24),$basicbold)
+      .btn-cir
+        margin-left: auto
+        display: flex
+        align-items: center
+        justify-content: center
+        border-color: rgba(255,255,255,.2)
+        span
+          color: #fff
+          font-size: px(12)
+      
+    .button-wrap
+      display: flex
+      .form-btn
+        p 
+          font-family: $basicbold
+    +rwdmax(1200)
+      padding: 20px 0 0
+      margin-top: 7px
+      flex-direction: column
+    +rwdmax(767)
+      .price
+        span:nth-child(2)
+          letter-spacing: 0.59px
+          font-size: px(18)
+    +rwdmax(575)
+      .form-btn
+        padding: 20px 10px
+    +rwdmax(360)
+      .button-wrap
+        margin-top: 15px
+        flex-direction: column 
+        align-items: center
+      .form-btn
+        padding: 15px 10px
+      .form-btn.fakeline
+        &::before
+          width: 0
+          height: 0
+  // 結帳明細
+  .detail-text
+    padding-top: 30px
+    display: none
+    .wrap
+      display: flex
+      .fz-14
+        width: 24.3%
+        padding-left: 24px
+        flex-shrink: 0
+        color: #b2b2b6
+        letter-spacing: 0.46px
+        font-family: $basicbold
+      >div 
+        width: 100%
+        >div 
+          padding-bottom: 20px
+        span 
+          color: #fff
+          letter-spacing: 0.46px
+          +fontSet2(px(14),$basicbold)
+        span:last-child
+          position: relative
+          padding-left: 10px
+          margin-left: 10px
+          &::after
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 2px
+            height: 13px
+            background-color: #5a5c65
+    +rwdmax(1200)
+      padding-top: 0
+      background-color: #31333e
+      .wrap
+        flex-direction: column
+        padding: 0 35px
+        .fz-14
+          width: 100%
+          padding-bottom: 20px
+          padding-left: 0
+        >div
+          >div 
+            display: flex
+            span:last-child
+              margin-left: auto
+              &::after
+                width: 0
+                height: 0
+        .right
+          width: 100%
+    +rwdmax(767)
+      .wrap
+        padding: 0 16px
+        >div
+          >div
+            align-items: center
+            padding-bottom: 15px
+          span:first-child
+            width: 50%
+            line-height: 1.5
+          
+// 會員共用標題
+.member-bgtext
+  &.center
+    text-align: center
+    .text
+      justify-content: center
+  &.init
+    width: 100%
+    padding-top: 0 
+    padding-left: 0
+    padding-right: 0
+    padding-bottom: 45px
+    .text
+      justify-content: center
+      transform: translateY(0)
+  span 
+    color: rgba(0,0,0,0.1)
+    +fontSet2(px(131),$basic)
+  .text
+    display: flex
+    align-items: baseline
+    transform: translateY(-45px)
+  .en
+    font-size: px(35)
+  .ch
+    margin-left: 9px
+    letter-spacing: 0.95px
+    font-size: px(19)
+  +rwdmax(1200)
+    &.init
+      padding-bottom: 15px
+  +rwdmax(767)
+    position: relative
+    width: 100%
+    &.center
+      .text
+        position: absolute
+        bottom: 7px
+        left: 50%
+        transform: translateX(-50%)
+    &.init
+      padding-bottom: 22px
+      .text
+        display: flex
+        flex-direction: column 
+        align-items: center
+        .ch 
+          padding-top: 12px
+          margin-left: 0
+    span
+      font-size: px(98)
+    .text
+      width: 100%
+
+// 廣告
+.pub
+  position: fixed
+  width: 100%
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  background-color: rgba(255,255,255,.8)
+  z-index: 10
+  opacity: 0
+  display: none
+  transition: .5s ease-in-out
+  &.show
+    opacity: 1
+  .center
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+  &-wrap
+    max-width: pxTovw(1200)
+    width: 100%
+    // margin: 0 auto
+    position: relative
+    padding-bottom: 30px
+    .cir-btn
+      position: absolute
+      right: -25px
+      top: -25px
+      z-index: 2
+    +rwdmax(900)
+      max-width: 80vw
+    +rwdmax(767)
+      max-width: 90vw
+      .cir-btn
+        width: 35px
+        height: 35px
+        top: -20px
+        right: -15px
+  &-swiper
+    .swiper-slide
+      a 
+        width: 100%
+        position: relative
+        overflow: hidden
+        padding-bottom: 60%
+        .img 
+          width: 100%
+          +posCenter
+  .swiper-pagination
+    left: 50%
+    bottom: 0
+    transform: translateX(-50%)
+    z-index: 5
+  .swiper-pagination-bullet
+    margin: 0 6px
+    
+// 會員生日gif
+.gif 
+  position: fixed
+  width: 100%
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  background-color: rgba(255,255,255,.8)
+  z-index: 10
+  opacity: 0
+  display: none
+  transition: .5s ease-in-out
+  .hide
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 20
+    width: 100%
+    height: 100%
+    background-color: #fff
+  &.show
+    opacity: 1
+  &-wrap 
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    .img 
+      position: relative
+      width: 100%
+    img
+      width: 100%
+      +posCenter
+    +rwdmax(767)
+      img
+        width: 120%
+        
+// 燈箱
+.libox-container,.libox-inner,.libox-inner2
+  position: fixed
+  left: 0
+  top: 0
+  width: 100vw
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  background-color: rgba(0,0,0,0.2)
+  z-index: 100
+  opacity: 0
+  transition: .5s ease-in-out
+  display: none
+  &.show
+    opacity: 1
+  &.z-top 
+    z-index: 999 !important
+  .scrollbar-macosx
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+  
+// 共用提示燈箱
+.libox-common
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  overflow-y: scroll
+  &::-webkit-scrollbar-track
+    border-radius: 10px
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  &::-webkit-scrollbar
+    width: 6px
+    +rwdmax(767)
+      display: none
+  &::-webkit-scrollbar-thumb
+    border-radius: 10px
+    background-color: rgba(108, 110, 113, 1)
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  +rwdmax(575)
+    display: block
+    width: 100%
+    height: 100%
+  .cir-wrap
+    position: relative
+    width: 450px
+    height: 450px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    border-radius: 100%
+    background-color: #202020
+    box-shadow: 7.4px 9.5px 25.8px 3.2px rgba(0, 0, 0, 0.31)
+    overflow: hidden
+    &.large
+      width: 885px
+      height: 885px
+    &.middle
+      width: 765px
+      height: 765px
+    // 載入中
+    &.loading
+      .bg
+        position: absolute
+        width: 100%
+        height: 100%
+        overflow: hidden
+        border-radius: 100%
+        background-position-x: 68%
+        background-position-y: 6%
+        background-size: 365%
+        background-image: url(../../../dist/assets/img/loading-bg.png)
+        animation: rotate 5s linear infinite
+      .cir-bg 
+        h5 
+          padding-top: 0
+          &::after
+            content: '...'
+            animation: dotsContent 1.5s infinite 
+        h6 
+          padding-bottom: 0
+    &.loading2
+      .bg 
+        position: absolute
+        width: 100%
+        height: 100%
+        overflow: hidden
+        background-position-x: 28%
+        background-position-y: 100%
+        background-size: 285%
+        background-image: url(../../../dist/assets/img/search-bg.jpg)
+      .cir-bg 
+        h6
+          padding-top: 10px
+        p 
+          padding-top: 10px
+    // 會員
+    &.member
+      .bg 
+        position: absolute
+        z-index: 0
+        width: 100%
+        height: 100%
+        overflow: hidden
+        background-position-x: 0%
+        background-position-y: 70%
+        background-size: 310%
+        background-image: url(../../../dist/assets/img/search-bg.jpg)
+      .cir-bg 
+        h6
+          padding-top: 10px
+          padding-bottom: 20px
+      
+    // 加入商品
+    &.add
+      .cir-bg 
+        .bg-text
+          top: 40%
+      .img 
+        z-index: 1
+        &.large
+          width: 80%
+      h6 
+        padding: 0
+        text-align: center
+    // 加入商品組合
+    &.addpackage
+      h6 
+        padding-top: 220px
+    // 登入會員
+    &.login
+      .btn-close
+        cursor: pointer
+        opacity: .5
+        transition: all .5s ease-in-out
+        &:hover
+          opacity: 1
+      .btn-close:nth-child(2)
+        position: relative
+        padding-left: 10px
+        margin-left: 10px
+        &::after
+          content: ''
+          position: absolute
+          left: 0
+          top: 50%
+          transform: translateY(-50%)
+          width: 1px
+          height: 10px
+          background-color: #fff
+        
+    // 庫存不足
+    &.shortage
+      .cir-btn
+        flex-shrink: 0
+        margin-top: 45px
+      .btn-close
+        cursor: pointer
+        margin-top: auto 
+        margin-bottom: 13%
+      .form-btn.goTop
+        margin-bottom: 10%
+        display: flex
+        align-items: center
+        border: 0
+        color: $main
+        p 
+          letter-spacing: 0.53px
+          +fontSet2(px(16),$basicbold)
+        .icon-trangle-up
+          margin-left: 10px
+          font-size: px(12)
+      .cir-bg
+        width: 100%
+        height: 100%
+        justify-content: flex-start
+        >p
+          max-width: 500px
+          width: 100%
+          margin: 0 auto 
+          text-align: center
+      .stoke-wrap
+        max-width: 530px
+        width: 100%
+        margin: 40px auto 0
+        .scrollbar-inner
+          max-height: 350px !important
+          >.scroll-element.scroll-y
+            width: 4px
+            border-radius: 0px
+            .scroll-element_outer
+              border-radius: 0px
+            .scroll-element_track
+              width: 1px
+              left: 1px
+            .scroll-bar
+              width: 3px
+              background-color: $main
+              opacity: 1
+              border-radius: 0px
+        ul
+          max-width: 470px
+          width: 100%
+          margin: 0 auto
+        .tit 
+          padding-bottom: 15px
+          display: flex
+          justify-content: space-between
+          align-items: center
+          color: #fff 
+          >span 
+            flex-shrink: 0
+            letter-spacing: 1.05px
+            font-size: px(14)
+          &-wrap
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            line-height: 1.5
+            margin-right: 10px
+            span 
+              letter-spacing: 1.35px
+              font-size: px(18)
+            span:last-child
+              margin-left: 15px
+              padding-left: 15px
+              position: relative
+              &::after
+                content: ''
+                position: absolute
+                left: 0
+                top: 50%
+                transform: translateY(-50%)
+                width: 1px
+                height: 15px
+                background-color: rgba(255,255,255,.3)
+        li
+          padding: 18px 20px
+          border-bottom: solid 1px #333
+          >div
+            display: flex
+          p 
+            padding-right: 5px
+            &.after
+              position: relative
+              padding-right: 15px
+              margin-right: 10px
+              &::after
+
+                content: 'x'
+                position: absolute
+                right: 0
+                top: 0
+                font-weight: bold
+                letter-spacing: 0.46px
+                +fontSet2(px(14),$basicbold)
+                +mozhack
+                  font-weight: normal
+                
+        li:first-child
+          padding-top: 0
+        li:last-child
+          border-bottom: 0
+          padding-bottom: 0
+      .img-cir
+        flex-shrink: 0
+        width: 20px
+        height: 20px
+        border-radius: 100%
+        border: solid 2px #fff
+        margin-right: 8px
+        img 
+          border-radius: 100%
+      +rwdmax(1400)
+        width: 750px
+        height: 750px
+        padding: 50px 0
+        .cir-btn
+          margin-top: 0
+        .btn-close
+          margin-bottom: 10px
+        .stoke-wrap
+          max-width: 500px
+          .scrollbar-inner
+            max-height: 250px !important
+        .form-btn.goTop
+          margin-bottom: 5%
+      +rwdmax(1350)
+        width: 650px
+        height: 650px
+        .cir-bg
+          h5 
+            padding-top: 40px
+        .stoke-wrap
+          max-width: 450px
+          .scrollbar-inner
+            max-height: 200px !important
+      +rwdmax(700)
+        padding: 50px 120px
+        .stoke-wrap
+          margin-top: 35px
+        .cir-bg
+          position: initial
+          h5 
+            padding-top: 28px
+        .btn-close
+          position: absolute
+          bottom: 55px
+          margin-bottom: 0
+        li
+          div:not(.tit)
+            flex-wrap: wrap 
+            max-width: 270px
+            div:nth-child(5),
+            p:nth-child(6)
+              margin-top: 5px
+      +rwdmax(550)
+        width: 620px
+        height: 620px
+      +rwdmax(450)
+        padding: 55px 135px
+    +rwdmax(575)
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+  .bg
+    width: 100%
+    height: 100%
+    background-position: center center
+    background-size: cover
+    position: absolute
+    left: 0
+    top: 0 
+  .cir-bg 
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    .bg-text
+      position: absolute
+      left: 50%
+      top: 30%
+      color: rgba(255,255,255,0.06)
+      transform: translate(-50%,-50%) rotate(10deg)
+      +fontSet2(px(197),$basicbold)
+      &.green
+        color: $main
+    h5,h6 
+      width: 100%
+      text-align: center
+      color: $main
+      &.white
+        color: #fff
+    h5 
+      padding-top: 70px
+      +fontSet2(px(36),$basic)
+    h6 
+      padding: 22px 0
+      font-weight: bold
+      line-height: 1.5
+      letter-spacing: 1.5px
+      +fontSet2(px(20),$basic)
+    p
+      color: #fff
+      line-height: 1.5
+      letter-spacing: 1.05px
+      +fontSet2(px(14),$basic)
+      &.wrongText
+        width: 80%
+        text-align: center
+    .wrap
+      display: flex
+    .btn-close
+      cursor: pointer
+      margin-top: 50px
+      p 
+        transition: letter-spacing .3s ease-in-out
+      &:hover 
+        p 
+          letter-spacing: 2px
+    
+.libox-inner,.libox-inner2
+  visibility: hidden
+  z-index: -1
+  &.show
+    visibility: visible
+    z-index: 100
+    opacity: 1
+  &[data-name="reset"]
+    text-align: center
+    .libox-common .cir-bg .bg-text
+      top: 40%
+  &[data-name="guide"]
+    .cir-wrap.shortage
+      .cir-bg
+        height: auto
+      .cir-btn
+        &.ajax_close
+          margin-top: 0
+        &.goTop 
+          margin-top: 100px
+      .scrollbar-inner
+        max-height: 370px !important
+      +rwdmax(1400)
+        .cir-bg
+          h5 
+            padding-top: 40px
+        .scrollbar-inner
+          max-height: 300px !important
+      +rwdmax(1350)
+        width: 650px
+        height: 650px
+        .stoke-wrap
+          max-width: 450px
+        .scrollbar-inner
+          max-height: 200px !important
+        .cir-btn
+          &.ajax_close
+            margin-top: 0px
+          &.goTop 
+            margin-top: 50px
+      +rwdmax(700)
+        padding: 120px 120px
+      +rwdmax(550)
+        width: 620px
+        height: 620px
+        padding: 90px 90px
+      +rwdmax(450)
+        padding: 90px 135px
+    .img
+      max-width: 370px
+      width: 100%
+      margin: 0 auto
+  
+  &[data-name="loading2"],
+  &[data-name="couponLimit"],
+  &[data-name="payType"],
+  &[data-name="invType"]
+    &.show
+      z-index: 101
+    .libox-common
+      .cir-wrap.login .btn-close:first-child:after
+        width: 0
+        height: 0
+      
+.libox-container2
+  position: fixed
+  left: 0
+  top: 0
+  width: 100vw
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  z-index: 101
+  .scrollbar-macosx
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+
+// 商品評價
+[data-name="eva"]
+  .cir-wrap
+    width: 685px
+    height: 685px
+    padding-top: 50px
+    padding-bottom: 50px
+    justify-content: flex-start
+  .cir-bg
+    max-width: 475px
+    width: 100%
+    margin: 0 auto
+  .medals
+    padding-top: 20px
+    padding-bottom: 40px
+    .icon-wrap
+      position: relative
+    .text 
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      color: #fff
+      +posCenter
+      .en
+        +fontSet2(px(50),$basicbold)
+      .ch 
+        letter-spacing: 0.7px
+        font-size: px(14)
+  .scrollbar-inner
+    max-height: 210px !important
+    >.scroll-element.scroll-y
+      width: 4px
+      border-radius: 0px
+      .scroll-element_outer
+        border-radius: 0px
+      .scroll-element_track
+        width: 1px
+        left: 1px
+      .scroll-bar
+        width: 3px
+        background-color: $main
+        opacity: 1
+        border-radius: 0px
+
+    .content
+      min-width: 400px
+      padding-right: 35px
+      color: #fff
+      .top 
+        padding-bottom: 35px
+        display: flex
+        align-items: center
+        justify-content: space-between
+      .name
+        letter-spacing: 0.95px
+        font-size: px(19)
+      .date
+        letter-spacing: 0.7px
+        +fontSet2(px(14),$basicbold)
+      +rwdmax(767)
+        min-width: unset
+  .cir-btn.goTop
+    // margin-top: auto
+    margin-top: 40px
+    >div 
+      width: 100%
+      height: 100%
+      +flexCenter
+  +rwdmax(575)
+    .cir-bg
+      max-width: none
+      width: 50%
+
+.headshot
+  width: 100%
+  height: 100%
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center

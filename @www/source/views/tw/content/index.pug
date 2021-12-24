@@ -1,0 +1,687 @@
+- 
+  var marquee = [
+    {
+      direction: 'right',
+      scrollamount : '7',
+      //- text: 'Transfer the  perspective from now on.',
+      text: 'Hello! 哩賀! 你好!',
+      img: [
+        {
+          size: 'small',
+          pic: '../../../uploads/index/img-01-190X250.png'},
+        {
+          size: 'large',
+          pic: '../../../uploads/index/img-02-380X250.png'},
+        {
+          size: 'small',
+          pic: '../../../uploads/index/img-03-190X250.png'},
+      ]},
+    {
+      direction: 'left',
+      scrollamount : '7',
+      //- text: 'Not afraid of adventure and exploration.',
+      text: 'Hello! 哩賀! 你好!',
+      img: [
+        {
+          size: 'small',
+          pic: '../../../uploads/index/img-04-190X250.png'},
+        {
+          size: 'small',
+          pic: '../../../uploads/index/img-05-190X250.png'},
+        {
+          size: 'small',
+          pic: '../../../uploads/index/img-06-190X250.png'},
+      ]},
+    {
+      direction: 'right',
+      scrollamount : '7',
+      //- text: 'Looking for a new home. Looking for a new home.',
+      text: 'Hello! 哩賀! 你好!',
+      img: [
+        {
+          size: 'small',
+          pic: '../../../uploads/index/img-07-190X250.png'},
+        {
+          size: 'large',
+          pic: '../../../uploads/index/img-08-380X250.png'},
+        {
+          size: 'small',
+          pic: '../../../uploads/index/img-09-190X250.png'},
+      ]},
+    //- {
+    //-   direction: 'right',
+    //-   scrollamount : '15',
+    //-   text: 'Looking for a new home. Looking for a new home.',
+    //-   img: [
+    //-     {
+    //-       size: 'large',
+    //-       pic: '../../../uploads/index/img-02-315X160.png'},
+    //-     {
+    //-       size: 'large',
+    //-       pic: '../../../uploads/index/img-08-335X147.png'},
+    //-     {
+    //-       size: 'large',
+    //-       pic: '../../../uploads/index/img-02-315X160.png'},
+    //-   ]},
+    //- {
+    //-   direction: 'right',
+    //-   scrollamount : '15',
+    //-   text: 'Looking for a new home. Looking for a new home.',
+    //-   img: [
+    //-     {
+    //-       size: 'large',
+    //-       pic: '../../../uploads/index/img-02-315X160.png'},
+    //-     {
+    //-       size: 'large',
+    //-       pic: '../../../uploads/index/img-08-335X147.png'},
+    //-     {
+    //-       size: 'large',
+    //-       pic: '../../../uploads/index/img-02-315X160.png'},
+    //-   ]},
+    //- {
+    //-   direction: 'right',
+    //-   scrollamount : '15',
+    //-   text: 'Looking for a new home. Looking for a new home.',
+    //-   img: [
+    //-     {
+    //-       size: 'large',
+    //-       pic: '../../../uploads/index/img-02-315X160.png'},
+    //-     {
+    //-       size: 'large',
+    //-       pic: '../../../uploads/index/img-08-335X147.png'},
+    //-     {
+    //-       size: 'large',
+    //-       pic: '../../../uploads/index/img-02-315X160.png'},
+    //-   ]},
+  ]
+
+
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/index.css")
+  // data-random : 幫我放產品隨機(每次進來都不一樣)三張png家具圖
+  // data-trans : 大單元會加上此轉場標籤
+  body.home(data-page="home" data-random='[{"pic":"../../../uploads/index/img-02-315X160.png"},{"pic":"../../../uploads/index/img-08-335X147.png"},{"pic":"../../../uploads/index/img-07-103X147.png"}]' data-trans)
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="") 
+    h1 有情門 strausslab
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+
+        // 1. 先選擇區塊要上的圖片數量
+        // 2. 根據每個區塊的圖片數量(1~4)再繼續做選擇
+        // type-row1 : 一大圖 >> 可選 圖片左/中/右 >> 選擇圖片比例 小/中/大/滿版
+        // type-row2 : 兩圖 >> 選左右比例 3X6 6X3 4X5 5X4 5X5
+        // type-row3 : 三圖 >> 尺寸固定 (手機版swiper)
+        // type-row4 : 四圖 >> 尺寸固定 可以選擇讓某張圖片區域(1~4)隱藏(+樣式)(結構需要存在) / (手機版swiper)
+        // type-row1+type-mix : 滾動換圖樣式
+        // 可選擇讓物件<div class="obj"> 上(data-path="top")/下(data-path="bottom")/左(data-path="left")/右(data-path="right") 做滾動視差
+        // 3. 滿版或不滿版
+        // 滿版 + class : type-fullVer
+        // 不滿版 + class : type-disVer
+        // <div class="type-row2 type-disVer">
+        // 4. 選擇大標題樣式(可上可不上)
+        // title-type : 9種位置
+        // (data-type="left-top" data-type="left-center" data-type="left-bottom")
+        // (data-type="center-top" data-type="center-center" data-type="center-bottom")
+        // (data-type="right-top" data-type="right-center" data-type="right-bottom")
+        // 5. 可選擇大標是否有動態
+        // 靜態 title-type
+        // 靜態標題注意 : 英文/中文 可隨意是否要上(最後一個 span 要加上 border-bottom)
+        // 有動態 title-type + title-move
+        // 動態效果: 
+        // (data-move="loop") - 多組字循環播放
+        // (data-move="top") - 文字往上長(最多只能增加到 3組不同字樣)
+        // (data-move="bottom") - 文字往下長(最多只能增加到 3組不同字樣)
+
+        // 主要內容
+        main
+          //- .transbox 
+          //-   .big-text
+          //-     .text
+          //-       div
+          //-         span E
+          //-         span X
+          //-         span P
+          //-         span L
+          //-         span O
+          //-         span R
+          //-     .text
+          //-       div
+          //-         span C
+          //-         span U
+          //-         span R
+          //-         span I
+          //-         span O
+          //-         span S
+          //-         span I
+          //-         span T
+          //-         span Y
+          //-     .text
+          //-       div
+          //-         span A
+          //-         span D
+          //-         span V
+          //-         span E
+          //-         span N
+          //-         span T
+          //-         span U
+          //-         span R
+          //-         span E
+              
+
+            //- .title-type
+            //-   div
+            //-     span.en Strauss Lab
+            //-     span.en Strauss Lab
+            //-     span.en.border-bottom Strauss Lab
+            //- .img.type-shake
+            //-   .img-wrap
+            //-     img(src="../../../uploads/index/img-08-380X250.png", alt="")
+            //-   .img-wrap
+            //-     img(src="../../../uploads/product/detail-obj07-380X250.png", alt="")
+            //-   .img-wrap
+            //-     img(src="../../../uploads/index/img-02-380X250.png", alt="")
+          
+          //- section.type-row4.type-disVer(data-shift-container)
+          //-   .title-type(data-type="center-bottom")
+          //-     span.en.white-after Discover Meet
+          //-     span.ch.border-bottom.white-after 重新定義生活風格‧挖掘全新體驗感知
+          //-   .swiper-container
+          //-     .swiper-wrapper
+          //-       .swiper-slide
+          //-         a.block.white-after.hover-cir(href="javascript:;" data-shift="down" data-clear)
+          //-           .img-normal
+          //-             .parallax-container(data-parallax-container)
+          //-               .img-bg(style="background-image: url(../../../uploads/index/img05-320X552.jpg)" data-parallax data-parallax-bg)
+          //-                 .obj(data-path="left")
+          //-                   img(src="../../../uploads/index/wood01-320X460.png", alt="")
+          //-             .text
+          //-               p
+          //-           .img-cover 
+          //-             .parallax-container(data-parallax-container)
+          //-               .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg) 
+          //-             .text
+          //-               p
+          //-       .swiper-slide.v-hidden
+          //-         a.block.white-after.hover-cir(href="javascript:;" data-shift="down" data-clear)
+          //-           .img-normal
+          //-             .parallax-container
+          //-               .img-bg
+          //-             .text
+          //-               p
+          //-       .swiper-slide
+          //-         a.block.white-after.hover-cir(href="javascript:;" data-shift="up" data-clear)
+          //-           .img-normal
+          //-             .parallax-container(data-parallax-container)
+          //-               .img-bg(style="background-color: #f091e5" data-parallax data-parallax-bg)
+          //-                 .obj(data-path="bottom")
+          //-                   img(src="../../../uploads/index/wood02-320X460.png", alt="")
+          //-             .text
+          //-               p
+          //-           .img-cover 
+          //-             .parallax-container(data-parallax-container)
+          //-               .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg)
+          //-             .text
+          //-               p
+          //-       .swiper-slide
+          //-         a.block.white-after.hover-cir(href="javascript:;" data-clear)
+          //-           .img-normal
+          //-             .parallax-container(data-parallax-container)
+          //-               .img-bg(style="background-image: url(../../../uploads/index/img06-320X552.jpg)" data-parallax data-parallax-bg)
+          //-                 .obj(data-path="right")
+          //-                   img(src="../../../uploads/index/wood03-320X460.png", alt="")
+          //-             .text
+          //-               p
+          //-           .img-cover 
+          //-             .parallax-container(data-parallax-container)
+          //-               .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg)
+          //-             .text
+          //-               p
+          //-     .swiper-pagination
+          //- section.type-row1.type-mix.type-fullVer
+          //-   .fix-wrap
+          //-     // 第一則 + show
+          //-     .block-wrap.show.center(data-size="middle")
+          //-       .title-type(data-type="center-top")
+          //-         span.en.border-bottom.white-after space memory
+          //-       a.block.white-after.hover-cir(href="javascript:;")
+          //-         .img-normal
+          //-           img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img07-960X1100.jpg", alt="")
+          //-     .block-wrap.left(data-size="large")
+          //-       .title-type(data-type="right-top")
+          //-         span.en.border-bottom.white-after dinning time
+          //-       a.block.white-after.hover-cir(href="javascript:;")
+          //-         .img-normal
+          //-           img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img08-960X1100.jpg", alt="")
+          //-         .img-cover 
+          //-           img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img07-960X1100.jpg", alt="")
+          //-     .block-wrap.right(data-size="small")
+          //-       .title-type(data-type="left-center")
+          //-         span.en.border-bottom.white-after good night :)
+          //-       a.block.white-after.hover-cir(href="javascript:;")
+          //-         .img-normal
+          //-           img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img09-960X1100.jpg", alt="")
+          //-         .img-cover 
+          //-           img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img07-960X1100.jpg", alt="")
+          //-     .block-wrap.left(data-size="large")
+          //-       .title-type(data-type="right-bottom")
+          //-         span.en.border-bottom.white-after good night :)
+          //-       a.block.white-after.hover-cir(href="javascript:;")
+          //-         .img-normal
+          //-           img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img12-1280X860.jpg", alt="")
+          // 兩圖樣式: type-row2 
+          // 選擇 滿版 type-fullVer / 不滿版 type-disVer
+          // 要選擇圖片比例: data-type="3X6" data-type="6X3" data-type="4X5" data-type="5X4" data-type="5X5" 
+          // 圖片建議尺寸 : (data-type="4X5" data-type="5X4" data-type="5X5") 960X1030
+          // 圖片建議尺寸 : (data-type="3X6" data-type="6X3") 大圖 1040X795 小圖 320X552
+          // 家具 png 建議尺寸("4X5") : 640X790 & 960X1080
+          // 靜態標題注意 : 英文/中文 可隨意是否要上(最後一個 span 要加上 border-bottom)
+          section.type-row2.type-fullVer(data-type="4X5" data-shift-container)
+            .title-type(data-type="left-bottom")
+              span.en.white-after.white-after-index Discover Meet
+              span.ch.border-bottom.white-after.white-after-index 重新定義生活風格‧挖掘全新體驗感知
+            // 以下是 type-row2/type-row3/type-row4 的共同規則 (背景圖/背景色/是否有內容物件/內容物件的相關設定)
+            .block-wrap
+              a.block.hover-cir.white-after.white-after-index.cursor-none(href="javascript:;" data-hover="yellowBig")
+                // 可上兩張圖: (hover換圖) / 也可只上一張
+                // img-normal : 第一張圖
+                .img-normal
+                  .parallax-container(data-parallax-container)
+                    // img-bg : 可選擇上圖(data-src="") 或是填入背景色(style="background-color: ")
+                    .img-bg.b-lazy(data-src="" style="background-color: #f7c3b8" data-parallax data-parallax-bg)
+                      // <div class="obj"> : 有家具物件(png) (不上可移除此結構)
+                      // data-path : 根據家具物件的圖片處理方式 需選擇物件的位置 靠上(top)/下(bottom)/左(left)/右(right)
+                      .obj(data-path="right")
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/sofa-640X790.png", alt="")
+                  // 產品名稱可上可不上
+                  .text 
+                    p
+                // img-cover : 第二張圖
+                // 不上第二張圖可移除此結構
+                .img-cover
+                  .parallax-container(data-parallax-container)
+                    // img-bg : 可選擇上圖(data-src="") 或是填入背景色(style="background-color:")
+                    .img-bg.b-lazy(data-src="../../../uploads/index/color-block-960X1300.jpg" data-parallax data-parallax-bg)
+                      .obj(data-path="right")
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/desk-960X1080.png", alt="")
+                  // 產品名稱可上可不上
+                  .text
+                    p
+              a.block.hover-cir.hover-text.white-after.white-after-index.cursor-none(href="javascript:;" data-hover="yellowBig")
+                // 只有上一張圖的
+                .img-normal
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(data-src="../../../uploads/index/color-block-960X1300.jpg" data-parallax data-parallax-bg)
+                      .obj(data-path="right")
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/desk-960X1080.png", alt="")
+                  .text
+                    p
+          // 三圖樣式: type-row3
+          // 注意 : type-row3 和 type-row4 不要用b-lazy
+          // 選擇 滿版 type-fullVer / 不滿版 type-disVer
+          // 三圖和四圖樣式的 注意要加  (data-shift-container) 
+          // <a class="block"> 可設定上/下位移 <data-shift="up"> <data-shift="down">
+          // 背景圖片: 背景圖(建議尺寸: 400X618) 或是 自選背景底色
+          // 家具 png 建議尺寸 : 400X480
+          section.type-row3.type-disVer(data-shift-container)
+            .swiper-container
+              .swiper-wrapper
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="up" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img01-400X618.jpg)" data-parallax data-parallax-bg)
+                      // 產品名稱可上可不上 兩邊要一樣
+                      .text
+                        p 圓圓條凳 W46.5
+                    .img-cover 
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg)
+                      // 產品名稱可上可不上
+                      .text
+                        p 圓圓條凳 W46.5
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="down" data-clear data-hover="yellowBig")
+                    .img-normal
+                      // 如果客戶只有單純放一張 png 圖片 (背景圖/底色都不設定) 注意這邊要+ visible
+                      .parallax-container.visible(data-parallax-container)
+                        .img-bg
+                          .obj(data-path="top")
+                            img(src="../../../uploads/index/cat02.png", alt="")
+                      .text
+                        p 加菲 多功能收納桶
+                    .img-cover
+                      .parallax-container.visible(data-parallax-container)
+                        .img-bg
+                          .obj(data-path="top")
+                            img(src="../../../uploads/index/cat01.png", alt="")
+                      .text
+                        p 加菲 多功能收納桶
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="up" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg)
+              .swiper-pagination
+          // 四圖樣式: type-row4
+          // 注意 : type-row3 和 type-row4 不要用b-lazy
+          // 選擇 滿版 type-fullVer / 不滿版 type-disVer
+          // 三圖和四圖樣式的  注意要加 (data-shift-container) 
+          // <a class="block"> 可設定上/下位移 <data-shift="up"> <data-shift="down"> 
+          // 背景圖片: 背景圖(建議尺寸: 400X618) 或是 自選背景底色
+          // 家具 png 建議尺寸 : 320X460
+          section.type-row4.type-disVer(data-shift-container)
+            // 動態標題 + title-move
+            // 選位置: data-type="left-top"
+            // 選效果: 多組標題循環播放 data-move="loop" (客戶可新增多組字)
+            .title-type.title-move(data-type="left-bottom" data-move="loop")
+              //- .en.border-bottom
+              //-   p Discover Meet
+              //- .en.border-bottom 
+              //-   p WHAT’S UP?
+              //- .en.border-bottom
+              //-   p FOR ADVENTURE
+              .en.border-bottom
+                p Hello!
+              .en.border-bottom 
+                p 哩賀!
+              .en.border-bottom
+                p 你好!
+            .swiper-container
+              .swiper-wrapper
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="down" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-color: #e6e6e6" data-parallax data-parallax-bg)
+                          .obj(data-path="top")
+                            img(src="../../../uploads/index/chair01-320X460.png", alt="")
+                      .text
+                        p 圓圓條凳 W46.5
+                    .img-cover 
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg) 
+                      .text
+                        p 圓圓條凳 W46.5
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="up" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img11-320X552.jpg)" data-parallax data-parallax-bg)
+                          .obj(data-path="top")
+                            img(src="../../../uploads/index/chair02-320X460.png", alt="")
+                      .text
+                        p 圓圓條凳 W46.5
+                    .img-cover 
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/chair02-2-320X460.jpg)" data-parallax data-parallax-bg)
+                      .text
+                        p 圓圓條凳 W46.5
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="down" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-color: #95dae9" data-parallax data-parallax-bg)
+                          .obj(data-path="top")
+                            img(src="../../../uploads/index/chair03-320X460.png", alt="")
+                      .text
+                        p 
+                    .img-cover 
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg)
+                      .text
+                        p
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="up" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/chair04-320X552.jpg)" data-parallax data-parallax-bg)
+                      .text
+                        p
+                    .img-cover 
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg)
+                      .text
+                        p
+              .swiper-pagination
+          // 四圖樣式: type-row4
+          // 注意四圖樣式 
+          // 可以選擇隱藏 1~4 某個區塊(結構需存在) <div class="swiper-slide"> + class: v-hidden
+          section.type-row4.type-fullVer(data-shift-container)
+            .swiper-container
+              .swiper-wrapper
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="down" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img05-320X552.jpg)" data-parallax data-parallax-bg)
+                          .obj(data-path="left")
+                            img(src="../../../uploads/index/wood01-320X460.png", alt="")
+                      .text
+                        p
+                    .img-cover 
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg) 
+                      .text
+                        p
+                .swiper-slide.v-hidden
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="down" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container
+                        .img-bg
+                      .text
+                        p
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="up" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-color: #f091e5" data-parallax data-parallax-bg)
+                          .obj(data-path="bottom")
+                            img(src="../../../uploads/index/wood02-320X460.png", alt="")
+                      .text
+                        p
+                    .img-cover 
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg)
+                      .text
+                        p
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img06-320X552.jpg)" data-parallax data-parallax-bg)
+                          .obj(data-path="right")
+                            img(src="../../../uploads/index/wood03-320X460.png", alt="")
+                      .text
+                        p
+                    .img-cover 
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg)
+                      .text
+                        p
+              .swiper-pagination
+          // 滾動換圖樣式 : type-row1+type-mix
+          // 選擇 滿版 type-fullVer / 不滿版 type-disVer
+          // 圖片建議尺寸 : 直圖(960X1100) 横圖(1280X860)
+          // 可選擇圖片比例 data-size: 小(small)/中(middle)/大(large)/滿版(full)
+          // block-wrap +class 可設定 圖片靠左(left)/置中(center)/靠右(right)
+          section.type-row1.type-mix.type-disVer
+            .fix-wrap
+              // 第一則 + show
+              .block-wrap.show.center(data-size="middle")
+                .title-type(data-type="center-top")
+                  span.en.border-bottom.white-after.white-after-index space memory
+                a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-hover="yellowBig")
+                  .img-normal
+                    img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img07-960X1100.jpg", alt="")
+              .block-wrap.center(data-size="middle")
+                .title-type(data-type="right-top")
+                  span.en.border-bottom.white-after.white-after-index dinning time
+                a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-hover="yellowBig")
+                  .img-normal
+                    img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img08-960X1100.jpg", alt="")
+                  .img-cover 
+                    img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img07-960X1100.jpg", alt="")
+              .block-wrap.center(data-size="middle")
+                .title-type(data-type="left-center")
+                  span.en.border-bottom.white-after.white-after-index good night :)
+                a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-hover="yellowBig")
+                  .img-normal
+                    img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img09-960X1100.jpg", alt="")
+                  .img-cover 
+                    img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img07-960X1100.jpg", alt="")
+              //- .block-wrap.left(data-size="middle")
+              //-   .title-type(data-type="right-bottom")
+              //-     span.en.border-bottom.white-after.white-after-index good night :)
+              //-   a.block.white-after.white-after-index.hover-cir(href="javascript:;" data-hover="yellowBig")
+              //-     .img-normal
+              //-       img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img12-1280X860.jpg", alt="")
+              //- .block-wrap.left(data-size="middle")
+              //-   .title-type(data-type="right-center")
+              //-     span.en.border-bottom.white-after.white-after-index a lazy day :-S
+              //-   a.block.white-after.white-after-index.hover-cir(href="javascript:;" data-hover="yellowBig")
+              //-     .img-normal
+              //-       img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/img07-960X1100.jpg", alt="")
+          // type-row2 兩圖 3X6
+          section.type-row2.type-disVer(data-type="3X6")
+            .block-wrap
+              a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="down" data-clear data-hover="yellowBig")
+                .img-normal
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(data-src="../../../uploads/index/img11-320X552.jpg" data-parallax data-parallax-bg)
+                      .obj(data-path="left")
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/rice-400X505.png", alt="")
+                  .text
+                    p 飯糰葉子茶几
+                .img-cover
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(data-src="" data-parallax data-parallax-bg)
+                      .obj(data-path="top")
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/index/wood04-400X505.png", alt="")
+                  .text
+                    p 飯糰葉子茶几
+              a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-hover="yellowBig")
+                .img-normal
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(data-src="../../../uploads/index/img10-1040X795.jpg" data-parallax data-parallax-bg)
+                  .text
+                    p
+          // 單大圖 : type-row1
+          // 選擇 滿版 type-fullVer / 不滿版 type-disVer
+          // 圖片建議尺寸 : 直圖(960X1100) 横圖(1280X1032)
+          // 可選擇圖片比例 data-size: 小(small)/中(middle)/大(large)/滿版(full)
+          // type-row1 +class 可設定 圖片靠左(預設)/置中(center)/靠右(right)
+          section.type-row1.left(data-size="large")
+            // 文字動態: 往上長 (最多只可以新增3組不同字樣)
+            .title-type.title-move(data-type="left-bottom" data-move="bottom")
+              .en
+                span.white-after.white-after-index life experience
+              .en
+                span.white-after.white-after-index life experience
+              .en.border-bottom
+                span.white-after.white-after-index life experience
+            .block-wrap
+              a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-hover="yellowBig")
+                .img-normal
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(data-src="../../../uploads/index/img12-1280X860.jpg" data-parallax data-parallax-bg)
+                .img-cover
+                  .parallax-container(data-parallax-container)
+                    .img-bg.b-lazy(data-src="../../../uploads/index/color-block-960X1300.jpg" data-parallax data-parallax-bg)
+
+          section.type-row4.type-disVer(data-shift-container)
+            // 文字動態: 往上長 (最多只可以新增3組不同字樣)
+            .title-type.title-move(data-type="center-top" data-move="top")
+              .en
+                span.white-after.white-after-index life experience
+              .en
+                span.white-after.white-after-index life experience
+              .en.border-bottom
+                span.white-after.white-after-index life experience
+            .swiper-container
+              .swiper-wrapper
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="down" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img13-320X552.jpg)" data-parallax data-parallax-bg)
+                      .text
+                        p
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="up" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img14-320X552.jpg)" data-parallax data-parallax-bg)
+                          .obj(data-path="right")
+                            img(src="../../../uploads/index/sofa-320X460.png", alt="")
+                      .text
+                        p
+                    .img-cover 
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img14-320X552.jpg)" data-parallax data-parallax-bg)
+                          .obj(data-path="left")
+                            img(src="../../../uploads/index/chair03-320X460.png", alt="")
+                      .text
+                        p
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="down" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img11-320X552.jpg)" data-parallax data-parallax-bg)
+                          .obj(data-path="right")
+                            img(src="../../../uploads/index/wood06-320X460.png", alt="")
+                      .text
+                        p
+                    .img-cover 
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg)
+                      .text
+                        p
+                .swiper-slide
+                  a.block.white-after.white-after-index.hover-cir.cursor-none(href="javascript:;" data-shift="down" data-clear data-hover="yellowBig")
+                    .img-normal
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-color: #e6e6e6" data-parallax data-parallax-bg)
+                          .obj(data-path="bottom")
+                            img(src="../../../uploads/index/wood05-320X460.png", alt="")
+                      .text
+                        p
+                    .img-cover
+                      .parallax-container(data-parallax-container)
+                        .img-bg(style="background-image: url(../../../uploads/index/img03-400X618.jpg)" data-parallax data-parallax-bg)
+                      .text
+                        p
+              .swiper-pagination
+          // 固定在底部的區塊
+          section.type-bottom 
+            // 跑馬燈文字可改
+            // <div class="img"> + class 橫/大: large ，小: small
+            // 圖片建議尺寸: 橫/大(380X250) 小(190X250)
+            each val in marquee
+              .block.waypoint.white-after.white-after-index 
+                marquee.text(direction= val.direction scrollamount= val.scrollamount loop="-1")= val.text
+                .img-wrap.hover-cir(href="javascript:;" data-hover="yellowBig")
+                  each img in val.img
+                    a.img.cursor-none(href="javascript:;" class= img.size)
+                      img(src= img.pic, alt="")
+                
+
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

@@ -1,0 +1,202 @@
+-
+  var category = [
+    'PRODUCTS',
+    'SHOPPING',
+    'MEMBER',
+    'OTHER',
+  ]
+
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/faq.css")
+  body.faq(data-page="faq")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main.common-padding
+          // 標題&敘述可改
+          section.top-title(data-aost data-aost-class="show" data-aost-offset="90")
+            .unit-title 
+              .left
+                span.en Q&A
+                span.ch 疑難排解
+            p.fz-14 我們整理了幾個常見的問題，希望能夠解決您的疑問，請透過下方的按鈕，快速
+              |找到欲詢問的類別！
+          // 錨點
+          // 項目可新增
+          section.category(data-aost data-aost-class="show" data-aost-offset="90")
+            .category-list
+              // data-anchor-target=".qa-{{ index }}"
+              // 幫我帶index 從1開始
+              ul
+                each val,index in category
+                  li
+                    a(href="javascript:;" data-anchor-target=`.qa-${index+1}` data-anchor-speed="1200" data-anchor)= val
+            .btn-wrap.hover-cir(data-hover="border")
+              a.unit-link.dark.link-open(href="javascript:;")
+                .text 
+                  p.en.fz-14 MORE
+                  p.ch.fz-14 
+                    span 所有訊息分類
+                div.icon.rotate
+                  i.icon-trangle-down
+
+          // QA內容
+          section.qa-1
+            .left(data-aost data-aost-class="show" data-aost-offset="90")
+              span.en Product
+              span.ch 關於產品
+            .right
+              ul 
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 01
+                    p 退換貨說明
+                    .open
+                      .cross-plus
+                  .item-content
+                    p ※訂購前敬請詳閱退換貨說明，您送出訂單的同時將視同您已詳閱、同意以下規定。以下說明僅適用於網購門市，不適用於實體門市。
+                    p 1.當您收到商品，卻發現和訂單內容不符，或有瑕疵等情況時，敬請在商品到貨隔日起算2天內與客服人員聯繫，我們將協助您處理退換貨事宜。
+                    p 2.當物流團隊將商品送至您家中時，請馬上與物流士一同拆開包裝檢查，以保障您的購買權益。拆包裝後，若發現商品有瑕疵、損傷或錯誤，請於當下讓物流士收回，我們將指派客服人員與您聯繫。
+                    p 3.若您的商品為暫寄於管理室，也請務必於到貨日起算2日內拆包裝，若有瑕疵也請於到貨2日內向客服人員反應，以免影響您的權益。
+                    p 4.依據消費者保護法規定，顧客自收到商品第二天起計算（請留意為到達指定地址第二天起），有七天的猶豫期間，可與我們聯絡申請退換貨，但【七天猶豫期間非試用期或鑑賞期】，若退換商品的本體、隨附配件、隨附文件、贈品、內外包裝、吊牌及標籤等，有受損、髒污、缺件、變更之情形，可能會被認定為已逾越檢查商品之必要程度，而使您行使退換貨的權利受到影響，或需負擔商品所喪失價值之費用。
+                    p 5.退換貨時，請於有情門 Lab購物網站平台中申請退貨，並且透過指定通道提供欲退貨之完整商品、包裝之照片，後續將由客服人員向您回覆商品及包裝狀態，是否予以退換貨。
+                    p 6.退換貨時請務必提供完整的商品、訂單發票以及包裝，若包裝已丟棄，則需負擔商品售價15%的二次包裝費，將透過客服人員提供包裝費補購網址。在物流到府收回商品時須配合簽立折讓單、收貨單以及收回或更換發票，缺其一則不給予退貨。
+                    p 7.七天猶豫期過後，則不受理退換貨。
+                    p 8.退換貨不接受更換其他商品(商品編號不同即為不同商品)，請於退貨後另外訂購(運費及優惠計算方式以新訂單為準)。
+                    p 9.退換貨流程：
+                      <br>(1) 請至『會員中心→退貨申請』點選「退貨」服務選項，確認所要取消或辦理退貨的商品後，按下「退貨」鈕，送出「退貨」申請表，並透過Line@回饋商品照片，客服人員將為您辦理訂單退貨事宜。若有退貨問題，請透過粉絲專頁或Line@訊息，客服人員將為您服務。
+                      <br>(2) 商品運送到府上後，商品有誤或有瑕疵，請與物流士反映，物流士將立即收回，並將由客人人員協助換貨。
+                    p 10.退款方式
+                      <br>(1) 若為信用卡付款則以退刷方式退款，若為虛擬帳號付款方式，將會退款至您於退款通知信中所回覆的退款帳戶。因此請您留意個人基本資料以利退款與通知順利。
+                      <br>(2) 退款時間約為14-21個工作，9:00~18:00且未含假日(遇假日將順延)。
+                      <br>(3) 若遇特殊狀況無法依原付款方式退款，確認商品沒有問題後，將透過您所提供之退款帳號辦理退款。
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 02
+                    p 商品木紋與畫面為什麼會呈現不一致
+                    .open
+                      .cross-plus
+                  .item-content
+                    //- p
+                    .img 
+                      img(src="../../../uploads/faq/img02-645X400.jpg", alt="")
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 03
+                    p 我該如何保養傢俱？
+                    .open
+                      .cross-plus
+                  .item-content
+                    .img
+                      img(src="../../../uploads/faq/img02-645X400.jpg", alt="")
+          section.qa-2
+            .left(data-aost data-aost-class="show" data-aost-offset="90")
+              span.en Shopping
+              span.ch 關於購物
+            .right
+              ul 
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 01
+                    p 購物流程說明
+                    .open
+                      .cross-plus
+                  .item-content
+                    p 放置食物、飲料務必使用隔熱墊、桌巾或玻璃，以免溫度、水漬或油漬損傷商品表面。
+                      |<br>請避免金屬(尖銳)製品，直接接觸商品表面，以免造成刮傷、損傷。
+                    .img 
+                      img(src="../../../uploads/faq/img01-645X400.jpg", alt="")
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 02
+                    p 付款方式說明
+                    .open
+                      .cross-plus
+                  .item-content
+                    p 若您欲保養木質家具，可以先將上光蠟涂在一個乾凈的白色軟布上，純棉等天然纖維。
+                      |使用實木保養油輕輕擦拭，只需少量實木保養油就可以使家具保持較長時間美觀。 
+                      |順著木材紋理的方向將保養油擦到家具上，再用另一塊軟布擦掉家具表面多餘的實木保養油。
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 03
+                    p 如何取消訂單？
+                    .open
+                      .cross-plus
+                  .item-content
+                    p
+                    .img
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 04
+                    p 商品加入購物車後，為何無法結帳？
+                    .open
+                      .cross-plus
+                  .item-content
+                    p
+                    .img
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 05
+                    p 鑑賞期有多久？
+                    .open
+                      .cross-plus
+                  .item-content
+                    p
+                    .img
+          //section.qa-3
+            .left(data-aost data-aost-class="show" data-aost-offset="90")
+              span.en Member
+              span.ch 關於會員
+            .right
+              ul 
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 01
+                    p 如何加入會員？
+                    .open
+                      .cross-plus
+                  .item-content
+                    p 放置食物、飲料務必使用隔熱墊、桌巾或玻璃，以免溫度、水漬或油漬損傷商品表面。
+                      |<br>請避免金屬(尖銳)製品，直接接觸商品表面，以免造成刮傷、損傷。
+                    p 若您欲保養木質家具，可以先將上光蠟涂在一個乾凈的白色軟布上，純棉等天然纖維。
+                      |<br>使用實木保養油輕輕擦拭，只需少量實木保養油就可以使家具保持較長時間美觀。 
+                      |<br>順著木材紋理的方向將保養油擦到家具上，再用另一塊軟布擦掉家具表面多餘的實木保養油。
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 02
+                    p 忘記帳號密碼怎麼辦？
+                    .open
+                      .cross-plus
+                  .item-content
+                    p
+                    .img
+                li(data-aost data-aost-class="show" data-aost-offset="90")
+                  .item-title.hover-cir(data-hover="blue")
+                    .num 03
+                    p 我如何重新啟用自己的帳號？
+                    .open
+                      .cross-plus
+                  .item-content
+                    .img
+                      img(src="../../../uploads/faq/img02-645X400.jpg", alt="")
+
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

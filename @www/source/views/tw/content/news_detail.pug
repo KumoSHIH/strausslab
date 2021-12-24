@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/news_detail.css")
+
+  // background-color: 新聞內頁的背景色(客戶自訂)
+  // 文字顏色可設定 預設黑 / + white 白
+  body.news_detail.white(style="background-color: #1d418b" data-page="news_detail")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")
+    .main-wrapper
+      // background-color: 下一則新聞內頁的背景色
+      .color-block
+        .block(data-aost data-aost-class="show" data-aost-offset="90")(style="background-color: #ef8b60")
+        .block(data-aost data-aost-class="show" data-aost-offset="90")(style="background-color: #ef8b60")
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          // 關閉按鈕: 回上頁，如果是直接從網址進入，沒有上一頁，就直接回新聞列表
+          .cir-btn.gray.close(data-aost data-aost-class="show")
+            a.cross.hover-cir(href="./news.html" data-hover="yellowBig")
+          // 麵包屑
+          .breadcrumb(data-aost data-aost-class="show")
+            ul
+              li.first
+                a.hover-cir(href="./news.html" data-hover="yellowSmall") NEWS 
+              li.sec
+                // 文章分類可新增
+                // 分類點擊後回到列表
+                // JS : _categoryList.open();
+                ul
+                  li 
+                    a.hover-cir(href="./news.html" data-hover="yellowSmall") NEW PRODUCT
+                  li 
+                    a.hover-cir(href="./news.html" data-hover="yellowSmall") KNOWLEDGE
+          // 分享連結
+          .share(data-aost data-aost-class="show") 
+            span SHARE TO 
+            ul 
+              li
+                a.hover-cir(href="javascript:;" data-hover="yellowSmall" aria-label="facebook")
+                  span.icon-facebook
+              li 
+                a.hover-cir(href="javascript:;" data-hover="yellowSmall" aria-label="line")
+                  span.icon-line
+              li.copy-link
+                a.hover-cir(href="javascript:;" data-hover="yellowSmall" aria-label="copy link")
+                  span.icon-chain
+              
+          // 大標題 & 日期
+          article.news_detail_title
+            h1 2021 色彩趨勢，STRAUSS lab 先幫你預測！
+            p.tit(data-aost data-aost-class="show") 
+              span 2021 色彩趨勢，STRAUSS lab 先幫你預測！
+            p.date Oct. 11th 2020
+
+          // 內文區塊
+          section.content
+            .content-wrap 
+              // 內文描述
+              p.description(data-aost data-aost-class="show")  2021 即將來臨，您是否有掌握最新的色彩趨勢呢？
+                |<br>我們挑選了多件商品，推薦給總是走在尖端的您！
+
+              // 段落編輯器
+              // _imgCover & _wordWrap + waypoint
+              section._articleBlock
+                // 一段
+                article._articleU(article-flex='center' img-row='x2' img-firstbig='on' img-flex='center')
+                  ._contentWrap
+                    ._imgCover(data-aost data-aost-class="show") 
+                      ._cover
+                        ._photo
+                          img(src='../../../uploads/news/detail-img01-900X660.jpg' alt='圖片描述')
+                        span._description 對寵物的依戀，適時移情到這裡
+                          |<br>毛茸茸的膚觸，彷彿貼近毛小孩的身軀
+                          |<br>或輕擁入懷或相依，壓力瞬間釋放，疲憊瞬間撫慰。
+                          |<br>靜靜地守候與迎接～最重要的你和你最珍愛的人，一起徜徉在童話森林裡……
+                      ._cover
+                        ._photo
+                          img(src='../../../uploads/news/detail-img02-440X480.jpg' alt='圖片描述')
+                        span._description 欣賞線，也欣賞由線建構出等比等距的面。
+                      ._cover
+                        ._photo
+                          img(src='../../../uploads/news/detail-img03-440X335.jpg' alt='圖片描述')
+                        span._description 欣賞線，也欣賞由線建構出等比等距的面。
+                    ._wordWrap(data-aost data-aost-class="show") 
+                      h4._H 趣味抱枕
+                      p._P
+                // 一段
+                article._articleU(img-row='x1' img-size='x169')
+                  ._contentWrap
+                    ._imgCover(data-aost data-aost-class="show") 
+                      .swiper-container(data-swiper-num='1' data-swiper-scrollbar='off' data-swiper-autoplay='off')
+                        .swiper-wrapper
+                          ._cover.swiper-slide
+                            ._photo
+                              img(src='../../../uploads/news/detail-img04-900X630.jpg' alt='圖片描述')
+                            span._description 欣賞線，也欣賞由線建構出等比等距的面。
+                          ._cover.swiper-slide
+                            ._photo
+                              img(src='../../../uploads/news/detail-img04-900X630.jpg' alt='圖片描述')
+                            span._description 欣賞線，也欣賞由線建構出等比等距的面。
+                          ._cover.swiper-slide
+                            ._photo
+                              img(src='../../../uploads/news/detail-img04-900X630.jpg' alt='圖片描述')
+                            span._description 欣賞線，也欣賞由線建構出等比等距的面。
+                          ._cover.swiper-slide
+                            ._photo
+                              img(src='../../../uploads/news/detail-img04-900X630.jpg' alt='圖片描述')
+                            span._description 欣賞線，也欣賞由線建構出等比等距的面。
+                          ._cover.swiper-slide
+                            ._photo
+                              img(src='../../../uploads/news/detail-img04-900X630.jpg' alt='圖片描述')
+                            span._description 欣賞線，也欣賞由線建構出等比等距的面。
+                    ._wordWrap(data-aost data-aost-class="show") 
+                      h4._H 卡布奇諾邊几
+                      p._P
+                          |把卡布奇諾的香醇依戀放大到空間。
+                          |<br>圓與圓，金屬桌腳跨出的圓、實木桌體凝鍊的圓，茶色玻璃鏡面…
+                          |<br>映照豐富的層次，輝映漣漪盪漾的圈，圈圈圈圈浮現…
+                // 一段
+                article._articleR(article-flex='center' img-row='x1')
+                  ._contentWrap
+                    ._imgCover(data-aost data-aost-class="show") 
+                      ._cover
+                        ._photo
+                          img(src='../../../uploads/news/detail-img05-430X460.jpg' alt='圖片描述')
+                        //span._description 對寵物的依戀，適時移情到這裡
+                    ._wordWrap(data-aost data-aost-class="show") 
+                      h4._H 日常生活中最具溫度的想念<br>溫潤、傾心、滴滴香醇的迴圈。
+                      p._P 商品尺寸：W45×D45×H60（cm）
+                        span._buttonCover
+                          a._button.hover-cir(href='javascript:;' data-hover="yellowBig") 點擊前往商品
+
+                // 一段
+                article._articleU(img-row='x3' img-size='' img-merge='on')
+                  ._contentWrap
+                    ._imgCover(data-aost data-aost-class="show") 
+                      ._cover
+                        ._photo
+                          img(src='../../../uploads/news/detail-small01-300X210.jpg' alt='圖片描述')
+                        //span._description Description
+                      ._cover
+                        ._photo
+                          img(src='../../../uploads/news/detail-small02-300X210.jpg' alt='圖片描述')
+                        //span._description Description
+                      ._cover
+                        ._photo
+                          img(src='../../../uploads/news/detail-small03-300X210.jpg' alt='圖片描述')
+                        //span._description Description
+                      ._cover
+                        ._photo
+                          img(src='../../../uploads/news/detail-small04-300X210.jpg' alt='圖片描述')
+                        //span._description Description
+                      ._cover
+                        ._photo
+                          img(src='../../../uploads/news/detail-small05-300X210.jpg' alt='圖片描述')
+                        //span._description Description
+                      ._cover
+                        ._photo
+                          img(src='../../../uploads/news/detail-small06-300X210.jpg' alt='圖片描述')
+                        //span._description Description
+                    ._wordWrap(data-aost data-aost-class="show") 
+                      h4._H 探索其他特殊嘗試
+                      p._P
+                        |近日亞馬遜森林大火造成國際間的關注，綠色植物對於地球的重要性相信早已不必多說，《Key colors for S/S 21》首先釋出的顏色就是恍
+                        |<br>若漫步在樹林裡的Quiet Wave。
+                        |<br>
+                        |<br>在我們欣賞Quiet Wave 時，仿佛沐浴在「寧靜」的風裡，看著看著仿佛就能平靜所有情緒，正如綠色能安定人類一樣；Quiet Wave 不僅具
+                        |有樂觀、未來主義的視覺感受，同時它也是最能代表2021年之後我們必須保留且在意的顏色。
+                // 一段
+                // typeFull背景樣式 文字顏色固定白色
+                article._article.-typeFull-L(typefull-img='../../../uploads/news/detail-img06-900X540.jpg' typefull-img-rwd='../../../uploads/news/detail-img06-900X540.jpg' typefull-size='s' h-color='#fff' p-color='#fff' button-textcolor='#fff' button-textcolor-hover='#fff')
+                  ._contentWrap
+                    // _imgCover 若沒資料，可請後端不輸出結構
+                    ._wordWrap(data-aost data-aost-class="show") 
+                      h4._H 形狀與顏色之間的配合
+                      p._P
+                        | AI Aqua 具備著科技感的魅力色調，以及象徵著數位時代的
+                        | 快速感，想像它在未來被大量地使用於科技、數位產品上，
+                        | 絕對非常的有魅力。
+                        |<br>
+                        |<br>
+                        | WGSN 也認為，AI Aqua 不僅是科技代表，它也能活躍於運
+                        | 動、時尚之間；因為它不僅有未來科技的前衛，同時也具備
+                        | 潮流導向的特色。
+                        span._buttonCover
+                          a._button.hover-cir(href='javascript:;' data-hover="yellowBig") Button Description
+                // 一段
+                // typeFull純色背景樣式 文字顏色固定黑色 
+                // 這邊data裡面要放 undefined (typefull-img='undefined' typefull-img-rwd='undefined')
+                // 僅有文字敘述
+                //- article._article.-typeFull-Box(typefull-img='undefined' typefull-img-rwd='undefined' typefull-box-color="#fdca36")
+                //-   ._contentWrap
+                //-     ._wordWrap(data-aost data-aost-class="show") 
+                //-       h4._H 形狀與顏色之間的配合
+                //-       p._P
+                //-         | AI Aqua 具備著科技感的魅力色調，以及象徵著數位時代的
+                //-         | 快速感，想像它在未來被大量地使用於科技、數位產品上，
+                //-         | 絕對非常的有魅力。
+                //-         |<br>
+                //-         |<br>
+                //-         | WGSN 也認為，AI Aqua 不僅是科技代表，它也能活躍於運
+                //-         | 動、時尚之間；因為它不僅有未來科技的前衛，同時也具備
+                //-         | 潮流導向的特色。
+
+            // 下方其他連結
+            .content-bottom
+              // 探索更多
+              // 項目可新增: 連結網址 or 檔案下載
+              .exolore(data-aost data-aost-class="show") 
+                span RELATED 探索更多
+                ul 
+                  li 
+                    a.hover-cir(href="javascript:;" data-hover="blue") PRODUCTS 探索色彩產品
+                  li 
+                    a.hover-cir(href="javascript:;" data-hover="blue") 2021 型錄下載
+                  //- li 
+                  //-   a.hover-cir(href="javascript:;" data-hover="yellowSmall") PRODUCTS 探索色彩產品
+                  //- li 
+                  //-   a.hover-cir(href="javascript:;" data-hover="yellowSmall") PRODUCTS 探索色彩產品
+                  //- li 
+                  //-   a.hover-cir(href="javascript:;" data-hover="yellowSmall") PRODUCTS 探索色彩產品
+              // tag 標籤
+              // 可新增
+              // 點擊回到新聞列表做tag篩選
+              // callback: _news.showTagList();
+              .tag(data-aost data-aost-class="show") 
+                ul 
+                  li 
+                    a.hover-cir(href="./news.html" data-hover="blue") #2021SS
+                  li 
+                    a.hover-cir(href="./news.html" data-hover="blue") #PRODUCTS
+                  li 
+                    a.hover-cir(href="./news.html" data-hover="blue") #COLOR
+
+          // 下一則消息
+          .info-next
+            // gotop
+            a.cir-btn.black.goTop.hover-cir(data-anchor data-hover="yellowBig")
+              .icon
+                .icon-trangle-up
+            span(data-aost data-aost-class="show")  NEXT TOPIC
+            .text(data-aost data-aost-class="show") 
+              .small-tit 
+                a.hover-cir(href="./news_detail.html" data-hover="yellowBig")
+                  |熱銷商品三件 95 折，一起團購享受美好生活品質
+              a.unit-link.hover-cir.dark(href="./news_detail.html" data-hover="yellowBig")
+                .text 
+                  p.en.fz-16 MORE
+                .icon.right
+                  i.icon-arrAngle
+              p.date Oct. 08th 2020
+
+
+    
+  //引入的script
+  include ../layouts/_script.pug

@@ -1,0 +1,348 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/components/_product_common
+@import ../common/components/_dropdown
+
+.product_list
+  .main-wrapper
+    background-color: #fff
+    transition: background-color .5s ease-in-out
+  .filter-container, 
+  .filter-options,
+  .filter-wrap
+    margin-right: 8px
+  main
+    .product_list_filter 
+      .filter
+        &.desktop
+          +rwdmax(1400)
+            width: 93%
+            .filter-options
+              width: calc(33.3% - 8px)
+  // 篩選結果
+  &_result
+    max-width: 1440px
+    width: 100%
+    margin: 0 auto
+    padding-top: 150px
+    +rwdmax(1200)
+      padding-top: 100px
+    +rwdmax(767)
+      padding-top: 30px
+    ul 
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+    li 
+      position: relative
+      padding: 0 35px 90px
+      transition: .5s ease-in-out
+      &.grayscale
+        filter: grayscale(100%)
+      &[data-aost]
+        +yWaypoint(50)
+      &.show
+        +zWaypoint
+      +rwdmax(900)
+        // width: 45%
+        padding: 0 20px 50px
+      +rwdmax(767)
+        padding: 0 10px 50px
+    li:nth-child(odd)
+      .img
+        transform-origin: left top
+      &:hover 
+        .img
+          transform: rotate(5deg)
+    li:nth-child(even)
+      margin-top: -70px
+      .img
+        transform-origin: right top
+      &:hover 
+        .img
+          transform: rotate(-5deg)
+      +rwdmax(900)
+        margin-top: 0
+    a 
+      display: block
+      width: 100%
+      margin: 0 auto
+      &.large
+        width: 380px
+        .img
+          padding-bottom: 65.78%
+        +rwdmax(1366)
+          width: 350px
+          .img
+            padding-bottom: 71.42%
+        +rwdmax(900)
+          width: 300px
+          .img
+            padding-bottom: 83.3%
+            // padding-bottom: 65.78%
+        +rwdmax(767)
+          width: 150px
+          .img
+            padding-bottom: 73.33%
+      &.small
+        width: 190px
+        .img
+          padding-bottom: 131.57%
+        +rwdmax(1366)
+          width: 150px
+          .img
+            padding-bottom: 166.66%
+        +rwdmax(900)
+          width: 190px
+          .img
+            padding-bottom: 131.57%
+        +rwdmax(767)
+          width: 150px
+          .img 
+            width: 82px
+            margin: 0 auto
+            // padding-bottom: 134.14%
+            padding-bottom: 73.33%
+          .tag
+            &.left,
+            &.right
+              left: -30px
+      +rwdmax(1200)
+        display: flex
+        flex-direction: column
+    .img
+      // border: solid 1px
+      position: relative
+      transition: transform .5s ease-in-out
+      img
+        // width: 100%
+        // height: 100%
+        transition: .5s ease-in-out
+        +posCenter
+      +rwdmax(1200)
+        order: 1
+      +rwdmax(900)
+        // height: 250px
+        display: flex
+        align-items: center
+        justify-content: center
+        img 
+          // max-width: 100%
+          // width: auto 
+          margin: 0 auto
+      +rwdmax(767)
+        // height: 110px
+    .tag 
+      position: absolute
+      top: 20px
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 60px
+      height: 60px
+      border-radius: 100%
+      color: #fff
+      +fontSet2(px(12),$basicbold)
+      +rwdmax(767)
+        width: 46px
+        height: 46px
+        top: -20px
+      &.left
+        left: 10px
+        +rwdmax(900)
+          left: 0
+        +rwdmax(767)
+          left: -10px
+      &.right
+        right: 10px
+        +rwdmax(900)
+          right: 0
+        +rwdmax(767)
+          right: auto 
+          left: -10px
+      &.cus
+        top: 85px
+        .bg
+          position: absolute
+          right: 0
+          top: 0
+          width: 60px
+          height: 60px
+          border-radius: 100%
+          background-image: url(../../../dist/uploads/product/cus-bg-s.jpg)
+          background-repeat: no-repeat
+          background-size: cover
+          animation: rotate 6s linear infinite
+        span 
+          z-index: 1
+        +rwdmax(767)
+          top: 30px
+          .bg
+            width: 46px
+            height: 46px
+      &.cus-left 
+        left: 10px
+        top: 20px
+        +rwdmax(767)
+          top: -20px
+          left: -10px
+      
+    // 選色點點
+    .dot 
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      top: 30%
+      display: none
+      z-index: 1
+      &-wrap
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+      &-block
+        margin: 0 5px 5px
+        width: 21px
+        height: 21px
+        border: solid 2px #fff 
+        border-radius: 50%
+        overflow: hidden
+        cursor: pointer
+        &.active
+          border-color: #000
+      +rwdmax(1200)
+        order: 2
+        position: static
+        display: block
+        transform: translateX(0)
+        margin-top: 15px
+        margin-bottom: 15px
+        .dot-block
+          margin: 0 7px 5px
+          width: 28px
+          height: 28px
+      +rwdmax(767)
+        margin-top: 5px
+        margin-bottom: 5px
+        .dot-block
+          margin: 0 6px 5px
+          width: 23px
+          height: 23px
+    .text-detail
+      padding-top: 15px
+      text-align: center
+      opacity: 0
+      transition: opacity .5s ease-in-out
+      &.show
+        opacity: 1
+      +rwdmax(1200)
+        opacity: 1
+        order: 3
+      +rwdmax(767)
+        padding-top: 5px
+        h2,
+        .price
+          font-size: px(16)
+        .price
+          padding: 7px 0 10px
+        .txt
+          font-size: px(12)
+  // 相關產品
+  &_more
+    position: relative
+    max-width: 1560px
+    width: 100%
+    margin: 0 auto
+    .market-title
+      padding-bottom: 12%
+      margin: 80px 0 180px
+    +rwdmax(1700)
+      width: 90%
+    +rwdmax(1550)
+      .market-title
+        margin-top: 50px
+        margin-bottom: 100px
+    +rwdmax(1000)
+      width: 85%
+    +rwdmax(767)
+      .market-title
+        padding-bottom: 40px
+        margin-bottom: 50px
+
+  .more-content
+    ul
+      display: flex
+      justify-content: space-around
+      flex-wrap: wrap
+    li 
+      padding-bottom: 100px
+      margin-right: 20px
+      a 
+        display: block
+        height: 100%
+      .img 
+        position: relative
+        overflow: hidden
+        height: 440px
+        img 
+          width: auto
+          height: 100%
+          transition: transform .8s ease-in-out
+        +rwdmax(1700)
+          height: 400px
+        +rwdmax(1600)
+          height: 350px
+        +rwdmax(1360)
+          height: 300px
+        +rwdmax(1200)
+          height: 250px
+        +rwdmax(767)
+          height: 260px
+      .text 
+        padding: 18px 20px
+        .en
+          +fontSet2(px(35),$basic)
+        .ch
+          margin-top: 10px
+          font-weight: bold
+          letter-spacing: 0.95px
+          line-height: px(29)
+          +fontSet2(px(19),$basic)
+          +ellipsis(2,29px)
+        +rwdmax(1500)
+          .en 
+            font-size: px(30)
+          .ch 
+            line-height: px(24)
+            +ellipsis(2,24px)
+        +rwdmax(1200)
+          padding: 15px
+          .en
+            font-size: px(26)
+        +rwdmax(767)
+          .en
+            font-size: px(21)
+      &:hover 
+        .img 
+          img
+            transform: scale(1.1,1.1)
+      &[data-aost]
+        +yWaypoint(50)
+      &.show
+        +zWaypoint
+      +rwdmax(1550)
+        margin-right: 10px
+      +rwdmax(1200)
+        padding-bottom: 60px
+      +rwdmax(1000)
+        margin-right: 0
+      +rwdmax(767)
+        padding-bottom: 25px
+    li:nth-child(3n)
+      margin-right: 0
+
+
+  
+  
+        

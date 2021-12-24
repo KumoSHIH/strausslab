@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/shopping_other.css")
+  body.shopping_failure(data-page="shopping_failure")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          // 標題&敘述可改
+          section.top-title(data-aost data-aost-class="show" data-aost-offset="90")
+            .unit-title 
+              .left
+                span.en Oops!
+                span.ch 您的訂單尚未成立
+            p.fz-14 似乎出了點差錯，您的訂單並未成功成立，請返回上一步，
+              |<br>再付款一次！
+            .text
+              span NOTICE:&nbsp;訂單編號請於此頁立即重新付款，否則訂單將做失效處理。
+            // 按鈕
+            .btn-wrap(data-aost data-aost-class="show" data-aost-offset="90")
+              a.btn-cir.hover-cir(href="./index.html" data-hover="yellowSmall")
+                .cross-plus
+                span 重新付款
+
+
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

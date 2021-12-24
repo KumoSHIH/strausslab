@@ -1,0 +1,79 @@
+- 
+  var footerItem = [
+    {
+      en: 'Story',
+      ch: '品牌故事',
+      url: './about.html'},
+    {
+      en: 'Member',
+      ch: '會員中心',
+      url: './member_center.html'},
+    {
+      en: 'News',
+      ch: '發佈中心',
+      url: './news.html'},
+    {
+      en: 'Q&A',
+      ch: '常見問題',
+      url: './faq.html'},
+    {
+      en: 'Products',
+      ch: '商品專區',
+      url: './product.html'},
+    {
+      en: 'Contact',
+      ch: '聯絡我們',
+      url: './contact.html'},
+  ]
+
+  var social = [
+    {
+      icon: 'icon-facebook',
+      name: 'facebook'},
+    {
+      icon: 'icon-instagram',
+      name: 'instagram'},
+    {
+      icon: 'icon-line',
+      name: 'line'},
+    {
+      icon: 'icon-youtube-dark',
+      name: 'youtube'},
+    {
+      icon: 'icon-pinkoi',
+      name: 'pinkoi'},
+    {
+      icon: 'icon-momo',
+      name: 'momo'},
+  ]
+
+footer.footer.waypoint(data-aost data-aost-class="show" data-aost-offset="90")
+  .go-top.light(data-anchor-target="" data-anchor-speed="1800" data-anchor-callback="_home.anchorCallback" data-anchor)
+    div
+      i.icon-trangle-up
+  .footer-left
+    ul.footer-item 
+      each val in footerItem
+        li 
+          a.hover-cir(href= val.url data-hover="blueBig" aria-label= val.en)
+            span.en= val.en
+            span.ch= val.ch
+    ul.footer-social
+      each val in social
+        li
+          a.hover-cir(href="javascript:;" data-hover="blueBig" target="_blank" aria-label= val.name rel="noreferrer noopener")
+            span(class= val.icon)
+    .footer-contact
+      .footer-mail
+        span.icon-mail
+        p service@twucm.com
+      .copyright 
+        p © 2020 Strauss lab all right reserved. Design by 
+          a.hover-cir(href="https://www.wddgroup.com/" data-hover="blueBig") WDD.
+          a.privacy.hover-cir(href="javascript:;" data-hover="blueBig" data-libox="privacy") PRIVACY POLIVY
+  .footer-right
+    a.logo.hover-cir(href="./index.html" data-hover="blueBig" aria-label="home") 
+      img(src="../../../assets/img/logo-w.png", alt="")
+
+  
+  

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+html(lang="zh-Hant-TW")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/about.css")
+  body.about(data-page="about")
+    include ../layouts/_ad.pug
+    .mouse-container
+      #mouse 
+        .circle
+        .mark
+          img(src="../../../assets/img/cursor.png", alt="")  
+    .main-wrapper
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        main
+          section.top-title(data-aost data-aost-class="show")
+            .unit-title
+              .left
+                span.en Brand Story
+                span.ch 品牌故事
+          section.section1
+            .wrap
+              .left
+                .img.img1(data-aost data-aost-class="show" data-aost-offset="90")
+                  img(src="../../../uploads/about/img01-350X470.jpg", alt="")
+                .img.img2(data-aost data-aost-class="show" data-aost-offset="90")
+                  img(src="../../../uploads/about/img02-350X470.jpg", alt="")
+              .right
+                .text(data-aost data-aost-class="show")
+                  p.fz-20 Strauss Lab  
+                    |<br>Everything is possible
+                  p.fz-14 是傳統
+                    |<br>是50年代永進木器的延續
+                    |<br>是完美空間有情門的細胞分裂
+                  p.fz-14 是年輕
+                    |<br>熟讀古今 喜愛美學 胸懷大地
+                    |<br>成熟體態下依舊活力熱情 
+                  p.fz-14 是玩心
+                    |<br>推演生活型態進化的可能性
+                    |<br>用機能 造型 材質 工法 色彩 來成形
+                  p.fz-14 是理性與感性
+                    |<br>左腦思考邏輯工序 右腦塞滿點子創意
+                    |<br>要生活有趣好玩而實用經濟成為必須
+                .img(data-aost data-aost-class="show")
+                  img(src="../../../uploads/about/img-200X200.jpg", alt="")
+          seciton.section2
+            // 跑馬燈
+            .marquee
+              .track 
+                p 
+                  span Designer Team
+                  span Designer Team
+                  span Designer Team
+                  span Designer Team
+                  span Designer Team
+                  span Designer Team
+                  span Designer Team
+                  span Designer Team
+            .text-wrap(data-aost data-aost-class="show")
+              div
+                p.fz-20.bold 設計團隊
+                  |<br>70年家具設計基礎所累積出的實力與眼光
+                  |<br>以嶄新的美學見解重新詮釋空間的樣貌
+                p.fz-14 
+                  |Strauss Lab 設計團隊
+                  |<br>集結來自不同背景經驗的設計師
+                  |<br>從機能 造型 色彩的角度切入
+                  |<br>摸索並挑戰著空間與生活之間可能性
+                p.fz-14 
+                  |有點頑皮 帶些冒險 更多玩心
+                  |<br>讓居家的日常更輕鬆  舒適 有趣            
+            .bg
+              // ++
+              canvas#bgCanvas( 
+              data-desktop="background-image: url(../../../uploads/about/bg-1920X900.jpg)"
+              data-mobile="background-image: url(../../../uploads/about/bg-375X900.jpg)")
+          seciton.section3(data-aost data-aost-class="show")
+            .wrap
+              .left
+                .title-type.title-move.small.type-over(data-type="left-bottom" data-move="top")
+                  .en
+                    span RE-THINKING
+                  .en
+                    span ADVENTURE
+                  .en.border-bottom
+                    span WARM & MEMORY
+              .right
+                .img 
+                  img(src="../../../uploads/about/img-525X680.jpg", alt="")
+                
+
+
+
+
+
+
+        // 頁尾
+        include ../layouts/_footer.pug
+        // 隱私權政策
+        include ../layouts/_privacy.pug
+    
+  //引入的script
+  include ../layouts/_script.pug
